@@ -3,7 +3,10 @@
 // Excluded pages: legal / utility pages
 ---
 
-<script src="https://mws-booking-widget.ams3.cdn.digitaloceanspaces.com/mws-booking-widget-v1.min.js"></script>
+<script
+  is:inline
+  src="https://mws-booking-widget.ams3.cdn.digitaloceanspaces.com/mws-booking-widget-v1.min.js"
+></script>
 
 <script is:inline>
   (function () {
@@ -90,13 +93,27 @@
         optionalTabs: [],
       };
 
-      // Wait for widget to load
+      // Initialize if already available, otherwise wait for script load.
       if (typeof bookingWidget !== 'undefined') {
         bookingWidget.init(config);
+        return;
+      }
+
+      const widgetScript = document.querySelector(
+        'script[src*="mws-booking-widget"]'
+      );
+
+      if (widgetScript) {
+        widgetScript.addEventListener('load', () => {
+          if (typeof bookingWidget !== 'undefined') {
+            bookingWidget.init(config);
+          }
+        });
+        widgetScript.addEventListener('error', () => {
+          console.warn('Booking widget script failed to load.');
+        });
       } else {
-        document.querySelector(
-          'script[src*="mws-booking-widget"]'
-        ).addEventListener('load', () => bookingWidget.init(config));
+        console.warn('Booking widget script tag not found.');
       }
     }
   })();
