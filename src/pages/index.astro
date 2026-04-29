@@ -70,8 +70,8 @@ const rooms = [
   ══════════════════════════════════════════ -->
   <section class="relative h-screen min-h-[640px] flex items-center overflow-hidden bg-forest-700">
 
-    <!-- Hero image -->
-    <div class="absolute inset-0">
+    <!-- Hero image — layer 1 (bottom) -->
+    <div class="absolute inset-0 z-0">
       <img
         src="/images/hotel/hero.jpg"
         alt="feelMOOR Gesundresort Bad Wurzach – Außenansicht"
@@ -79,12 +79,12 @@ const rooms = [
         loading="eager"
         fetchpriority="high"
       />
-      <!-- Subtle base tint so image isn't blown out -->
-      <div class="absolute inset-0 bg-forest-900/30"></div>
-      <!-- Left-side gradient: darkens the text area, fades out toward the right -->
-      <div class="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/50 to-transparent"></div>
-      <!-- Bottom gradient: anchors text block at the bottom -->
-      <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-forest-950/85 to-transparent"></div>
+    </div>
+    <!-- Gradient overlays — layer 2 (above image, below text) -->
+    <!-- Left-side gradient: darkens the text area, fades out toward the right -->
+    <div class="absolute inset-0 z-[1] bg-gradient-to-r from-forest-950/90 via-forest-950/50 to-transparent"></div>
+    <!-- Bottom gradient: anchors text block at the bottom -->
+    <div class="absolute bottom-0 left-0 right-0 h-2/3 z-[1] bg-gradient-to-t from-forest-950/85 to-transparent"></div>
     </div>
 
     <!-- Gold line animation (bottom) -->
