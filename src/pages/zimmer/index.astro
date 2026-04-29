@@ -8,7 +8,7 @@ const roomTypes = [
     tagline: 'Ihr persönlicher Rückzugsort',
     size: 'ab 22 m²',
     capacity: '1 Person',
-    gradient: 'from-stone/40 via-stone-light/50 to-stone/20',
+    img: '/images/zimmer/doppelzimmer/room-8.jpg',
     features: ['Gemütliche Einzelgröße', 'Schreibtisch & Lesebereich', 'Bergblick oder Gartenblick', 'Minibar & Kaffeemaschine'],
     description: 'Unsere Einzelzimmer sind sorgfältig eingerichtete Rückzugsorte für Alleinreisende. Warme Naturtöne, hochwertige Bettwäsche und eine ruhige Atmosphäre laden zum Abschalten und Erholen ein.',
   },
@@ -18,7 +18,7 @@ const roomTypes = [
     tagline: 'Gemeinsam entspannen',
     size: 'ab 28 m²',
     capacity: '1–2 Personen',
-    gradient: 'from-gold/12 via-stone/35 to-stone-light/40',
+    img: '/images/zimmer/doppelzimmer/room-1.jpg',
     features: ['Komfortables Doppelbett', 'Sitzbereich mit Sessel', 'Badewanne oder Regendusche', 'Balkon (ausgewählte Zimmer)'],
     description: 'Großzügige Doppelzimmer für Paare und Alleinreisende, die mehr Raum wünschen. Warme Holzelemente, natürliche Materialien und ein durchdachtes Design schaffen eine Wohlfühlatmosphäre.',
     highlight: true,
@@ -29,7 +29,7 @@ const roomTypes = [
     tagline: 'Exklusiver Wohnkomfort',
     size: 'ab 48 m²',
     capacity: '1–2 Personen',
-    gradient: 'from-forest/15 via-forest/8 to-stone/30',
+    img: '/images/zimmer/doppelzimmer/room-3.jpg',
     features: ['Separater Wohnbereich', 'Luxuriöses Badezimmer', 'Premium-Ausstattung', 'Besonderer Ausblick'],
     description: 'Unsere Suiten bieten exklusiven Wohnkomfort auf hohem Niveau. Ein separater Wohnbereich, edle Materialien und besondere Details machen Ihren Aufenthalt zu einem unvergesslichen Erlebnis.',
   },
@@ -86,8 +86,13 @@ const amenities = [
         <article class={`grid lg:grid-cols-2 gap-0 group ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
 
           <!-- Image -->
-          <div class={`img-placeholder aspect-[16/10] lg:aspect-auto min-h-[340px] bg-gradient-to-br ${room.gradient} ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-            <span class="img-placeholder-label">Foto: {room.label}</span>
+          <div class={`relative overflow-hidden aspect-[16/10] lg:aspect-auto min-h-[340px] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+            <img
+              src={room.img}
+              alt={room.label + ' – feelMOOR Gesundresort'}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
             {room.highlight && (
               <div class="absolute top-5 right-5 z-20 bg-gold text-white text-[9px] tracking-caption uppercase px-3 py-1.5">
                 Beliebt

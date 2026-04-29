@@ -37,21 +37,21 @@ const rooms = [
     label: 'Einzelzimmer',
     size: 'ab 22 m²',
     desc: 'Rückzugsort für Alleinreisende – komfortabel eingerichtet mit Blick ins Grüne.',
-    gradient: 'from-stone/30 to-stone-light/60',
+    img: '/images/zimmer/doppelzimmer/room-5.jpg',
   },
   {
     slug: 'doppelzimmer',
     label: 'Doppelzimmer',
     size: 'ab 28 m²',
     desc: 'Ideal für Paare – großzügig, warm und mit allem Komfort für Ihren Aufenthalt.',
-    gradient: 'from-gold/8 to-stone/35',
+    img: '/images/zimmer/doppelzimmer/room-2.jpg',
   },
   {
     slug: 'suiten',
     label: 'Suiten',
     size: 'ab 48 m²',
     desc: 'Exklusiver Wohnkomfort mit separatem Wohnbereich und besonderem Ambiente.',
-    gradient: 'from-forest/12 to-stone/30',
+    img: '/images/zimmer/doppelzimmer/room-3.jpg',
   },
 ];
 ---
@@ -67,20 +67,17 @@ const rooms = [
   ══════════════════════════════════════════ -->
   <section class="relative h-screen min-h-[640px] flex items-center overflow-hidden bg-forest-700">
 
-    <!-- Placeholder image layer -->
-    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
-      <!-- Textured overlay -->
-      <div class="absolute inset-0 opacity-20"
-           style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
-      </div>
-      <!-- Landscape suggestion gradient -->
-      <div class="absolute bottom-0 left-0 right-0 h-2/3
-                  bg-gradient-to-t from-forest-900/60 to-transparent">
-      </div>
-      <!-- Image placeholder label -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <span class="text-cream/10 text-[11px] tracking-caption uppercase font-body">Foto: Moorlandschaft Bad Wurzach</span>
-      </div>
+    <!-- Hero image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/hotel/hero.jpg"
+        alt="feelMOOR Gesundresort Bad Wurzach – Außenansicht"
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-forest-900/55"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-forest-900/70 to-transparent"></div>
     </div>
 
     <!-- Gold line animation (bottom) -->
@@ -245,8 +242,13 @@ const rooms = [
         </div>
 
         <!-- Large featured room image -->
-        <div class="img-placeholder aspect-[16/10] rounded-sm bg-gradient-to-br from-stone/40 to-gold/15">
-          <span class="img-placeholder-label">Foto: Suiten Ansicht</span>
+        <div class="aspect-[16/10] overflow-hidden">
+          <img
+            src="/images/zimmer/doppelzimmer/room-1.jpg"
+            alt="Doppelzimmer – feelMOOR Gesundresort"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
         </div>
       </div>
 
@@ -254,8 +256,13 @@ const rooms = [
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
         {rooms.map((room) => (
           <a href={`/zimmer/${room.slug}`} class="group block card-hover">
-            <div class={`img-placeholder aspect-[3/2] bg-gradient-to-br ${room.gradient}`}>
-              <span class="img-placeholder-label">Foto: {room.label}</span>
+            <div class="aspect-[3/2] overflow-hidden">
+              <img
+                src={room.img}
+                alt={room.label + ' – feelMOOR'}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
             </div>
             <div class="bg-white border border-stone-light border-t-2 group-hover:border-t-gold transition-colors duration-300 px-5 py-5">
               <div class="flex items-center justify-between mb-2">
@@ -279,10 +286,15 @@ const rooms = [
   ══════════════════════════════════════════ -->
   <section class="relative py-28 lg:py-36 overflow-hidden bg-forest-700">
 
-    <!-- Background gradient + texture -->
-    <div class="absolute inset-0 bg-gradient-to-r from-forest-800 to-forest-600 opacity-90"></div>
-    <div class="absolute inset-0 opacity-10"
-         style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/therme/outdoor-pool.jpg"
+        alt="feelMOOR Therme – Außenpool"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-forest-900/70"></div>
     </div>
 
     <!-- Decorative gold arc -->

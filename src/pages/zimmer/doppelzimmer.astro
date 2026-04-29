@@ -18,10 +18,10 @@ const features = [
 ];
 
 const gallery = [
-  { label: 'Wohnbereich',    gradient: 'from-stone/40 via-stone-light/50 to-gold/10' },
-  { label: 'Schlafbereich',  gradient: 'from-gold/12 via-stone/40 to-stone-light/30' },
-  { label: 'Badezimmer',     gradient: 'from-stone-light/50 via-stone/30 to-forest/10' },
-  { label: 'Ausblick',       gradient: 'from-forest/15 via-forest/8 to-stone-light/40' },
+  { label: 'Wohnbereich',   src: '/images/zimmer/doppelzimmer/room-1.jpg' },
+  { label: 'Schlafbereich', src: '/images/zimmer/doppelzimmer/room-2.jpg' },
+  { label: 'Badezimmer',    src: '/images/zimmer/doppelzimmer/room-7.jpg' },
+  { label: 'Ausblick',      src: '/images/zimmer/doppelzimmer/room-4.jpg' },
 ];
 
 const upsell = [
@@ -38,14 +38,16 @@ const upsell = [
   <!-- ── Breadcrumb & Hero ── -->
   <section class="relative overflow-hidden" style="min-height: 70vh;">
 
-    <!-- Hero image placeholder -->
-    <div class="absolute inset-0 bg-gradient-to-br from-stone/40 via-stone-light/60 to-gold/15">
-      <div class="absolute inset-0 opacity-5"
-           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
-      </div>
-      <span class="absolute inset-0 flex items-center justify-center text-[10px] tracking-caption uppercase text-ink-light/30 font-body">
-        Foto: Doppelzimmer Hauptansicht
-      </span>
+    <!-- Hero image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/zimmer/doppelzimmer/room-6.jpg"
+        alt="Superior Doppelzimmer – feelMOOR Gesundresort"
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-ink-dark/25"></div>
     </div>
 
     <!-- Gradient overlay from bottom -->
@@ -96,8 +98,13 @@ const upsell = [
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {gallery.map((img, i) => (
-          <div class={`img-placeholder ${i === 0 ? 'aspect-[4/3] col-span-2 row-span-1' : 'aspect-square'} bg-gradient-to-br ${img.gradient} cursor-pointer hover:opacity-90 transition-opacity duration-300`}>
-            <span class="img-placeholder-label">{img.label}</span>
+          <div class={`overflow-hidden cursor-pointer group ${i === 0 ? 'aspect-[4/3] col-span-2 row-span-1' : 'aspect-square'}`}>
+            <img
+              src={img.src}
+              alt={img.label + ' – Doppelzimmer feelMOOR'}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
