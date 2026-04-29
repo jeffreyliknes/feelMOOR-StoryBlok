@@ -9,7 +9,8 @@ const packages = [
     nights: '7–14 Nächte',
     teaser: 'Die klassische Moorheilkur – medizinisch begleitet, mit täglichen Moorbädern und individuell abgestimmten Anwendungen für nachhaltige Gesundheit.',
     href: '/angebote/moorintensivkur',
-    gradient: 'from-forest/20 to-forest/35',
+    img: '/images/allgaeu/moor-1.jpg',
+    imgAlt: 'Moorlandschaft Torflehrpfad Bad Wurzach',
   },
   {
     id: 'verwoehntage',
@@ -18,7 +19,8 @@ const packages = [
     nights: '2–4 Nächte',
     teaser: 'Abschalten, loslassen, ankommen. Verwöhnprogramm mit Therme, Sauna und ausgewählten Wellnessanwendungen – für die Seele und den Körper.',
     href: '/angebote/verwoehntage',
-    gradient: 'from-gold/15 to-stone/40',
+    img: '/images/therme/wellness-1.jpg',
+    imgAlt: 'Paar entspannt auf Sprudelliege in der Therme',
   },
   {
     id: 'yoga-retreat',
@@ -27,7 +29,8 @@ const packages = [
     nights: '5–7 Nächte',
     teaser: 'Körper, Geist und Seele in Einklang bringen. Tägliche Yoga-Praxis, Meditation in der Moorlandschaft und regenerative Spa-Behandlungen.',
     href: '/angebote/yoga-retreat',
-    gradient: 'from-forest-100/40 to-gold/10',
+    img: '/images/therme/sauna-1.jpg',
+    imgAlt: 'Saunalandschaft im feelMOOR',
   },
 ];
 
@@ -76,8 +79,8 @@ const rooms = [
         loading="eager"
         fetchpriority="high"
       />
-      <div class="absolute inset-0 bg-forest-900/55"></div>
-      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-forest-900/70 to-transparent"></div>
+      <div class="absolute inset-0 bg-forest-900/60"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-forest-900/80 to-transparent"></div>
     </div>
 
     <!-- Gold line animation (bottom) -->
@@ -181,10 +184,15 @@ const rooms = [
           <article class="group card-hover">
             <a href={pkg.href} class="block">
 
-              <!-- Image placeholder -->
-              <div class={`img-placeholder aspect-[4/3] bg-gradient-to-br ${pkg.gradient}`}>
-                <span class="img-placeholder-label">Foto: {pkg.title}</span>
-                <!-- Corner accent -->
+              <!-- Image with overlay -->
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={pkg.img}
+                  alt={pkg.imgAlt}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-ink-dark/30"></div>
                 <div class="absolute top-4 left-4 z-20">
                   <span class="caption-label bg-cream/90 px-2.5 py-1">{pkg.tag}</span>
                 </div>
