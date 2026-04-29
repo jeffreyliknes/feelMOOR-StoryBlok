@@ -79,8 +79,12 @@ const rooms = [
         loading="eager"
         fetchpriority="high"
       />
-      <div class="absolute inset-0 bg-forest-900/68"></div>
-      <div class="absolute bottom-0 left-0 right-0 h-4/5 bg-gradient-to-t from-forest-950 via-forest-950/80 to-transparent"></div>
+      <!-- Subtle base tint so image isn't blown out -->
+      <div class="absolute inset-0 bg-forest-900/30"></div>
+      <!-- Left-side gradient: darkens the text area, fades out toward the right -->
+      <div class="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/50 to-transparent"></div>
+      <!-- Bottom gradient: anchors text block at the bottom -->
+      <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-forest-950/85 to-transparent"></div>
     </div>
 
     <!-- Gold line animation (bottom) -->
