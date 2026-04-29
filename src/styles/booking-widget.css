@@ -1,0 +1,132 @@
+/* ── Fixed container ── */
+#booking-widget-container {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  #booking-widget-container {
+    bottom: 0;
+    min-width: 100%;
+  }
+}
+
+/* ── Widget colour overrides ── */
+@keyframes pointOut {
+  0%   { background-color: #C0392B; opacity: 0; transform: scale(1.2); }
+  100% { background-color: unset;   opacity: 1; transform: scale(1); }
+}
+
+#booking-widget-container svg { fill: #B39D4D; }
+
+/* Tab buttons */
+#booking-widget-container .tab-button {
+  background-color: #2D4A3E;
+  color: #FAF7F0;
+}
+#booking-widget-container .tab-button.selected {
+  background-color: #FAF7F0;
+  color: #2A2A22;
+}
+#booking-widget-container .booking-widget_tab-selection_info-box .tab-button {
+  background-color: #7C6A30;
+}
+
+/* Tab content */
+#booking-widget-container .booking-widget_tab-content {
+  background-color: #FAF7F0;
+}
+
+/* Optional tab title/text */
+#booking-widget-container .optional-tab-content .title { color: #B39D4D; }
+#booking-widget-container .optional-tab-content .text  { color: #2A2A22; }
+
+/* Hotel select – invalid */
+#booking-widget-container .booking-widget_hotel-select-wrapper.invalid {
+  animation: pointOut 0.5s ease-in-out;
+}
+#booking-widget-container .booking-widget_hotel-select-wrapper.invalid .booking-widget_hotel-select {
+  color: #C0392B;
+}
+#booking-widget-container .booking-widget_hotel-select-wrapper.invalid .hotel-icon,
+#booking-widget-container .booking-widget_hotel-select-wrapper.invalid .exclamation-triangle-icon {
+  fill: #C0392B;
+}
+
+/* Hotel select list */
+#booking-widget-container .booking-widget_select-wrapper-options-list {
+  background-color: #F3EEE4;
+}
+#booking-widget-container .booking-widget_select-wrapper-options-list li:hover {
+  background-color: #EDE5D0;
+}
+
+/* Date picker */
+#booking-widget-container .booking-widget-date-picker {
+  background-color: #F3EEE4;
+}
+#booking-widget-container .booking-widget-date-picker .invalid-date-message {
+  color: #C0392B;
+}
+#booking-widget-container .booking-widget-date-picker .DayPicker-Day:hover {
+  background-color: #2A2A22;
+  color: #FAF7F0;
+  cursor: pointer;
+}
+#booking-widget-container .booking-widget-date-picker .DayPicker-Day.DayPicker-Day--today {
+  font-weight: bold;
+}
+#booking-widget-container .booking-widget-date-picker .DayPicker-Day.DayPicker-Day--disabled {
+  background-color: lightgray;
+  pointer-events: none;
+}
+#booking-widget-container .booking-widget-date-picker .DayPicker-Day.DayPicker-Day--selected {
+  background-color: #2D4A3E;
+  color: #FAF7F0;
+}
+#booking-widget-container .booking-widget-date-picker .DayPicker-Day.DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  background-color: rgba(179, 157, 77, 0.15) !important;
+  color: #B39D4D;
+}
+#booking-widget-container .booking-widget-date-picker.invalid-hover .DayPicker-Day.DayPicker-Day--selected {
+  background-color: #C0392B;
+  color: #FAF7F0;
+}
+
+/* Room select list */
+#booking-widget-container .booking-widget_room-select-list {
+  background-color: #F3EEE4;
+}
+#booking-widget-container .booking-widget_room-select-list .add-new-room-button {
+  background-color: #FAF7F0;
+  color: #B39D4D;
+}
+#booking-widget-container .booking-widget_room-select-list .remove-room-button {
+  color: #B39D4D;
+}
+
+/* Inputs */
+#booking-widget-container .booking-widget_number-input-wrapper input  { color: #2A2A22; }
+#booking-widget-container .booking-widget_number-select-wrapper select { color: #2A2A22; }
+
+/* Generic fields */
+#booking-widget-container .booking-widget_generic-fields-list { background-color: #FAF7F0; }
+
+/* Book / mobile button */
+#booking-widget-container .booking-widget_mobile-button,
+#booking-widget-container .book-button {
+  background-color: #B39D4D;
+  color: #FAF7F0;
+  transition: background-color 0.3s ease-in-out;
+}
+#booking-widget-container .booking-widget_mobile-button:hover,
+#booking-widget-container .book-button:hover {
+  background-color: #8C7A38;
+}
+#booking-widget-container .booking-widget_mobile-button svg,
+#booking-widget-container .book-button svg {
+  fill: #FAF7F0;
+}

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-gold: #B39D4D;
+    --color-gold-dark: #8C7A38;
+    --color-forest: #2D4A3E;
+    --color-cream: #FAF7F0;
+    --color-stone-light: #EDE5D0;
+    --color-ink: #2A2A22;
+    --header-h: 80px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body text-[15px] leading-relaxed;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-light;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  p { @apply leading-[1.75]; }
+}
+
+@layer components {
+  /* ── Caption label above headings ── */
+  .caption-label {
+    @apply inline-block font-body text-[10px] font-medium tracking-caption uppercase text-gold;
+  }
+
+  /* ── Section headings ── */
+  .section-title {
+    @apply font-display font-light text-ink-dark;
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    line-height: 1.08;
+  }
+
+  .section-title em {
+    @apply italic font-light;
+    color: var(--color-gold);
+  }
+
+  /* ── Gold rule ── */
+  .gold-rule {
+    @apply block h-px bg-gold/40 w-12 mt-5;
+  }
+
+  /* ── Pill button ── */
+  .btn-gold {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 text-[11px] font-medium tracking-wider uppercase
+           bg-gold text-white transition-all duration-300;
+  }
+  .btn-gold:hover {
+    background-color: var(--color-gold-dark);
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 text-[11px] font-medium tracking-wider uppercase
+           border border-gold text-gold bg-transparent transition-all duration-300;
+  }
+  .btn-outline-gold:hover {
+    @apply bg-gold text-white;
+  }
+
+  .btn-forest {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 text-[11px] font-medium tracking-wider uppercase
+           bg-forest text-cream transition-all duration-300;
+  }
+  .btn-forest:hover {
+    background-color: var(--color-forest);
+    opacity: 0.88;
+  }
+
+  /* ── Image placeholder ── */
+  .img-placeholder {
+    @apply relative overflow-hidden bg-stone-light;
+  }
+
+  .img-placeholder::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(135deg, rgba(45,74,62,0.08) 0%, rgba(179,157,77,0.06) 100%);
+  }
+
+  .img-placeholder-label {
+    @apply absolute inset-0 flex items-center justify-center z-10
+           text-[9px] tracking-caption uppercase text-ink-light font-body;
+  }
+
+  /* ── Card ── */
+  .card-hover {
+    @apply transition-transform duration-500 ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ── Mega menu panel ── */
+  .mega-panel {
+    @apply fixed left-0 right-0 bg-white shadow-xl;
+    top: var(--header-h);
+    border-top: 2px solid var(--color-gold);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  }
+
+  .mega-panel.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* ── Animated entrance utilities ── */
+  .animate-on-load { opacity: 0; }
+  .animate-on-load.loaded { animation: fadeUp 0.9s ease-out forwards; }
+
+  /* ── Scrolled header ── */
+  .header-scrolled {
+    @apply shadow-sm;
+    background-color: rgba(250, 247, 240, 0.96) !important;
+    backdrop-filter: blur(8px);
+  }
+}

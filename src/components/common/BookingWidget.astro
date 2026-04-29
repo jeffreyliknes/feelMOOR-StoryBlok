@@ -1,0 +1,103 @@
+---
+// Booking widget – Rategain mws-booking-widget v1.4.2
+// Excluded pages: legal / utility pages
+---
+
+<script src="https://mws-booking-widget.ams3.cdn.digitaloceanspaces.com/mws-booking-widget-v1.min.js"></script>
+
+<script is:inline>
+  (function () {
+    const EXCLUDED = [
+      '/impressum', '/datenschutz', '/agb', '/404',
+      '/privacy-policy', '/imprint', '/terms-conditions',
+    ];
+    const path = location.pathname.replace(/\/$/, '');
+    const isExcluded = EXCLUDED.some((p) => path.endsWith(p));
+
+    if (!isExcluded) {
+      const div = document.createElement('div');
+      div.id = 'booking-widget-container';
+      document.body.appendChild(div);
+
+      const config = {
+        autoGenerateComponent: false,
+        defaultLink: 'https://onepagebooking.com/feelmoor',
+        deeplink: 'https://r.myhotelshop.de/ibe.php',
+        predefinedDeeplinkParameters: {
+          hotelId: '20160',
+          placement: '104',
+          partnerId: 'HotelNetSolutionsV5',
+        },
+        defaultLanguage: 'de',
+        languageMapping: { en: 'en', de: 'de' },
+        dateFormatToBeParsed: 'DDMMYY',
+        widthToChangeToButton: 900,
+        topToChangeThePosition: 300,
+        bookingButton: {
+          header: { en: 'Best-Price-Guarantee', de: 'Best-Preis-Garantie' },
+          label: {
+            booking: { en: 'Book Now', de: 'Jetzt buchen' },
+            voucher: { en: 'Check Now', de: 'Check jetzt' },
+            events:  { en: 'Check Events', de: 'Check Events' },
+          },
+        },
+        bookingTab: {
+          id: 'booking',
+          label: { en: 'Availability check', de: 'Verfügbarkeit prüfen' },
+          form: [
+            {
+              name: 'dateRange',
+              type: 'dateRangePicker',
+              disableBefore: undefined,
+              minBookableDays: 0,
+              invalidDateRangeMessage: {
+                en: 'Must be more than {minBookableDays} days',
+                de: 'Muss länger als {minBookableDays} Tage sein',
+              },
+              placeholder: {
+                arrival:   { en: 'Arrival',   de: 'Anreise' },
+                departure: { en: 'Departure', de: 'Abreise' },
+              },
+              dateFormatToBeShown: {
+                en: 'DD/MM/YYYY',
+                de: 'DD.MM.YYYY',
+              },
+            },
+            {
+              name: 'rooms',
+              type: 'roomSelect',
+              maxRoom: 3,
+              defaultValue: 1,
+              placeholder: {
+                rooms:  { en: 'Rooms',  de: 'Zimmer' },
+                people: { en: 'People', de: 'Personen' },
+              },
+              fieldArray: {
+                title:  { en: 'Room',   de: 'Zimmer' },
+                adults: {
+                  name: 'adults',
+                  label: { en: 'Adults', de: 'Erwachsene' },
+                  defaultValue: 2,
+                  min: 1,
+                  max: 3,
+                },
+                addRoomLabel:    { en: 'Add Room', de: 'Zimmer hinzufügen' },
+                removeRoomLabel: { en: 'Remove',   de: 'Entfernen' },
+              },
+            },
+          ],
+        },
+        optionalTabs: [],
+      };
+
+      // Wait for widget to load
+      if (typeof bookingWidget !== 'undefined') {
+        bookingWidget.init(config);
+      } else {
+        document.querySelector(
+          'script[src*="mws-booking-widget"]'
+        ).addEventListener('load', () => bookingWidget.init(config));
+      }
+    }
+  })();
+</script>

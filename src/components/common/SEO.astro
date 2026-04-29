@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  noindex?: boolean;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/images/og-default.jpg',
+  noindex = false,
+  canonicalUrl,
+} = Astro.props;
+
+const siteUrl = 'https://www.feelmoor.de';
+const canonical = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
+const fullTitle = title.includes('feelMOOR') ? title : `${title} – feelMOOR`;
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:title"       content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type"        content="website" />
+<meta property="og:url"         content={canonical} />
+<meta property="og:image"       content={`${siteUrl}${ogImage}`} />
+<meta property="og:locale"      content="de_DE" />
+<meta property="og:site_name"   content="feelMOOR – Das Gesundresort Bad Wurzach" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image"       content={`${siteUrl}${ogImage}`} />
+
+<!-- Geo -->
+<meta name="geo.position"  content="47.9114;9.9052" />
+<meta name="geo.placename" content="Bad Wurzach" />
+<meta name="icbm"          content="47.9114,9.9052" />
