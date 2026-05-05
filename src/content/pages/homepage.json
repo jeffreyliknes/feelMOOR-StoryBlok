@@ -1,0 +1,64 @@
+{
+  "seo_title": "feelMOOR – Das Gesundresort Bad Wurzach",
+  "seo_description": "feelMOOR – Das modernste Moorbad Deutschlands im Herzen des Allgäus. Gesundheitskuren, Therme & Spa, Wellness-Pakete und natürliche Erholung in Bad Wurzach.",
+  "hero": {
+    "image": "/images/hotel/hero.jpg",
+    "image_alt": "feelMOOR Gesundresort Bad Wurzach – Außenansicht",
+    "caption": "Bad Wurzach · Allgäu",
+    "headline_line1": "Das Gesundresort",
+    "headline_line2": "im Herzen des Allgäus",
+    "body": "Das modernste Moorbad Deutschlands vereint jahrhundertealte Heilkraft mit zeitgemäßem Luxus – Therme, Gesundheitskuren und natürliche Erholung unter einem Dach.",
+    "cta_primary_label": "Angebote entdecken",
+    "cta_primary_href": "/angebote",
+    "cta_secondary_label": "Das Resort",
+    "cta_secondary_href": "/hotel"
+  },
+  "pillars": [
+    {
+      "number": "01",
+      "heading": "Moorheilbad",
+      "body": "Über 5.000 Jahre altes Naturmoor – anerkanntes Heilmittel für Orthopädie, Rheuma und Rehabilitation."
+    },
+    {
+      "number": "02",
+      "heading": "Therme & Spa",
+      "body": "Thermalbad, Saunalandschaft und Wellness-Anwendungen für tiefe Entspannung und körperliches Wohlbefinden."
+    },
+    {
+      "number": "03",
+      "heading": "Allgäuer Natur",
+      "body": "Eingebettet in das UNESCO-Biosphärenreservat – Wandern, Radfahren und Naturerlebnisse direkt vor der Haustür."
+    }
+  ],
+  "packages_section": {
+    "caption": "Pakete & Angebote",
+    "heading": "Kuren, Wellness & Retreats",
+    "all_link_label": "Alle Angebote"
+  },
+  "rooms_section": {
+    "caption": "Unterkunft",
+    "heading": "Zimmer & Suiten",
+    "body": "Unsere Zimmer und Suiten sind Rückzugsorte des Komforts – warme Materialien, natürliche Farben und ein Design, das die Allgäuer Landschaft spiegelt.",
+    "all_link_label": "Alle Zimmer",
+    "featured_image": "/images/zimmer/doppelzimmer/room-1.jpg"
+  },
+  "therme_cta": {
+    "background_image": "/images/therme/outdoor-pool.jpg",
+    "caption": "feelMOOR Therme",
+    "heading": "Moorwasser-Therme & Saunalandschaft",
+    "body": "Tauchen Sie ein in wohltuendes Moorwasser-Thermalbad, genießen Sie unsere weitläufige Saunalandschaft und erleben Sie exklusive Spa-Behandlungen.",
+    "stat_1_value": "1.500 m²",
+    "stat_1_label": "Wasserfläche",
+    "stat_2_value": "7",
+    "stat_2_label": "Saunen & Dampfbäder",
+    "stat_3_value": "34 °C",
+    "stat_3_label": "Moorwassertemperatur",
+    "cta_primary_label": "Therme entdecken",
+    "cta_secondary_label": "Preise & Öffnungszeiten"
+  },
+  "voucher_strip": {
+    "caption": "Verschenken Sie Erholung",
+    "heading": "feelMOOR Gutscheine –",
+    "subheading": "das perfekte Geschenk"
+  }
+}

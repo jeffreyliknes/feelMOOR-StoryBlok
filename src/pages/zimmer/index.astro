@@ -1,56 +1,16 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
+import roomsOverview from '@/content/pages/rooms-overview.json';
 
-const roomTypes = [
-  {
-    slug: 'einzelzimmer',
-    label: 'Einzelzimmer',
-    tagline: 'Ihr persönlicher Rückzugsort',
-    size: 'ab 22 m²',
-    capacity: '1 Person',
-    img: '/images/zimmer/doppelzimmer/room-8.jpg',
-    features: ['Gemütliche Einzelgröße', 'Schreibtisch & Lesebereich', 'Bergblick oder Gartenblick', 'Minibar & Kaffeemaschine'],
-    description: 'Unsere Einzelzimmer sind sorgfältig eingerichtete Rückzugsorte für Alleinreisende. Warme Naturtöne, hochwertige Bettwäsche und eine ruhige Atmosphäre laden zum Abschalten und Erholen ein.',
-  },
-  {
-    slug: 'doppelzimmer',
-    label: 'Doppelzimmer',
-    tagline: 'Gemeinsam entspannen',
-    size: 'ab 28 m²',
-    capacity: '1–2 Personen',
-    img: '/images/zimmer/doppelzimmer/room-1.jpg',
-    features: ['Komfortables Doppelbett', 'Sitzbereich mit Sessel', 'Badewanne oder Regendusche', 'Balkon (ausgewählte Zimmer)'],
-    description: 'Großzügige Doppelzimmer für Paare und Alleinreisende, die mehr Raum wünschen. Warme Holzelemente, natürliche Materialien und ein durchdachtes Design schaffen eine Wohlfühlatmosphäre.',
-    highlight: true,
-  },
-  {
-    slug: 'suiten',
-    label: 'Suiten',
-    tagline: 'Exklusiver Wohnkomfort',
-    size: 'ab 48 m²',
-    capacity: '1–2 Personen',
-    img: '/images/zimmer/doppelzimmer/room-3.jpg',
-    features: ['Separater Wohnbereich', 'Luxuriöses Badezimmer', 'Premium-Ausstattung', 'Besonderer Ausblick'],
-    description: 'Unsere Suiten bieten exklusiven Wohnkomfort auf hohem Niveau. Ein separater Wohnbereich, edle Materialien und besondere Details machen Ihren Aufenthalt zu einem unvergesslichen Erlebnis.',
-  },
-];
+const roomTypes = (await getCollection('rooms')).sort(
+  (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
+);
 
-const amenities = [
-  { icon: '⟡', label: 'Kostenfreies WLAN' },
-  { icon: '⟡', label: 'Moorwasser-Kosmetikserie' },
-  { icon: '⟡', label: 'Kuschelroben & Hausschuhe' },
-  { icon: '⟡', label: 'Kissenmenü' },
-  { icon: '⟡', label: 'Therme-Zugang inbegriffen' },
-  { icon: '⟡', label: 'Gesundes Frühstücksbuffet' },
-  { icon: '⟡', label: 'Fahrradverleih' },
-  { icon: '⟡', label: 'Parkplatz kostenlos' },
-];
+const page = roomsOverview;
 ---
 
-<PageLayout
-  title="Zimmer & Suiten – feelMOOR"
-  description="Komfortable Einzelzimmer, Doppelzimmer und exklusive Suiten im feelMOOR Gesundresort Bad Wurzach. Alle Zimmer mit Therme-Zugang und natürlichem Ambiente."
->
+<PageLayout title={page.seo_title} description={page.seo_description}>
 
   <!-- ── Page Hero ── -->
   <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
@@ -61,13 +21,12 @@ const amenities = [
     </div>
 
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
-      <p class="caption-label mb-4">Unterkunft</p>
-      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">
-        Zimmer &amp; <em class="italic" style="color:#B39D4D;">Suiten</em>
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;"
+          set:html={page.hero_heading.replace(' & ', ' &amp; <em class="italic" style="color:#B39D4D;">') + '</em>'}>
       </h1>
       <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">
-        Jedes Zimmer ein Rückzugsort – gestaltet mit natürlichen Materialien,
-        warmen Allgäuer Farben und dem Komfort, den Sie verdienen.
+        {page.hero_intro}
       </p>
       <!-- Breadcrumb -->
       <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
@@ -88,13 +47,13 @@ const amenities = [
           <!-- Image -->
           <div class={`relative overflow-hidden aspect-[16/10] lg:aspect-auto min-h-[340px] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
             <img
-              src={room.img}
-              alt={room.label + ' – feelMOOR Gesundresort'}
+              src={room.data.preview_image}
+              alt={room.data.name + ' – feelMOOR Gesundresort'}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
             <div class="absolute inset-0 bg-ink-dark/20"></div>
-            {room.highlight && (
+            {room.data.highlight && (
               <div class="absolute top-5 right-5 z-20 bg-gold text-white text-[9px] tracking-caption uppercase px-3 py-1.5">
                 Beliebt
               </div>
@@ -103,25 +62,30 @@ const amenities = [
 
           <!-- Content -->
           <div class={`bg-white border border-stone-light group-hover:border-gold/20 transition-colors duration-300 p-8 lg:p-12 flex flex-col justify-center ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
-            <p class="caption-label mb-3">{room.tagline}</p>
+            {room.data.tagline && (
+              <p class="caption-label mb-3">{room.data.tagline}</p>
+            )}
             <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.1;">
-              {room.label}
+              {room.data.name}
             </h2>
             <div class="flex items-center gap-5 mt-3 mb-5">
-              <span class="text-[11px] text-ink-muted border border-stone px-2.5 py-1">{room.size}</span>
-              <span class="text-[11px] text-ink-muted border border-stone px-2.5 py-1">{room.capacity}</span>
+              {room.data.size && (
+                <span class="text-[11px] text-ink-muted border border-stone px-2.5 py-1">{room.data.size}</span>
+              )}
+              {room.data.capacity && (
+                <span class="text-[11px] text-ink-muted border border-stone px-2.5 py-1">{room.data.capacity}</span>
+              )}
             </div>
-            <p class="text-[13px] text-ink-muted leading-relaxed mb-6">{room.description}</p>
-
-            <!-- Features -->
-            <ul class="grid grid-cols-2 gap-x-4 gap-y-2 mb-8">
-              {room.features.map(f => (
-                <li class="flex items-center gap-2 text-[12px] text-ink-muted">
-                  <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
-                  {f}
-                </li>
-              ))}
-            </ul>
+            {room.data.feature_groups[0] && (
+              <ul class="grid grid-cols-2 gap-x-4 gap-y-2 mb-8">
+                {room.data.feature_groups[0].items.map((f) => (
+                  <li class="flex items-center gap-2 text-[12px] text-ink-muted">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <div class="flex flex-wrap gap-3">
               <a href={`/zimmer/${room.slug}`} class="btn-gold">
@@ -144,13 +108,13 @@ const amenities = [
     <div class="absolute inset-0 bg-forest opacity-95"></div>
     <div class="relative z-10 max-w-screen-xl mx-auto px-6">
       <div class="text-center mb-12">
-        <p class="caption-label mb-3">Inklusive Leistungen</p>
-        <h2 class="font-display font-light text-cream" style="font-size:clamp(1.75rem,3.5vw,3rem);">
-          Was in jedem Zimmer <em class="italic" style="color:#B39D4D;">inbegriffen</em> ist
+        <p class="caption-label mb-3">{page.amenities_subheading}</p>
+        <h2 class="font-display font-light text-cream" style="font-size:clamp(1.75rem,3.5vw,3rem);"
+            set:html={page.amenities_heading.replace(' inbegriffen', ' <em class="italic" style="color:#B39D4D;">inbegriffen</em>')}>
         </h2>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        {amenities.map(a => (
+        {page.amenities.map((a) => (
           <div class="text-center py-6 px-4 border border-cream/10 hover:border-gold/40 transition-colors duration-300 group">
             <div class="w-10 h-10 border border-gold/40 flex items-center justify-center mx-auto mb-3 group-hover:bg-gold/10 transition-colors">
               <span class="text-gold text-lg leading-none">✦</span>
@@ -167,9 +131,9 @@ const amenities = [
   <section class="py-16 bg-white border-b border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">
-        Bereit für Ihren Aufenthalt?
+        {page.cta_heading}
       </h2>
-      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">{page.cta_body}</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="#booking" class="btn-gold">Jetzt buchen</a>
         <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>

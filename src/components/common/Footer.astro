@@ -1,48 +1,8 @@
 ---
-const year = new Date().getFullYear();
+import site from '@/content/settings/site.json';
 
-const cols = [
-  {
-    heading: 'Hotel & Resort',
-    links: [
-      { label: 'Über feelMOOR',    href: '/hotel' },
-      { label: 'Zimmer & Suiten',  href: '/zimmer' },
-      { label: 'Restaurant',       href: '/kulinarik' },
-      { label: 'Nachhaltigkeit',   href: '/nachhaltigkeit' },
-      { label: 'Anreise & Lage',   href: '/service-kontakt' },
-    ],
-  },
-  {
-    heading: 'Therme & Gesundheit',
-    links: [
-      { label: 'feelMOOR Therme',  href: '/therme' },
-      { label: 'Thermalbad',       href: '/therme/thermalbad' },
-      { label: 'Sauna',            href: '/therme/sauna' },
-      { label: 'Moorbad',          href: '/gesundheit/moorbad' },
-      { label: 'Behandlungen',     href: '/gesundheit/anwendungen' },
-    ],
-  },
-  {
-    heading: 'Angebote',
-    links: [
-      { label: 'Alle Pakete',         href: '/angebote' },
-      { label: 'Moorintensivkur',     href: '/angebote/moorintensivkur' },
-      { label: 'Verwöhntage',         href: '/angebote/verwoehntage' },
-      { label: 'Yoga & Retreats',     href: '/angebote/yoga-retreat' },
-      { label: 'Saisonal Specials',   href: '/angebote/saisonal-specials' },
-    ],
-  },
-  {
-    heading: 'Service',
-    links: [
-      { label: 'Kontakt',       href: '/service-kontakt' },
-      { label: 'Gutscheine',    href: '/gutscheine' },
-      { label: 'Newsletter',    href: '/newsletter' },
-      { label: 'Jobs',          href: '/jobs' },
-      { label: 'News & Blog',   href: '/news' },
-    ],
-  },
-];
+const year = new Date().getFullYear();
+const cols = site.footer_columns;
 ---
 
 <footer class="bg-forest text-cream/80">
@@ -64,27 +24,27 @@ const cols = [
           />
         </a>
         <address class="not-italic text-[12.5px] leading-relaxed text-cream/60 mb-5">
-          Moorbadstraße 1<br />
-          88410 Bad Wurzach<br />
-          Bayern, Deutschland
+          {site.address_street}<br />
+          {site.address_zip_city}<br />
+          {site.address_region}, {site.address_country}
         </address>
-        <a href="tel:+497564301000" class="text-[12.5px] text-gold hover:text-gold-300 transition-colors block mb-1">
-          +49 7564 30-1000
+        <a href={`tel:${site.phone_link}`} class="text-[12.5px] text-gold hover:text-gold-300 transition-colors block mb-1">
+          {site.phone_display}
         </a>
-        <a href="mailto:info@feelmoor.de" class="text-[12.5px] text-gold hover:text-gold-300 transition-colors">
-          info@feelmoor.de
+        <a href={`mailto:${site.email}`} class="text-[12.5px] text-gold hover:text-gold-300 transition-colors">
+          {site.email}
         </a>
 
         <!-- Social -->
         <div class="flex gap-3 mt-6">
-          <a href="#" aria-label="Instagram" class="w-8 h-8 border border-cream/20 flex items-center justify-center hover:border-gold/60 hover:text-gold transition-colors text-cream/50">
+          <a href={site.social_instagram} aria-label="Instagram" class="w-8 h-8 border border-cream/20 flex items-center justify-center hover:border-gold/60 hover:text-gold transition-colors text-cream/50">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="2" y="2" width="20" height="20" rx="5"/>
               <circle cx="12" cy="12" r="4"/>
               <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
             </svg>
           </a>
-          <a href="#" aria-label="Facebook" class="w-8 h-8 border border-cream/20 flex items-center justify-center hover:border-gold/60 hover:text-gold transition-colors text-cream/50">
+          <a href={site.social_facebook} aria-label="Facebook" class="w-8 h-8 border border-cream/20 flex items-center justify-center hover:border-gold/60 hover:text-gold transition-colors text-cream/50">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
             </svg>
@@ -97,7 +57,7 @@ const cols = [
         <div>
           <p class="text-[9.5px] tracking-caption uppercase text-gold mb-4 font-medium">{col.heading}</p>
           <ul class="space-y-2">
-            {col.links.map(link => (
+            {col.links.map((link) => (
               <li>
                 <a href={link.href} class="text-[12.5px] text-cream/60 hover:text-cream transition-colors duration-150">
                   {link.label}
@@ -134,17 +94,17 @@ const cols = [
   <div class="border-t border-cream/10">
     <div class="max-w-screen-xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p class="text-[11px] text-cream/40">
-        © {year} feelMOOR GmbH · Das Gesundresort Bad Wurzach
+        © {year} {site.copyright_name}
       </p>
       <div class="flex items-center gap-5">
-        <a href="/impressum"  class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Impressum</a>
+        <a href="/impressum"   class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Impressum</a>
         <a href="/datenschutz" class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Datenschutz</a>
         <a href="/sitemap.xml" class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Sitemap</a>
       </div>
       <div class="flex items-center gap-2">
-        <a href="/"    class="text-[10.5px] font-medium text-gold">DE</a>
+        <a href="/"   class="text-[10.5px] font-medium text-gold">DE</a>
         <span class="text-cream/20 text-xs">·</span>
-        <a href="/en"  class="text-[10.5px] text-cream/40 hover:text-cream/70 transition-colors">EN</a>
+        <a href="/en" class="text-[10.5px] text-cream/40 hover:text-cream/70 transition-colors">EN</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,57 @@
+{
+  "hotel_name": "feelMOOR",
+  "tagline": "Das Gesundresort Bad Wurzach",
+  "address_street": "Moorbadstraße 1",
+  "address_zip_city": "88410 Bad Wurzach",
+  "address_region": "Bayern",
+  "address_country": "Deutschland",
+  "phone_display": "+49 7564 30-1000",
+  "phone_link": "+497564301000",
+  "email": "info@feelmoor.de",
+  "social_instagram": "#",
+  "social_facebook": "#",
+  "default_og_image": "/images/og-default.jpg",
+  "copyright_name": "feelMOOR GmbH · Das Gesundresort Bad Wurzach",
+  "footer_columns": [
+    {
+      "heading": "Hotel & Resort",
+      "links": [
+        { "label": "Über feelMOOR",  "href": "/hotel" },
+        { "label": "Zimmer & Suiten", "href": "/zimmer" },
+        { "label": "Restaurant",      "href": "/kulinarik" },
+        { "label": "Nachhaltigkeit",  "href": "/nachhaltigkeit" },
+        { "label": "Anreise & Lage",  "href": "/service-kontakt" }
+      ]
+    },
+    {
+      "heading": "Therme & Gesundheit",
+      "links": [
+        { "label": "feelMOOR Therme", "href": "/therme" },
+        { "label": "Thermalbad",      "href": "/therme/thermalbad" },
+        { "label": "Sauna",           "href": "/therme/sauna" },
+        { "label": "Moorbad",         "href": "/gesundheit/moorbad" },
+        { "label": "Behandlungen",    "href": "/gesundheit/anwendungen" }
+      ]
+    },
+    {
+      "heading": "Angebote",
+      "links": [
+        { "label": "Alle Pakete",       "href": "/angebote" },
+        { "label": "Moorintensivkur",   "href": "/angebote/moorintensivkur" },
+        { "label": "Verwöhntage",       "href": "/angebote/verwoehntage" },
+        { "label": "Yoga & Retreats",   "href": "/angebote/yoga-retreat" },
+        { "label": "Saisonal Specials", "href": "/angebote/saisonal-specials" }
+      ]
+    },
+    {
+      "heading": "Service",
+      "links": [
+        { "label": "Kontakt",     "href": "/service-kontakt" },
+        { "label": "Gutscheine",  "href": "/gutscheine" },
+        { "label": "Newsletter",  "href": "/newsletter" },
+        { "label": "Jobs",        "href": "/jobs" },
+        { "label": "News & Blog", "href": "/news" }
+      ]
+    }
+  ]
+}
