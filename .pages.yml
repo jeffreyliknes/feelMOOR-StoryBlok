@@ -1,0 +1,376 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+
+  # ── HOMEPAGE ────────────────────────────────────────────────────────────────
+  - name: homepage
+    label: "Homepage"
+    path: src/content/pages/homepage.json
+    type: file
+    fields:
+      - name: seo_title
+        label: "Page Title (Browser Tab)"
+        type: string
+      - name: seo_description
+        label: "Page Description (Google)"
+        type: text
+
+      - name: hero
+        label: "Hero Section"
+        type: object
+        fields:
+          - name: image
+            label: "Background Image"
+            type: image
+          - name: image_alt
+            label: "Image Description (Alt Text)"
+            type: string
+          - name: caption
+            label: "Location Label (e.g. \"Bad Wurzach · Allgäu\")"
+            type: string
+          - name: headline_line1
+            label: "Headline Line 1"
+            type: string
+          - name: headline_line2
+            label: "Headline Line 2 (italic, highlighted)"
+            type: string
+          - name: body
+            label: "Intro Text"
+            type: text
+          - name: cta_primary_label
+            label: "Primary Button Text"
+            type: string
+          - name: cta_primary_href
+            label: "Primary Button Link"
+            type: string
+          - name: cta_secondary_label
+            label: "Secondary Button Text"
+            type: string
+          - name: cta_secondary_href
+            label: "Secondary Button Link"
+            type: string
+
+      - name: pillars
+        label: "Three Pillars (01 Moorheilbad, 02 Therme, 03 Nature)"
+        type: list
+        fields:
+          - name: number
+            label: "Number (e.g. \"01\")"
+            type: string
+          - name: heading
+            label: "Heading"
+            type: string
+          - name: body
+            label: "Description"
+            type: text
+
+      - name: packages_section
+        label: "Packages Section (Headings)"
+        type: object
+        fields:
+          - name: caption
+            label: "Category Label (e.g. \"Pakete & Angebote\")"
+            type: string
+          - name: heading
+            label: "Section Heading"
+            type: string
+          - name: all_link_label
+            label: "\"All Packages\" Button Text"
+            type: string
+
+      - name: rooms_section
+        label: "Rooms Section (Headings)"
+        type: object
+        fields:
+          - name: caption
+            label: "Category Label"
+            type: string
+          - name: heading
+            label: "Section Heading"
+            type: string
+          - name: body
+            label: "Intro Text"
+            type: text
+          - name: all_link_label
+            label: "\"All Rooms\" Button Text"
+            type: string
+          - name: featured_image
+            label: "Featured Preview Image"
+            type: image
+
+      - name: therme_cta
+        label: "Thermal Spa Section"
+        type: object
+        fields:
+          - name: background_image
+            label: "Background Image"
+            type: image
+          - name: caption
+            label: "Category Label"
+            type: string
+          - name: heading
+            label: "Section Heading"
+            type: string
+          - name: body
+            label: "Description"
+            type: text
+          - name: stat_1_value
+            label: "Stat 1 Value (e.g. \"1.500 m²\")"
+            type: string
+          - name: stat_1_label
+            label: "Stat 1 Label (e.g. \"Water Surface\")"
+            type: string
+          - name: stat_2_value
+            label: "Stat 2 Value (e.g. \"7\")"
+            type: string
+          - name: stat_2_label
+            label: "Stat 2 Label (e.g. \"Saunas\")"
+            type: string
+          - name: stat_3_value
+            label: "Stat 3 Value (e.g. \"34 °C\")"
+            type: string
+          - name: stat_3_label
+            label: "Stat 3 Label (e.g. \"Water Temperature\")"
+            type: string
+          - name: cta_primary_label
+            label: "Primary Button Text"
+            type: string
+          - name: cta_secondary_label
+            label: "Secondary Button Text"
+            type: string
+
+      - name: voucher_strip
+        label: "Gift Vouchers Section"
+        type: object
+        fields:
+          - name: caption
+            label: "Category Label"
+            type: string
+          - name: heading
+            label: "Heading"
+            type: string
+          - name: subheading
+            label: "Second Line (italic)"
+            type: string
+
+  # ── ROOMS OVERVIEW PAGE ──────────────────────────────────────────────────────
+  - name: rooms_page
+    label: "Rooms & Suites – Overview Page"
+    path: src/content/pages/rooms-overview.json
+    type: file
+    fields:
+      - name: seo_title
+        label: "Page Title (Browser Tab)"
+        type: string
+      - name: seo_description
+        label: "Page Description (Google)"
+        type: text
+      - name: hero_caption
+        label: "Category Label above Heading"
+        type: string
+      - name: hero_heading
+        label: "Page Heading"
+        type: string
+      - name: hero_intro
+        label: "Intro Text"
+        type: text
+      - name: amenities_heading
+        label: "Section Heading (Included Amenities)"
+        type: string
+      - name: amenities_subheading
+        label: "Section Subheading"
+        type: string
+      - name: amenities
+        label: "In-Room Amenities (Wi-Fi, Breakfast, Spa, etc.)"
+        type: list
+        fields:
+          - name: label
+            label: "Amenity Name"
+            type: string
+      - name: cta_heading
+        label: "CTA Heading (\"Ready for your stay?\")"
+        type: string
+      - name: cta_body
+        label: "CTA Description"
+        type: text
+
+  # ── ROOMS COLLECTION ─────────────────────────────────────────────────────────
+  - name: rooms
+    label: "Rooms & Suites"
+    path: src/content/rooms
+    type: collection
+    format: yaml-frontmatter
+    extension: md
+    fields:
+      - name: name
+        label: "Room Name (e.g. \"Doppelzimmer\")"
+        type: string
+        required: true
+      - name: tagline
+        label: "Short Tagline (card & hero)"
+        type: string
+      - name: size
+        label: "Room Size (e.g. \"from 28 m²\")"
+        type: string
+      - name: capacity
+        label: "Occupancy (e.g. \"1–2 Guests\")"
+        type: string
+      - name: highlight
+        label: "Show \"Popular\" Badge?"
+        type: boolean
+      - name: sort_order
+        label: "Display Order in Listing (1 = first)"
+        type: number
+      - name: seo_title
+        label: "Page Title (Browser Tab)"
+        type: string
+      - name: seo_description
+        label: "Page Description (Google)"
+        type: text
+      - name: hero_image
+        label: "Hero Image (detail page)"
+        type: image
+      - name: preview_image
+        label: "Preview Image (room card on listing page)"
+        type: image
+      - name: gallery
+        label: "Photo Gallery (detail page)"
+        type: list
+        fields:
+          - name: image
+            label: "Photo"
+            type: image
+          - name: caption
+            label: "Caption"
+            type: string
+      - name: intro_heading
+        label: "Description Section Heading (e.g. \"The Room\")"
+        type: string
+      - name: intro_subheading
+        label: "Description Subheading (e.g. \"Relax together – comfort for two\")"
+        type: string
+      - name: specs
+        label: "Room Data (right sidebar)"
+        type: list
+        fields:
+          - name: label
+            label: "Label (e.g. \"Size\")"
+            type: string
+          - name: value
+            label: "Value (e.g. \"from 28 m²\")"
+            type: string
+      - name: feature_groups
+        label: "Amenity Groups"
+        type: list
+        fields:
+          - name: heading
+            label: "Group Name (e.g. \"Comfort\")"
+            type: string
+          - name: items
+            label: "Features"
+            type: list
+
+  # ── PACKAGES COLLECTION ──────────────────────────────────────────────────────
+  - name: packages
+    label: "Packages & Offers"
+    path: src/content/packages
+    type: collection
+    format: yaml-frontmatter
+    extension: md
+    fields:
+      - name: title
+        label: "Package Name"
+        type: string
+        required: true
+      - name: tag
+        label: "Category Label (e.g. \"Health Cure\")"
+        type: string
+      - name: nights
+        label: "Duration (e.g. \"7–14 Nights\")"
+        type: string
+      - name: teaser
+        label: "Short Description (homepage card)"
+        type: text
+      - name: image
+        label: "Preview Image"
+        type: image
+      - name: image_alt
+        label: "Image Description (Alt Text)"
+        type: string
+      - name: price_from
+        label: "Starting Price in EUR (number only, e.g. 195)"
+        type: number
+      - name: price_label
+        label: "Price Suffix (e.g. \"per person / night\")"
+        type: string
+      - name: booking_link
+        label: "Booking Link"
+        type: string
+      - name: includes
+        label: "What's Included"
+        type: list
+
+  # ── GLOBAL SETTINGS ──────────────────────────────────────────────────────────
+  - name: site_settings
+    label: "Global Settings"
+    path: src/content/settings/site.json
+    type: file
+    fields:
+      - name: hotel_name
+        label: "Hotel Name"
+        type: string
+      - name: tagline
+        label: "Hotel Tagline"
+        type: string
+      - name: address_street
+        label: "Street Address"
+        type: string
+      - name: address_zip_city
+        label: "Postcode & City"
+        type: string
+      - name: address_region
+        label: "State / Region"
+        type: string
+      - name: address_country
+        label: "Country"
+        type: string
+      - name: phone_display
+        label: "Phone Number (display, e.g. \"+49 7564 30-1000\")"
+        type: string
+      - name: phone_link
+        label: "Phone Number (tel link, no spaces, e.g. \"+497564301000\")"
+        type: string
+      - name: email
+        label: "Email Address"
+        type: string
+      - name: social_instagram
+        label: "Instagram Link"
+        type: string
+      - name: social_facebook
+        label: "Facebook Link"
+        type: string
+      - name: default_og_image
+        label: "Default Social Preview Image (OG Image)"
+        type: image
+      - name: copyright_name
+        label: "Copyright Text (e.g. \"feelMOOR GmbH · Das Gesundresort Bad Wurzach\")"
+        type: string
+      - name: footer_columns
+        label: "Footer Navigation (4 columns)"
+        type: list
+        fields:
+          - name: heading
+            label: "Column Heading"
+            type: string
+          - name: links
+            label: "Links"
+            type: list
+            fields:
+              - name: label
+                label: "Link Text"
+                type: string
+              - name: href
+                label: "Link URL"
+                type: string
