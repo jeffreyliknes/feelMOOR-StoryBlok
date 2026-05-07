@@ -24,93 +24,187 @@ const seoTitle = room.seo_title ?? `${room.name} – Zimmer & Suiten – feelMOO
 const seoDescription =
   room.seo_description ??
   `${room.name} im feelMOOR Gesundresort Bad Wurzach. ${room.size ?? ''}, Therme-Zugang inbegriffen. Jetzt buchen.`;
+
+/** Unique gallery rows for hero + thumbs + lightbox (no duplicate URLs). */
+const galleryUnique = room.gallery.filter(
+  (g, i, arr) => arr.findIndex((x) => x.image === g.image) === i
+);
+let sideGallery = galleryUnique
+  .filter((g) => g.image !== room.hero_image)
+  .slice(0, 3);
+
+if (
+  sideGallery.length < 3 &&
+  room.preview_image &&
+  room.preview_image !== room.hero_image &&
+  !sideGallery.some((g) => g.image === room.preview_image)
+) {
+  sideGallery = [
+    ...sideGallery,
+    { image: room.preview_image, caption: room.name },
+  ].slice(0, 3);
+}
+
+const allPhotos: { image: string; caption: string }[] = [];
+const seenUrls = new Set<string>();
+for (const src of [room.hero_image, ...galleryUnique.map((g) => g.image)]) {
+  if (!seenUrls.has(src)) {
+    seenUrls.add(src);
+    const cap =
+      galleryUnique.find((g) => g.image === src)?.caption ??
+      (src === room.hero_image ? room.name : '');
+    allPhotos.push({ image: src, caption: cap });
+  }
+}
+const photoCount = allPhotos.length;
 ---
 
 <PageLayout title={seoTitle} description={seoDescription}>
 
-  <!-- ── Breadcrumb & Hero ── -->
-  <section class="relative overflow-hidden" style="min-height: 70vh;">
-
-    <!-- Hero image -->
-    <div class="absolute inset-0">
-      <img
-        src={room.hero_image}
-        alt={`${room.name} – feelMOOR Gesundresort`}
-        class="w-full h-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-      />
-      <div class="absolute inset-0 bg-ink-dark/55"></div>
-      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-ink-dark/75 to-transparent"></div>
+  <!-- ── Top bar: back + breadcrumb (listing-style, no full-screen hero) ── -->
+  <section class="bg-cream border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <a
+        href="/zimmer"
+        class="inline-flex items-center gap-2 text-[11px] font-medium tracking-wide text-ink-muted hover:text-gold transition-colors w-fit"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Zurück zu allen Zimmern
+      </a>
+      <nav class="flex items-center gap-2 text-[10.5px] text-ink-muted sm:justify-end">
+        <a href="/" class="hover:text-gold transition-colors">Start</a>
+        <span class="text-stone">/</span>
+        <a href="/zimmer" class="hover:text-gold transition-colors">Zimmer & Suiten</a>
+        <span class="text-stone">/</span>
+        <span class="text-ink-dark">{room.name}</span>
+      </nav>
     </div>
+  </section>
 
-    <!-- Gradient overlay from bottom -->
-    <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-cream to-transparent"></div>
-
-    <!-- Content card floating over image -->
-    <div class="relative z-10 flex flex-col justify-end h-full pt-40 pb-12">
-      <div class="max-w-screen-xl mx-auto px-6 w-full">
-
-        <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 text-[10.5px] text-ink-muted mb-6">
-          <a href="/" class="hover:text-gold transition-colors">Start</a>
-          <span class="text-stone">›</span>
-          <a href="/zimmer" class="hover:text-gold transition-colors">Zimmer & Suiten</a>
-          <span class="text-stone">›</span>
-          <span class="text-ink">{room.name}</span>
-        </nav>
-
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-          <div>
-            <p class="caption-label mb-2">Unterkunft</p>
-            <h1 class="font-display font-light text-ink-dark" style="font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:1.04;">
-              {room.name}
-            </h1>
-            <div class="flex flex-wrap items-center gap-3 mt-4">
-              {room.size && (
-                <span class="text-[11px] text-ink-muted border border-stone px-3 py-1.5">{room.size}</span>
-              )}
-              {room.capacity && (
-                <span class="text-[11px] text-ink-muted border border-stone px-3 py-1.5">{room.capacity}</span>
-              )}
-              <span class="text-[11px] text-gold border border-gold/40 bg-gold/5 px-3 py-1.5">Therme inklusive</span>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3 flex-shrink-0">
-            <a href="#booking" class="btn-gold">
-              Jetzt buchen
-              <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="/service-kontakt" class="btn-outline-gold">Anfrage</a>
-          </div>
+  <!-- ── Title + meta (above imagery, like booking-site detail pages) ── -->
+  <section class="bg-cream pt-8 pb-6 lg:pt-10 lg:pb-8">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+        <div>
+          <p class="caption-label mb-2">Unterkunft</p>
+          <h1 class="font-display font-light text-ink-dark tracking-tight text-[clamp(1.85rem,4vw,3rem)] leading-[1.08]">
+            {room.name}
+          </h1>
+          <p class="mt-3 text-[13px] text-ink-muted flex flex-wrap items-center gap-x-2 gap-y-1">
+            {room.tagline && (
+              <>
+                <span>{room.tagline}</span>
+                {(room.size || room.capacity) && <span class="text-stone hidden sm:inline">·</span>}
+              </>
+            )}
+            {room.size && <span>{room.size}</span>}
+            {room.size && room.capacity && <span class="text-stone">·</span>}
+            {room.capacity && <span>{room.capacity}</span>}
+            {(room.size || room.capacity || room.tagline) && (
+              <span class="text-stone hidden sm:inline">·</span>
+            )}
+            <span class="text-gold font-medium">Therme inklusive</span>
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:pt-7 flex-shrink-0">
+          <a href="#booking" class="btn-gold">
+            Jetzt buchen
+            <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="/service-kontakt" class="btn-outline-gold">Anfrage</a>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ── Gallery ── -->
-  {room.gallery.length > 0 && (
-    <section class="bg-cream pt-10 pb-0">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {room.gallery.map((img, i) => (
-            <div class={`overflow-hidden cursor-pointer group ${i === 0 ? 'aspect-[4/3] col-span-2 row-span-1' : 'aspect-square'}`}>
-              <img
-                src={img.image}
-                alt={`${img.caption} – ${room.name} feelMOOR`}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
+  <!-- ── Gallery: large feature + stacked thumbs (no viewport hero) ── -->
+  <section class="bg-cream pb-10 lg:pb-14">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div
+        class:list={[
+          'grid gap-3 sm:gap-4',
+          sideGallery.length > 0
+            ? 'lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)] lg:items-stretch lg:min-h-[min(520px,70vh)]'
+            : 'grid-cols-1',
+        ]}
+      >
+        <div class="relative rounded-xl overflow-hidden bg-stone-light aspect-[4/3] lg:aspect-auto lg:min-h-[280px] shadow-sm group">
+          <img
+            src={room.hero_image}
+            alt={`${room.name} – feelMOOR Gesundresort`}
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            loading="eager"
+            fetchpriority="high"
+          />
+          {photoCount > 1 && (
+            <div class="absolute bottom-4 left-4">
+              <button
+                type="button"
+                id="open-room-gallery"
+                class="inline-flex items-center gap-2 rounded-lg bg-white/95 backdrop-blur-sm px-4 py-2.5 text-[11px] font-medium tracking-wide text-ink-dark shadow-md border border-stone-light/80 hover:border-gold/40 hover:text-gold transition-colors"
+              >
+                <svg class="w-4 h-4 text-ink-muted" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M2 4h4v4H2V4zm8 0h4v4h-4V4zM2 10h4v4H2v-4zm8 0h4v4h-4v-4z" stroke="currentColor" stroke-width="1.2"/>
+                </svg>
+                Alle Fotos ({photoCount})
+              </button>
             </div>
-          ))}
+          )}
         </div>
-      </div>
-    </section>
-  )}
 
+        {sideGallery.length > 0 && (
+          <div class="flex flex-row lg:flex-col gap-3 sm:gap-4 lg:h-full lg:min-h-[min(520px,70vh)]">
+            {sideGallery.map((img) => (
+              <button
+                type="button"
+                class="gallery-thumb relative rounded-xl overflow-hidden bg-stone-light aspect-[4/3] lg:flex-1 lg:aspect-auto lg:min-h-[100px] shadow-sm cursor-pointer group border-0 p-0 w-full min-w-0"
+                data-open-gallery="true"
+              >
+                <img
+                  src={img.image}
+                  alt={`${img.caption} – ${room.name}`}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <dialog
+    id="room-gallery-dialog"
+    class="room-gallery-dialog rounded-xl border border-stone-light shadow-2xl p-0"
+  >
+    <div class="flex items-center justify-between gap-4 px-5 py-4 border-b border-stone-light bg-white sticky top-0 z-10">
+      <p class="font-display font-light text-lg text-ink-dark">{room.name}</p>
+      <button
+        type="button"
+        id="close-room-gallery"
+        class="text-[11px] uppercase tracking-wide text-ink-muted hover:text-gold px-3 py-1.5 rounded-md border border-transparent hover:border-stone-light transition-colors"
+      >
+        Schließen
+      </button>
+    </div>
+    <div class="p-4 sm:p-6 max-h-[min(80vh,720px)] overflow-y-auto bg-cream">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
+        {allPhotos.map((p) => (
+          <figure class="rounded-lg overflow-hidden bg-stone-light shadow-sm">
+            <img src={p.image} alt={p.caption ? `${p.caption} – ${room.name}` : room.name} class="w-full aspect-[4/3] object-cover" loading="lazy" />
+            {p.caption && (
+              <figcaption class="text-[10px] text-ink-muted px-2 py-2 bg-white border-t border-stone-light">{p.caption}</figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+    </div>
+  </dialog>
 
   <!-- ── Description + Specs ── -->
   <section class="py-20 lg:py-28 bg-cream">
@@ -153,7 +247,7 @@ const seoDescription =
 
         <!-- Spec sidebar -->
         <div class="lg:col-span-1">
-          <div class="bg-white border border-stone-light p-7 sticky top-[calc(var(--header-h)+2rem)]">
+          <div class="rounded-xl bg-white border border-stone-light shadow-md p-7 lg:sticky lg:top-[calc(var(--header-h)+2rem)]">
             <p class="caption-label mb-5">Zimmerdaten</p>
             {room.specs.length > 0 && (
               <dl class="space-y-4">
@@ -209,4 +303,41 @@ const seoDescription =
     </section>
   )}
 
+  <script>
+    const dlg = document.getElementById('room-gallery-dialog');
+    const openBtn = document.getElementById('open-room-gallery');
+    const closeBtn = document.getElementById('close-room-gallery');
+
+    function openGallery() {
+      dlg?.showModal();
+      document.body.style.overflow = 'hidden';
+    }
+    function closeGallery() {
+      dlg?.close();
+      document.body.style.overflow = '';
+    }
+
+    openBtn?.addEventListener('click', openGallery);
+    closeBtn?.addEventListener('click', closeGallery);
+    document.querySelectorAll('[data-open-gallery]').forEach((el) => {
+      el.addEventListener('click', openGallery);
+    });
+    dlg?.addEventListener('click', (e) => {
+      if (e.target === dlg) closeGallery();
+    });
+    dlg?.addEventListener('close', () => {
+      document.body.style.overflow = '';
+    });
+  </script>
+
+  <style is:global>
+    .room-gallery-dialog {
+      max-width: min(960px, 94vw);
+      width: 100%;
+      margin: auto;
+    }
+    .room-gallery-dialog::backdrop {
+      background: rgba(26, 24, 22, 0.45);
+    }
+  </style>
 </PageLayout>
