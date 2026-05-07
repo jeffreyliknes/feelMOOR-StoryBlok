@@ -9,6 +9,7 @@ const rooms = (await getCollection('rooms')).sort(
 );
 
 const hp = homepage;
+const pillarOrder = ['moorheilbad', 'therme', 'nature'] as const;
 const hero = hp.hero;
 const therme = hp.therme_cta;
 const voucher = hp.voucher_strip;
@@ -93,14 +94,17 @@ const voucher = hp.voucher_strip;
   <section class="bg-white border-b border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-stone-light">
-        {hp.pillars.map((pillar) => (
+        {pillarOrder.map((key) => {
+          const pillar = hp.pillars[key];
+          return (
           <div class="px-8 py-10 group">
             <span class="font-display italic text-gold/40 text-4xl font-light">{pillar.number}</span>
             <h3 class="font-display font-light text-[1.4rem] text-ink-dark mt-2 mb-3">{pillar.heading}</h3>
             <div class="w-8 h-px bg-gold/50 mb-4 group-hover:w-14 transition-all duration-500"></div>
             <p class="text-[12.5px] text-ink-muted leading-relaxed">{pillar.body}</p>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>

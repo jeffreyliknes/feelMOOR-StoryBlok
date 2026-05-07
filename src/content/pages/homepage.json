@@ -13,23 +13,23 @@
     "cta_secondary_label": "Das Resort",
     "cta_secondary_href": "/hotel"
   },
-  "pillars": [
-    {
+  "pillars": {
+    "moorheilbad": {
       "number": "01",
       "heading": "Moorheilbad",
       "body": "Über 5.000 Jahre altes Naturmoor – anerkanntes Heilmittel für Orthopädie, Rheuma und Rehabilitation."
     },
-    {
+    "therme": {
       "number": "02",
       "heading": "Therme & Spa",
       "body": "Thermalbad, Saunalandschaft und Wellness-Anwendungen für tiefe Entspannung und körperliches Wohlbefinden."
     },
-    {
+    "nature": {
       "number": "03",
       "heading": "Allgäuer Natur",
       "body": "Eingebettet in das UNESCO-Biosphärenreservat – Wandern, Radfahren und Naturerlebnisse direkt vor der Haustür."
     }
-  ],
+  },
   "packages_section": {
     "caption": "Pakete & Angebote",
     "heading": "Kuren, Wellness & Retreats",

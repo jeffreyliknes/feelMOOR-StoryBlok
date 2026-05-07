@@ -52,19 +52,50 @@ content:
             label: "Secondary Button Link"
             type: string
 
+      # Nested objects only (no list/array) — some CMS builds mishandle list fields
       - name: pillars
         label: "Three Pillars (01 Moorheilbad, 02 Therme, 03 Nature)"
-        type: list
+        type: object
         fields:
-          - name: number
-            label: "Number (e.g. \"01\")"
-            type: string
-          - name: heading
-            label: "Heading"
-            type: string
-          - name: body
-            label: "Description"
-            type: text
+          - name: moorheilbad
+            label: "01 – Moorheilbad"
+            type: object
+            fields:
+              - name: number
+                label: "Number (e.g. \"01\")"
+                type: string
+              - name: heading
+                label: "Heading"
+                type: string
+              - name: body
+                label: "Description"
+                type: text
+          - name: therme
+            label: "02 – Therme & Spa"
+            type: object
+            fields:
+              - name: number
+                label: "Number (e.g. \"02\")"
+                type: string
+              - name: heading
+                label: "Heading"
+                type: string
+              - name: body
+                label: "Description"
+                type: text
+          - name: nature
+            label: "03 – Allgäuer Natur"
+            type: object
+            fields:
+              - name: number
+                label: "Number (e.g. \"03\")"
+                type: string
+              - name: heading
+                label: "Heading"
+                type: string
+              - name: body
+                label: "Description"
+                type: text
 
       - name: packages_section
         label: "Packages Section (Headings)"
