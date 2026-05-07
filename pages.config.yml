@@ -316,7 +316,7 @@ content:
         type: string
         required: true
       - name: tag
-        label: "Category Label (e.g. \"Health Cure\")"
+        label: "Category / mega-menu column (use: Gesundheitskur | Wellness | Retreat)"
         type: string
       - name: nights
         label: "Duration (e.g. \"7–14 Nights\")"
@@ -339,6 +339,12 @@ content:
       - name: booking_link
         label: "Booking Link"
         type: string
+      - name: nav_order
+        label: "Nav order in mega menu (lower = earlier within its column)"
+        type: number
+      - name: show_in_nav
+        label: "Show in header Angebote mega menu?"
+        type: boolean
       - name: includes
         label: "What's Included"
         type: list
@@ -388,6 +394,25 @@ content:
       - name: copyright_name
         label: "Copyright Text (e.g. \"feelMOOR GmbH · Das Gesundresort Bad Wurzach\")"
         type: string
+      - name: header_nav_links
+        label: "Header mega menu — extra links (optional; for pages not in collections)"
+        type: list
+        fields:
+          - name: mega_menu_id
+            label: "Section — hotel | therme | gesundheit | angebote | allgaeu"
+            type: string
+          - name: column_heading
+            label: "Column heading (must match exactly, e.g. Das Resort, Zimmer & Suiten)"
+            type: string
+          - name: label
+            label: "Link text"
+            type: string
+          - name: href
+            label: "URL path"
+            type: string
+          - name: sort_order
+            label: "Order among manual links (lower first)"
+            type: number
       - name: footer_columns
         label: "Footer Navigation (4 columns)"
         type: list

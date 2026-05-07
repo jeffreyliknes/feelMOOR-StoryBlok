@@ -63,6 +63,10 @@ const packages = defineCollection({
     price_label: z.string().optional(),
     booking_link: z.string().optional(),
     includes: z.array(z.string()).optional().default([]),
+    /** Lower sorts first in mega menu within each column */
+    nav_order: z.number().optional(),
+    /** Set false to hide this package from Angebote mega menu */
+    show_in_nav: z.boolean().optional().default(true),
   }),
 });
 
