@@ -1,0 +1,64 @@
+{
+  "seo_title": "feelMOOR – Health Resort Bad Wurzach",
+  "seo_description": "feelMOOR – Germany's most advanced moor spa in the heart of the Allgäu. Health cures, thermal baths & spa, wellness packages and natural relaxation in Bad Wurzach.",
+  "hero": {
+    "image": "/images/hotel/hero.jpg",
+    "image_alt": "feelMOOR Health Resort Bad Wurzach – exterior",
+    "caption": "Bad Wurzach · Allgäu",
+    "headline_line1": "The health resort",
+    "headline_line2": "in the heart of the Allgäu",
+    "body": "Germany's most advanced moor spa brings centuries of healing tradition together with contemporary luxury – thermal baths, health cures and natural relaxation under one roof.",
+    "cta_primary_label": "Explore offers",
+    "cta_primary_href": "/angebote",
+    "cta_secondary_label": "The resort",
+    "cta_secondary_href": "/hotel"
+  },
+  "pillars": {
+    "moorheilbad": {
+      "number": "01",
+      "heading": "Moor healing baths",
+      "body": "Natural moor more than 5,000 years old – an accredited remedy for orthopaedic conditions, rheumatism and rehabilitation."
+    },
+    "therme": {
+      "number": "02",
+      "heading": "Thermal baths & spa",
+      "body": "Thermal pool, sauna landscape and wellness treatments for deep relaxation and physical wellbeing."
+    },
+    "nature": {
+      "number": "03",
+      "heading": "Allgäu nature",
+      "body": "Set within the UNESCO biosphere reserve – hiking, cycling and nature experiences right on your doorstep."
+    }
+  },
+  "packages_section": {
+    "caption": "Packages & offers",
+    "heading": "Cures, wellness & retreats",
+    "all_link_label": "All offers"
+  },
+  "rooms_section": {
+    "caption": "Accommodation",
+    "heading": "Rooms & suites",
+    "body": "Our rooms and suites are retreats of comfort – warm materials, natural colours and a design inspired by the Allgäu landscape.",
+    "all_link_label": "All rooms",
+    "featured_image": "/images/zimmer/doppelzimmer/room-1.jpg"
+  },
+  "therme_cta": {
+    "background_image": "/images/therme/outdoor-pool.jpg",
+    "caption": "feelMOOR thermal baths",
+    "heading": "Moor-water thermal baths & sauna landscape",
+    "body": "Immerse yourself in soothing moor-water thermal baths, enjoy our extensive sauna landscape and experience exclusive spa treatments.",
+    "stat_1_value": "1,500 m²",
+    "stat_1_label": "Water surface",
+    "stat_2_value": "7",
+    "stat_2_label": "Saunas & steam baths",
+    "stat_3_value": "34 °C",
+    "stat_3_label": "Moor water temperature",
+    "cta_primary_label": "Discover the thermal baths",
+    "cta_secondary_label": "Prices & opening hours"
+  },
+  "voucher_strip": {
+    "caption": "Give the gift of relaxation",
+    "heading": "feelMOOR gift vouchers –",
+    "subheading": "the perfect present"
+  }
+}

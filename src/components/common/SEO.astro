@@ -5,6 +5,7 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   canonicalUrl?: string;
+  locale?: 'de' | 'en';
 }
 
 const {
@@ -13,7 +14,10 @@ const {
   ogImage = '/images/og-default.jpg',
   noindex = false,
   canonicalUrl,
+  locale = 'de',
 } = Astro.props;
+
+const ogLocale = locale === 'en' ? 'en_US' : 'de_DE';
 
 const siteUrl = 'https://www.feelmoor.de';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
@@ -31,7 +35,7 @@ const fullTitle = title.includes('feelMOOR') ? title : `${title} – feelMOOR`;
 <meta property="og:type"        content="website" />
 <meta property="og:url"         content={canonical} />
 <meta property="og:image"       content={`${siteUrl}${ogImage}`} />
-<meta property="og:locale"      content="de_DE" />
+<meta property="og:locale"      content={ogLocale} />
 <meta property="og:site_name"   content="feelMOOR – Das Gesundresort Bad Wurzach" />
 
 <!-- Twitter / X -->

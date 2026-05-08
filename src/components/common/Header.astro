@@ -14,6 +14,14 @@ const navExtras =
     .header_nav_links ?? [];
 
 const nav = buildSiteNavigation(packages, rooms, navExtras);
+
+interface Props {
+  locale?: 'de' | 'en';
+}
+
+const { locale = 'de' } = Astro.props;
+const homeHref = locale === 'en' ? '/en' : '/';
+const isEn = locale === 'en';
 ---
 
 <header
@@ -24,7 +32,7 @@ const nav = buildSiteNavigation(packages, rooms, navExtras);
   <div class="max-w-screen-xl mx-auto px-6 h-full flex items-center justify-between gap-6">
 
     <!-- Logo (~20% larger than prior h-12 / lg:h-14 for clearer presence in nav) -->
-    <a href="/" class="flex-shrink-0 flex items-center group" aria-label="feelMOOR Startseite">
+    <a href={homeHref} class="flex-shrink-0 flex items-center group" aria-label={isEn ? 'feelMOOR home' : 'feelMOOR Startseite'}>
       <img
         src="/images/logo-feelmoor-horizontal.svg"
         alt="feelMOOR Therme Bad Wurzach"
@@ -36,7 +44,7 @@ const nav = buildSiteNavigation(packages, rooms, navExtras);
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hidden lg:flex items-center gap-1" aria-label="Hauptnavigation">
+    <nav class="hidden lg:flex items-center gap-1" aria-label={isEn ? 'Main navigation' : 'Hauptnavigation'}>
       {nav.map((item) => (
         <div class="nav-item relative" data-nav-id={item.id}>
           <button
@@ -56,9 +64,9 @@ const nav = buildSiteNavigation(packages, rooms, navExtras);
     <!-- Right: Language + Book -->
     <div class="hidden lg:flex items-center gap-4 flex-shrink-0">
       <div class="flex items-center gap-1.5 text-[10.5px] tracking-wide font-medium">
-        <a href="/" class="text-gold uppercase">DE</a>
+        <a href="/" class:list={[isEn ? 'text-ink-muted hover:text-gold' : 'text-gold', 'uppercase transition-colors']}>DE</a>
         <span class="text-stone">·</span>
-        <a href="/en" class="text-ink-muted hover:text-gold uppercase transition-colors">EN</a>
+        <a href="/en" class:list={[isEn ? 'text-gold' : 'text-ink-muted hover:text-gold', 'uppercase transition-colors']}>EN</a>
       </div>
       <a href="/service-kontakt" class="text-[10.5px] tracking-wider uppercase text-ink-muted hover:text-gold transition-colors">
         Kontakt
@@ -72,7 +80,7 @@ const nav = buildSiteNavigation(packages, rooms, navExtras);
     <button
       id="mobile-menu-toggle"
       class="lg:hidden flex flex-col gap-1.5 p-2"
-      aria-label="Menü öffnen"
+      aria-label={isEn ? 'Open menu' : 'Menü öffnen'}
       aria-expanded="false"
     >
       <span class="hamburger-line block w-6 h-px bg-ink-dark transition-all duration-300"></span>
@@ -184,7 +192,12 @@ const nav = buildSiteNavigation(packages, rooms, navExtras);
         </div>
       </div>
     ))}
-    <div class="pt-6 flex flex-col gap-3">
+    <div class="flex items-center gap-2 pb-4 mb-2 border-b border-stone-light">
+      <a href="/" class:list={[isEn ? 'text-ink-muted' : 'text-gold', 'text-[10.5px] tracking-wide font-medium uppercase hover:text-gold transition-colors']}>DE</a>
+      <span class="text-stone text-xs">·</span>
+      <a href="/en" class:list={[isEn ? 'text-gold' : 'text-ink-muted', 'text-[10.5px] tracking-wide font-medium uppercase hover:text-gold transition-colors']}>EN</a>
+    </div>
+    <div class="pt-2 flex flex-col gap-3">
       <a href="#booking" class="btn-gold text-center justify-center">Jetzt buchen</a>
       <a href="/gutscheine" class="btn-outline-gold text-center justify-center">Gutscheine</a>
     </div>

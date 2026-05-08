@@ -12,13 +12,23 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   heroOffset?: boolean; // true = first section starts under fixed header
+  htmlLang?: 'de' | 'en';
+  locale?: 'de' | 'en';
 }
 
-const { title, description, ogImage, noindex, heroOffset = true } = Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  noindex,
+  heroOffset = true,
+  htmlLang = 'de',
+  locale = 'de',
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,19 +36,19 @@ const { title, description, ogImage, noindex, heroOffset = true } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <SEO {title} {description} {ogImage} {noindex} />
+    <SEO {title} {description} {ogImage} {noindex} locale={locale} />
 
     <!-- Booking widget CDN CSS -->
     <link rel="stylesheet" href="https://mws-booking-widget.ams3.cdn.digitaloceanspaces.com/mws-booking-widget-v1.min.css" />
   </head>
   <body class="min-h-screen flex flex-col">
-    <Header />
+    <Header locale={locale} />
 
     <main class={heroOffset ? 'pt-[var(--header-h)]' : ''} style="flex: 1;">
       <slot />
     </main>
 
-    <Footer />
+    <Footer locale={locale} />
     <BookingWidget />
   </body>
 </html>

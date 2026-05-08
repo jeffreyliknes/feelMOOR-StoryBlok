@@ -1,0 +1,318 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import homepageEn from '@/content/pages/homepage-en.json';
+
+const packages = await getCollection('packages');
+const rooms = (await getCollection('rooms')).sort(
+  (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
+);
+
+const hp = homepageEn;
+const pillarOrder = ['moorheilbad', 'therme', 'nature'] as const;
+const hero = hp.hero;
+const therme = hp.therme_cta;
+const voucher = hp.voucher_strip;
+---
+
+<PageLayout
+  title={hp.seo_title}
+  description={hp.seo_description}
+  heroOffset={false}
+  htmlLang="en"
+  locale="en"
+>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="relative h-screen min-h-[640px] flex items-center overflow-hidden bg-forest-700">
+
+    <div class="absolute inset-0 z-0">
+      <img
+        src={hero.image}
+        alt={hero.image_alt}
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="absolute inset-0 z-[1] bg-gradient-to-r from-forest-950/90 via-forest-950/50 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-2/3 z-[1] bg-gradient-to-t from-forest-950/85 to-transparent"></div>
+
+    <div class="absolute bottom-[3.5rem] left-0 h-px overflow-hidden w-full">
+      <div class="h-px bg-gold/30 animate-line-grow" style="animation-delay:1.2s;opacity:0;animation-fill-mode:forwards;"></div>
+    </div>
+
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 w-full pt-20">
+      <div class="max-w-2xl">
+        <p class="caption-label opacity-0 animate-fade-in" style="animation-delay:.3s;animation-fill-mode:forwards;">
+          {hero.caption}
+        </p>
+
+        <h1 class="font-display font-light text-cream opacity-0 animate-fade-up mt-4" style="font-size:clamp(3rem,7vw,6rem);line-height:1.02;animation-delay:.5s;animation-fill-mode:forwards;">
+          {hero.headline_line1}<br />
+          <em class="italic" style="color:#B39D4D;">{hero.headline_line2}</em>
+        </h1>
+
+        <p class="text-cream/70 text-[14.5px] leading-relaxed max-w-lg mt-6 opacity-0 animate-fade-up"
+           style="animation-delay:.75s;animation-fill-mode:forwards;">
+          {hero.body}
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-10 opacity-0 animate-fade-up"
+             style="animation-delay:.95s;animation-fill-mode:forwards;">
+          <a href={hero.cta_primary_href} class="btn-gold">
+            {hero.cta_primary_label}
+            <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href={hero.cta_secondary_href} class="btn-outline-gold border-cream/50 text-cream hover:bg-cream hover:text-ink-dark">
+            {hero.cta_secondary_label}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-50">
+      <span class="text-[9px] tracking-caption uppercase text-cream font-body"
+            style="writing-mode:vertical-rl;">Discover</span>
+      <div class="w-px h-10 bg-cream/40 relative overflow-hidden">
+        <div class="absolute top-0 w-full h-1/3 bg-cream animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-stone-light">
+        {pillarOrder.map((key) => {
+          const pillar = hp.pillars[key];
+          return (
+          <div class="px-8 py-10 group">
+            <span class="font-display italic text-gold/40 text-4xl font-light">{pillar.number}</span>
+            <h3 class="font-display font-light text-[1.4rem] text-ink-dark mt-2 mb-3">{pillar.heading}</h3>
+            <div class="w-8 h-px bg-gold/50 mb-4 group-hover:w-14 transition-all duration-500"></div>
+            <p class="text-[12.5px] text-ink-muted leading-relaxed">{pillar.body}</p>
+          </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-24 lg:py-32 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+        <div>
+          <p class="caption-label">{hp.packages_section.caption}</p>
+          <h2 class="section-title mt-3"
+              set:html={hp.packages_section.heading.replace(' & ', ' &amp;<br /><em>') + '</em>'}>
+          </h2>
+          <span class="gold-rule"></span>
+        </div>
+        <a href="/angebote" class="btn-outline-gold self-start sm:self-auto flex-shrink-0">
+          {hp.packages_section.all_link_label}
+          <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {packages.map((pkg) => (
+          <article class="group card-hover">
+            <a href={pkg.data.booking_link ?? `/angebote/${pkg.slug}`} class="block">
+
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={pkg.data.image ?? '/images/hotel/interior-1.jpg'}
+                  alt={pkg.data.image_alt ?? pkg.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-ink-dark/30"></div>
+                {pkg.data.tag && (
+                  <div class="absolute top-4 left-4 z-20">
+                    <span class="caption-label bg-cream/90 px-2.5 py-1">{pkg.data.tag}</span>
+                  </div>
+                )}
+              </div>
+
+              <div class="bg-white px-6 pt-6 pb-7 border border-stone-light border-t-0 group-hover:border-gold/30 transition-colors duration-300">
+                <div class="flex items-start justify-between gap-3 mb-3">
+                  <h3 class="font-display font-light text-[1.4rem] text-ink-dark leading-tight">
+                    {pkg.data.title}
+                  </h3>
+                  {pkg.data.nights && (
+                    <span class="text-[10.5px] text-ink-muted bg-stone-light/60 px-2.5 py-1 flex-shrink-0 mt-1">
+                      {pkg.data.nights}
+                    </span>
+                  )}
+                </div>
+                {pkg.data.teaser && (
+                  <p class="text-[12.5px] text-ink-muted leading-relaxed mb-5">{pkg.data.teaser}</p>
+                )}
+                <span class="inline-flex items-center gap-2 text-[10.5px] tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all duration-200">
+                  Learn more
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-24 lg:py-32 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div>
+          <p class="caption-label">{hp.rooms_section.caption}</p>
+          <h2 class="section-title mt-3"
+              set:html={hp.rooms_section.heading.replace(' & ', ' &amp;<br /><em>') + '</em>'}>
+          </h2>
+          <span class="gold-rule"></span>
+          <p class="text-[13.5px] text-ink-muted leading-relaxed mt-6 max-w-md">
+            {hp.rooms_section.body}
+          </p>
+          <a href="/zimmer" class="btn-forest mt-8 inline-flex">
+            {hp.rooms_section.all_link_label}
+            <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="aspect-[16/10] overflow-hidden">
+          <img
+            src={hp.rooms_section.featured_image}
+            alt="Double room – feelMOOR Health Resort"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {rooms.map((room) => (
+          <a href={`/zimmer/${room.slug}`} class="group block card-hover">
+            <div class="aspect-[3/2] overflow-hidden">
+              <img
+                src={room.data.preview_image}
+                alt={room.data.name + ' – feelMOOR'}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+            </div>
+            <div class="bg-white border border-stone-light border-t-2 group-hover:border-t-gold transition-colors duration-300 px-5 py-5">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-display font-light text-[1.25rem] text-ink-dark">{room.data.name}</h3>
+                {room.data.size && (
+                  <span class="text-[10px] text-ink-muted tracking-wide">{room.data.size}</span>
+                )}
+              </div>
+              {room.data.tagline && (
+                <p class="text-[12px] text-ink-muted leading-relaxed mb-3">{room.data.tagline}</p>
+              )}
+              <span class="text-[10px] tracking-wider uppercase text-gold font-medium group-hover:tracking-widest transition-all duration-300">
+                Details →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="relative py-28 lg:py-36 overflow-hidden bg-forest-700">
+
+    <div class="absolute inset-0">
+      <img
+        src={therme.background_image}
+        alt="feelMOOR thermal baths – outdoor pool"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-forest-900/80"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-forest-950/95 via-forest-950/60 to-transparent"></div>
+    </div>
+
+    <div class="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block opacity-5">
+      <svg viewBox="0 0 500 600" class="h-full ml-auto" fill="none">
+        <circle cx="500" cy="300" r="320" stroke="#B39D4D" stroke-width="1"/>
+        <circle cx="500" cy="300" r="240" stroke="#B39D4D" stroke-width="0.5"/>
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{therme.caption}</p>
+      <h2 class="font-display font-light text-cream" style="font-size:clamp(2.2rem,5vw,4.5rem);line-height:1.08;"
+          set:html={therme.heading.replace(' & ', ' &amp;<br /><em class="italic" style="color:#B39D4D;">') + '</em>'}>
+      </h2>
+      <p class="text-cream/70 text-[14px] leading-relaxed max-w-xl mx-auto mt-6">
+        {therme.body}
+      </p>
+
+      <div class="flex flex-wrap gap-4 justify-center mt-10">
+        <a href="/therme" class="btn-gold">
+          {therme.cta_primary_label}
+          <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/therme/preise" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-[11px] font-medium tracking-wider uppercase border border-cream/40 text-cream hover:bg-cream/10 transition-colors duration-300">
+          {therme.cta_secondary_label}
+        </a>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-12 mt-16 border-t border-cream/10 pt-10">
+        {[
+          { num: therme.stat_1_value, label: therme.stat_1_label },
+          { num: therme.stat_2_value, label: therme.stat_2_label },
+          { num: therme.stat_3_value, label: therme.stat_3_label },
+        ].map((stat) => (
+          <div class="text-center">
+            <p class="font-display font-light text-cream/90" style="font-size:2rem;">{stat.num}</p>
+            <p class="text-[10.5px] tracking-wider uppercase text-cream/50 mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-white border-y border-stone-light py-16">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="text-center lg:text-left">
+          <p class="caption-label">{voucher.caption}</p>
+          <h2 class="font-display font-light text-[clamp(1.75rem,3.5vw,2.75rem)] text-ink-dark mt-2 leading-tight">
+            {voucher.heading}<br />
+            <em class="italic text-gold">{voucher.subheading}</em>
+          </h2>
+        </div>
+        <div class="flex flex-wrap gap-4 flex-shrink-0">
+          <a href="/gutscheine" class="btn-gold">
+            Buy a gift voucher
+            <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="/service-kontakt" class="btn-outline-gold">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

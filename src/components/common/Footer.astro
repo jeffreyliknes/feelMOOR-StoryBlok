@@ -1,6 +1,14 @@
 ---
 import site from '@/content/settings/site.json';
 
+interface Props {
+  locale?: 'de' | 'en';
+}
+
+const { locale = 'de' } = Astro.props;
+const homeHref = locale === 'en' ? '/en' : '/';
+const isEn = locale === 'en';
+
 const year = new Date().getFullYear();
 const cols = site.footer_columns;
 ---
@@ -13,7 +21,7 @@ const cols = site.footer_columns;
 
       <!-- Brand column -->
       <div class="col-span-2 lg:col-span-1">
-        <a href="/" class="inline-block mb-5">
+        <a href={homeHref} class="inline-block mb-5">
           <img
             src="/images/logo-feelmoor-horizontal.svg"
             alt="feelMOOR Therme Bad Wurzach"
@@ -102,9 +110,9 @@ const cols = site.footer_columns;
         <a href="/sitemap.xml" class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Sitemap</a>
       </div>
       <div class="flex items-center gap-2">
-        <a href="/"   class="text-[10.5px] font-medium text-gold">DE</a>
+        <a href="/"   class:list={[isEn ? 'text-cream/40 hover:text-cream/70' : 'font-medium text-cream', 'text-[10.5px] transition-colors']}>DE</a>
         <span class="text-cream/20 text-xs">·</span>
-        <a href="/en" class="text-[10.5px] text-cream/40 hover:text-cream/70 transition-colors">EN</a>
+        <a href="/en" class:list={[isEn ? 'font-medium text-cream' : 'text-cream/40 hover:text-cream/70', 'text-[10.5px] transition-colors']}>EN</a>
       </div>
     </div>
   </div>
