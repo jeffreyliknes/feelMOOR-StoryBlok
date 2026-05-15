@@ -213,13 +213,91 @@ content:
       - name: amenities_subheading
         label: "Section Subheading"
         type: string
-      - name: amenities
-        label: "In-Room Amenities (Wi-Fi, Breakfast, Spa, etc.)"
-        type: list
+      # Fixed tiles (no list-of-objects) — Pages CMS turns object lists into "[object Object]" in the UI
+      - name: amenities_tiles
+        label: "Included amenities (8 tiles, grid order left→right, top→bottom)"
+        type: object
         fields:
-          - name: label
-            label: "Amenity Name"
-            type: string
+          - name: tile_1
+            label: "Tile 1"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional — for future icon set; leave blank for default)"
+                type: string
+          - name: tile_2
+            label: "Tile 2"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional)"
+                type: string
+          - name: tile_3
+            label: "Tile 3"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional)"
+                type: string
+          - name: tile_4
+            label: "Tile 4"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional)"
+                type: string
+          - name: tile_5
+            label: "Tile 5"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional)"
+                type: string
+          - name: tile_6
+            label: "Tile 6"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional)"
+                type: string
+          - name: tile_7
+            label: "Tile 7"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional)"
+                type: string
+          - name: tile_8
+            label: "Tile 8"
+            type: object
+            fields:
+              - name: label
+                label: "Amenity name"
+                type: string
+              - name: icon_key
+                label: "Icon key (optional)"
+                type: string
       - name: cta_heading
         label: "CTA Heading (\"Ready for your stay?\")"
         type: string
@@ -266,42 +344,270 @@ content:
       - name: preview_image
         label: "Preview Image (room card on listing page)"
         type: image
-      - name: gallery
-        label: "Photo Gallery (detail page)"
-        type: list
+      # Lists of objects break Pages CMS UI (`[object Object]`). Use fixed slide slots instead.
+      - name: gallery_slots
+        label: "Photo Gallery (detail page — up to 12 slides, leave unused slots empty)"
+        type: object
         fields:
-          - name: image
-            label: "Photo"
-            type: image
-          - name: caption
-            label: "Caption"
-            type: string
+          - name: slide_1
+            label: "Gallery slide 1"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_2
+            label: "Gallery slide 2"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_3
+            label: "Gallery slide 3"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_4
+            label: "Gallery slide 4"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_5
+            label: "Gallery slide 5"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_6
+            label: "Gallery slide 6"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_7
+            label: "Gallery slide 7"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_8
+            label: "Gallery slide 8"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_9
+            label: "Gallery slide 9"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_10
+            label: "Gallery slide 10"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_11
+            label: "Gallery slide 11"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
+          - name: slide_12
+            label: "Gallery slide 12"
+            type: object
+            fields:
+              - name: image
+                label: "Photo"
+                type: image
+              - name: caption
+                label: "Caption"
+                type: string
       - name: intro_heading
         label: "Description Section Heading (e.g. \"The Room\")"
         type: string
       - name: intro_subheading
         label: "Description Subheading (e.g. \"Relax together – comfort for two\")"
         type: string
-      - name: specs
-        label: "Room Data (right sidebar)"
-        type: list
+      - name: specs_slots
+        label: "Room Data (right sidebar — up to 10 rows)"
+        type: object
         fields:
-          - name: label
-            label: "Label (e.g. \"Size\")"
-            type: string
-          - name: value
-            label: "Value (e.g. \"from 28 m²\")"
-            type: string
-      - name: feature_groups
-        label: "Amenity Groups"
-        type: list
+          - name: row_1
+            label: "Spec row 1"
+            type: object
+            fields:
+              - name: label
+                label: "Label (e.g. \"Size\")"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_2
+            label: "Spec row 2"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_3
+            label: "Spec row 3"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_4
+            label: "Spec row 4"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_5
+            label: "Spec row 5"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_6
+            label: "Spec row 6"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_7
+            label: "Spec row 7"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_8
+            label: "Spec row 8"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_9
+            label: "Spec row 9"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+          - name: row_10
+            label: "Spec row 10"
+            type: object
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+              - name: value
+                label: "Value"
+                type: string
+      # One block per group — features are one bullet per line (no nested lists).
+      - name: feature_groups_block
+        label: "Amenity Groups (up to 4 sections)"
+        type: object
         fields:
-          - name: heading
-            label: "Group Name (e.g. \"Comfort\")"
+          - name: group_1_heading
+            label: "Group 1 heading"
             type: string
-          - name: items
-            label: "Features"
-            type: list
+          - name: group_1_features
+            label: "Group 1 features (one per line)"
+            type: text
+          - name: group_2_heading
+            label: "Group 2 heading"
+            type: string
+          - name: group_2_features
+            label: "Group 2 features (one per line)"
+            type: text
+          - name: group_3_heading
+            label: "Group 3 heading"
+            type: string
+          - name: group_3_features
+            label: "Group 3 features (one per line)"
+            type: text
+          - name: group_4_heading
+            label: "Group 4 heading"
+            type: string
+          - name: group_4_features
+            label: "Group 4 features (one per line)"
+            type: text
 
   # ── PACKAGES COLLECTION ──────────────────────────────────────────────────────
   - name: packages
