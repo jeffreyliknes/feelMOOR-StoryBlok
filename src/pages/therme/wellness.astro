@@ -1,0 +1,111 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import wellnessData from '@/content/pages/therme-wellness.json';
+
+const page = wellnessData;
+
+const categories = [
+  {
+    title: 'Massagen',
+    description: 'Von klassischer Massage bis zur Moorpackungs-Massage – unsere Therapeuten lösen Verspannungen und fördern tiefe Entspannung.',
+    items: ['Klassische Massage', 'Moorpackungs-Massage', 'Wellnessöl-Massage', 'Reflexzonenmassage']
+  },
+  {
+    title: 'Körperbehandlungen',
+    description: 'Peelingsbehandlungen, Moorpackungen und therapeutische Anwendungen für einen gepflegten und regenerierten Körper.',
+    items: ['Moorpeeling', 'Moorpackung Ganzkörper', 'Körper-Detox-Behandlung', 'Lakritzmoor-Packung']
+  },
+  {
+    title: 'Gesichtsbehandlungen',
+    description: 'Professionelle Gesichtsbehandlungen mit Moorextrakten und natürlichen Produkten für strahlende, verjüngte Haut.',
+    items: ['Moorgesichtsbehandlung', 'Hydro-Facial mit Moorwasser', 'Anti-Aging Kur', 'Sensitive Skin Behandlung']
+  },
+  {
+    title: 'Mooranwendungen',
+    description: 'Traditionelle und moderne Moorheilkunde für Gelenke, Muskulatur und Hautprobleme – bewährt seit Generationen.',
+    items: ['Heilmoor-Packung lokal', 'Rheumabehandlung', 'Orthopädische Moorbehandlung', 'Hautregenerations-Kur']
+  }
+];
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+
+  <!-- ── Page Hero ── -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <a href="/therme" class="hover:text-cream/70 transition-colors">Therme</a>
+        <span>›</span>
+        <span class="text-cream/60">Wellness & Spa</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── Intro Section ── -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="caption-label mb-4 text-gold">Professionelle Wellnesspflege</p>
+        <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+        <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Treatment Categories ── -->
+  <section class="py-16 lg:py-24 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        {categories.map((category) => (
+          <div class="bg-white border border-stone-light p-8 lg:p-10">
+            <h3 class="font-display font-light text-ink-dark text-lg mb-3">{category.title}</h3>
+            <p class="text-[13.5px] text-ink-muted mb-6 leading-relaxed">{category.description}</p>
+            <ul class="space-y-2">
+              {category.items.map((item) => (
+                <li class="flex items-center gap-3 text-[13px] text-ink-dark">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Booking Note ── -->
+  <section class="py-12 bg-forest-700/95 border-y border-forest-600">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="text-center">
+        <p class="text-cream/60 text-[11px] tracking-widest uppercase mb-3">Buchung & Beratung</p>
+        <p class="text-cream/80 text-[13.5px] leading-relaxed max-w-2xl mx-auto">
+          Alle Wellness-Anwendungen können direkt an der Rezeption oder telefonisch gebucht werden. Unsere Spa-Berater helfen Ihnen gerne, die perfekte Behandlung für Ihre Bedürfnisse zu finden. <a href="/service-kontakt" class="text-gold hover:text-gold/80 transition-colors underline">Kontaktieren Sie uns</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

@@ -1,0 +1,117 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import pageData from '@/content/pages/fitness-kurse.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+  <!-- Hero Section -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <a href="/fitness" class="hover:text-cream/70 transition-colors">Fitness</a>
+        <span>›</span>
+        <span class="text-cream/60">Kursprogramm</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Back Link -->
+  <section class="py-6 bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <a href="/fitness" class="text-gold text-[13px] font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Zurück zu Fitness</a>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+      <p class="text-[13.5px] text-ink-muted leading-relaxed mt-6 max-w-3xl">{page.intro_body}</p>
+    </div>
+  </section>
+
+  <!-- Course Categories Grid -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Yoga -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🧘</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Yoga</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Von klassischem Hatha Yoga bis dynamischem Vinyasa – Kurse für alle Fitnesslevel. Verbessert Flexibilität, Kraft und Atemkontrolle.</p>
+        </div>
+
+        <!-- Pilates -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🤸</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Pilates</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Gezieltes Rumpftraining für Kraft, Stabilität und Ausrichtung. Mat Pilates und Geräte-Pilates, für Anfänger bis Fortgeschrittene.</p>
+        </div>
+
+        <!-- Aquafitness -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🏊</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Aquafitness</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Gelenkschonendes Training im warmen Thermalbad – Ausdauer und Kraft ohne hohe Belastung. Ideal auch für Schmerzpatienten.</p>
+        </div>
+
+        <!-- Rückentraining -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">💪</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Rückentraining</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Intensives Training zur Kräftigung der Rücken- und Stabilisatormuskulatur. Vorbeugung und Therapie von Rückenschmerzen.</p>
+        </div>
+
+        <!-- Functional Fitness -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">⚡</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Functional Fitness</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Kraftvolles Gruppentraining mit modernen Elementen – für maximale Effizienz und funktionale Alltagsfähigkeit.</p>
+        </div>
+
+        <!-- Entspannung -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">☮️</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Entspannung</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Geführte Meditation, progressive Muskelentspannung und Entspannungstechniken für innere Ruhe und Stressabbau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Note -->
+  <section class="py-12 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="bg-white rounded-lg p-8 border-l-4 border-gold">
+        <p class="text-ink-dark font-semibold text-[13px] mb-2">KURSPLAN & ANMELDUNG</p>
+        <p class="text-[13px] text-ink-muted leading-relaxed">
+          Der aktuelle Kursplan mit Zeiten, Dauer und Trainer finden Sie auf unserer <a href="/oeffnungszeiten" class="text-gold hover:text-gold/80 transition-colors font-semibold">Öffnungszeiten- und Kursseite</a>. Anfänger sind jederzeit willkommen – springen Sie an einem Termin ein oder melden Sie sich vorab an!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

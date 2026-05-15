@@ -18,35 +18,20 @@ const rooms = defineCollection({
     seo_description: z.string().optional(),
     hero_image: z.string(),
     preview_image: z.string(),
-    gallery: z
-      .array(
-        z.object({
-          image: z.string(),
-          caption: z.string(),
-        })
-      )
-      .optional()
-      .default([]),
+    gallery: z.array(z.object({
+      image: z.string(),
+      caption: z.string().optional().default(''),
+    })).optional().default([]),
     intro_heading: z.string().optional(),
     intro_subheading: z.string().optional(),
-    specs: z
-      .array(
-        z.object({
-          label: z.string(),
-          value: z.string(),
-        })
-      )
-      .optional()
-      .default([]),
-    feature_groups: z
-      .array(
-        z.object({
-          heading: z.string(),
-          items: z.array(z.string()),
-        })
-      )
-      .optional()
-      .default([]),
+    specs: z.array(z.object({
+      label: z.string(),
+      value: z.string(),
+    })).optional().default([]),
+    feature_groups: z.array(z.object({
+      heading: z.string(),
+      items: z.array(z.string()).optional().default([]),
+    })).optional().default([]),
   }),
 });
 
@@ -70,4 +55,17 @@ const packages = defineCollection({
   }),
 });
 
-export const collections = { rooms, packages, pages, settings };
+const blog = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.string(),
+    author: z.string().optional(),
+    teaser: z.string().optional(),
+    image: z.string().optional().default(''),
+    image_alt: z.string().optional().default(''),
+    category: z.string().optional(),
+  }),
+});
+
+export const collections = { rooms, packages, pages, settings, blog };

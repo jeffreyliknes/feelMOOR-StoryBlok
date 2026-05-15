@@ -8,6 +8,7 @@ const roomTypes = (await getCollection('rooms')).sort(
 );
 
 const page = roomsOverview;
+const amenitiesList: { label: string }[] = Array.isArray(page.amenities) ? page.amenities : [];
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -114,7 +115,7 @@ const page = roomsOverview;
         </h2>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        {page.amenities.map((a) => (
+        {amenitiesList.map((a) => (
           <div class="text-center py-6 px-4 border border-cream/10 hover:border-gold/40 transition-colors duration-300 group">
             <div class="w-10 h-10 border border-gold/40 flex items-center justify-center mx-auto mb-3 group-hover:bg-gold/10 transition-colors">
               <span class="text-gold text-lg leading-none">✦</span>

@@ -1,0 +1,108 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import pageData from '@/content/pages/nachhaltigkeit.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+
+  <!-- ── Page Hero ── -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <span class="text-cream/60">Nachhaltigkeit</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── Intro Section ── -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <p class="caption-label mb-4 text-gold">Verantwortung</p>
+          <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+          <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+        </div>
+        <div class="bg-forest-700 p-8 lg:p-12 text-cream rounded-sm flex flex-col justify-center min-h-[300px] lg:min-h-[400px]">
+          <div class="space-y-8">
+            <div>
+              <p class="text-[13.5px] leading-relaxed text-cream/80">Wir verstehen Nachhaltigkeit nicht als Trend, sondern als Verantwortung gegenüber den kommenden Generationen.</p>
+            </div>
+            <div class="border-t border-cream/20 pt-8">
+              <p class="text-[11px] tracking-widest uppercase text-gold mb-3">Ganzheitlicher Ansatz</p>
+              <p class="text-[13.5px] text-cream/70">Von der Beschaffung bis zur Abfallvermeidung – Nachhaltigkeit ist in jeder Entscheidung unseres Hauses verankert.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4-Column Initiatives Grid ── -->
+  <section class="py-16 lg:py-24 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Moorschutz */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Moorschutz</h3>
+          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Aktive Zusammenarbeit mit Naturschutzorganisationen zum Erhalt des Wurzacher Rieds.</p>
+        </div>
+
+        {/* Regionale Partner */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Regionale Partner</h3>
+          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Bevorzugung lokaler Lieferanten zur Unterstützung der Allgäuer Wirtschaft.</p>
+        </div>
+
+        {/* Energieeffizienz */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Energieeffizienz</h3>
+          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Moderne Technologien und intelligente Systeme zur Reduktion unseres CO₂-Fußabdrucks.</p>
+        </div>
+
+        {/* Abfallreduzierung */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Abfallreduzierung</h3>
+          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Konsequente Mülltrennung und Recycling in allen Bereichen des Resorts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Certifications/Memberships Strip ── -->
+  <section class="py-12 bg-cream border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <p class="text-[13.5px] text-ink-muted mb-6">Unsere Nachhaltigkeitsstandards werden durch international anerkannte Zertifizierungen bestätigt.</p>
+      <div class="flex flex-wrap gap-6 justify-center items-center">
+        <span class="text-[12px] font-medium text-ink-dark px-4 py-2 bg-white border border-stone-light rounded-sm">Moorheilbad Bad Wurzach</span>
+        <span class="text-[12px] font-medium text-ink-dark px-4 py-2 bg-white border border-stone-light rounded-sm">Wellness-Zertifikat</span>
+        <span class="text-[12px] font-medium text-ink-dark px-4 py-2 bg-white border border-stone-light rounded-sm">Nachhaltigkeitssiegel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA (Modified) ── -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Nachhaltig Urlaub machen</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Erfahren Sie mehr über unser Engagement oder planen Sie Ihren nachhaltigen Aufenthalt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/hotel" class="btn-gold">Unser Hotel</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Mehr erfahren</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

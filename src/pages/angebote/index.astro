@@ -1,0 +1,135 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import pageData from '@/content/pages/angebote.json';
+
+const packages = (await getCollection('packages')).sort(
+  (a, b) => (a.data.nav_order ?? 99) - (b.data.nav_order ?? 99)
+);
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+
+  <!-- ── Page Hero ── -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">
+        {page.hero_heading}
+      </h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">
+        {page.hero_intro}
+      </p>
+      <!-- Breadcrumb -->
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <span class="text-cream/60">Angebote</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── Package cards grid ── -->
+  <section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {packages.map((pkg) => (
+          <article class="group bg-white border border-stone-light rounded-xl overflow-hidden hover:border-gold/30 transition-colors duration-300">
+
+            <!-- Package Image -->
+            <div class="relative overflow-hidden bg-stone-light/50 aspect-[4/3]">
+              {pkg.data.image ? (
+                <img
+                  src={pkg.data.image}
+                  alt={pkg.data.image_alt ?? pkg.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-full h-full bg-gradient-to-br from-stone-light to-stone-light/70 flex items-center justify-center">
+                  <svg class="w-12 h-12 text-stone/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                </div>
+              )}
+            </div>
+
+            <!-- Package Content -->
+            <div class="p-6 lg:p-7 flex flex-col">
+              <!-- Tag & Title -->
+              {pkg.data.tag && (
+                <p class="caption-label mb-2 text-gold">{pkg.data.tag}</p>
+              )}
+              <h3 class="font-display font-light text-ink-dark text-xl lg:text-2xl leading-tight mb-3">
+                {pkg.data.title}
+              </h3>
+
+              <!-- Nights badge -->
+              {pkg.data.nights && (
+                <p class="text-[11px] text-ink-muted mb-3 pb-3 border-b border-stone-light/60">
+                  {pkg.data.nights}
+                </p>
+              )}
+
+              <!-- Teaser -->
+              {pkg.data.teaser && (
+                <p class="text-[13px] text-ink-muted leading-relaxed mb-5 flex-grow">
+                  {pkg.data.teaser}
+                </p>
+              )}
+
+              <!-- Price -->
+              {pkg.data.price_from && (
+                <div class="mb-5">
+                  <p class="font-display font-light text-ink-dark text-2xl">ab {pkg.data.price_from} €</p>
+                  {pkg.data.price_label && (
+                    <p class="text-[11px] text-ink-muted mt-1">{pkg.data.price_label}</p>
+                  )}
+                </div>
+              )}
+
+              <!-- CTA -->
+              <div class="flex gap-3 pt-4 border-t border-stone-light/60">
+                {pkg.data.booking_link ? (
+                  <a href={pkg.data.booking_link} class="btn-gold flex-1 justify-center text-center">
+                    Jetzt buchen
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                ) : (
+                  <a href={`/angebote/${pkg.slug}`} class="btn-gold flex-1 justify-center text-center">
+                    Mehr erfahren
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

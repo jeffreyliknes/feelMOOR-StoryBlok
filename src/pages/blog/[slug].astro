@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const post = entry.data;
+
+const seoTitle = `${post.title} – feelMOOR Blog`;
+const seoDescription = post.teaser ?? post.title;
+---
+
+<PageLayout title={seoTitle} description={seoDescription}>
+
+  <!-- Top bar: breadcrumb + back -->
+  <section class="bg-cream border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <a href="/news" class="inline-flex items-center gap-2 text-[11px] font-medium tracking-wide text-ink-muted hover:text-gold transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none">
+          <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Zurück zu News & Blog
+      </a>
+      <nav class="flex items-center gap-2 text-[10.5px] text-ink-muted">
+        <a href="/" class="hover:text-gold transition-colors">Start</a>
+        <span>/</span>
+        <a href="/news" class="hover:text-gold transition-colors">News & Blog</a>
+        <span>/</span>
+        <span class="text-ink-dark">{post.title}</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Article header -->
+  <section class="bg-cream pt-10 pb-6 lg:pt-14">
+    <div class="max-w-2xl mx-auto px-6">
+      {post.category && <p class="caption-label mb-3">{post.category}</p>}
+      <h1 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,4vw,3rem);line-height:1.1;">
+        {post.title}
+      </h1>
+      <div class="flex items-center gap-4 mt-4 text-[11px] text-ink-muted">
+        {post.date && (
+          <time datetime={post.date}>
+            {new Date(post.date).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+        )}
+        {post.date && post.author && <span>·</span>}
+        {post.author && <span>{post.author}</span>}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured image -->
+  {post.image && (
+    <section class="bg-cream pb-8">
+      <div class="max-w-3xl mx-auto px-6">
+        <img src={post.image} alt={post.image_alt ?? post.title} class="w-full aspect-video object-cover rounded-xl" loading="eager" />
+      </div>
+    </section>
+  )}
+
+  <!-- Article body -->
+  <section class="py-10 lg:py-14 bg-cream">
+    <div class="max-w-2xl mx-auto px-6 prose prose-stone prose-headings:font-display prose-headings:font-light text-[14px] text-ink-muted leading-relaxed">
+      <Content />
+    </div>
+  </section>
+
+  <!-- Back to news CTA -->
+  <section class="py-12 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="caption-label mb-1">feelMOOR News & Blog</p>
+        <h2 class="font-display font-light text-ink-dark text-2xl">Weitere Beiträge entdecken</h2>
+      </div>
+      <div class="flex gap-3">
+        <a href="/news" class="btn-outline-gold">Alle Beiträge</a>
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

@@ -1,0 +1,116 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import thermalBadData from '@/content/pages/therme-thermalbad.json';
+
+const page = thermalBadData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+
+  <!-- ── Page Hero ── -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <a href="/therme" class="hover:text-cream/70 transition-colors">Therme</a>
+        <span>›</span>
+        <span class="text-cream/60">Thermalbad</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── Intro Section ── -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="caption-label mb-4 text-gold">Wasserparadies</p>
+        <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+        <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features Grid ── -->
+  <section class="py-16 lg:py-24 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        {/* Feature 1 */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-light text-ink-dark text-lg mb-3">Innenbecken 34 °C</h3>
+          <p class="text-[13.5px] text-ink-muted">Behagliches Mineralwasser in der großzügigen Halle – ideale Bedingungen für Entspannung und Therapie.</p>
+        </div>
+
+        {/* Feature 2 */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-light text-ink-dark text-lg mb-3">Außenpool</h3>
+          <p class="text-[13.5px] text-ink-muted">Ganzjährig geöffnet – schwimmen Sie unter freiem Himmel, umgeben von Natur und Allgäuer Landschaft.</p>
+        </div>
+
+        {/* Feature 3 */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-light text-ink-dark text-lg mb-3">Strömungskanal</h3>
+          <p class="text-[13.5px] text-ink-muted">Sanfte Strömungen massieren den Körper und fördern Bewegung und Entspannung zugleich.</p>
+        </div>
+
+        {/* Feature 4 */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-light text-ink-dark text-lg mb-3">Unterwassersprudler & Massagen</h3>
+          <p class="text-[13.5px] text-ink-muted">Therapeutische Massagen und Sprudler für gezielte Entspannung von Rücken und Gelenken.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Info Bar ── -->
+  <section class="py-12 bg-forest-700/95 border-y border-forest-600">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="text-center">
+        <p class="text-cream/80 text-[13.5px] leading-relaxed">
+          Das Thermalbad ist ein Angebot speziell für Hotelgäste (kostenfrei) und Tagesgäste (siehe <a href="/therme/preise" class="text-gold hover:text-gold/80 transition-colors underline">Preise & Tarife</a>). Bitte beachten Sie unsere <a href="#" class="text-gold hover:text-gold/80 transition-colors underline">Hausordnung</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

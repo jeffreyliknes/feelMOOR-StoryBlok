@@ -1,0 +1,173 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import pageData from '@/content/pages/gesundheit-aerzte.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+  <!-- Hero Section -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <a href="/gesundheit" class="hover:text-cream/70 transition-colors">Gesundheit</a>
+        <span>›</span>
+        <span class="text-cream/60">Ärzte & Therapeuten</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Back Link -->
+  <section class="py-6 bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <a href="/gesundheit" class="text-gold text-[13px] font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Zurück zu Gesundheit</a>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+      <p class="text-[13.5px] text-ink-muted leading-relaxed mt-6 max-w-3xl">{page.intro_body}</p>
+    </div>
+  </section>
+
+  <!-- Team Overview: Three Specialty Areas -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Kurärzte -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">👨‍⚕️</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Kurärzte</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed mb-6">Unsere Kurärzte mit Spezialqualifikation in Balneologie, Medizinischer Bäderkunde und Kurbädermedizin begleiten Ihre Genesung.</p>
+          <ul class="text-[12px] text-ink-muted space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Anamnese & medizinische Untersuchung</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Individuelle Kurverlaufskontrolle</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Behandlungsplan & Empfehlungen</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Physiotherapie -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🏃</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Physiotherapie</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed mb-6">Unser Team von diplomierten Physiotherapeuten bietet modernste Therapietechniken zur Verbesserung Ihrer Mobilität und Schmerzfreiheit.</p>
+          <ul class="text-[12px] text-ink-muted space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Manuelle Therapie & Mobilisation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Bewegungstraining & Stabilisierung</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Specials: Lymphdrainage, Sporttherapie</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Gesundheitsberatung -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">💡</div>
+          <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Gesundheitsberatung</h3>
+          <p class="text-[13px] text-ink-muted leading-relaxed mb-6">Unsere Gesundheitsberater unterstützen Sie in Ernährung, Bewegung, Stressmanagement und Prävention für langfristiges Wohlbefinden.</p>
+          <ul class="text-[12px] text-ink-muted space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Ernährungsberatung & Kurgenuss</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Bewegungs- & Lebensstiländerung</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">•</span>
+              <span>Entspannung & Stressabbau</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Process -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h3 class="font-display font-light text-ink-dark text-[26px] mb-12 text-center">Ihre medizinische Betreuung</h3>
+      <div class="max-w-2xl mx-auto">
+        <div class="space-y-6">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">1</div>
+            <div>
+              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Ärztliches Anamnesegespräch</h4>
+              <p class="text-[13px] text-ink-muted leading-relaxed">Zu Beginn Ihres Aufenthalts führt ein Kurarzt ein ausführliches Gespräch über Ihre Krankengeschichte, aktuelle Beschwerden und Behandlungsziele.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">2</div>
+            <div>
+              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Individuelle Behandlungsplanung</h4>
+              <p class="text-[13px] text-ink-muted leading-relaxed">Basierend auf Ihre Befunde wird ein persönlich abgestimmter Kur- und Therapieplan erstellt – mit genauen Anwendungsempfehlungen.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">3</div>
+            <div>
+              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Therapeutische Umsetzung</h4>
+              <p class="text-[13px] text-ink-muted leading-relaxed">Physiotherapeuten und Ärzte begleiten Sie durch alle Anwendungen, passen die Intensität an und geben kompetente Anleitung.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">4</div>
+            <div>
+              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Verlaufskontrollen & Nachbereitung</h4>
+              <p class="text-[13px] text-ink-muted leading-relaxed">Während und nach der Kur finden regelmäßige Kontrollen statt. Sie erhalten Empfehlungen zur Nachsorge und Prävention für zuhause.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Strip -->
+  <section class="py-12 bg-forest-700 text-center">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h3 class="text-cream text-[18px] font-display font-light mb-4">Haben Sie Fragen zu unserem Team?</h3>
+      <a href="/service-kontakt" class="inline-block btn-gold">Kontakt aufnehmen</a>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Termin vereinbaren</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Buchen Sie jetzt Ihren Aufenthalt und lernen Sie unser Team kennen.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Anfrage senden</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

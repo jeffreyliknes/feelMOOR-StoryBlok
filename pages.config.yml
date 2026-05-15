@@ -52,7 +52,6 @@ content:
             label: "Secondary Button Link"
             type: string
 
-      # Nested objects only (no list/array) — some CMS builds mishandle list fields
       - name: pillars
         label: "Three Pillars (01 Moorheilbad, 02 Therme, 03 Nature)"
         type: object
@@ -62,10 +61,6 @@ content:
             type: object
             fields:
               - name: number
-                label: "Number (e.g. \"01\")"
-                type: string
-              - name: heading
-                label: "Heading"
                 type: string
               - name: body
                 label: "Description"
@@ -348,6 +343,334 @@ content:
       - name: includes
         label: "What's Included"
         type: list
+
+  # ── HOTEL PAGE ───────────────────────────────────────────────────────────────
+  - name: hotel_page
+    label: "Hotel – Overview"
+    path: src/content/pages/hotel.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  # ── THERME PAGES ─────────────────────────────────────────────────────────────
+  - name: therme_page
+    label: "Therme – Overview"
+    path: src/content/pages/therme.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: therme_thermalbad_page
+    label: "Therme – Thermalbad"
+    path: src/content/pages/therme-thermalbad.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: therme_sauna_page
+    label: "Therme – Sauna"
+    path: src/content/pages/therme-sauna.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: therme_wellness_page
+    label: "Therme – Wellness"
+    path: src/content/pages/therme-wellness.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: therme_preise_page
+    label: "Therme – Preise"
+    path: src/content/pages/therme-preise.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  # ── GESUNDHEIT PAGES ──────────────────────────────────────────────────────────
+  - name: gesundheit_page
+    label: "Gesundheit – Overview"
+    path: src/content/pages/gesundheit.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: gesundheit_moorbad_page
+    label: "Gesundheit – Moorbad"
+    path: src/content/pages/gesundheit-moorbad.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: gesundheit_anwendungen_page
+    label: "Gesundheit – Anwendungen"
+    path: src/content/pages/gesundheit-anwendungen.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: gesundheit_aerzte_page
+    label: "Gesundheit – Ärzte & Therapeuten"
+    path: src/content/pages/gesundheit-aerzte.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  # ── FITNESS PAGES ─────────────────────────────────────────────────────────────
+  - name: fitness_page
+    label: "Fitness – Overview"
+    path: src/content/pages/fitness.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: fitness_studio_page
+    label: "Fitness – Fitnessstudio"
+    path: src/content/pages/fitness-studio.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: fitness_kurse_page
+    label: "Fitness – Kurse"
+    path: src/content/pages/fitness-kurse.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: fitness_mitgliedschaften_page
+    label: "Fitness – Mitgliedschaften"
+    path: src/content/pages/fitness-mitgliedschaften.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  # ── ANGEBOTE (PACKAGES OVERVIEW) ─────────────────────────────────────────────
+  - name: angebote_page
+    label: "Angebote – Overview"
+    path: src/content/pages/angebote.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  # ── NEWS / BLOG ───────────────────────────────────────────────────────────────
+  - name: news_page
+    label: "News – Overview"
+    path: src/content/pages/news.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: blog
+    label: "News & Blog Posts"
+    path: src/content/blog
+    type: collection
+    format: yaml-frontmatter
+    extension: md
+    fields:
+      - { name: title, label: "Title", type: string, required: true }
+      - { name: date, label: "Date (YYYY-MM-DD)", type: string }
+      - { name: author, label: "Author", type: string }
+      - { name: category, label: "Category", type: string }
+      - { name: teaser, label: "Teaser Text", type: text }
+      - { name: image, label: "Featured Image", type: image }
+      - { name: image_alt, label: "Image Alt Text", type: string }
+
+  # ── UTILITY PAGES ─────────────────────────────────────────────────────────────
+  - name: kulinarik_page
+    label: "Kulinarik"
+    path: src/content/pages/kulinarik.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+      - { name: intro_heading, label: "Intro Section Heading", type: string }
+      - { name: intro_body, label: "Intro Section Body", type: text }
+
+  - name: nachhaltigkeit_page
+    label: "Nachhaltigkeit"
+    path: src/content/pages/nachhaltigkeit.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: allgaeu_page
+    label: "Allgäu & Region"
+    path: src/content/pages/allgaeu.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: jobs_page
+    label: "Jobs & Karriere"
+    path: src/content/pages/jobs.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: service_kontakt_page
+    label: "Service & Kontakt"
+    path: src/content/pages/service-kontakt.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: gutscheine_page
+    label: "Gutscheine"
+    path: src/content/pages/gutscheine.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: newsletter_page
+    label: "Newsletter"
+    path: src/content/pages/newsletter.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: oeffnungszeiten_page
+    label: "Öffnungszeiten"
+    path: src/content/pages/oeffnungszeiten.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+      - { name: note, label: "Holiday Hours Note", type: text }
+
+  - name: impressum_page
+    label: "Impressum"
+    path: src/content/pages/impressum.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: heading, label: "Page Heading", type: string }
+      - { name: company_name, label: "Company Name", type: string }
+      - { name: company_subtitle, label: "Company Subtitle", type: string }
+      - { name: address_street, label: "Street Address", type: string }
+      - { name: address_zip_city, label: "ZIP & City", type: string }
+      - { name: managing_director, label: "Managing Director", type: string }
+      - { name: register_court, label: "Register Court", type: string }
+      - { name: register_number, label: "Register Number", type: string }
+      - { name: vat_id, label: "VAT ID", type: string }
+      - { name: content_responsible, label: "Content Responsible (§55 RStV)", type: text }
+      - { name: liability_text, label: "Liability for Content Text", type: text }
+      - { name: links_text, label: "Liability for Links Text", type: text }
+
+  - name: datenschutz_page
+    label: "Datenschutzerklärung"
+    path: src/content/pages/datenschutz.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: heading, label: "Page Heading", type: string }
+      - { name: intro, label: "Introduction", type: text }
+      - { name: section_responsible_heading, label: "Section: Responsible – Heading", type: string }
+      - { name: section_responsible_body, label: "Section: Responsible – Body", type: text }
+      - { name: section_data_heading, label: "Section: Data Collection – Heading", type: string }
+      - { name: section_data_body, label: "Section: Data Collection – Body", type: text }
+      - { name: section_cookies_heading, label: "Section: Cookies – Heading", type: string }
+      - { name: section_cookies_body, label: "Section: Cookies – Body", type: text }
+      - { name: section_rights_heading, label: "Section: Your Rights – Heading", type: string }
+      - { name: section_rights_body, label: "Section: Your Rights – Body", type: text }
+      - { name: contact_dpo, label: "Data Protection Contact Email", type: string }
 
   # ── GLOBAL SETTINGS ──────────────────────────────────────────────────────────
   - name: site_settings

@@ -1,0 +1,127 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import pageData from '@/content/pages/kulinarik.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+
+  <!-- ── Page Hero ── -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <span class="text-cream/60">Kulinarik</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── Intro Section ── -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <p class="caption-label mb-4 text-gold">Willkommen</p>
+          <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+          <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+        </div>
+        <div class="bg-forest-700 p-8 lg:p-12 text-cream rounded-sm flex flex-col justify-center min-h-[300px] lg:min-h-[400px]">
+          <div class="space-y-8">
+            <div>
+              <p class="text-[13.5px] leading-relaxed text-cream/80">Jedes Gericht wird mit Blick auf Ihre Gesundheit zubereitet – ohne dabei auf Geschmack zu verzichten.</p>
+            </div>
+            <div class="border-t border-cream/20 pt-8">
+              <p class="text-[11px] tracking-widest uppercase text-gold mb-3">Mehr als nur Essen</p>
+              <p class="text-[13.5px] text-cream/70">Unsere Küche verbindet traditionelle Allgäuer Rezepte mit modernem Ernährungswissen für optimales Wohlbefinden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Highlights Grid (3 columns) ── -->
+  <section class="py-16 lg:py-24 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+        {/* Vitalküche */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Vitalküche</h3>
+          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Nährstoffreich und leicht verdaulich – unsere Vitalküche unterstützt Ihren Körper bei der Regeneration.</p>
+          <div class="mt-6 pt-6 border-t border-stone-light/50">
+            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+              Mehr erfahren
+              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
+                <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Regionale Zutaten */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Regionale Zutaten</h3>
+          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Direkt von Allgäuer Bauern und lokalen Partnern – Frische und Qualität garantiert.</p>
+          <div class="mt-6 pt-6 border-t border-stone-light/50">
+            <a href="/nachhaltigkeit" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+              Unsere Partner
+              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
+                <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Saisonale Menüs */}
+        <div class="bg-white border border-stone-light p-8 lg:p-10">
+          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Saisonale Menüs</h3>
+          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Das Beste aus jeder Jahreszeit – von Frühling bis Winter wechseln wir kreativ die Menüs.</p>
+          <div class="mt-6 pt-6 border-t border-stone-light/50">
+            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+              Reservieren
+              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
+                <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Opening Hours Note ── -->
+  <section class="py-12 bg-cream border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <p class="text-[13.5px] text-ink-muted mb-4">Informationen zu unseren Öffnungszeiten erhalten Sie hier:</p>
+      <a href="/oeffnungszeiten" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+        Zu den Öffnungszeiten
+        <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Tisch reservieren oder weitere Informationen erhalten.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/service-kontakt" class="btn-gold">Tisch reservieren</a>
+        <a href="/oeffnungszeiten" class="btn-outline-gold">Öffnungszeiten</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

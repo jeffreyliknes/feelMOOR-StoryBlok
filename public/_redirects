@@ -1,0 +1,116 @@
+# ── feelMOOR 301 Redirects ──────────────────────────────────────────────────
+# Migrating from SiteJet to new Astro site
+# Format: /old-path  /new-path  301
+
+# ── Renamed main sections ────────────────────────────────────────────────────
+/feelmoor-therme                        /therme                         301
+/feelmoor-therme/*                      /therme/:splat                  301
+/gesundheit-moor-bad-wurzach            /gesundheit                     301
+/gesundheit-moor-bad-wurzach/*          /gesundheit/:splat              301
+/feelmoor-fitnessclub                   /fitness                        301
+/feelmoor-fitnessclub/*                 /fitness/:splat                 301
+
+# ── Therme sub-pages ─────────────────────────────────────────────────────────
+/feelmoor-therme/thermalbad             /therme/thermalbad              301
+/feelmoor-therme/sauna                  /therme/sauna                   301
+/feelmoor-therme/wellness               /therme/wellness                301
+/feelmoor-therme/preise                 /therme/preise                  301
+/therme-bad-wurzach                     /therme                         301
+/therme-bad-wurzach/*                   /therme/:splat                  301
+
+# ── Gesundheit sub-pages ─────────────────────────────────────────────────────
+/gesundheit-moor-bad-wurzach/moorbad    /gesundheit/moorbad             301
+/gesundheit-moor-bad-wurzach/anwendungen /gesundheit/anwendungen        301
+/gesundheit-moor-bad-wurzach/aerzte-therapeuten /gesundheit/aerzte-therapeuten 301
+/moorbad-bad-wurzach                    /gesundheit/moorbad             301
+/moorheilbad                            /gesundheit/moorbad             301
+/moorheilbad/*                          /gesundheit/:splat              301
+/gesundheit-anwendungen                 /gesundheit/anwendungen         301
+
+# ── Fitness sub-pages ────────────────────────────────────────────────────────
+/feelmoor-fitnessclub/fitnessstudio     /fitness/fitnessstudio          301
+/feelmoor-fitnessclub/kurse             /fitness/kurse                  301
+/feelmoor-fitnessclub/mitgliedschaften  /fitness/mitgliedschaften       301
+/fitnesscenter                          /fitness                        301
+/fitness-bad-wurzach                    /fitness                        301
+
+# ── Hotel / Resort ───────────────────────────────────────────────────────────
+/hotel-bad-wurzach                      /hotel                          301
+/resort                                 /hotel                          301
+/ueber-uns                              /hotel                          301
+/das-resort                             /hotel                          301
+
+# ── Rooms ────────────────────────────────────────────────────────────────────
+/zimmer-suiten                          /zimmer                         301
+/zimmer-bad-wurzach                     /zimmer                         301
+/hotelzimmer                            /zimmer                         301
+/doppelzimmer                           /zimmer/doppelzimmer            301
+/einzelzimmer                           /zimmer/einzelzimmer            301
+/suite                                  /zimmer/suiten                  301
+/suiten                                 /zimmer/suiten                  301
+
+# ── Packages / Offers ────────────────────────────────────────────────────────
+/angebote-pakete                        /angebote                       301
+/pakete                                 /angebote                       301
+/gesundheitspakete                      /angebote                       301
+/moorkur-bad-wurzach                    /angebote/moorintensivkur       301
+/moorintensivkur                        /angebote/moorintensivkur       301
+/verwoehnwochenende                     /angebote/verwoehntage          301
+/verwoehntage                           /angebote/verwoehntage          301
+/yoga-retreat-bad-wurzach               /angebote/yoga-retreat          301
+
+# ── Promo / dated package pages ──────────────────────────────────────────────
+/angebote-2023                          /angebote                       301
+/angebote-2024                          /angebote                       301
+/angebote-2025                          /angebote                       301
+/fruehlingspakete                       /angebote                       301
+/sommerpakete                           /angebote                       301
+/herbstpakete                           /angebote                       301
+/winterpakete                           /angebote                       301
+/weihnachten                            /angebote                       301
+/silvester                              /angebote                       301
+/ostern                                 /angebote                       301
+
+# ── Kulinarik ────────────────────────────────────────────────────────────────
+/restaurant-bad-wurzach                 /kulinarik                      301
+/restaurant                             /kulinarik                      301
+/vitalrestaurant                        /kulinarik                      301
+/fruehstueck                            /kulinarik                      301
+/kulinarisches                          /kulinarik                      301
+
+# ── Allgäu / Region ──────────────────────────────────────────────────────────
+/region-allgaeu                         /allgaeu                        301
+/bad-wurzach                            /allgaeu                        301
+/urlaub-allgaeu                         /allgaeu                        301
+/ausflugsziele                          /allgaeu                        301
+
+# ── Service / Contact ────────────────────────────────────────────────────────
+/kontakt                                /service-kontakt                301
+/anfrage                                /service-kontakt                301
+/contact                                /service-kontakt                301
+
+# ── Vouchers ─────────────────────────────────────────────────────────────────
+/gutschein                              /gutscheine                     301
+/geschenkgutschein                      /gutscheine                     301
+/gutscheine-kaufen                      /gutscheine                     301
+
+# ── Jobs ─────────────────────────────────────────────────────────────────────
+/karriere                               /jobs                           301
+/stellenangebote                        /jobs                           301
+/ausbildung                             /jobs                           301
+/team                                   /jobs                           301
+
+# ── Legal ────────────────────────────────────────────────────────────────────
+/agb                                    /datenschutz                    301
+/legal                                  /impressum                      301
+
+# ── News / Blog ──────────────────────────────────────────────────────────────
+/aktuelles                              /news                           301
+/neuigkeiten                            /news                           301
+/presse                                 /news                           301
+/blog                                   /news                           301
+
+# ── Sustainability ───────────────────────────────────────────────────────────
+/nachhaltigkeit-bad-wurzach             /nachhaltigkeit                 301
+/umwelt                                 /nachhaltigkeit                 301
+/green-resort                           /nachhaltigkeit                 301

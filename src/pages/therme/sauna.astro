@@ -1,0 +1,96 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import saunaData from '@/content/pages/therme-sauna.json';
+
+const page = saunaData;
+
+const saunaTypes = [
+  { name: 'Finnische Sauna', temp: '100 °C' },
+  { name: 'Biosauna', temp: '60 °C' },
+  { name: 'Dampfbad', temp: '55 °C' },
+  { name: 'Erlebnissauna', temp: '80 °C' },
+  { name: 'Infrarotkabine', temp: '60 °C' },
+  { name: 'Außensauna', temp: '90 °C' }
+];
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+
+  <!-- ── Page Hero ── -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <a href="/therme" class="hover:text-cream/70 transition-colors">Therme</a>
+        <span>›</span>
+        <span class="text-cream/60">Saunalandschaft</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── Intro Section ── -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="caption-label mb-4 text-gold">Wärmetherapie</p>
+        <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+        <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Sauna Types Grid ── -->
+  <section class="py-16 lg:py-24 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        {saunaTypes.map((sauna) => (
+          <div class="bg-white border border-stone-light p-8 lg:p-10 text-center">
+            <h3 class="font-display font-light text-ink-dark text-lg mb-3">{sauna.name}</h3>
+            <div class="flex items-center justify-center gap-2 mb-4">
+              <span class="text-3xl font-display font-light text-gold">{sauna.temp}</span>
+            </div>
+            <p class="text-[12px] text-ink-light">Optimale Wärmeentwicklung</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Rules & Info Bar ── -->
+  <section class="py-12 bg-forest-700/95 border-y border-forest-600">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-cream/60 text-[11px] tracking-widest uppercase mb-2">Saunaregeln</p>
+          <p class="text-cream/80 text-[13.5px] leading-relaxed">Bitte beachten Sie unsere <a href="#" class="text-gold hover:text-gold/80 transition-colors underline">Saunaordnung</a>. Mindestalter: 16 Jahre, Begleitung Unter-16-Jähriger erforderlich.</p>
+        </div>
+        <div>
+          <p class="text-cream/60 text-[11px] tracking-widest uppercase mb-2">Aufgusszeiten</p>
+          <p class="text-cream/80 text-[13.5px] leading-relaxed">Regelmäßige Aufgusszeiten mit verschiedenen Düften und Kräutern – schauen Sie an der Rezeption nach dem genauen Plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

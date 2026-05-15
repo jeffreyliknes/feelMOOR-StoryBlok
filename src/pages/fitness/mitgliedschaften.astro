@@ -1,0 +1,218 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import pageData from '@/content/pages/fitness-mitgliedschaften.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+  <!-- Hero Section -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <a href="/fitness" class="hover:text-cream/70 transition-colors">Fitness</a>
+        <span>›</span>
+        <span class="text-cream/60">Mitgliedschaften</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Back Link -->
+  <section class="py-6 bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <a href="/fitness" class="text-gold text-[13px] font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Zurück zu Fitness</a>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+      <p class="text-[13.5px] text-ink-muted leading-relaxed mt-6 max-w-3xl">{page.intro_body}</p>
+    </div>
+  </section>
+
+  <!-- Membership Tiers -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h3 class="font-display font-light text-ink-dark text-[28px] mb-12 text-center">Tarife und Optionen</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Studio Tier -->
+        <div class="bg-cream rounded-lg p-8 border-2 border-gold/30 hover:border-gold transition-colors">
+          <div class="text-center mb-6">
+            <p class="text-gold text-[12px] font-semibold uppercase tracking-wide mb-3">PAKET 1</p>
+            <h4 class="font-display font-light text-ink-dark text-[24px]">Studio</h4>
+          </div>
+          <div class="bg-white rounded-lg p-4 mb-6 text-center">
+            <p class="text-gold text-[13px] font-semibold uppercase tracking-wide">Preis</p>
+            <p class="text-[13px] text-ink-muted mt-1">Auf Anfrage</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Zugang Fitnessstudio</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Alle Geräte & Zonen</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Einsteigerberatung</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Flexible Laufzeit</span>
+            </li>
+          </ul>
+          <a href="/service-kontakt" class="w-full block text-center btn-outline-gold">Anfrage stellen</a>
+        </div>
+
+        <!-- Studio + Kurse Tier -->
+        <div class="bg-cream rounded-lg p-8 border-2 border-gold relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-white text-[11px] font-semibold uppercase tracking-wide px-3 py-1 rounded-full">Beliebt</div>
+          <div class="text-center mb-6">
+            <p class="text-gold text-[12px] font-semibold uppercase tracking-wide mb-3">PAKET 2</p>
+            <h4 class="font-display font-light text-ink-dark text-[24px]">Studio + Kurse</h4>
+          </div>
+          <div class="bg-white rounded-lg p-4 mb-6 text-center">
+            <p class="text-gold text-[13px] font-semibold uppercase tracking-wide">Preis</p>
+            <p class="text-[13px] text-ink-muted mt-1">Auf Anfrage</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Studio + alle Kurse</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Yoga, Pilates, Rücken</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Unbegrenzte Teilnahme</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Flexible Laufzeit</span>
+            </li>
+          </ul>
+          <a href="/service-kontakt" class="w-full block text-center btn-gold">Anfrage stellen</a>
+        </div>
+
+        <!-- All-inclusive Tier -->
+        <div class="bg-cream rounded-lg p-8 border-2 border-gold/30 hover:border-gold transition-colors">
+          <div class="text-center mb-6">
+            <p class="text-gold text-[12px] font-semibold uppercase tracking-wide mb-3">PAKET 3</p>
+            <h4 class="font-display font-light text-ink-dark text-[24px]">All-inclusive</h4>
+          </div>
+          <div class="bg-white rounded-lg p-4 mb-6 text-center">
+            <p class="text-gold text-[13px] font-semibold uppercase tracking-wide">Preis</p>
+            <p class="text-[13px] text-ink-muted mt-1">Auf Anfrage</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Studio + Kurse + Therme</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Vollständiger Zugang</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Thermalbad & Saunen</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1">✓</span>
+              <span class="text-[13px] text-ink-muted">Flexible Laufzeit</span>
+            </li>
+          </ul>
+          <a href="/service-kontakt" class="w-full block text-center btn-outline-gold">Anfrage stellen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Included Benefits -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h3 class="font-display font-light text-ink-dark text-[26px] mb-12 text-center">Das ist in jeder Mitgliedschaft enthalten</h3>
+      <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-6">
+        <div class="flex items-start gap-3">
+          <span class="text-gold text-xl flex-shrink-0">✓</span>
+          <div>
+            <p class="font-semibold text-ink-dark text-[13px] mb-1">Trainingscenter & Geräte</p>
+            <p class="text-[12px] text-ink-muted">Zugang zu modernsten Trainingsgeräten und allen Zonen</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-gold text-xl flex-shrink-0">✓</span>
+          <div>
+            <p class="font-semibold text-ink-dark text-[13px] mb-1">Professionelle Trainer</p>
+            <p class="text-[12px] text-ink-muted">Kostenlose Einführungsberatung und Tipps bei Fragen</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-gold text-xl flex-shrink-0">✓</span>
+          <div>
+            <p class="font-semibold text-ink-dark text-[13px] mb-1">Flexible Nutzung</p>
+            <p class="text-[12px] text-ink-muted">Nach Ihrem Zeitplan – keine Vorbuchung nötig</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-gold text-xl flex-shrink-0">✓</span>
+          <div>
+            <p class="font-semibold text-ink-dark text-[13px] mb-1">Pausierbar & Flexibel</p>
+            <p class="text-[12px] text-ink-muted">Anpassbar an Ihre Lebenssituation – jederzeit kündbar</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-gold text-xl flex-shrink-0">✓</span>
+          <div>
+            <p class="font-semibold text-ink-dark text-[13px] mb-1">Community Events</p>
+            <p class="text-[12px] text-ink-muted">Zugang zu Mitglieder-Events und Specials</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-gold text-xl flex-shrink-0">✓</span>
+          <div>
+            <p class="font-semibold text-ink-dark text-[13px] mb-1">Gäste-Zuschuss</p>
+            <p class="text-[12px] text-ink-muted">Attraktive Konditionen für Gäste Ihres Hotels-Aufenthalts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Strip -->
+  <section class="py-12 bg-forest-700 text-center">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h3 class="text-cream text-[18px] font-display font-light mb-4">Welche Mitgliedschaft passt zu Ihnen?</h3>
+      <p class="text-cream/70 text-[13px] mb-6">Unsere Mitgliedschaftsberater helfen gerne bei der Wahl der richtigen Option.</p>
+      <a href="/service-kontakt" class="inline-block btn-gold">Jetzt anfragen</a>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit, Mitglied zu werden?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Nehmen Sie Kontakt mit uns auf oder buchen Sie Ihren Aufenthalt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/service-kontakt" class="btn-gold">Mitgliedschaft anfragen</a>
+        <a href="#booking" class="btn-outline-gold">Gast-Zugang buchen</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

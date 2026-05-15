@@ -1,0 +1,102 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import pageData from '@/content/pages/fitness-studio.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+  <!-- Hero Section -->
+  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div class="absolute inset-0 opacity-10"
+           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <p class="caption-label mb-4">{page.hero_caption}</p>
+      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
+      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
+        <span>›</span>
+        <a href="/fitness" class="hover:text-cream/70 transition-colors">Fitness</a>
+        <span>›</span>
+        <span class="text-cream/60">Fitnessstudio</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Back Link -->
+  <section class="py-6 bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <a href="/fitness" class="text-gold text-[13px] font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Zurück zu Fitness</a>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+      <p class="text-[13.5px] text-ink-muted leading-relaxed mt-6 max-w-3xl">{page.intro_body}</p>
+    </div>
+  </section>
+
+  <!-- Studio Zones Grid -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h3 class="font-display font-light text-ink-dark text-[28px] mb-12 text-center">Trainingsbereiche</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Gerätetraining -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">⚙️</div>
+          <h4 class="font-display font-light text-ink-dark text-[20px] mb-3">Gerätetraining</h4>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Hochwertige Trainingsgeräte für alle Muskelgruppen – von führenden Herstellern mit ergonomischem Design. Ideal für gezieltes Krafttraining und Muskelaufbau. Anfänger bis Profis.</p>
+        </div>
+
+        <!-- Freie Gewichte -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🏋️</div>
+          <h4 class="font-display font-light text-ink-dark text-[20px] mb-3">Freie Gewichte</h4>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Umfangreiches Hanteltraining mit Kurzhanteln, Langhanteln und Kettlebells. Maximale Kontrolle über Bewegungsabläufe und intensive Stabilisierungsarbeit für funktionales Training.</p>
+        </div>
+
+        <!-- Cardio-Zone -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🏃‍♂️</div>
+          <h4 class="font-display font-light text-ink-dark text-[20px] mb-3">Cardio-Zone</h4>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Großzügiger Bereich mit modernen Cardiogeräten: Laufbänder, Ellipsentrainer, Rudergeräte und Ergometer mit Touchscreen und Trainingsanwendungen.</p>
+        </div>
+
+        <!-- Functional Training -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🤸</div>
+          <h4 class="font-display font-light text-ink-dark text-[20px] mb-3">Functional Training</h4>
+          <p class="text-[13px] text-ink-muted leading-relaxed">Spezialisierter Bereich mit Suspension-Trainern, Battle Ropes, Medicine Balls und Functional-Training-Tools. Für alltagsfähige Kraft, Ausdauer und Koordination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opening Hours Note -->
+  <section class="py-12 bg-stone-light/30">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="bg-white rounded-lg p-8 border-l-4 border-gold">
+        <p class="text-ink-dark font-semibold text-[13px] mb-2">ÖFFNUNGSZEITEN & ZUGANG</p>
+        <p class="text-[13px] text-ink-muted leading-relaxed">Das Fitnessstudio ist an allen Tagen der Woche zugänglich. Gäste des feelMOOR Hotels haben 24/7 Zugang mit ihrer Zimmerkarte. Mitglieder und externe Gäste können flexible Öffnungszeiten nutzen. Aktuelle Öffnungszeiten finden Sie auf unserer <a href="/oeffnungszeiten" class="text-gold hover:text-gold/80 transition-colors font-semibold">Öffnungszeiten-Seite</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
+      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
