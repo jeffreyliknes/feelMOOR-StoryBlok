@@ -538,12 +538,19 @@ content:
     extension: md
     fields:
       - { name: title, label: "Title", type: string, required: true }
-      - { name: date, label: "Date (YYYY-MM-DD)", type: string }
+      - { name: date, label: "Date (YYYY-MM-DD)", type: date }
       - { name: author, label: "Author", type: string }
       - { name: category, label: "Category", type: string }
-      - { name: teaser, label: "Teaser Text", type: text }
-      - { name: image, label: "Featured Image", type: image }
-      - { name: image_alt, label: "Image Alt Text", type: string }
+      - { name: teaser, label: "Teaser (card on overview page)", type: text }
+      - { name: image, label: "Featured Image (overview + top of article)", type: image }
+      - { name: image_alt, label: "Featured Image Alt Text", type: string }
+      - name: body
+        label: "Article content"
+        type: rich-text
+        description: "Main post text. Use links, headings, lists, and inline images. No em or en dashes in copy."
+        options:
+          switcher: true
+          path: blog
 
   # ── UTILITY PAGES ─────────────────────────────────────────────────────────────
   - name: kulinarik_page
