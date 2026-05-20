@@ -26,7 +26,7 @@ Content lives in two forms:
 - **Markdown collections** (`src/content/rooms/`, `src/content/packages/`, `src/content/blog/`) — individual entries with YAML frontmatter. Schemas defined in `src/content/config.ts` via Zod.
 - **JSON page data** (`src/content/pages/`) — structured data for static pages (homepage, therme, gesundheit, etc.) and global settings (`src/content/settings/site.json`).
 
-The CMS is **Pages CMS** — its field definitions live in `pages.config.yml`. Editors manage content through the Pages CMS UI which writes directly to these files.
+The CMS is **Pages CMS** — its field definitions live in **`.pages.yml`** (the file the CMS reads). `pages.config.yml` is a duplicate reference copy; keep both in sync when adding collections. Editors manage content through the Pages CMS UI which writes directly to these files.
 
 ### Routing
 

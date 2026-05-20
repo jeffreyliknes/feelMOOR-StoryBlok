@@ -188,7 +188,7 @@ content:
 
   # ── ROOMS OVERVIEW PAGE ──────────────────────────────────────────────────────
   - name: rooms_page
-    label: "Rooms & Suites – Overview Page"
+    label: "Rooms & Suites, Overview Page"
     path: src/content/pages/rooms-overview.json
     type: file
     fields:
@@ -654,6 +654,40 @@ content:
       - name: includes
         label: "What's Included"
         type: list
+
+  # ── NEWS / BLOG ───────────────────────────────────────────────────────────────
+  - name: news_page
+    label: "News & Blog, Overview"
+    path: src/content/pages/news.json
+    type: file
+    fields:
+      - { name: seo_title, label: "Page Title", type: string }
+      - { name: seo_description, label: "Meta Description", type: text }
+      - { name: hero_caption, label: "Hero Caption", type: string }
+      - { name: hero_heading, label: "Hero Heading", type: string }
+      - { name: hero_intro, label: "Hero Intro", type: text }
+
+  - name: blog
+    label: "News & Blog Posts"
+    path: src/content/blog
+    type: collection
+    format: yaml-frontmatter
+    extension: md
+    fields:
+      - { name: title, label: "Title", type: string, required: true }
+      - { name: date, label: "Date (YYYY-MM-DD)", type: date }
+      - { name: author, label: "Author", type: string }
+      - { name: category, label: "Category", type: string }
+      - { name: teaser, label: "Teaser (card on overview page)", type: text }
+      - { name: image, label: "Featured Image (overview + top of article)", type: image }
+      - { name: image_alt, label: "Featured Image Alt Text", type: string }
+      - name: body
+        label: "Article content"
+        type: rich-text
+        description: "Main post text. Use links, headings, lists, and inline images. No em or en dashes in copy."
+        options:
+          switcher: true
+          path: blog
 
   # ── GLOBAL SETTINGS ──────────────────────────────────────────────────────────
   - name: site_settings
