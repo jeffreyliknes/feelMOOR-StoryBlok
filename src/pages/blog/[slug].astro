@@ -14,8 +14,8 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const post = entry.data;
 
-const seoTitle = `${post.title}, feelMOOR Blog`;
-const seoDescription = post.teaser ?? post.title;
+const seoTitle = post.seo_title ?? `${post.title}, feelMOOR Blog`;
+const seoDescription = post.seo_description ?? post.teaser ?? post.title;
 ---
 
 <PageLayout title={seoTitle} description={seoDescription}>
@@ -69,7 +69,7 @@ const seoDescription = post.teaser ?? post.title;
 
   <!-- Article body -->
   <section class="py-10 lg:py-14 bg-cream">
-    <div class="max-w-2xl mx-auto px-6 prose prose-stone prose-headings:font-display prose-headings:font-light text-sm text-ink-muted leading-relaxed">
+    <div class="max-w-2xl mx-auto px-6 prose prose-stone prose-headings:font-display prose-headings:font-light prose-h1:text-2xl text-sm text-ink-muted leading-relaxed">
       <Content />
     </div>
   </section>

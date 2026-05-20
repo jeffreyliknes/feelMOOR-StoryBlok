@@ -55,11 +55,17 @@ const packages = defineCollection({
   }),
 });
 
+const blogDate = z
+  .union([z.string(), z.date()])
+  .transform((val) => (val instanceof Date ? val.toISOString().slice(0, 10) : val));
+
 const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.string(),
+    seo_title: z.string().optional(),
+    seo_description: z.string().optional(),
+    date: blogDate,
     author: z.string().optional(),
     teaser: z.string().optional(),
     image: z.string().optional().default(''),
