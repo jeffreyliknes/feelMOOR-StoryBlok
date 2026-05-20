@@ -1,13 +1,13 @@
 ---
-title: "Beispielbeitrag zum Üben"
-date: "2026-05-20"
-author: "feelMOOR Redaktion"
-teaser: "Dieser Beitrag ist nur ein Platzhalter, damit Sie in Pages CMS einen neuen Blog-Artikel anlegen und testen können."
-image: "/images/hotel/hero.jpg"
-image_alt: "feelMOOR Gesundresort Bad Wurzach, Außenansicht"
-category: "Übung"
+title: Beispielbeitrag zum Üben
+date: 2026-05-20
+author: feelMOOR Redaktion
+category: Übung
+teaser: Dieser Beitrag ist nur ein Platzhalter, damit Sie in Pages CMS einen
+  neuen Blog-Artikel anlegen und testen können.
+image: /images/hotel/hero.jpg
+image_alt: feelMOOR Gesundresort Bad Wurzach, Außenansicht
 ---
-
 Dies ist **Beispieltext** für Ihren ersten Blog-Beitrag. Sie können diesen Absatz in Pages CMS ersetzen, formatieren oder erweitern.
 
 ## So testen Sie den Editor
@@ -24,3 +24,8 @@ Dies ist **Beispieltext** für Ihren ersten Blog-Beitrag. Sie können diesen Abs
 3. Speichern und die Vorschau auf der Website prüfen
 
 Wenn alles funktioniert, legen Sie einen neuen Beitrag an (neue `.md`-Datei in der Blog-Collection) oder löschen Sie diesen Übungsbeitrag.
+
+
+
+![image.png](/images/image.png)
+
