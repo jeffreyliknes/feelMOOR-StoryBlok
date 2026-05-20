@@ -162,7 +162,7 @@ function baseNavigation(): NavMegaItem[] {
         tag: 'Bad Wurzach · Allgäu',
         heading: 'Herzlich Willkommen',
         body:
-          'Das modernste Moorbad Deutschlands im Herzen des Allgäus – Gesundheit, Natur und Genuss unter einem Dach.',
+          'Das modernste Moorbad Deutschlands im Herzen des Allgäus, Gesundheit, Natur und Genuss unter einem Dach.',
         cta: { label: 'Resort entdecken', href: '/hotel' },
       },
     },
@@ -229,7 +229,7 @@ function baseNavigation(): NavMegaItem[] {
         tag: 'Natürlich gesund',
         heading: 'Die Heilkraft des Moores',
         body:
-          'Über 5.000 Jahre altes Naturmoor aus Bad Wurzach – Anerkanntes Heilbad für Orthopädie und Rehabilitation.',
+          'Über 5.000 Jahre altes Naturmoor aus Bad Wurzach, Anerkanntes Heilbad für Orthopädie und Rehabilitation.',
         cta: { label: 'Gesundheit entdecken', href: '/gesundheit' },
       },
     },
@@ -242,7 +242,7 @@ function baseNavigation(): NavMegaItem[] {
         tag: 'Jetzt verfügbar',
         heading: 'Pakete & Kuren',
         body:
-          'Von der intensiven Moorheilkur bis zum entspannten Wellnesswochenende – wir haben das passende Paket für Sie.',
+          'Von der intensiven Moorheilkur bis zum entspannten Wellnesswochenende, wir haben das passende Paket für Sie.',
         cta: { label: 'Alle Angebote', href: '/angebote' },
       },
     },
@@ -268,7 +268,7 @@ function baseNavigation(): NavMegaItem[] {
         tag: 'Natur pur',
         heading: 'Die Allgäuer Bergwelt',
         body:
-          'Wandern, Radfahren und Naturerlebnisse rund um Bad Wurzach – direkt vor unserer Haustür.',
+          'Wandern, Radfahren und Naturerlebnisse rund um Bad Wurzach, direkt vor unserer Haustür.',
         cta: { label: 'Region entdecken', href: '/allgaeu' },
       },
     },

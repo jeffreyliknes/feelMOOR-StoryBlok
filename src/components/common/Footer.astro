@@ -31,15 +31,15 @@ const cols = site.footer_columns;
             loading="lazy"
           />
         </a>
-        <address class="not-italic text-[12.5px] leading-relaxed text-cream/60 mb-5">
+        <address class="not-italic text-xs leading-relaxed text-cream/60 mb-5">
           {site.address_street}<br />
           {site.address_zip_city}<br />
           {site.address_region}, {site.address_country}
         </address>
-        <a href={`tel:${site.phone_link}`} class="text-[12.5px] text-gold hover:text-gold-300 transition-colors block mb-1">
+        <a href={`tel:${site.phone_link}`} class="text-xs text-gold hover:text-gold-300 transition-colors block mb-1">
           {site.phone_display}
         </a>
-        <a href={`mailto:${site.email}`} class="text-[12.5px] text-gold hover:text-gold-300 transition-colors">
+        <a href={`mailto:${site.email}`} class="text-xs text-gold hover:text-gold-300 transition-colors">
           {site.email}
         </a>
 
@@ -63,11 +63,11 @@ const cols = site.footer_columns;
       <!-- Link columns -->
       {cols.map((col) => (
         <div>
-          <p class="text-[9.5px] tracking-caption uppercase text-gold mb-4 font-medium">{col.heading}</p>
+          <p class="text-xs tracking-caption uppercase text-gold mb-4 font-medium">{col.heading}</p>
           <ul class="space-y-2">
             {col.links.map((link) => (
               <li>
-                <a href={link.href} class="text-[12.5px] text-cream/60 hover:text-cream transition-colors duration-150">
+                <a href={link.href} class="text-xs text-cream/60 hover:text-cream transition-colors duration-150">
                   {link.label}
                 </a>
               </li>
@@ -88,9 +88,9 @@ const cols = site.footer_columns;
           <input
             type="email"
             placeholder="Ihre E-Mail-Adresse"
-            class="flex-1 bg-cream/10 border border-cream/20 px-4 py-3 text-[12.5px] text-cream placeholder:text-cream/40 focus:outline-none focus:border-gold/60 transition-colors"
+            class="flex-1 bg-cream/10 border border-cream/20 px-4 py-3 text-xs text-cream placeholder:text-cream/40 focus:outline-none focus:border-gold/60 transition-colors"
           />
-          <button type="submit" class="bg-gold hover:bg-gold-600 text-white px-6 py-3 text-[10px] tracking-wider uppercase font-medium transition-colors duration-300 flex-shrink-0">
+          <button type="submit" class="bg-gold hover:bg-gold-600 text-white px-6 py-3 text-xs tracking-wider uppercase font-medium transition-colors duration-300 flex-shrink-0">
             Anmelden
           </button>
         </form>
@@ -101,18 +101,18 @@ const cols = site.footer_columns;
   <!-- Bottom bar -->
   <div class="border-t border-cream/10">
     <div class="max-w-screen-xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-[11px] text-cream/40">
+      <p class="text-xs text-cream/40">
         © {year} {site.copyright_name}
       </p>
       <div class="flex items-center gap-5">
-        <a href="/impressum"   class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Impressum</a>
-        <a href="/datenschutz" class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Datenschutz</a>
-        <a href="/sitemap.xml" class="text-[11px] text-cream/40 hover:text-cream/70 transition-colors">Sitemap</a>
+        <a href="/impressum"   class="text-xs text-cream/40 hover:text-cream/70 transition-colors">Impressum</a>
+        <a href="/datenschutz" class="text-xs text-cream/40 hover:text-cream/70 transition-colors">Datenschutz</a>
+        <a href="/sitemap.xml" class="text-xs text-cream/40 hover:text-cream/70 transition-colors">Sitemap</a>
       </div>
       <div class="flex items-center gap-2">
-        <a href="/"   class:list={[isEn ? 'text-cream/40 hover:text-cream/70' : 'font-medium text-cream', 'text-[10.5px] transition-colors']}>DE</a>
+        <a href="/"   class:list={[isEn ? 'text-cream/40 hover:text-cream/70' : 'font-medium text-cream', 'text-xs transition-colors']}>DE</a>
         <span class="text-cream/20 text-xs">·</span>
-        <a href="/en" class:list={[isEn ? 'font-medium text-cream' : 'text-cream/40 hover:text-cream/70', 'text-[10.5px] transition-colors']}>EN</a>
+        <a href="/en" class:list={[isEn ? 'font-medium text-cream' : 'text-cream/40 hover:text-cream/70', 'text-xs transition-colors']}>EN</a>
       </div>
     </div>
   </div>

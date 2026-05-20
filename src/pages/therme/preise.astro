@@ -17,8 +17,8 @@ const page = priceData;
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
       <p class="caption-label mb-4">{page.hero_caption}</p>
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <a href="/therme" class="hover:text-cream/70 transition-colors">Therme</a>
@@ -40,7 +40,7 @@ const page = priceData;
           </div>
           <div>
             <h3 class="font-display font-light text-ink-dark text-lg mb-2">Für Hotelgäste inklusive</h3>
-            <p class="text-[13.5px] text-ink-muted leading-relaxed">{page.note_hotel_guests}</p>
+            <p class="text-xs text-ink-muted leading-relaxed">{page.note_hotel_guests}</p>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@ const page = priceData;
       <div class="max-w-3xl mx-auto">
         <p class="caption-label mb-4 text-gold">Für Tagesgäste</p>
         <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">Eintrittspreise Tagesgäste</h2>
-        <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.note_day_guests}</p>
+        <p class="text-xs text-ink-muted mt-6 leading-relaxed">{page.note_day_guests}</p>
       </div>
     </div>
   </section>
@@ -73,31 +73,31 @@ const page = priceData;
           </thead>
           <tbody>
             <tr class="border-b border-stone-light">
-              <td class="px-6 py-4 text-[13.5px] text-ink-dark font-medium">Erwachsene</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-muted text-center">€ 12,00</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-muted text-center">€ 18,00</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-dark font-medium text-center">€ 24,00</td>
+              <td class="px-6 py-4 text-xs text-ink-dark font-medium">Erwachsene</td>
+              <td class="px-6 py-4 text-xs text-ink-muted text-center">€ 12,00</td>
+              <td class="px-6 py-4 text-xs text-ink-muted text-center">€ 18,00</td>
+              <td class="px-6 py-4 text-xs text-ink-dark font-medium text-center">€ 24,00</td>
             </tr>
             <tr class="border-b border-stone-light">
-              <td class="px-6 py-4 text-[13.5px] text-ink-dark font-medium">Kinder (4–15 Jahre)</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-muted text-center">€ 7,00</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-muted text-center">€ 11,00</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-dark font-medium text-center">€ 15,00</td>
+              <td class="px-6 py-4 text-xs text-ink-dark font-medium">Kinder (4 bis 15 Jahre)</td>
+              <td class="px-6 py-4 text-xs text-ink-muted text-center">€ 7,00</td>
+              <td class="px-6 py-4 text-xs text-ink-muted text-center">€ 11,00</td>
+              <td class="px-6 py-4 text-xs text-ink-dark font-medium text-center">€ 15,00</td>
             </tr>
             <tr class="bg-gold/5">
-              <td class="px-6 py-4 text-[13.5px] text-ink-dark font-medium">Familie (2 Erw. + 2 Ki.)</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-muted text-center">€ 28,00</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-muted text-center">€ 42,00</td>
-              <td class="px-6 py-4 text-[13.5px] text-ink-dark font-medium text-center">€ 56,00</td>
+              <td class="px-6 py-4 text-xs text-ink-dark font-medium">Familie (2 Erw. + 2 Ki.)</td>
+              <td class="px-6 py-4 text-xs text-ink-muted text-center">€ 28,00</td>
+              <td class="px-6 py-4 text-xs text-ink-muted text-center">€ 42,00</td>
+              <td class="px-6 py-4 text-xs text-ink-dark font-medium text-center">€ 56,00</td>
             </tr>
             <tr class="border-t border-stone-light">
-              <td class="px-6 py-4 text-[13px] text-ink-light italic">Senioren (ab 65 J.) – 10% Rabatt</td>
-              <td colspan="3" class="px-6 py-4 text-[11px] text-ink-light">Mit Nachweis erhältlich an der Rezeption</td>
+              <td class="px-6 py-4 text-xs text-ink-light italic">Senioren (ab 65 J.), 10% Rabatt</td>
+              <td colspan="3" class="px-6 py-4 text-xs text-ink-light">Mit Nachweis erhältlich an der Rezeption</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="text-[11px] text-ink-light mt-4">Preise inkl. Thermalbad und Saunalandschaft. Wellness-Anwendungen kosten extra.</p>
+      <p class="text-xs text-ink-light mt-4">Preise inkl. Thermalbad und Saunalandschaft. Wellness-Anwendungen kosten extra.</p>
     </div>
   </section>
 
@@ -108,17 +108,17 @@ const page = priceData;
         <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Öffnungszeiten</h2>
         <div class="mt-8 grid md:grid-cols-2 gap-8">
           <div class="border border-stone-light p-6 rounded-sm">
-            <p class="text-[11px] text-ink-light tracking-widest uppercase mb-4">Mo–Fr</p>
-            <p class="text-[13.5px] text-ink-dark font-medium">09:00 – 21:00 Uhr</p>
-            <p class="text-[12px] text-ink-light mt-2">Letzte Einfahrt: 20:00 Uhr</p>
+            <p class="text-xs text-ink-light tracking-widest uppercase mb-4">Mo, Fr</p>
+            <p class="text-xs text-ink-dark font-medium">09:00 bis 21:00 Uhr</p>
+            <p class="text-xs text-ink-light mt-2">Letzte Einfahrt: 20:00 Uhr</p>
           </div>
           <div class="border border-stone-light p-6 rounded-sm">
-            <p class="text-[11px] text-ink-light tracking-widest uppercase mb-4">Sa–So & Feiertage</p>
-            <p class="text-[13.5px] text-ink-dark font-medium">08:00 – 21:00 Uhr</p>
-            <p class="text-[12px] text-ink-light mt-2">Letzte Einfahrt: 20:00 Uhr</p>
+            <p class="text-xs text-ink-light tracking-widest uppercase mb-4">Sa, So & Feiertage</p>
+            <p class="text-xs text-ink-dark font-medium">08:00 bis 21:00 Uhr</p>
+            <p class="text-xs text-ink-light mt-2">Letzte Einfahrt: 20:00 Uhr</p>
           </div>
         </div>
-        <p class="text-[12px] text-ink-light mt-6 leading-relaxed">
+        <p class="text-xs text-ink-light mt-6 leading-relaxed">
           <strong>Hinweis:</strong> An Feiertagen und während besonderer Veranstaltungen können die Öffnungszeiten abweichen. Bitte informieren Sie sich aktuell.
         </p>
       </div>
@@ -130,7 +130,7 @@ const page = priceData;
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="max-w-2xl mx-auto bg-white border border-stone-light p-8 lg:p-10 rounded-sm text-center">
         <h3 class="font-display font-light text-ink-dark text-lg mb-3">Fragen zu den Preisen?</h3>
-        <p class="text-[13.5px] text-ink-muted mb-6 leading-relaxed">Kontaktieren Sie uns direkt oder besuchen Sie uns. Wir beraten Sie gerne zu Preisvergünstigungen, Gruppentarifen und speziellen Angeboten.</p>
+        <p class="text-xs text-ink-muted mb-6 leading-relaxed">Kontaktieren Sie uns direkt oder besuchen Sie uns. Wir beraten Sie gerne zu Preisvergünstigungen, Gruppentarifen und speziellen Angeboten.</p>
         <a href="/service-kontakt" class="btn-gold inline-block">Kontakt & Anfrage</a>
       </div>
     </div>
@@ -140,7 +140,7 @@ const page = priceData;
   <section class="py-16 bg-white border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
-      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <p class="text-xs text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="#booking" class="btn-gold">Jetzt buchen</a>
         <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>

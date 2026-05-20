@@ -1,7 +1,7 @@
 ---
 title: Yoga Retreat
 tag: Retreat
-nights: 5–7 Nächte
+nights: 5 bis 7 Nächte
 teaser: Körper, Geist und Seele in Einklang bringen. Tägliche Yoga-Praxis, Meditation in der Moorlandschaft und regenerative Spa-Behandlungen.
 image: /images/therme/sauna-1.jpg
 image_alt: Saunalandschaft im feelMOOR

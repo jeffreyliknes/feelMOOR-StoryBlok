@@ -55,7 +55,7 @@ const voucher = hp.voucher_strip;
           <em class="italic" style="color:#B39D4D;">{hero.headline_line2}</em>
         </h1>
 
-        <p class="text-cream/70 text-[14.5px] leading-relaxed max-w-lg mt-6 opacity-0 animate-fade-up"
+        <p class="text-cream/70 text-sm leading-relaxed max-w-lg mt-6 opacity-0 animate-fade-up"
            style="animation-delay:.75s;animation-fill-mode:forwards;">
           {hero.body}
         </p>
@@ -76,7 +76,7 @@ const voucher = hp.voucher_strip;
     </div>
 
     <div class="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-50">
-      <span class="text-[9px] tracking-caption uppercase text-cream font-body"
+      <span class="text-xs tracking-caption uppercase text-cream font-body"
             style="writing-mode:vertical-rl;">Discover</span>
       <div class="w-px h-10 bg-cream/40 relative overflow-hidden">
         <div class="absolute top-0 w-full h-1/3 bg-cream animate-bounce"></div>
@@ -95,7 +95,7 @@ const voucher = hp.voucher_strip;
             <span class="font-display italic text-gold/40 text-4xl font-light">{pillar.number}</span>
             <h3 class="font-display font-light text-[1.4rem] text-ink-dark mt-2 mb-3">{pillar.heading}</h3>
             <div class="w-8 h-px bg-gold/50 mb-4 group-hover:w-14 transition-all duration-500"></div>
-            <p class="text-[12.5px] text-ink-muted leading-relaxed">{pillar.body}</p>
+            <p class="text-xs text-ink-muted leading-relaxed">{pillar.body}</p>
           </div>
           );
         })}
@@ -149,15 +149,15 @@ const voucher = hp.voucher_strip;
                     {pkg.data.title}
                   </h3>
                   {pkg.data.nights && (
-                    <span class="text-[10.5px] text-ink-muted bg-stone-light/60 px-2.5 py-1 flex-shrink-0 mt-1">
+                    <span class="text-xs text-ink-muted bg-stone-light/60 px-2.5 py-1 flex-shrink-0 mt-1">
                       {pkg.data.nights}
                     </span>
                   )}
                 </div>
                 {pkg.data.teaser && (
-                  <p class="text-[12.5px] text-ink-muted leading-relaxed mb-5">{pkg.data.teaser}</p>
+                  <p class="text-xs text-ink-muted leading-relaxed mb-5">{pkg.data.teaser}</p>
                 )}
-                <span class="inline-flex items-center gap-2 text-[10.5px] tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all duration-200">
+                <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all duration-200">
                   Learn more
                   <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
                     <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -182,7 +182,7 @@ const voucher = hp.voucher_strip;
               set:html={hp.rooms_section.heading.replace(' & ', ' &amp;<br /><em>') + '</em>'}>
           </h2>
           <span class="gold-rule"></span>
-          <p class="text-[13.5px] text-ink-muted leading-relaxed mt-6 max-w-md">
+          <p class="text-xs text-ink-muted leading-relaxed mt-6 max-w-md">
             {hp.rooms_section.body}
           </p>
           <a href="/zimmer" class="btn-forest mt-8 inline-flex">
@@ -196,7 +196,7 @@ const voucher = hp.voucher_strip;
         <div class="aspect-[16/10] overflow-hidden">
           <img
             src={hp.rooms_section.featured_image}
-            alt="Double room – feelMOOR Health Resort"
+            alt="Double room, feelMOOR Health Resort"
             class="w-full h-full object-cover"
             loading="lazy"
           />
@@ -209,7 +209,7 @@ const voucher = hp.voucher_strip;
             <div class="aspect-[3/2] overflow-hidden">
               <img
                 src={room.data.preview_image}
-                alt={room.data.name + ' – feelMOOR'}
+                alt={room.data.name + ', feelMOOR'}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -218,13 +218,13 @@ const voucher = hp.voucher_strip;
               <div class="flex items-center justify-between mb-2">
                 <h3 class="font-display font-light text-[1.25rem] text-ink-dark">{room.data.name}</h3>
                 {room.data.size && (
-                  <span class="text-[10px] text-ink-muted tracking-wide">{room.data.size}</span>
+                  <span class="text-xs text-ink-muted tracking-wide">{room.data.size}</span>
                 )}
               </div>
               {room.data.tagline && (
-                <p class="text-[12px] text-ink-muted leading-relaxed mb-3">{room.data.tagline}</p>
+                <p class="text-xs text-ink-muted leading-relaxed mb-3">{room.data.tagline}</p>
               )}
-              <span class="text-[10px] tracking-wider uppercase text-gold font-medium group-hover:tracking-widest transition-all duration-300">
+              <span class="text-xs tracking-wider uppercase text-gold font-medium group-hover:tracking-widest transition-all duration-300">
                 Details →
               </span>
             </div>
@@ -240,7 +240,7 @@ const voucher = hp.voucher_strip;
     <div class="absolute inset-0">
       <img
         src={therme.background_image}
-        alt="feelMOOR thermal baths – outdoor pool"
+        alt="feelMOOR thermal baths, outdoor pool"
         class="w-full h-full object-cover"
         loading="lazy"
       />
@@ -260,7 +260,7 @@ const voucher = hp.voucher_strip;
       <h2 class="font-display font-light text-cream" style="font-size:clamp(2.2rem,5vw,4.5rem);line-height:1.08;"
           set:html={therme.heading.replace(' & ', ' &amp;<br /><em class="italic" style="color:#B39D4D;">') + '</em>'}>
       </h2>
-      <p class="text-cream/70 text-[14px] leading-relaxed max-w-xl mx-auto mt-6">
+      <p class="text-cream/70 text-sm leading-relaxed max-w-xl mx-auto mt-6">
         {therme.body}
       </p>
 
@@ -271,7 +271,7 @@ const voucher = hp.voucher_strip;
             <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <a href="/therme/preise" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-[11px] font-medium tracking-wider uppercase border border-cream/40 text-cream hover:bg-cream/10 transition-colors duration-300">
+        <a href="/therme/preise" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-xs font-medium tracking-wider uppercase border border-cream/40 text-cream hover:bg-cream/10 transition-colors duration-300">
           {therme.cta_secondary_label}
         </a>
       </div>
@@ -284,7 +284,7 @@ const voucher = hp.voucher_strip;
         ].map((stat) => (
           <div class="text-center">
             <p class="font-display font-light text-cream/90" style="font-size:2rem;">{stat.num}</p>
-            <p class="text-[10.5px] tracking-wider uppercase text-cream/50 mt-1">{stat.label}</p>
+            <p class="text-xs tracking-wider uppercase text-cream/50 mt-1">{stat.label}</p>
           </div>
         ))}
       </div>

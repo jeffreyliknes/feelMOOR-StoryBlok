@@ -17,8 +17,8 @@ const page = thermeData;
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
       <p class="caption-label mb-4">{page.hero_caption}</p>
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <span class="text-cream/60">Therme & Spa</span>
@@ -32,15 +32,15 @@ const page = thermeData;
       <div class="grid grid-cols-3 gap-8 text-center">
         <div>
           <p class="font-display font-light text-cream" style="font-size:clamp(1.75rem,3vw,2.5rem);">{page.stat_1_value}</p>
-          <p class="text-[11px] text-cream/60 mt-2 tracking-widest uppercase">{page.stat_1_label}</p>
+          <p class="text-xs text-cream/60 mt-2 tracking-widest uppercase">{page.stat_1_label}</p>
         </div>
         <div>
           <p class="font-display font-light text-cream" style="font-size:clamp(1.75rem,3vw,2.5rem);">{page.stat_2_value}</p>
-          <p class="text-[11px] text-cream/60 mt-2 tracking-widest uppercase">{page.stat_2_label}</p>
+          <p class="text-xs text-cream/60 mt-2 tracking-widest uppercase">{page.stat_2_label}</p>
         </div>
         <div>
           <p class="font-display font-light text-cream" style="font-size:clamp(1.75rem,3vw,2.5rem);">{page.stat_3_value}</p>
-          <p class="text-[11px] text-cream/60 mt-2 tracking-widest uppercase">{page.stat_3_label}</p>
+          <p class="text-xs text-cream/60 mt-2 tracking-widest uppercase">{page.stat_3_label}</p>
         </div>
       </div>
     </div>
@@ -53,11 +53,11 @@ const page = thermeData;
         <div>
           <p class="caption-label mb-4 text-gold">Die Therme</p>
           <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
-          <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+          <p class="text-xs text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
         </div>
         <div class="bg-stone-light/30 rounded-sm aspect-video flex items-center justify-center">
           <div class="text-center">
-            <p class="text-[13px] text-ink-light">Bildbereich Therme</p>
+            <p class="text-xs text-ink-light">Bildbereich Therme</p>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ const page = thermeData;
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">Erkunden Sie die Therme</h2>
-        <p class="text-[13.5px] text-ink-muted mt-3">Alles über unsere Thermalbäder, Saunen und Wellness-Anwendungen.</p>
+        <p class="text-xs text-ink-muted mt-3">Alles über unsere Thermalbäder, Saunen und Wellness-Anwendungen.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         {/* Thermalbad */}
@@ -80,7 +80,7 @@ const page = thermeData;
               <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="text-[13.5px] text-ink-muted">34 °C warmes Mineralwasser, Strömungskanal und Außenpool das ganze Jahr.</p>
+          <p class="text-xs text-ink-muted">34 °C warmes Mineralwasser, Strömungskanal und Außenpool das ganze Jahr.</p>
         </a>
 
         {/* Sauna */}
@@ -91,7 +91,7 @@ const page = thermeData;
               <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="text-[13.5px] text-ink-muted">7 Saunen, Dampfbad, Erlebnisduschen und großzügige Ruhebereiche.</p>
+          <p class="text-xs text-ink-muted">7 Saunen, Dampfbad, Erlebnisduschen und großzügige Ruhebereiche.</p>
         </a>
 
         {/* Wellness */}
@@ -102,7 +102,7 @@ const page = thermeData;
               <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="text-[13.5px] text-ink-muted">Massagen, Mooranwendungen und Schönheitsbehandlungen von Profis.</p>
+          <p class="text-xs text-ink-muted">Massagen, Mooranwendungen und Schönheitsbehandlungen von Profis.</p>
         </a>
 
         {/* Preise */}
@@ -113,7 +113,7 @@ const page = thermeData;
               <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="text-[13.5px] text-ink-muted">Eintrittspreise für Tagesgäste – Hotelgäste genießen freien Zugang.</p>
+          <p class="text-xs text-ink-muted">Eintrittspreise für Tagesgäste, Hotelgäste genießen freien Zugang.</p>
         </a>
       </div>
     </div>
@@ -123,7 +123,7 @@ const page = thermeData;
   <section class="py-16 bg-white border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihre Wellness-Auszeit?</h2>
-      <p class="text-[13px] text-ink-muted mt-3 mb-8">Buchen Sie Ihren Aufenthalt oder fragen Sie nach Tagesgästen-Angeboten.</p>
+      <p class="text-xs text-ink-muted mt-3 mb-8">Buchen Sie Ihren Aufenthalt oder fragen Sie nach Tagesgästen-Angeboten.</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="#booking" class="btn-gold">Jetzt buchen</a>
         <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>

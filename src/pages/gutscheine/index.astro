@@ -17,8 +17,8 @@ const page = pageData;
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
       <p class="caption-label mb-4">{page.hero_caption}</p>
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <span class="text-cream/60">Gutscheine</span>
@@ -33,16 +33,16 @@ const page = pageData;
         <div>
           <p class="caption-label mb-4 text-gold">Geschenke</p>
           <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
-          <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+          <p class="text-xs text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
         </div>
         <div class="bg-forest-700 p-8 lg:p-12 text-cream rounded-sm flex flex-col justify-center min-h-[300px] lg:min-h-[400px]">
           <div class="space-y-8">
             <div>
-              <p class="text-[13.5px] leading-relaxed text-cream/80">Ein feelMOOR Gutschein ist nicht nur ein Geschenk – es ist eine Einladung zu einem unvergesslichen Erlebnis.</p>
+              <p class="text-xs leading-relaxed text-cream/80">Ein feelMOOR Gutschein ist nicht nur ein Geschenk, es ist eine Einladung zu einem unvergesslichen Erlebnis.</p>
             </div>
             <div class="border-t border-cream/20 pt-8">
-              <p class="text-[11px] tracking-widest uppercase text-gold mb-3">Flexibel gestalten</p>
-              <p class="text-[13.5px] text-cream/70">Nutzen Sie unsere vordefinierten Pakete oder bestellen Sie einen Gutschein über einen beliebigen Wunschbetrag.</p>
+              <p class="text-xs tracking-widest uppercase text-gold mb-3">Flexibel gestalten</p>
+              <p class="text-xs text-cream/70">Nutzen Sie unsere vordefinierten Pakete oder bestellen Sie einen Gutschein über einen beliebigen Wunschbetrag.</p>
             </div>
           </div>
         </div>
@@ -57,9 +57,9 @@ const page = pageData;
         {/* Thermeneintritt */}
         <div class="bg-white border border-stone-light p-8 lg:p-10">
           <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Thermeneintritt</h3>
-          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Genießen Sie den Zugang zu unserer Therme mit 1.500 m² Wasserfläche und 7 Saunen.</p>
+          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Genießen Sie den Zugang zu unserer Therme mit 1.500 m² Wasserfläche und 7 Saunen.</p>
           <div class="mt-6 pt-6 border-t border-stone-light/50">
-            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
               Gutschein anfragen
               <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -71,9 +71,9 @@ const page = pageData;
         {/* Wellness-Behandlung */}
         <div class="bg-white border border-stone-light p-8 lg:p-10">
           <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Wellness-Behandlung</h3>
-          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Verschenken Sie Entspannung durch Massagen, Moorbehandlungen oder Wellness-Pakete.</p>
+          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Verschenken Sie Entspannung durch Massagen, Moorbehandlungen oder Wellness-Pakete.</p>
           <div class="mt-6 pt-6 border-t border-stone-light/50">
-            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
               Gutschein anfragen
               <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -85,9 +85,9 @@ const page = pageData;
         {/* Übernachtungspaket */}
         <div class="bg-white border border-stone-light p-8 lg:p-10">
           <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Übernachtungspaket</h3>
-          <p class="text-[13.5px] text-ink-muted mt-4 leading-relaxed">Das perfekte Geschenk für einen kompletten Aufenthalt mit Übernachtung und Vollverpflegung.</p>
+          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Das perfekte Geschenk für einen kompletten Aufenthalt mit Übernachtung und Vollverpflegung.</p>
           <div class="mt-6 pt-6 border-t border-stone-light/50">
-            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
               Gutschein anfragen
               <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -105,27 +105,27 @@ const page = pageData;
       <div class="max-w-2xl mx-auto">
         <h3 class="font-display font-light text-ink-dark mb-8 text-center" style="font-size:1.75rem;">Individuelle Gutscheine</h3>
         <div class="bg-white border border-stone-light p-8 lg:p-10 rounded-sm mb-8">
-          <p class="text-[13.5px] text-ink-muted leading-relaxed mb-4">Sie möchten einen Gutschein über einen anderen Betrag verschenken? Kein Problem! Wir erstellen Ihnen gerne einen individuellen Gutschein mit dem Wunschbetrag.</p>
+          <p class="text-xs text-ink-muted leading-relaxed mb-4">Sie möchten einen Gutschein über einen anderen Betrag verschenken? Kein Problem! Wir erstellen Ihnen gerne einen individuellen Gutschein mit dem Wunschbetrag.</p>
         </div>
 
         <h4 class="font-display font-light text-ink-dark mb-6" style="font-size:1.25rem;">Versandoptionen</h4>
         <div class="space-y-4 mb-8">
           <div class="flex gap-4">
             <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6 w-6 rounded-full bg-gold text-forest-700 text-[12px] font-bold">1</div>
+              <div class="flex items-center justify-center h-6 w-6 rounded-full bg-gold text-forest-700 text-xs font-bold">1</div>
             </div>
             <div>
-              <h5 class="text-[13.5px] font-medium text-ink-dark mb-1">Digital per E-Mail</h5>
-              <p class="text-[12px] text-ink-muted">Sofort versand und druckbereit – perfekt für spontane Geschenke.</p>
+              <h5 class="text-xs font-medium text-ink-dark mb-1">Digital per E-Mail</h5>
+              <p class="text-xs text-ink-muted">Sofort versand und druckbereit, perfekt für spontane Geschenke.</p>
             </div>
           </div>
           <div class="flex gap-4">
             <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6 w-6 rounded-full bg-gold text-forest-700 text-[12px] font-bold">2</div>
+              <div class="flex items-center justify-center h-6 w-6 rounded-full bg-gold text-forest-700 text-xs font-bold">2</div>
             </div>
             <div>
-              <h5 class="text-[13.5px] font-medium text-ink-dark mb-1">Per Post als schönes Kärtchen</h5>
-              <p class="text-[12px] text-ink-muted">Wir versenden Ihren Gutschein elegant verpackt per Post.</p>
+              <h5 class="text-xs font-medium text-ink-dark mb-1">Per Post als schönes Kärtchen</h5>
+              <p class="text-xs text-ink-muted">Wir versenden Ihren Gutschein elegant verpackt per Post.</p>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ const page = pageData;
   <section class="py-16 bg-white border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Jetzt Gutschein anfragen</h2>
-      <p class="text-[13px] text-ink-muted mt-3 mb-8">Kontaktieren Sie uns für die Erstellung Ihres persönlichen feelMOOR Gutscheins.</p>
+      <p class="text-xs text-ink-muted mt-3 mb-8">Kontaktieren Sie uns für die Erstellung Ihres persönlichen feelMOOR Gutscheins.</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="/service-kontakt" class="btn-gold">Kontaktieren Sie uns</a>
         <a href="/" class="btn-outline-gold">Zurück zur Startseite</a>

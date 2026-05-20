@@ -16,8 +16,8 @@ const page = pageData;
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
       <p class="caption-label mb-4">{page.hero_caption}</p>
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <a href="/gesundheit" class="hover:text-cream/70 transition-colors">Gesundheit</a>
@@ -30,7 +30,7 @@ const page = pageData;
   <!-- Back Link -->
   <section class="py-6 bg-white border-b border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6">
-      <a href="/gesundheit" class="text-gold text-[13px] font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Zurück zu Gesundheit</a>
+      <a href="/gesundheit" class="text-gold text-xs font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Zurück zu Gesundheit</a>
     </div>
   </section>
 
@@ -38,7 +38,7 @@ const page = pageData;
   <section class="py-16 lg:py-24 bg-cream">
     <div class="max-w-screen-xl mx-auto px-6">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
-      <p class="text-[13.5px] text-ink-muted leading-relaxed mt-6 max-w-3xl">{page.intro_body}</p>
+      <p class="text-xs text-ink-muted leading-relaxed mt-6 max-w-3xl">{page.intro_body}</p>
     </div>
   </section>
 
@@ -50,8 +50,8 @@ const page = pageData;
         <div class="bg-cream rounded-lg p-8">
           <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">👨‍⚕️</div>
           <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Kurärzte</h3>
-          <p class="text-[13px] text-ink-muted leading-relaxed mb-6">Unsere Kurärzte mit Spezialqualifikation in Balneologie, Medizinischer Bäderkunde und Kurbädermedizin begleiten Ihre Genesung.</p>
-          <ul class="text-[12px] text-ink-muted space-y-2">
+          <p class="text-xs text-ink-muted leading-relaxed mb-6">Unsere Kurärzte mit Spezialqualifikation in Balneologie, Medizinischer Bäderkunde und Kurbädermedizin begleiten Ihre Genesung.</p>
+          <ul class="text-xs text-ink-muted space-y-2">
             <li class="flex items-start gap-2">
               <span class="text-gold mt-1">•</span>
               <span>Anamnese & medizinische Untersuchung</span>
@@ -71,8 +71,8 @@ const page = pageData;
         <div class="bg-cream rounded-lg p-8">
           <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">🏃</div>
           <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Physiotherapie</h3>
-          <p class="text-[13px] text-ink-muted leading-relaxed mb-6">Unser Team von diplomierten Physiotherapeuten bietet modernste Therapietechniken zur Verbesserung Ihrer Mobilität und Schmerzfreiheit.</p>
-          <ul class="text-[12px] text-ink-muted space-y-2">
+          <p class="text-xs text-ink-muted leading-relaxed mb-6">Unser Team von diplomierten Physiotherapeuten bietet modernste Therapietechniken zur Verbesserung Ihrer Mobilität und Schmerzfreiheit.</p>
+          <ul class="text-xs text-ink-muted space-y-2">
             <li class="flex items-start gap-2">
               <span class="text-gold mt-1">•</span>
               <span>Manuelle Therapie & Mobilisation</span>
@@ -92,8 +92,8 @@ const page = pageData;
         <div class="bg-cream rounded-lg p-8">
           <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl mb-6">💡</div>
           <h3 class="font-display font-light text-ink-dark text-[20px] mb-3">Gesundheitsberatung</h3>
-          <p class="text-[13px] text-ink-muted leading-relaxed mb-6">Unsere Gesundheitsberater unterstützen Sie in Ernährung, Bewegung, Stressmanagement und Prävention für langfristiges Wohlbefinden.</p>
-          <ul class="text-[12px] text-ink-muted space-y-2">
+          <p class="text-xs text-ink-muted leading-relaxed mb-6">Unsere Gesundheitsberater unterstützen Sie in Ernährung, Bewegung, Stressmanagement und Prävention für langfristiges Wohlbefinden.</p>
+          <ul class="text-xs text-ink-muted space-y-2">
             <li class="flex items-start gap-2">
               <span class="text-gold mt-1">•</span>
               <span>Ernährungsberatung & Kurgenuss</span>
@@ -119,31 +119,31 @@ const page = pageData;
       <div class="max-w-2xl mx-auto">
         <div class="space-y-6">
           <div class="flex gap-6">
-            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">1</div>
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-xs">1</div>
             <div>
-              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Ärztliches Anamnesegespräch</h4>
-              <p class="text-[13px] text-ink-muted leading-relaxed">Zu Beginn Ihres Aufenthalts führt ein Kurarzt ein ausführliches Gespräch über Ihre Krankengeschichte, aktuelle Beschwerden und Behandlungsziele.</p>
+              <h4 class="font-semibold text-ink-dark text-sm mb-2">Ärztliches Anamnesegespräch</h4>
+              <p class="text-xs text-ink-muted leading-relaxed">Zu Beginn Ihres Aufenthalts führt ein Kurarzt ein ausführliches Gespräch über Ihre Krankengeschichte, aktuelle Beschwerden und Behandlungsziele.</p>
             </div>
           </div>
           <div class="flex gap-6">
-            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">2</div>
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-xs">2</div>
             <div>
-              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Individuelle Behandlungsplanung</h4>
-              <p class="text-[13px] text-ink-muted leading-relaxed">Basierend auf Ihre Befunde wird ein persönlich abgestimmter Kur- und Therapieplan erstellt – mit genauen Anwendungsempfehlungen.</p>
+              <h4 class="font-semibold text-ink-dark text-sm mb-2">Individuelle Behandlungsplanung</h4>
+              <p class="text-xs text-ink-muted leading-relaxed">Basierend auf Ihre Befunde wird ein persönlich abgestimmter Kur- und Therapieplan erstellt, mit genauen Anwendungsempfehlungen.</p>
             </div>
           </div>
           <div class="flex gap-6">
-            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">3</div>
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-xs">3</div>
             <div>
-              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Therapeutische Umsetzung</h4>
-              <p class="text-[13px] text-ink-muted leading-relaxed">Physiotherapeuten und Ärzte begleiten Sie durch alle Anwendungen, passen die Intensität an und geben kompetente Anleitung.</p>
+              <h4 class="font-semibold text-ink-dark text-sm mb-2">Therapeutische Umsetzung</h4>
+              <p class="text-xs text-ink-muted leading-relaxed">Physiotherapeuten und Ärzte begleiten Sie durch alle Anwendungen, passen die Intensität an und geben kompetente Anleitung.</p>
             </div>
           </div>
           <div class="flex gap-6">
-            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-[13px]">4</div>
+            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold text-xs">4</div>
             <div>
-              <h4 class="font-semibold text-ink-dark text-[14px] mb-2">Verlaufskontrollen & Nachbereitung</h4>
-              <p class="text-[13px] text-ink-muted leading-relaxed">Während und nach der Kur finden regelmäßige Kontrollen statt. Sie erhalten Empfehlungen zur Nachsorge und Prävention für zuhause.</p>
+              <h4 class="font-semibold text-ink-dark text-sm mb-2">Verlaufskontrollen & Nachbereitung</h4>
+              <p class="text-xs text-ink-muted leading-relaxed">Während und nach der Kur finden regelmäßige Kontrollen statt. Sie erhalten Empfehlungen zur Nachsorge und Prävention für zuhause.</p>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@ const page = pageData;
   <section class="py-16 bg-white border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Termin vereinbaren</h2>
-      <p class="text-[13px] text-ink-muted mt-3 mb-8">Buchen Sie jetzt Ihren Aufenthalt und lernen Sie unser Team kennen.</p>
+      <p class="text-xs text-ink-muted mt-3 mb-8">Buchen Sie jetzt Ihren Aufenthalt und lernen Sie unser Team kennen.</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="#booking" class="btn-gold">Jetzt buchen</a>
         <a href="/service-kontakt" class="btn-outline-gold">Anfrage senden</a>

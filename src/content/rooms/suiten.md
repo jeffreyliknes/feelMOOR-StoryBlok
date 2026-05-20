@@ -2,10 +2,10 @@
 name: Suiten
 tagline: Exklusiver Wohnkomfort
 size: ab 48 m²
-capacity: 1–2 Personen
+capacity: 1 bis 2 Personen
 highlight: false
 sort_order: 3
-seo_title: Suiten – Zimmer & Suiten – feelMOOR
+seo_title: Suiten, Zimmer & Suiten, feelMOOR
 seo_description: Exklusive Suiten im feelMOOR Gesundresort Bad Wurzach. Ab 48 m², separater Wohnbereich, Premium-Ausstattung und Therme-Zugang inklusive. Jetzt buchen.
 hero_image: /images/zimmer/doppelzimmer/room-3.jpg
 preview_image: /images/zimmer/doppelzimmer/room-3.jpg
@@ -17,12 +17,12 @@ gallery:
   - image: /images/zimmer/doppelzimmer/room-10.jpg
     caption: Badezimmer
 intro_heading: Die Suite
-intro_subheading: "Raum für Zweisamkeit – auf höchstem Niveau"
+intro_subheading: "Raum für Zweisamkeit, auf höchstem Niveau"
 specs:
   - label: Größe
     value: ab 48 m²
   - label: Belegung
-    value: 1–2 Personen
+    value: 1 bis 2 Personen
   - label: Wohnbereich
     value: Separater Wohnbereich mit Sofa
   - label: Badezimmer
@@ -62,6 +62,6 @@ feature_groups:
 
 Unsere Suiten bieten exklusiven Wohnkomfort auf hohem Niveau. Ein separater Wohnbereich, edle Materialien und besondere Details machen Ihren Aufenthalt zu einem unvergesslichen Erlebnis.
 
-Die großzügige Raumaufteilung schafft Platz für echte Erholung – ob Sie gemeinsam den Abend auf dem Sofa verbringen oder in der freistehenden Badewanne den Stress des Alltags hinter sich lassen möchten.
+Die großzügige Raumaufteilung schafft Platz für echte Erholung, ob Sie gemeinsam den Abend auf dem Sofa verbringen oder in der freistehenden Badewanne den Stress des Alltags hinter sich lassen möchten.
 
 Alle Suiten bieten einen besonderen Ausblick und sind mit unserer exklusiven Moorwasser-Kosmetikserie in der Premium-Version ausgestattet.

@@ -1,3 +1,7 @@
+# Editorial guidelines (all user-facing text in JSON/Markdown fields):
+# - Do not use em dashes (—) or en dashes (–). Use commas, colons, or rephrase the sentence.
+# - For ranges (times, nights, temperatures), write "bis" (e.g. "09:00 bis 21:00", "7 bis 14 Nächte", "38 bis 42 °C").
+
 media:
   input: public/images
   output: /images

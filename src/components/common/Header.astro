@@ -48,7 +48,7 @@ const isEn = locale === 'en';
       {nav.map((item) => (
         <div class="nav-item relative" data-nav-id={item.id}>
           <button
-            class="nav-trigger flex items-center gap-1 px-3.5 py-2 text-[11.5px] font-medium tracking-wide uppercase text-ink-muted hover:text-gold transition-colors duration-200"
+            class="nav-trigger flex items-center gap-1 px-3.5 py-2 text-xs font-medium tracking-wide uppercase text-ink-muted hover:text-gold transition-colors duration-200"
             aria-expanded="false"
             aria-haspopup="true"
           >
@@ -63,15 +63,15 @@ const isEn = locale === 'en';
 
     <!-- Right: Language + Book -->
     <div class="hidden lg:flex items-center gap-4 flex-shrink-0">
-      <div class="flex items-center gap-1.5 text-[10.5px] tracking-wide font-medium">
+      <div class="flex items-center gap-1.5 text-xs tracking-wide font-medium">
         <a href="/" class:list={[isEn ? 'text-ink-muted hover:text-gold' : 'text-gold', 'uppercase transition-colors']}>DE</a>
         <span class="text-stone">·</span>
         <a href="/en" class:list={[isEn ? 'text-gold' : 'text-ink-muted hover:text-gold', 'uppercase transition-colors']}>EN</a>
       </div>
-      <a href="/service-kontakt" class="text-[10.5px] tracking-wider uppercase text-ink-muted hover:text-gold transition-colors">
+      <a href="/service-kontakt" class="text-xs tracking-wider uppercase text-ink-muted hover:text-gold transition-colors">
         Kontakt
       </a>
-      <a href="#booking" class="btn-gold text-[10px] py-3 px-6">
+      <a href="#booking" class="btn-gold text-xs py-3 px-6">
         Jetzt buchen
       </a>
     </div>
@@ -113,7 +113,7 @@ const isEn = locale === 'en';
               <li>
                 <a
                   href={link.href}
-                  class="block py-1.5 text-[13px] text-ink-muted hover:text-gold transition-colors duration-150 hover:translate-x-1 transform transition-transform"
+                  class="block py-1.5 text-xs text-ink-muted hover:text-gold transition-colors duration-150 hover:translate-x-1 transform transition-transform"
                 >
                   {link.label}
                 </a>
@@ -130,11 +130,11 @@ const isEn = locale === 'en';
           <h3 class="font-display font-light text-[1.55rem] text-ink-dark leading-tight mb-3">
             {item.featured.heading}
           </h3>
-          <p class="text-[12.5px] text-ink-muted leading-relaxed">
+          <p class="text-xs text-ink-muted leading-relaxed">
             {item.featured.body}
           </p>
         </div>
-        <a href={item.featured.cta.href} class="btn-outline-gold mt-6 self-start text-[10px] py-2.5 px-5">
+        <a href={item.featured.cta.href} class="btn-outline-gold mt-6 self-start text-xs py-2.5 px-5">
           {item.featured.cta.label}
           <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
             <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -146,12 +146,12 @@ const isEn = locale === 'en';
     <!-- Bottom strip -->
     <div class="border-t border-stone-light bg-stone-light/30 px-6 py-3">
       <div class="max-w-screen-xl mx-auto flex items-center gap-6">
-        <a href={item.href} class="text-[10.5px] tracking-caption uppercase text-gold hover:text-gold-600 transition-colors">
+        <a href={item.href} class="text-xs tracking-caption uppercase text-gold hover:text-gold-600 transition-colors">
           Alle {item.label} →
         </a>
         <span class="text-stone text-xs">·</span>
-        <a href="/gutscheine" class="text-[10.5px] tracking-wide text-ink-muted hover:text-gold transition-colors">Gutscheine</a>
-        <a href="/service-kontakt" class="text-[10.5px] tracking-wide text-ink-muted hover:text-gold transition-colors">Kontakt</a>
+        <a href="/gutscheine" class="text-xs tracking-wide text-ink-muted hover:text-gold transition-colors">Gutscheine</a>
+        <a href="/service-kontakt" class="text-xs tracking-wide text-ink-muted hover:text-gold transition-colors">Kontakt</a>
       </div>
     </div>
   </div>
@@ -167,7 +167,7 @@ const isEn = locale === 'en';
     {nav.map((item) => (
       <div class="mobile-accordion border-b border-stone-light">
         <button class="mobile-accordion-trigger w-full flex items-center justify-between py-4 text-left">
-          <span class="font-body text-[13px] font-medium tracking-wide uppercase text-ink-dark">
+          <span class="font-body text-xs font-medium tracking-wide uppercase text-ink-dark">
             {item.label}
           </span>
           <svg class="mobile-chevron w-4 h-4 text-gold transition-transform duration-200" viewBox="0 0 12 12" fill="none">
@@ -181,7 +181,7 @@ const isEn = locale === 'en';
               <ul class="space-y-1">
                 {col.links.map((link) => (
                   <li>
-                    <a href={link.href} class="block py-1 text-[13px] text-ink-muted hover:text-gold transition-colors">
+                    <a href={link.href} class="block py-1 text-xs text-ink-muted hover:text-gold transition-colors">
                       {link.label}
                     </a>
                   </li>
@@ -193,9 +193,9 @@ const isEn = locale === 'en';
       </div>
     ))}
     <div class="flex items-center gap-2 pb-4 mb-2 border-b border-stone-light">
-      <a href="/" class:list={[isEn ? 'text-ink-muted' : 'text-gold', 'text-[10.5px] tracking-wide font-medium uppercase hover:text-gold transition-colors']}>DE</a>
+      <a href="/" class:list={[isEn ? 'text-ink-muted' : 'text-gold', 'text-xs tracking-wide font-medium uppercase hover:text-gold transition-colors']}>DE</a>
       <span class="text-stone text-xs">·</span>
-      <a href="/en" class:list={[isEn ? 'text-gold' : 'text-ink-muted', 'text-[10.5px] tracking-wide font-medium uppercase hover:text-gold transition-colors']}>EN</a>
+      <a href="/en" class:list={[isEn ? 'text-gold' : 'text-ink-muted', 'text-xs tracking-wide font-medium uppercase hover:text-gold transition-colors']}>EN</a>
     </div>
     <div class="pt-2 flex flex-col gap-3">
       <a href="#booking" class="btn-gold text-center justify-center">Jetzt buchen</a>

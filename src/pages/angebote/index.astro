@@ -25,11 +25,11 @@ const page = pageData;
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">
         {page.hero_heading}
       </h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">
         {page.hero_intro}
       </p>
       <!-- Breadcrumb -->
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <span class="text-cream/60">Angebote</span>
@@ -72,14 +72,14 @@ const page = pageData;
 
               <!-- Nights badge -->
               {pkg.data.nights && (
-                <p class="text-[11px] text-ink-muted mb-3 pb-3 border-b border-stone-light/60">
+                <p class="text-xs text-ink-muted mb-3 pb-3 border-b border-stone-light/60">
                   {pkg.data.nights}
                 </p>
               )}
 
               <!-- Teaser -->
               {pkg.data.teaser && (
-                <p class="text-[13px] text-ink-muted leading-relaxed mb-5 flex-grow">
+                <p class="text-xs text-ink-muted leading-relaxed mb-5 flex-grow">
                   {pkg.data.teaser}
                 </p>
               )}
@@ -89,7 +89,7 @@ const page = pageData;
                 <div class="mb-5">
                   <p class="font-display font-light text-ink-dark text-2xl">ab {pkg.data.price_from} €</p>
                   {pkg.data.price_label && (
-                    <p class="text-[11px] text-ink-muted mt-1">{pkg.data.price_label}</p>
+                    <p class="text-xs text-ink-muted mt-1">{pkg.data.price_label}</p>
                   )}
                 </div>
               )}
@@ -124,7 +124,7 @@ const page = pageData;
   <section class="py-16 bg-white border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
-      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <p class="text-xs text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="#booking" class="btn-gold">Jetzt buchen</a>
         <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>

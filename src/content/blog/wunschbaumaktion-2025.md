@@ -1,5 +1,5 @@
 ---
-title: "Wunschbaumaktion 2025 – Danke für Ihre Unterstützung"
+title: "Wunschbaumaktion 2025, Danke für Ihre Unterstützung"
 date: "2025-12-15"
 author: "feelMOOR Redaktion"
 teaser: "Unsere alljährliche Wunschbaumaktion hat auch 2025 wieder viele Herzen berührt. Gemeinsam haben wir etwas Besonderes bewegt."
@@ -23,6 +23,6 @@ Zum zehnten Mal haben wir unsere traditionelle Wunschbaumaktion durchgeführt. I
 
 Jedes Jahr dekorieren unsere Gäste während ihres Aufenthalts einen großen Weihnachtsbaum mit Wunschzetteln. Diese werden dann durch die Großzügigkeit unserer Gäste erfüllt und an Familien, Schulen und Institutionen in Bad Wurzach verteilt.
 
-Diese Aktion ist für uns weit mehr als ein Event – sie zeigt die Verbundenheit zwischen unserer Therme und der Gemeinde. Wir freuen uns bereits auf die Wunschbaumaktion 2026 und werden noch mehr Menschen erreichen wollen.
+Diese Aktion ist für uns weit mehr als ein Event, sie zeigt die Verbundenheit zwischen unserer Therme und der Gemeinde. Wir freuen uns bereits auf die Wunschbaumaktion 2026 und werden noch mehr Menschen erreichen wollen.
 
 **Danke an alle, die diese wunderbare Tradition mit uns leben!**

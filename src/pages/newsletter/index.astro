@@ -17,8 +17,8 @@ const page = pageData;
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
       <p class="caption-label mb-4">{page.hero_caption}</p>
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <span class="text-cream/60">Newsletter</span>
@@ -34,24 +34,24 @@ const page = pageData;
         <div>
           <p class="caption-label mb-4 text-gold">Informationen</p>
           <h2 class="font-display font-light text-ink-dark mb-6" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
-          <p class="text-[13.5px] text-ink-muted mb-8 leading-relaxed">{page.intro_body}</p>
+          <p class="text-xs text-ink-muted mb-8 leading-relaxed">{page.intro_body}</p>
 
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
               <span class="text-gold mt-1 flex-shrink-0">✓</span>
-              <span class="text-[13.5px] text-ink-muted">Exklusive Angebote und Frühbucher-Rabatte</span>
+              <span class="text-xs text-ink-muted">Exklusive Angebote und Frühbucher-Rabatte</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-gold mt-1 flex-shrink-0">✓</span>
-              <span class="text-[13.5px] text-ink-muted">Saisonale Wellness- und Paketangebote</span>
+              <span class="text-xs text-ink-muted">Saisonale Wellness- und Paketangebote</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-gold mt-1 flex-shrink-0">✓</span>
-              <span class="text-[13.5px] text-ink-muted">Gesundheitstipps vom feelMOOR-Ärzteteam</span>
+              <span class="text-xs text-ink-muted">Gesundheitstipps vom feelMOOR-Ärzteteam</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-gold mt-1 flex-shrink-0">✓</span>
-              <span class="text-[13.5px] text-ink-muted">News, Events und Neuigkeiten aus dem Resort</span>
+              <span class="text-xs text-ink-muted">News, Events und Neuigkeiten aus dem Resort</span>
             </li>
           </ul>
         </div>
@@ -63,27 +63,27 @@ const page = pageData;
           <form action="/service-kontakt" method="POST" class="space-y-5">
             {/* Name Field */}
             <div>
-              <label for="name" class="block text-[11px] tracking-widest uppercase text-gold mb-2">Name</label>
+              <label for="name" class="block text-xs tracking-widest uppercase text-gold mb-2">Name</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 placeholder="Ihr Name"
                 required
-                class="w-full px-4 py-3 border border-stone-light rounded-sm text-[13.5px] text-ink-dark placeholder-ink-muted/50 focus:outline-none focus:border-gold transition-colors"
+                class="w-full px-4 py-3 border border-stone-light rounded-sm text-xs text-ink-dark placeholder-ink-muted/50 focus:outline-none focus:border-gold transition-colors"
               />
             </div>
 
             {/* Email Field */}
             <div>
-              <label for="email" class="block text-[11px] tracking-widest uppercase text-gold mb-2">E-Mail-Adresse</label>
+              <label for="email" class="block text-xs tracking-widest uppercase text-gold mb-2">E-Mail-Adresse</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="info@beispiel.de"
                 required
-                class="w-full px-4 py-3 border border-stone-light rounded-sm text-[13.5px] text-ink-dark placeholder-ink-muted/50 focus:outline-none focus:border-gold transition-colors"
+                class="w-full px-4 py-3 border border-stone-light rounded-sm text-xs text-ink-dark placeholder-ink-muted/50 focus:outline-none focus:border-gold transition-colors"
               />
             </div>
 
@@ -96,7 +96,7 @@ const page = pageData;
           </form>
 
           {/* Privacy Note */}
-          <p class="text-[11px] text-ink-muted mt-6 pt-6 border-t border-stone-light leading-relaxed">
+          <p class="text-xs text-ink-muted mt-6 pt-6 border-t border-stone-light leading-relaxed">
             {page.privacy_note}
           </p>
         </div>
@@ -107,7 +107,7 @@ const page = pageData;
   <!-- ── Back to Home ── -->
   <section class="py-12 bg-stone-light/30 border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
-      <a href="/" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+      <a href="/" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
         Zurück zur Startseite
         <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
           <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>

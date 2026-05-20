@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const post = entry.data;
 
-const seoTitle = `${post.title} – feelMOOR Blog`;
+const seoTitle = `${post.title}, feelMOOR Blog`;
 const seoDescription = post.teaser ?? post.title;
 ---
 
@@ -23,13 +23,13 @@ const seoDescription = post.teaser ?? post.title;
   <!-- Top bar: breadcrumb + back -->
   <section class="bg-cream border-b border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-      <a href="/news" class="inline-flex items-center gap-2 text-[11px] font-medium tracking-wide text-ink-muted hover:text-gold transition-colors">
+      <a href="/news" class="inline-flex items-center gap-2 text-xs font-medium tracking-wide text-ink-muted hover:text-gold transition-colors">
         <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none">
           <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         Zurück zu News & Blog
       </a>
-      <nav class="flex items-center gap-2 text-[10.5px] text-ink-muted">
+      <nav class="flex items-center gap-2 text-xs text-ink-muted">
         <a href="/" class="hover:text-gold transition-colors">Start</a>
         <span>/</span>
         <a href="/news" class="hover:text-gold transition-colors">News & Blog</a>
@@ -46,7 +46,7 @@ const seoDescription = post.teaser ?? post.title;
       <h1 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,4vw,3rem);line-height:1.1;">
         {post.title}
       </h1>
-      <div class="flex items-center gap-4 mt-4 text-[11px] text-ink-muted">
+      <div class="flex items-center gap-4 mt-4 text-xs text-ink-muted">
         {post.date && (
           <time datetime={post.date}>
             {new Date(post.date).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -69,7 +69,7 @@ const seoDescription = post.teaser ?? post.title;
 
   <!-- Article body -->
   <section class="py-10 lg:py-14 bg-cream">
-    <div class="max-w-2xl mx-auto px-6 prose prose-stone prose-headings:font-display prose-headings:font-light text-[14px] text-ink-muted leading-relaxed">
+    <div class="max-w-2xl mx-auto px-6 prose prose-stone prose-headings:font-display prose-headings:font-light text-sm text-ink-muted leading-relaxed">
       <Content />
     </div>
   </section>

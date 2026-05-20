@@ -7,7 +7,7 @@ const page = wellnessData;
 const categories = [
   {
     title: 'Massagen',
-    description: 'Von klassischer Massage bis zur Moorpackungs-Massage – unsere Therapeuten lösen Verspannungen und fördern tiefe Entspannung.',
+    description: 'Von klassischer Massage bis zur Moorpackungs-Massage, unsere Therapeuten lösen Verspannungen und fördern tiefe Entspannung.',
     items: ['Klassische Massage', 'Moorpackungs-Massage', 'Wellnessöl-Massage', 'Reflexzonenmassage']
   },
   {
@@ -22,7 +22,7 @@ const categories = [
   },
   {
     title: 'Mooranwendungen',
-    description: 'Traditionelle und moderne Moorheilkunde für Gelenke, Muskulatur und Hautprobleme – bewährt seit Generationen.',
+    description: 'Traditionelle und moderne Moorheilkunde für Gelenke, Muskulatur und Hautprobleme, bewährt seit Generationen.',
     items: ['Heilmoor-Packung lokal', 'Rheumabehandlung', 'Orthopädische Moorbehandlung', 'Hautregenerations-Kur']
   }
 ];
@@ -40,8 +40,8 @@ const categories = [
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
       <p class="caption-label mb-4">{page.hero_caption}</p>
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <a href="/therme" class="hover:text-cream/70 transition-colors">Therme</a>
@@ -57,7 +57,7 @@ const categories = [
       <div class="max-w-3xl mx-auto">
         <p class="caption-label mb-4 text-gold">Professionelle Wellnesspflege</p>
         <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
-        <p class="text-[13.5px] text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+        <p class="text-xs text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
       </div>
     </div>
   </section>
@@ -69,10 +69,10 @@ const categories = [
         {categories.map((category) => (
           <div class="bg-white border border-stone-light p-8 lg:p-10">
             <h3 class="font-display font-light text-ink-dark text-lg mb-3">{category.title}</h3>
-            <p class="text-[13.5px] text-ink-muted mb-6 leading-relaxed">{category.description}</p>
+            <p class="text-xs text-ink-muted mb-6 leading-relaxed">{category.description}</p>
             <ul class="space-y-2">
               {category.items.map((item) => (
-                <li class="flex items-center gap-3 text-[13px] text-ink-dark">
+                <li class="flex items-center gap-3 text-xs text-ink-dark">
                   <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
                   {item}
                 </li>
@@ -88,8 +88,8 @@ const categories = [
   <section class="py-12 bg-forest-700/95 border-y border-forest-600">
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="text-center">
-        <p class="text-cream/60 text-[11px] tracking-widest uppercase mb-3">Buchung & Beratung</p>
-        <p class="text-cream/80 text-[13.5px] leading-relaxed max-w-2xl mx-auto">
+        <p class="text-cream/60 text-xs tracking-widest uppercase mb-3">Buchung & Beratung</p>
+        <p class="text-cream/80 text-xs leading-relaxed max-w-2xl mx-auto">
           Alle Wellness-Anwendungen können direkt an der Rezeption oder telefonisch gebucht werden. Unsere Spa-Berater helfen Ihnen gerne, die perfekte Behandlung für Ihre Bedürfnisse zu finden. <a href="/service-kontakt" class="text-gold hover:text-gold/80 transition-colors underline">Kontaktieren Sie uns</a>.
         </p>
       </div>
@@ -100,7 +100,7 @@ const categories = [
   <section class="py-16 bg-white border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
       <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aufenthalt?</h2>
-      <p class="text-[13px] text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
+      <p class="text-xs text-ink-muted mt-3 mb-8">Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.</p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="#booking" class="btn-gold">Jetzt buchen</a>
         <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfrage</a>

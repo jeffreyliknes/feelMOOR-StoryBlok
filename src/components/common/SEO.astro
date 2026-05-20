@@ -21,7 +21,7 @@ const ogLocale = locale === 'en' ? 'en_US' : 'de_DE';
 
 const siteUrl = 'https://www.feelmoor.de';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
-const fullTitle = title.includes('feelMOOR') ? title : `${title} – feelMOOR`;
+const fullTitle = title.includes('feelMOOR') ? title : `${title}, feelMOOR`;
 ---
 
 <title>{fullTitle}</title>
@@ -36,7 +36,7 @@ const fullTitle = title.includes('feelMOOR') ? title : `${title} – feelMOOR`;
 <meta property="og:url"         content={canonical} />
 <meta property="og:image"       content={`${siteUrl}${ogImage}`} />
 <meta property="og:locale"      content={ogLocale} />
-<meta property="og:site_name"   content="feelMOOR – Das Gesundresort Bad Wurzach" />
+<meta property="og:site_name"   content="feelMOOR, Das Gesundresort Bad Wurzach" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card"        content="summary_large_image" />

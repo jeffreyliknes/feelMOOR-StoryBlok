@@ -46,6 +46,11 @@ export default {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body:    ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
+      fontSize: {
+        xs: ['0.8125rem', { lineHeight: '1.5' }],   // 13px — smallest body/UI text
+        sm: ['0.9375rem', { lineHeight: '1.75' }],  // 15px — normal body text
+        base: ['0.9375rem', { lineHeight: '1.75' }], // 15px — same as sm
+      },
       letterSpacing: {
         caption: '0.18em',
         wide:    '0.08em',

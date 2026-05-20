@@ -17,8 +17,8 @@ const page = pageData;
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
       <p class="caption-label mb-4">{page.hero_caption}</p>
       <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-[14px] max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-[11px] text-cream/40">
+      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
         <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
         <span>›</span>
         <span class="text-cream/60">Öffnungszeiten</span>
@@ -35,12 +35,12 @@ const page = pageData;
           <h3 class="font-display font-light text-ink-dark mb-6" style="font-size:1.25rem;">Therme</h3>
           <div class="space-y-3">
             <div>
-              <p class="text-[11px] tracking-widest uppercase text-gold mb-1">Montag – Freitag</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">09:00 – 21:00 Uhr</p>
+              <p class="text-xs tracking-widest uppercase text-gold mb-1">Montag bis Freitag</p>
+              <p class="text-xs text-ink-dark font-medium">09:00 bis 21:00 Uhr</p>
             </div>
             <div>
-              <p class="text-[11px] tracking-widest uppercase text-gold mb-1">Samstag – Sonntag</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">08:00 – 22:00 Uhr</p>
+              <p class="text-xs tracking-widest uppercase text-gold mb-1">Samstag bis Sonntag</p>
+              <p class="text-xs text-ink-dark font-medium">08:00 bis 22:00 Uhr</p>
             </div>
           </div>
         </div>
@@ -50,12 +50,12 @@ const page = pageData;
           <h3 class="font-display font-light text-ink-dark mb-6" style="font-size:1.25rem;">Fitnessclub</h3>
           <div class="space-y-3">
             <div>
-              <p class="text-[11px] tracking-widest uppercase text-gold mb-1">Montag – Freitag</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">06:30 – 22:00 Uhr</p>
+              <p class="text-xs tracking-widest uppercase text-gold mb-1">Montag bis Freitag</p>
+              <p class="text-xs text-ink-dark font-medium">06:30 bis 22:00 Uhr</p>
             </div>
             <div>
-              <p class="text-[11px] tracking-widest uppercase text-gold mb-1">Samstag – Sonntag</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">08:00 – 20:00 Uhr</p>
+              <p class="text-xs tracking-widest uppercase text-gold mb-1">Samstag bis Sonntag</p>
+              <p class="text-xs text-ink-dark font-medium">08:00 bis 20:00 Uhr</p>
             </div>
           </div>
         </div>
@@ -65,10 +65,10 @@ const page = pageData;
           <h3 class="font-display font-light text-ink-dark mb-6" style="font-size:1.25rem;">Restaurant</h3>
           <div class="space-y-3">
             <div>
-              <p class="text-[11px] tracking-widest uppercase text-gold mb-1">Täglich</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">Frühstück: 07:00 – 10:00</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">Mittag: 12:00 – 14:00</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">Abend: 18:30 – 21:00</p>
+              <p class="text-xs tracking-widest uppercase text-gold mb-1">Täglich</p>
+              <p class="text-xs text-ink-dark font-medium">Frühstück: 07:00 bis 10:00</p>
+              <p class="text-xs text-ink-dark font-medium">Mittag: 12:00 bis 14:00</p>
+              <p class="text-xs text-ink-dark font-medium">Abend: 18:30 bis 21:00</p>
             </div>
           </div>
         </div>
@@ -78,11 +78,11 @@ const page = pageData;
           <h3 class="font-display font-light text-ink-dark mb-6" style="font-size:1.25rem;">Rezeption</h3>
           <div class="space-y-3">
             <div>
-              <p class="text-[11px] tracking-widest uppercase text-gold mb-1">Täglich</p>
-              <p class="text-[13.5px] text-ink-dark font-medium">07:00 – 22:00 Uhr</p>
+              <p class="text-xs tracking-widest uppercase text-gold mb-1">Täglich</p>
+              <p class="text-xs text-ink-dark font-medium">07:00 bis 22:00 Uhr</p>
             </div>
             <div class="pt-3 mt-3 border-t border-stone-light/50">
-              <p class="text-[11px] text-ink-muted">Außerhalb dieser Zeit erreichbar über die Hotline oder per Notfall-Buzzer.</p>
+              <p class="text-xs text-ink-muted">Außerhalb dieser Zeit erreichbar über die Hotline oder per Notfall-Buzzer.</p>
             </div>
           </div>
         </div>
@@ -94,8 +94,8 @@ const page = pageData;
   <section class="py-12 bg-stone-light/30 border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="max-w-2xl mx-auto bg-white border border-stone-light p-8 rounded-sm">
-        <p class="text-[11px] tracking-widest uppercase text-gold mb-3">Wichtiger Hinweis</p>
-        <p class="text-[13.5px] text-ink-muted leading-relaxed">{page.note}</p>
+        <p class="text-xs tracking-widest uppercase text-gold mb-3">Wichtiger Hinweis</p>
+        <p class="text-xs text-ink-muted leading-relaxed">{page.note}</p>
       </div>
     </div>
   </section>
@@ -103,8 +103,8 @@ const page = pageData;
   <!-- ── Contact Link ── -->
   <section class="py-12 bg-cream border-t border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
-      <p class="text-[13.5px] text-ink-muted mb-4">Haben Sie Fragen zu unseren Öffnungszeiten?</p>
-      <a href="/service-kontakt" class="inline-flex items-center gap-2 text-[12px] text-gold font-medium hover:gap-3 transition-all">
+      <p class="text-xs text-ink-muted mb-4">Haben Sie Fragen zu unseren Öffnungszeiten?</p>
+      <a href="/service-kontakt" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
         Kontaktieren Sie uns
         <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
           <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
