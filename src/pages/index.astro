@@ -239,6 +239,9 @@ const voucher = hp.voucher_strip;
                   <span class="text-xs text-ink-muted tracking-wide">{room.data.size}</span>
                 )}
               </div>
+              {room.data.variants && (
+                <p class="text-xs text-gold tracking-wide mb-2">{room.data.variants}</p>
+              )}
               {room.data.tagline && (
                 <p class="text-xs text-ink-muted leading-relaxed mb-3">{room.data.tagline}</p>
               )}

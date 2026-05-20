@@ -1,23 +1,24 @@
 ---
 name: Doppelzimmer
+variants: Comfort · Superior · Classic
 tagline: Gemeinsam entspannen
 size: ab 28 m²
 capacity: 1 bis 2 Personen
 highlight: true
 sort_order: 2
 seo_title: Doppelzimmer, Zimmer & Suiten, feelMOOR
-seo_description: Komfortable Doppelzimmer im feelMOOR Gesundresort Bad Wurzach. Ab 28 m², Regendusche oder Badewanne, Therme-Zugang inbegriffen. Jetzt buchen.
-hero_image: /images/zimmer/doppelzimmer/room-6.jpg
-preview_image: /images/zimmer/doppelzimmer/room-1.jpg
+seo_description: Doppelzimmer Comfort, Superior und Classic im feelMOOR Gesundresort Bad Wurzach. Ab 28 m², Therme-Zugang inbegriffen. Jetzt buchen.
+hero_image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer1.jpg
+preview_image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer2.jpg
 gallery:
-  - image: /images/zimmer/doppelzimmer/room-1.jpg
+  - image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer3.jpg
     caption: Wohnbereich
-  - image: /images/zimmer/doppelzimmer/room-2.jpg
+  - image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer4.jpg
     caption: Schlafbereich
-  - image: /images/zimmer/doppelzimmer/room-7.jpg
+  - image: /images/zimmer/comfort-DZ/110-a-0111-IRZ_9920-ingorack.com.jpg
+    caption: Zimmeransicht
+  - image: /images/zimmer/comfort-DZ/112-a-0113-IRZ_9922-ingorack.com.jpg
     caption: Badezimmer
-  - image: /images/zimmer/doppelzimmer/room-4.jpg
-    caption: Ausblick
 intro_heading: Das Zimmer
 intro_subheading: "Gemeinsam erholen, Komfort für zwei"
 specs:
@@ -25,14 +26,14 @@ specs:
     value: ab 28 m²
   - label: Belegung
     value: 1 bis 2 Personen
+  - label: Kategorien
+    value: Comfort · Superior · Classic
   - label: Bett
     value: Französisches Doppelbett (180×200 cm)
   - label: Badezimmer
     value: Regendusche oder Badewanne
   - label: Aussicht
     value: Garten, Park oder Moorblick
-  - label: Etage
-    value: 1. bis 4. Etage, teils mit Balkon
 feature_groups:
   - heading: Komfort
     items:
@@ -47,7 +48,6 @@ feature_groups:
       - feelMOOR Moorwasser-Kosmetikserie
       - Fußbodenheizung
       - Doppelwaschbecken
-      - Haartrockner & Kosmetikspiegel
   - heading: Ausstattung
     items:
       - Flatscreen TV (55")
@@ -64,8 +64,8 @@ feature_groups:
       - 24h-Rezeption
 ---
 
-Unsere Doppelzimmer sind großzügig geschnittene Wohlfühloasen, die mit ihrer warmen Allgäuer Ästhetik sofort Ankommen-Lassen. Natürliche Materialien, helles Eichenholz, cremefarbene Leinenstoffe, handgefertigte Keramikdétails, schaffen eine ruhige, einladende Atmosphäre.
+Unsere Doppelzimmer in den Kategorien Comfort, Superior und Classic sind großzügig geschnittene Wohlfühloasen mit warmer Allgäuer Ästhetik. Natürliche Materialien, helles Eichenholz und cremefarbene Leinenstoffe schaffen eine ruhige, einladende Atmosphäre.
 
-Das komfortable Boxspringbett lädt zum langen Ausschlafen ein, während der gemütliche Sitzbereich zum Lesen oder Genießen eines Nespressos einlädt. Das Badezimmer bietet je nach Zimmertyp eine weitläufige Regendusche oder eine freistehende Badewanne, beides mit unserer exklusiven Moorwasser-Kosmetikserie.
+Das komfortable Boxspringbett lädt zum langen Ausschlafen ein, während der gemütliche Sitzbereich zum Lesen oder Genießen eines Nespressos einlädt. Je nach Kategorie und Zimmertyp erwarten Sie weitläufige Regenduschen, freistehende Badewannen oder besonders großzügige Grundrisse.
 
-Alle Doppelzimmer sind im Preis inklusive des Zugangs zur feelMOOR Therme, Thermalbad, Saunalandschaft und Wellnessbereiche stehen Ihnen für Ihre gesamte Aufenthaltsdauer zur Verfügung.
+Alle Doppelzimmer sind im Preis inklusive des Zugangs zur feelMOOR Therme.

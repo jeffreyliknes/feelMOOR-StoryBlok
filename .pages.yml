@@ -317,6 +317,9 @@ content:
         label: "Room Name (e.g. \"Doppelzimmer\")"
         type: string
         required: true
+      - name: variants
+        label: "Room categories (e.g. \"Comfort · Classic\")"
+        type: string
       - name: tagline
         label: "Short Tagline (card & hero)"
         type: string

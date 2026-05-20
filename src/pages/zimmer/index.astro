@@ -69,6 +69,9 @@ const amenitiesList: { label: string }[] = Array.isArray(page.amenities) ? page.
             <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.1;">
               {room.data.name}
             </h2>
+            {room.data.variants && (
+              <p class="text-xs text-gold tracking-wide mt-2 mb-1">{room.data.variants}</p>
+            )}
             <div class="flex items-center gap-5 mt-3 mb-5">
               {room.data.size && (
                 <span class="text-xs text-ink-muted border border-stone px-2.5 py-1">{room.data.size}</span>

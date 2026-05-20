@@ -57,6 +57,14 @@
     { "source": "/angebote/verwoehntage-superior-2023", "destination": "/angebote/verwoehntage-superior", "permanent": true },
     { "source": "/coronahinweise", "destination": "/", "permanent": true },
     { "source": "/pop-up-vorlage", "destination": "/", "permanent": true },
-    { "source": "/adventskalender", "destination": "/angebote/adventszeit", "permanent": true }
+    { "source": "/adventskalender", "destination": "/angebote/adventszeit", "permanent": true },
+    { "source": "/einzelzimmer", "destination": "/zimmer/einzelzimmer", "permanent": true },
+    { "source": "/doppelzimmer", "destination": "/zimmer/doppelzimmer", "permanent": true },
+    { "source": "/suiten", "destination": "/zimmer/suiten", "permanent": true },
+    { "source": "/suite", "destination": "/zimmer/suiten", "permanent": true },
+    { "source": "/zimmer/comfort-ez", "destination": "/zimmer/einzelzimmer", "permanent": true },
+    { "source": "/zimmer/comfort-dz", "destination": "/zimmer/doppelzimmer", "permanent": true },
+    { "source": "/zimmer/superior-dz", "destination": "/zimmer/doppelzimmer", "permanent": true },
+    { "source": "/zimmer/superior-suite", "destination": "/zimmer/suiten", "permanent": true }
   ]
 }

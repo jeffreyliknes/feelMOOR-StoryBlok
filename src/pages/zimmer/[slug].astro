@@ -92,6 +92,9 @@ const photoCount = allPhotos.length;
           <h1 class="font-display font-light text-ink-dark tracking-tight text-[clamp(1.85rem,4vw,3rem)] leading-[1.08]">
             {room.name}
           </h1>
+          {room.variants && (
+            <p class="mt-2 text-xs text-gold tracking-wide">{room.variants}</p>
+          )}
           <p class="mt-3 text-xs text-ink-muted flex flex-wrap items-center gap-x-2 gap-y-1">
             {room.tagline && (
               <>

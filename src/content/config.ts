@@ -9,6 +9,8 @@ const rooms = defineCollection({
   type: 'content',
   schema: z.object({
     name: z.string(),
+    /** e.g. "Comfort · Classic" — shown on cards and detail pages */
+    variants: z.string().optional(),
     tagline: z.string().optional(),
     size: z.string().optional(),
     capacity: z.string().optional(),
