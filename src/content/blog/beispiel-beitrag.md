@@ -25,7 +25,5 @@ Dies ist **Beispieltext** für Ihren ersten Blog-Beitrag. Sie können diesen Abs
 
 Wenn alles funktioniert, legen Sie einen neuen Beitrag an (neue `.md`-Datei in der Blog-Collection) oder löschen Sie diesen Übungsbeitrag.
 
-
-
-![image.png](/images/image.png)
+![](/images/therme/sauna-2.jpg)
 
