@@ -3,7 +3,7 @@ title: Moorintensivkur
 tag: Gesundheitskur
 nights: 7 bis 14 Nächte
 teaser: Die klassische Moorheilkur, medizinisch begleitet, mit täglichen Moorbädern und individuell abgestimmten Anwendungen für nachhaltige Gesundheit.
-image: /images/allgaeu/moor-1.jpg
+image: /images/allgaeu/Heilkraft-des-moores.jpg
 image_alt: Moorlandschaft Torflehrpfad Bad Wurzach
 booking_link: /angebote/moorintensivkur
 includes:

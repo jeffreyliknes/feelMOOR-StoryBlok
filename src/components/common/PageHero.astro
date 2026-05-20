@@ -1,0 +1,71 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  image?: string;
+  imageAlt?: string;
+  caption: string;
+  heading: string;
+  intro: string;
+  breadcrumb?: BreadcrumbItem[];
+}
+
+const { image, imageAlt, caption, heading, intro, breadcrumb = [] } = Astro.props;
+const alt = imageAlt ?? `${heading}, feelMOOR Gesundresort`;
+---
+
+<section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden min-h-[280px]">
+  {image ? (
+    <>
+      <div class="absolute inset-0 z-0">
+        <img
+          src={image}
+          alt={alt}
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="absolute inset-0 z-[1] bg-gradient-to-br from-forest-950/85 via-forest-900/70 to-forest-800/55"></div>
+      <div class="absolute inset-0 z-[1] bg-gradient-to-t from-forest-950/60 via-transparent to-forest-950/25"></div>
+    </>
+  ) : (
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
+      <div
+        class="absolute inset-0 opacity-10"
+        style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"
+      >
+      </div>
+    </div>
+  )}
+
+  <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+    <p class="caption-label mb-4">{caption}</p>
+    <h1
+      class="font-display font-light text-cream"
+      style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;"
+    >
+      {heading}
+    </h1>
+    <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{intro}</p>
+    {breadcrumb.length > 0 && (
+      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40 flex-wrap">
+        {breadcrumb.map((item, i) => (
+          <>
+            {i > 0 && <span>›</span>}
+            {item.href ? (
+              <a href={item.href} class="hover:text-cream/70 transition-colors">
+                {item.label}
+              </a>
+            ) : (
+              <span class="text-cream/60">{item.label}</span>
+            )}
+          </>
+        ))}
+      </nav>
+    )}
+  </div>
+</section>

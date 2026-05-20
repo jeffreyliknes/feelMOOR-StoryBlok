@@ -5,5 +5,8 @@
   "hero_heading": "Thermalbad",
   "hero_intro": "Schweben im warmen Mineralwasser, drinnen und draußen, das ganze Jahr.",
   "intro_heading": "Das Thermalbad",
-  "intro_body": "Unser Thermalbad bietet mit seinem 34 °C warmen Mineralwasser ideale Bedingungen für Entspannung und Regeneration. Innen- und Außenbecken, ein Strömungskanal sowie Unterwassersprudler und Massagedüsen verwöhnen Körper und Geist, zu jeder Jahreszeit."
+  "intro_body": "Unser Thermalbad bietet mit seinem 34 °C warmen Mineralwasser ideale Bedingungen für Entspannung und Regeneration. Innen- und Außenbecken, ein Strömungskanal sowie Unterwassersprudler und Massagedüsen verwöhnen Körper und Geist, zu jeder Jahreszeit.",
+  "hero_image": "/images/therme/therme-2.jpg",
+  "hero_image_alt": "Thermalbad feelMOOR",
+  "intro_image": "/images/therme/therme-3.jpg"
 }

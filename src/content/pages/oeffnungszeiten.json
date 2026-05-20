@@ -4,5 +4,7 @@
   "hero_caption": "Information",
   "hero_heading": "Öffnungszeiten",
   "hero_intro": "Alle Öffnungszeiten auf einen Blick, Therme, Fitness, Restaurant und Rezeption.",
-  "note": "Öffnungszeiten können an Feiertagen variieren. Bitte kontaktieren Sie uns für aktuelle Informationen."
+  "note": "Öffnungszeiten können an Feiertagen variieren. Bitte kontaktieren Sie uns für aktuelle Informationen.",
+  "hero_image": "/images/therme/therme-1.jpg",
+  "hero_image_alt": "feelMOOR Therme"
 }

@@ -7,15 +7,34 @@
   "amenities_heading": "Was in jedem Zimmer inbegriffen ist",
   "amenities_subheading": "Inklusive Leistungen",
   "amenities": [
-    { "label": "Kostenfreies WLAN" },
-    { "label": "Moorwasser-Kosmetikserie" },
-    { "label": "Kuschelroben & Hausschuhe" },
-    { "label": "Kissenmenü" },
-    { "label": "Therme-Zugang inbegriffen" },
-    { "label": "Gesundes Frühstücksbuffet" },
-    { "label": "Fahrradverleih" },
-    { "label": "Parkplatz kostenlos" }
+    {
+      "label": "Kostenfreies WLAN"
+    },
+    {
+      "label": "Moorwasser-Kosmetikserie"
+    },
+    {
+      "label": "Kuschelroben & Hausschuhe"
+    },
+    {
+      "label": "Kissenmenü"
+    },
+    {
+      "label": "Therme-Zugang inbegriffen"
+    },
+    {
+      "label": "Gesundes Frühstücksbuffet"
+    },
+    {
+      "label": "Fahrradverleih"
+    },
+    {
+      "label": "Parkplatz kostenlos"
+    }
   ],
   "cta_heading": "Bereit für Ihren Aufenthalt?",
-  "cta_body": "Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt."
+  "cta_body": "Prüfen Sie die Verfügbarkeit oder kontaktieren Sie uns direkt.",
+  "hero_image": "/images/zimmer/Superior-Suite/90-a-0091-IRZ_9892-ingorack.com.jpg",
+  "hero_image_alt": "Zimmer und Suiten feelMOOR",
+  "intro_image": "/images/zimmer/comfort-DZ/ComfortDoppelzimmer1.jpg"
 }

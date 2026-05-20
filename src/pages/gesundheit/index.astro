@@ -1,29 +1,21 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
+import PageHero from '@/components/common/PageHero.astro';
+import ContentImage from '@/components/common/ContentImage.astro';
 import pageData from '@/content/pages/gesundheit.json';
 
 const page = pageData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
-  <!-- Hero Section -->
-  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
-      <div class="absolute inset-0 opacity-10"
-           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
-      </div>
-    </div>
-    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
-      <p class="caption-label mb-4">{page.hero_caption}</p>
-      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
-        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
-        <span>›</span>
-        <span class="text-cream/60">Gesundheit</span>
-      </nav>
-    </div>
-  </section>
+  <PageHero
+    image={page.hero_image}
+    imageAlt={page.hero_image_alt}
+    caption={page.hero_caption}
+    heading={page.hero_heading}
+    intro={page.hero_intro}
+    breadcrumb={[{ label: 'Start', href: '/' }, { label: 'Gesundheit' }]}
+  />
 
   <!-- Intro Section -->
   <section class="py-16 lg:py-24 bg-cream">
@@ -33,11 +25,18 @@ const page = pageData;
           <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
           <p class="text-xs text-ink-muted leading-relaxed mt-6">{page.intro_body}</p>
         </div>
-        <div class="bg-forest-700 rounded-lg p-8 text-center">
-          <p class="text-gold text-xs font-semibold uppercase tracking-wide mb-2">Tradition & Vertrauen</p>
-          <div class="text-cream text-[42px] font-display font-light leading-tight mb-4">Seit über 100 Jahren Moorkurort</div>
-          <p class="text-cream/70 text-xs leading-relaxed">Das Wurzacher Ried ist eine der wertvollsten Moorlandschaften Europas, und unsere Fachkompetenz reicht über hundert Jahre zurück.</p>
-        </div>
+        {page.intro_image ? (
+          <ContentImage
+            src={page.intro_image}
+            alt="Moorlandschaft und Torflehrpfad Bad Wurzach"
+          />
+        ) : (
+          <div class="bg-forest-700 rounded-lg p-8 text-center">
+            <p class="text-gold text-xs font-semibold uppercase tracking-wide mb-2">Tradition & Vertrauen</p>
+            <div class="text-cream text-[42px] font-display font-light leading-tight mb-4">Seit über 100 Jahren Moorkurort</div>
+            <p class="text-cream/70 text-xs leading-relaxed">Das Wurzacher Ried ist eine der wertvollsten Moorlandschaften Europas, und unsere Fachkompetenz reicht über hundert Jahre zurück.</p>
+          </div>
+        )}
       </div>
     </div>
   </section>
@@ -47,33 +46,39 @@ const page = pageData;
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Moorbad Card -->
-        <a href="/gesundheit/moorbad" class="group bg-cream rounded-lg p-8 hover:shadow-lg transition-shadow">
-          <div class="mb-6">
-            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl">🌊</div>
+        <a href="/gesundheit/moorbad" class="group bg-cream rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="/images/allgaeu/Heilkraft-des-moores.jpg" alt="Moorbad Bad Wurzach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
+          <div class="p-8">
           <h3 class="font-display font-light text-ink-dark text-[24px] mb-3 group-hover:text-gold transition-colors">Moorbad</h3>
           <p class="text-xs text-ink-muted leading-relaxed mb-6">Das Original-Moorbad aus dem Wurzacher Ried, Heilkraft aus 10.000 Jahren Naturgeschichte.</p>
           <span class="text-gold text-xs font-semibold uppercase tracking-wide">Mehr erfahren →</span>
+          </div>
         </a>
 
         <!-- Anwendungen Card -->
-        <a href="/gesundheit/anwendungen" class="group bg-cream rounded-lg p-8 hover:shadow-lg transition-shadow">
-          <div class="mb-6">
-            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl">⚕️</div>
+        <a href="/gesundheit/anwendungen" class="group bg-cream rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="/images/wellness/Entschleunigung_Wellness.jpg" alt="Gesundheitsanwendungen feelMOOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
+          <div class="p-8">
           <h3 class="font-display font-light text-ink-dark text-[24px] mb-3 group-hover:text-gold transition-colors">Anwendungen</h3>
           <p class="text-xs text-ink-muted leading-relaxed mb-6">Medizinisch fundierte Therapien, von Moorbehandlungen über Physiotherapie bis Elektrotherapie.</p>
           <span class="text-gold text-xs font-semibold uppercase tracking-wide">Mehr erfahren →</span>
+          </div>
         </a>
 
         <!-- Ärzte & Therapeuten Card -->
-        <a href="/gesundheit/aerzte-therapeuten" class="group bg-cream rounded-lg p-8 hover:shadow-lg transition-shadow">
-          <div class="mb-6">
-            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xl">👨‍⚕️</div>
+        <a href="/gesundheit/aerzte-therapeuten" class="group bg-cream rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="/images/bilder-aerzte-therapeuten/3.png" alt="Ärzte und Therapeuten feelMOOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
+          <div class="p-8">
           <h3 class="font-display font-light text-ink-dark text-[24px] mb-3 group-hover:text-gold transition-colors">Ärzte & Therapeuten</h3>
           <p class="text-xs text-ink-muted leading-relaxed mb-6">Erfahrene Experten begleiten Sie auf Ihrem Weg zu Gesundheit und Wohlbefinden.</p>
           <span class="text-gold text-xs font-semibold uppercase tracking-wide">Mehr erfahren →</span>
+          </div>
         </a>
       </div>
     </div>

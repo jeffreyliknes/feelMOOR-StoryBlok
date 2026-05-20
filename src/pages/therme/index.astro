@@ -1,5 +1,7 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
+import PageHero from '@/components/common/PageHero.astro';
+import ContentImage from '@/components/common/ContentImage.astro';
 import thermeData from '@/content/pages/therme.json';
 
 const page = thermeData;
@@ -7,24 +9,14 @@ const page = thermeData;
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
 
-  <!-- ── Page Hero ── -->
-  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
-      <div class="absolute inset-0 opacity-10"
-           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
-      </div>
-    </div>
-    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
-      <p class="caption-label mb-4">{page.hero_caption}</p>
-      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
-        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
-        <span>›</span>
-        <span class="text-cream/60">Therme & Spa</span>
-      </nav>
-    </div>
-  </section>
+  <PageHero
+    image={page.hero_image}
+    imageAlt={page.hero_image_alt}
+    caption={page.hero_caption}
+    heading={page.hero_heading}
+    intro={page.hero_intro}
+    breadcrumb={[{ label: 'Start', href: '/' }, { label: 'Therme & Spa' }]}
+  />
 
   <!-- ── Stats Bar ── -->
   <section class="py-12 bg-forest-700 border-b border-forest-600">
@@ -55,11 +47,12 @@ const page = thermeData;
           <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
           <p class="text-xs text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
         </div>
-        <div class="bg-stone-light/30 rounded-sm aspect-video flex items-center justify-center">
-          <div class="text-center">
-            <p class="text-xs text-ink-light">Bildbereich Therme</p>
-          </div>
-        </div>
+        {page.intro_image && (
+          <ContentImage
+            src={page.intro_image}
+            alt="Thermalbad und Wasserwelt, feelMOOR Therme"
+          />
+        )}
       </div>
     </div>
   </section>
@@ -73,7 +66,11 @@ const page = thermeData;
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         {/* Thermalbad */}
-        <a href="/therme/thermalbad" class="group bg-white border border-stone-light hover:border-gold/30 p-8 lg:p-10 transition-all">
+        <a href="/therme/thermalbad" class="group bg-white border border-stone-light hover:border-gold/30 overflow-hidden transition-all">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="/images/therme/therme-2.jpg" alt="Thermalbad feelMOOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-10">
           <div class="flex items-start justify-between mb-4">
             <h3 class="font-display font-light text-ink-dark text-lg">Thermalbad</h3>
             <svg class="w-4 h-4 text-gold opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 14 14" fill="none">
@@ -81,10 +78,15 @@ const page = thermeData;
             </svg>
           </div>
           <p class="text-xs text-ink-muted">34 °C warmes Mineralwasser, Strömungskanal und Außenpool das ganze Jahr.</p>
+          </div>
         </a>
 
         {/* Sauna */}
-        <a href="/therme/sauna" class="group bg-white border border-stone-light hover:border-gold/30 p-8 lg:p-10 transition-all">
+        <a href="/therme/sauna" class="group bg-white border border-stone-light hover:border-gold/30 overflow-hidden transition-all">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="/images/therme/sauna-1.jpg" alt="Saunalandschaft feelMOOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-10">
           <div class="flex items-start justify-between mb-4">
             <h3 class="font-display font-light text-ink-dark text-lg">Saunalandschaft</h3>
             <svg class="w-4 h-4 text-gold opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 14 14" fill="none">
@@ -92,10 +94,15 @@ const page = thermeData;
             </svg>
           </div>
           <p class="text-xs text-ink-muted">7 Saunen, Dampfbad, Erlebnisduschen und großzügige Ruhebereiche.</p>
+          </div>
         </a>
 
         {/* Wellness */}
-        <a href="/therme/wellness" class="group bg-white border border-stone-light hover:border-gold/30 p-8 lg:p-10 transition-all">
+        <a href="/therme/wellness" class="group bg-white border border-stone-light hover:border-gold/30 overflow-hidden transition-all">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="/images/wellness/Massage.jpg" alt="Wellness und Spa feelMOOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-10">
           <div class="flex items-start justify-between mb-4">
             <h3 class="font-display font-light text-ink-dark text-lg">Wellness & Spa</h3>
             <svg class="w-4 h-4 text-gold opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 14 14" fill="none">
@@ -103,10 +110,15 @@ const page = thermeData;
             </svg>
           </div>
           <p class="text-xs text-ink-muted">Massagen, Mooranwendungen und Schönheitsbehandlungen von Profis.</p>
+          </div>
         </a>
 
         {/* Preise */}
-        <a href="/therme/preise" class="group bg-white border border-stone-light hover:border-gold/30 p-8 lg:p-10 transition-all">
+        <a href="/therme/preise" class="group bg-white border border-stone-light hover:border-gold/30 overflow-hidden transition-all">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="/images/therme/outdoor-pool.jpg" alt="Therme feelMOOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-10">
           <div class="flex items-start justify-between mb-4">
             <h3 class="font-display font-light text-ink-dark text-lg">Preise & Tarife</h3>
             <svg class="w-4 h-4 text-gold opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 14 14" fill="none">
@@ -114,6 +126,7 @@ const page = thermeData;
             </svg>
           </div>
           <p class="text-xs text-ink-muted">Eintrittspreise für Tagesgäste, Hotelgäste genießen freien Zugang.</p>
+          </div>
         </a>
       </div>
     </div>

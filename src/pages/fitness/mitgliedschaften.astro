@@ -1,31 +1,20 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
+import PageHero from '@/components/common/PageHero.astro';
 import pageData from '@/content/pages/fitness-mitgliedschaften.json';
 
 const page = pageData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
-  <!-- Hero Section -->
-  <section class="relative py-24 lg:py-32 bg-forest-700 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-forest-800 via-forest-700 to-forest-600">
-      <div class="absolute inset-0 opacity-10"
-           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')">
-      </div>
-    </div>
-    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
-      <p class="caption-label mb-4">{page.hero_caption}</p>
-      <h1 class="font-display font-light text-cream" style="font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;">{page.hero_heading}</h1>
-      <p class="text-cream/70 text-sm max-w-xl mx-auto mt-5 leading-relaxed">{page.hero_intro}</p>
-      <nav class="mt-8 flex items-center justify-center gap-2 text-xs text-cream/40">
-        <a href="/" class="hover:text-cream/70 transition-colors">Start</a>
-        <span>›</span>
-        <a href="/fitness" class="hover:text-cream/70 transition-colors">Fitness</a>
-        <span>›</span>
-        <span class="text-cream/60">Mitgliedschaften</span>
-      </nav>
-    </div>
-  </section>
+  <PageHero
+    image={page.hero_image}
+    imageAlt={page.hero_image_alt}
+    caption={page.hero_caption}
+    heading={page.hero_heading}
+    intro={page.hero_intro}
+    breadcrumb={[{ label: 'Start', href: '/' }, { label: 'Fitness', href: '/fitness' }, { label: 'Mitgliedschaften' }]}
+  />
 
   <!-- Back Link -->
   <section class="py-6 bg-white border-b border-stone-light">

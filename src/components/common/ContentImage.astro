@@ -1,0 +1,21 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  aspect?: 'video' | 'square' | 'portrait';
+}
+
+const { src, alt, class: className = '', aspect = 'video' } = Astro.props;
+
+const aspectClass =
+  aspect === 'square'
+    ? 'aspect-square'
+    : aspect === 'portrait'
+      ? 'aspect-[3/4]'
+      : 'aspect-video';
+---
+
+<div class={`overflow-hidden rounded-sm ${aspectClass} ${className}`}>
+  <img src={src} alt={alt} class="w-full h-full object-cover" loading="lazy" />
+</div>
