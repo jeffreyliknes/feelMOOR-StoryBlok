@@ -47,9 +47,10 @@ type RoomLike = {
   };
 };
 
-const COL_GESUND = 'Gesundheitskuren';
-const COL_WELLNESS = 'Wellness & Erholung';
-const COL_RETREATS = 'Retreats & Specials';
+const COL_HEILUNG    = 'Heilung & Regeneration';
+const COL_ENTSCHLACK = 'Entschlackung & Entgiftung';
+const COL_WELLNESS   = 'Entschleunigung & Wellness';
+const COL_SAISONAL   = 'Saisonal & Specials';
 
 function packageHref(pkg: PackageLike): string {
   const link = pkg.data.booking_link?.trim();
@@ -60,11 +61,12 @@ function packageHref(pkg: PackageLike): string {
 
 /** Maps package `tag` (frontmatter) to mega-menu column heading. */
 function columnHeadingForPackageTag(tag?: string): string {
-  const t = (tag ?? '').trim().toLowerCase();
-  if (t === 'gesundheitskur' || t.includes('gesundheitskur')) return COL_GESUND;
-  if (t === 'wellness') return COL_WELLNESS;
-  if (t === 'retreat') return COL_RETREATS;
-  return COL_RETREATS;
+  const t = (tag ?? '').trim();
+  if (t === COL_HEILUNG)    return COL_HEILUNG;
+  if (t === COL_ENTSCHLACK) return COL_ENTSCHLACK;
+  if (t === COL_WELLNESS)   return COL_WELLNESS;
+  if (t === COL_SAISONAL)   return COL_SAISONAL;
+  return COL_SAISONAL;
 }
 
 function buildAngeboteColumns(packages: PackageLike[]): NavColumn[] {
@@ -78,11 +80,12 @@ function buildAngeboteColumns(packages: PackageLike[]): NavColumn[] {
 
   const columns: NavColumn[] = [
     {
-      heading: COL_GESUND,
+      heading: COL_HEILUNG,
       links: [{ label: 'Alle Angebote', href: '/angebote' }],
     },
-    { heading: COL_WELLNESS, links: [] },
-    { heading: COL_RETREATS, links: [] },
+    { heading: COL_ENTSCHLACK, links: [] },
+    { heading: COL_WELLNESS,   links: [] },
+    { heading: COL_SAISONAL,   links: [] },
   ];
 
   for (const pkg of visible) {

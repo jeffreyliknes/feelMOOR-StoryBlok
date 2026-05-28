@@ -1,6 +1,6 @@
 ---
 title: Yoga Retreat
-tag: Retreat
+tag: Entschleunigung & Wellness
 nights: 5 bis 7 Nächte
 teaser: Körper, Geist und Seele in Einklang bringen. Tägliche Yoga-Praxis, Meditation in der Moorlandschaft und regenerative Spa-Behandlungen.
 image: /images/allgaeu/Achtsamkeit5-qregBYAvwytR5Yy04E_KuQ.png

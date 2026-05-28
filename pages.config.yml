@@ -315,8 +315,13 @@ content:
         type: string
         required: true
       - name: tag
-        label: "Category / mega-menu column (use: Gesundheitskur | Wellness | Retreat)"
-        type: string
+        label: "Category"
+        type: select
+        options:
+          - "Heilung & Regeneration"
+          - "Entschlackung & Entgiftung"
+          - "Entschleunigung & Wellness"
+          - "Saisonal & Specials"
       - name: nights
         label: "Duration (e.g. \"7–14 Nights\")"
         type: string

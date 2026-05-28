@@ -1,6 +1,6 @@
 ---
 title: Verwöhntage
-tag: Wellness
+tag: Entschleunigung & Wellness
 nights: 2 bis 4 Nächte
 teaser: Abschalten, loslassen, ankommen. Verwöhnprogramm mit Therme, Sauna und ausgewählten Wellnessanwendungen, für die Seele und den Körper.
 image: /images/therme/wellness-1.jpg

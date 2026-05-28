@@ -4,9 +4,28 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import pageData from '@/content/pages/angebote.json';
 
-const packages = (await getCollection('packages')).sort(
+const CATEGORY_ORDER = [
+  'Heilung & Regeneration',
+  'Entschlackung & Entgiftung',
+  'Entschleunigung & Wellness',
+  'Saisonal & Specials',
+];
+
+const allPackages = (await getCollection('packages')).sort(
   (a, b) => (a.data.nav_order ?? 99) - (b.data.nav_order ?? 99)
 );
+
+// Group by category in defined order; uncategorised packages go last
+const grouped = [
+  ...CATEGORY_ORDER.map((cat) => ({
+    tag: cat,
+    packages: allPackages.filter((p) => p.data.tag === cat),
+  })),
+  {
+    tag: 'Weitere Angebote',
+    packages: allPackages.filter((p) => !CATEGORY_ORDER.includes(p.data.tag ?? '')),
+  },
+].filter((g) => g.packages.length > 0);
 
 const page = pageData;
 ---
@@ -22,88 +41,123 @@ const page = pageData;
     breadcrumb={[{ label: 'Start', href: '/' }, { label: 'Angebote' }]}
   />
 
-  <!-- ── Package cards grid ── -->
-  <section class="py-20 lg:py-28 bg-cream">
+  <!-- ── Filter bar ── -->
+  <div class="sticky top-[var(--header-h)] z-30 bg-white border-b border-stone-light shadow-sm">
     <div class="max-w-screen-xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {packages.map((pkg) => (
-          <article class="group bg-white border border-stone-light rounded-xl overflow-hidden hover:border-gold/30 transition-colors duration-300">
-
-            <!-- Package Image -->
-            <div class="relative overflow-hidden bg-stone-light/50 aspect-[4/3]">
-              {pkg.data.image ? (
-                <img
-                  src={pkg.data.image}
-                  alt={pkg.data.image_alt ?? pkg.data.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              ) : (
-                <div class="w-full h-full bg-gradient-to-br from-stone-light to-stone-light/70 flex items-center justify-center">
-                  <svg class="w-12 h-12 text-stone/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                </div>
-              )}
-            </div>
-
-            <!-- Package Content -->
-            <div class="p-6 lg:p-7 flex flex-col">
-              <!-- Tag & Title -->
-              {pkg.data.tag && (
-                <p class="caption-label mb-2 text-gold">{pkg.data.tag}</p>
-              )}
-              <h3 class="font-display font-light text-ink-dark text-xl lg:text-2xl leading-tight mb-3">
-                {pkg.data.title}
-              </h3>
-
-              <!-- Nights badge -->
-              {pkg.data.nights && (
-                <p class="text-xs text-ink-muted mb-3 pb-3 border-b border-stone-light/60">
-                  {pkg.data.nights}
-                </p>
-              )}
-
-              <!-- Teaser -->
-              {pkg.data.teaser && (
-                <p class="text-xs text-ink-muted leading-relaxed mb-5 flex-grow">
-                  {pkg.data.teaser}
-                </p>
-              )}
-
-              <!-- Price -->
-              {pkg.data.price_from && (
-                <div class="mb-5">
-                  <p class="font-display font-light text-ink-dark text-2xl">ab {pkg.data.price_from} €</p>
-                  {pkg.data.price_label && (
-                    <p class="text-xs text-ink-muted mt-1">{pkg.data.price_label}</p>
-                  )}
-                </div>
-              )}
-
-              <!-- CTA -->
-              <div class="flex gap-3 pt-4 border-t border-stone-light/60">
-                {pkg.data.booking_link ? (
-                  <a href={pkg.data.booking_link} class="btn-gold flex-1 justify-center text-center">
-                    Jetzt buchen
-                    <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                ) : (
-                  <a href={`/angebote/${pkg.slug}`} class="btn-gold flex-1 justify-center text-center">
-                    Mehr erfahren
-                    <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                )}
-              </div>
-            </div>
-
-          </article>
+      <div class="flex items-center gap-2 overflow-x-auto py-4 scrollbar-none" id="filter-bar">
+        <button
+          data-filter="all"
+          class="filter-btn active shrink-0 px-5 py-2 rounded-full text-xs font-medium tracking-wide transition-colors duration-200 bg-ink text-white"
+        >
+          Alle Angebote
+        </button>
+        {CATEGORY_ORDER.map((cat) => (
+          <button
+            data-filter={cat}
+            class="filter-btn shrink-0 px-5 py-2 rounded-full text-xs font-medium tracking-wide transition-colors duration-200 bg-stone-light/60 text-ink-dark hover:bg-stone-light"
+          >
+            {cat}
+          </button>
         ))}
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- ── Grouped package sections ── -->
+  <div class="bg-cream">
+    {grouped.map((group) => (
+      <section
+        data-category={group.tag}
+        class="category-section py-16 lg:py-20 border-b border-stone-light/60 last:border-0"
+      >
+        <div class="max-w-screen-xl mx-auto px-6">
+
+          <!-- Category heading -->
+          <div class="mb-10">
+            <p class="caption-label text-gold mb-2">Angebote</p>
+            <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,2.75rem);">
+              {group.tag}
+            </h2>
+          </div>
+
+          <!-- Package cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {group.packages.map((pkg) => (
+              <article class="group bg-white border border-stone-light rounded-xl overflow-hidden hover:border-gold/30 transition-colors duration-300">
+
+                <!-- Package Image -->
+                <div class="relative overflow-hidden bg-stone-light/50 aspect-[4/3]">
+                  {pkg.data.image ? (
+                    <img
+                      src={pkg.data.image}
+                      alt={pkg.data.image_alt ?? pkg.data.title}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-gradient-to-br from-stone-light to-stone-light/70 flex items-center justify-center">
+                      <svg class="w-12 h-12 text-stone/30" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    </div>
+                  )}
+                </div>
+
+                <!-- Package Content -->
+                <div class="p-6 lg:p-7 flex flex-col">
+                  {pkg.data.tag && (
+                    <p class="caption-label mb-2 text-gold">{pkg.data.tag}</p>
+                  )}
+                  <h3 class="font-display font-light text-ink-dark text-xl lg:text-2xl leading-tight mb-3">
+                    {pkg.data.title}
+                  </h3>
+
+                  {pkg.data.nights && (
+                    <p class="text-xs text-ink-muted mb-3 pb-3 border-b border-stone-light/60">
+                      {pkg.data.nights}
+                    </p>
+                  )}
+
+                  {pkg.data.teaser && (
+                    <p class="text-xs text-ink-muted leading-relaxed mb-5 flex-grow">
+                      {pkg.data.teaser}
+                    </p>
+                  )}
+
+                  {pkg.data.price_from && (
+                    <div class="mb-5">
+                      <p class="font-display font-light text-ink-dark text-2xl">ab {pkg.data.price_from} €</p>
+                      {pkg.data.price_label && (
+                        <p class="text-xs text-ink-muted mt-1">{pkg.data.price_label}</p>
+                      )}
+                    </div>
+                  )}
+
+                  <div class="flex gap-3 pt-4 border-t border-stone-light/60">
+                    {pkg.data.booking_link ? (
+                      <a href={pkg.data.booking_link} class="btn-gold flex-1 justify-center text-center">
+                        Jetzt buchen
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                          <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </a>
+                    ) : (
+                      <a href={`/angebote/${pkg.slug}`} class="btn-gold flex-1 justify-center text-center">
+                        Mehr erfahren
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                          <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+              </article>
+            ))}
+          </div>
+
+        </div>
+      </section>
+    ))}
+  </div>
 
   <!-- ── Bottom CTA ── -->
   <section class="py-16 bg-white border-t border-stone-light">
@@ -118,3 +172,30 @@ const page = pageData;
   </section>
 
 </PageLayout>
+
+<script>
+  const bar = document.getElementById('filter-bar');
+  if (bar) {
+    bar.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-filter]');
+      if (!btn) return;
+
+      // Update active button styles
+      bar.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((b) => {
+        b.classList.remove('active', 'bg-ink', 'text-white');
+        b.classList.add('bg-stone-light/60', 'text-ink-dark');
+      });
+      btn.classList.add('active', 'bg-ink', 'text-white');
+      btn.classList.remove('bg-stone-light/60', 'text-ink-dark');
+
+      const filter = btn.dataset.filter;
+      document.querySelectorAll<HTMLElement>('.category-section').forEach((section) => {
+        if (filter === 'all' || section.dataset.category === filter) {
+          section.style.display = '';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    });
+  }
+</script>
