@@ -5,7 +5,13 @@ nights: 5 bis 7 Nächte
 teaser: Körper, Geist und Seele in Einklang bringen. Tägliche Yoga-Praxis, Meditation in der Moorlandschaft und regenerative Spa-Behandlungen.
 image: /images/allgaeu/Achtsamkeit5-qregBYAvwytR5Yy04E_KuQ.png
 image_alt: Yoga und Achtsamkeit im feelMOOR
-booking_link: /angebote/yoga-retreat
+booking_options:
+  - label: "Yoga Retreat"
+    href: "https://onepagebooking.com/feelmoor/packages/39123?lang=de"
+  - label: "Yoga & Moor"
+    href: "https://onepagebooking.com/feelmoor/packages/40522?lang=de"
+  - label: "Yoga & Moor Deluxe"
+    href: "https://onepagebooking.com/feelmoor/packages/40523?lang=de"
 includes:
   - Übernachtung inkl. Frühstücksbuffet
   - Tägliche Yoga-Einheiten (morgens & abends)

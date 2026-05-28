@@ -651,8 +651,18 @@ content:
         label: "Price Suffix (e.g. \"per person / night\")"
         type: string
       - name: booking_link
-        label: "Booking Link"
+        label: "Booking Link (single option)"
         type: string
+      - name: booking_options
+        label: "Booking Options (multiple durations)"
+        type: list
+        fields:
+          - name: label
+            label: "Duration Label (e.g. 7 Übernachtungen)"
+            type: string
+          - name: href
+            label: "Booking URL"
+            type: string
       - name: nav_order
         label: "Nav order in mega menu (lower = earlier within its column)"
         type: number

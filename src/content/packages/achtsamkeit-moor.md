@@ -1,7 +1,14 @@
 ---
 title: "Achtsamkeit & Moor"
 tag: "Heilung & Regeneration"
-nights: "21 Nächte"
+nights: "7 bis 21 Nächte"
+booking_options:
+  - label: "7 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/28640?lang=de"
+  - label: "14 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/28642?lang=de"
+  - label: "21 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/28641?lang=de"
 teaser: "EFFEKTIV REGENERIEN - Schöpfen Sie neue Kraft für den (beruflichen) Alltag und atmen Sie tief durch."
 ---
 

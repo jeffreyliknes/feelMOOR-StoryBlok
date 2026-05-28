@@ -49,6 +49,10 @@ const packages = defineCollection({
     price_from: z.number().optional(),
     price_label: z.string().optional(),
     booking_link: z.string().optional(),
+    booking_options: z.array(z.object({
+      label: z.string(),
+      href: z.string(),
+    })).optional().default([]),
     includes: z.array(z.string()).optional().default([]),
     /** Lower sorts first in mega menu within each column */
     nav_order: z.number().optional(),

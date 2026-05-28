@@ -1,7 +1,12 @@
 ---
 title: "Achtsamkeit & Regeneration"
 tag: "Heilung & Regeneration"
-nights: "14 Nächte"
+nights: "7 bis 14 Nächte"
+booking_options:
+  - label: "7 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50757?lang=de"
+  - label: "14 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50758?lang=de"
 teaser: "Sie sind ständig müde und erschöpft? Der (berufliche) Alltag lässt sich nur noch schwerlich meistern?"
 includes:
   - "Saunieren zur Stärkung des Immunsystems und des gesamten Organismus - außer an Moorbadetagen"

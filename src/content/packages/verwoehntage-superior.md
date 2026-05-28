@@ -1,7 +1,12 @@
 ---
 title: "Verwöhntage Superior"
 tag: "Entschleunigung & Wellness"
-nights: "4 Nächte"
+nights: "3 bis 4 Nächte"
+booking_options:
+  - label: "3 Nächte"
+    href: "https://onepagebooking.com/feelmoor/packages/49207?lang=de"
+  - label: "4 Nächte"
+    href: "https://onepagebooking.com/feelmoor/packages/49208?lang=de"
 teaser: "Raus aus dem Hamsterrad , mit den Bad Wurzacher Verwöhntagen wieder fit für den Alltag werden."
 includes:
   - "1 Alpines Kräuter-Moor-Peeling im Rasulbad"

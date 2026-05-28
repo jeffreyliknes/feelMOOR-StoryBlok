@@ -2,6 +2,13 @@
 title: "Yoga Retreat Week"
 tag: "Entschleunigung & Wellness"
 nights: "4 Tage"
+booking_options:
+  - label: "Yoga Week"
+    href: "https://onepagebooking.com/feelmoor/packages/45296?lang=de"
+  - label: "Yoga Week & Moor"
+    href: "https://onepagebooking.com/feelmoor/packages/45297?lang=de"
+  - label: "Yoga Week & Moor Deluxe"
+    href: "https://onepagebooking.com/feelmoor/packages/45298?lang=de"
 teaser: "Yoga hilft Ihnen Stress abzubauen sowie die Muskulatur und das Immunsystem zu stärken. Darüber hinaus bieten wir viele weitere Urlaubsaktivitäten in unserem feelMOOR Resort und der Umgebung (SPA, MOORbäder, Riedwanderung, Radtouren) für die genügend Zeit bleibt, da die Yoga-Einheiten morgens und abends stattfinden - eine perfekte Kombination für einen erfüllten Urlaub."
 ---
 

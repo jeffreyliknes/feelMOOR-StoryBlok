@@ -1,7 +1,14 @@
 ---
 title: "Wellness à la carte"
 tag: "Entschleunigung & Wellness"
-nights: "14 Tage"
+nights: "5 bis 10 Nächte"
+booking_options:
+  - label: "5 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50806?lang=de"
+  - label: "7 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50807?lang=de"
+  - label: "10 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50809?lang=de"
 teaser: "VERWÖHNEN - ENTSPANNEN - TRÄUMEN. Entfliehen Sie dem Stress, reduzieren Sie das Tempo und lassen Sie einfach mal wieder Ihre Seele baumeln. Genießen Sie wohlig warmes Thermalwasser und Wellness-Anwendungen vom Feinsten."
 ---
 

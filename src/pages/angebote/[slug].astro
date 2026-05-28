@@ -66,7 +66,14 @@ const seoDescription = pkg.teaser ?? `${pkg.title} im feelMOOR Gesundresort Bad 
           </p>
         </div>
         <div class="flex flex-wrap gap-3 lg:pt-7 flex-shrink-0">
-          {pkg.booking_link ? (
+          {pkg.booking_options && pkg.booking_options.length > 0 ? (
+            pkg.booking_options.map((opt) => (
+              <a href={opt.href} target="_blank" rel="noopener" class="btn-gold flex-col items-center text-center gap-0.5 py-2.5">
+                <span class="text-[0.65rem] uppercase tracking-wider opacity-70 font-sans">{opt.label}</span>
+                <span class="text-xs">Verfügbarkeit prüfen</span>
+              </a>
+            ))
+          ) : pkg.booking_link ? (
             <a href={pkg.booking_link} class="btn-gold">
               Jetzt buchen
               <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
@@ -160,7 +167,14 @@ const seoDescription = pkg.teaser ?? `${pkg.title} im feelMOOR Gesundresort Bad 
             )}
 
             <div class="space-y-3 pt-4 border-t border-stone-light">
-              {pkg.booking_link ? (
+              {pkg.booking_options && pkg.booking_options.length > 0 ? (
+                pkg.booking_options.map((opt) => (
+                  <a href={opt.href} target="_blank" rel="noopener" class="btn-gold w-full justify-between">
+                    <span class="font-sans text-[0.7rem] uppercase tracking-wider opacity-75">{opt.label}</span>
+                    <span class="text-xs">Verfügbarkeit prüfen</span>
+                  </a>
+                ))
+              ) : pkg.booking_link ? (
                 <a href={pkg.booking_link} class="btn-gold w-full justify-center">Jetzt buchen</a>
               ) : (
                 <a href="#booking" class="btn-gold w-full justify-center">Verfügbarkeit prüfen</a>

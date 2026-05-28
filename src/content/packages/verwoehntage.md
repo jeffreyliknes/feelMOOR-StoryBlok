@@ -5,7 +5,9 @@ nights: 2 bis 4 Nächte
 teaser: Abschalten, loslassen, ankommen. Verwöhnprogramm mit Therme, Sauna und ausgewählten Wellnessanwendungen, für die Seele und den Körper.
 image: /images/therme/wellness-1.jpg
 image_alt: Paar entspannt auf Sprudelliege in der Therme
-booking_link: /angebote/verwoehntage
+booking_options:
+  - label: "4 Nächte"
+    href: "https://onepagebooking.com/feelmoor/packages/49210?lang=de"
 includes:
   - Übernachtung inkl. Frühstücksbuffet
   - Unbegrenzter Therme-Zugang

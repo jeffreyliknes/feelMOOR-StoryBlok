@@ -1,7 +1,16 @@
 ---
 title: "VARIO.Kur"
 tag: "Heilung & Regeneration"
-nights: "21 Nächte"
+nights: "7 bis 21 Nächte"
+booking_options:
+  - label: "7 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50811?lang=de"
+  - label: "10 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/56365?lang=de"
+  - label: "14 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50812?lang=de"
+  - label: "21 Übernachtungen"
+    href: "https://onepagebooking.com/feelmoor/packages/50813?lang=de"
 teaser: "Unsere erfahrenen Ärzte stellen gemeinsam mit Ihnen Ihr persönliches Gesundheitsprogramm aus unserem breitgefächerten Leistungskatalog zusammen, das gezielt an Ihre persönlichen Bedürfnisse angepasst wird."
 includes:
   - "Saunieren zur Stärkung des Immunsystems und des gesamten Organismus - außer an Moorbadetagen"
