@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
-import PackageCard from '@/components/packages/PackageCard.astro';
 import homepage from '@/content/pages/homepage.json';
 
 const packages = await getCollection('packages');
@@ -10,6 +9,34 @@ const rooms = (await getCollection('rooms')).sort(
 );
 
 const hp = homepage;
+
+const CATEGORY_CARDS = [
+  {
+    name: 'Heilung & Regeneration',
+    desc: 'Moorheilbad, Kuren und ärztliche Begleitung.',
+    image: '/images/allgaeu/Heilkraft-des-moores.jpg',
+  },
+  {
+    name: 'Entschlackung & Entgiftung',
+    desc: 'Basenfasten, Detox und ein bewusster Neustart.',
+    image: '/images/wellness/flower-3086596_1920-2880w.jpg',
+  },
+  {
+    name: 'Entschleunigung & Wellness',
+    desc: 'Massagen, Spa und Yoga-Auszeiten.',
+    image: '/images/therme/wellness-2.jpg',
+  },
+  {
+    name: 'Saisonal & Specials',
+    desc: 'Feste, Wandern und Auszeiten zu zweit.',
+    image: '/images/allgaeu/WinterlandschaftWurzacherRied.jpg',
+  },
+];
+const categoryCards = CATEGORY_CARDS.map((c) => ({
+  ...c,
+  count: packages.filter((p) => p.data.tag === c.name).length,
+}));
+
 const pillarOrder = ['moorheilbad', 'therme', 'nature'] as const;
 const hero = hp.hero;
 const therme = hp.therme_cta;
@@ -134,10 +161,34 @@ const voucher = hp.voucher_strip;
         </a>
       </div>
 
-      <!-- Package cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        {packages.map((pkg) => (
-          <PackageCard pkg={pkg} variant="overlay" />
+      <!-- Category cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {categoryCards.map((cat) => (
+          <a
+            href={`/angebote?category=${encodeURIComponent(cat.name)}`}
+            class="group relative block overflow-hidden aspect-[3/4] card-hover"
+          >
+            <img
+              src={cat.image}
+              alt={cat.name}
+              loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/35 to-transparent"></div>
+            <div class="absolute inset-0 p-6 flex flex-col justify-end">
+              {cat.count > 0 && (
+                <p class="caption-label text-gold mb-2">{cat.count} Angebote</p>
+              )}
+              <h3 class="font-display font-light text-cream leading-tight" style="font-size:1.4rem;">{cat.name}</h3>
+              <p class="text-xs text-cream/70 mt-2 leading-relaxed">{cat.desc}</p>
+              <span class="mt-4 inline-flex items-center gap-2 text-xs tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all">
+                Entdecken
+                <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
         ))}
       </div>
     </div>

@@ -65,7 +65,7 @@ const page = pageData;
   </div>
 
   <!-- ── Grouped package sections ── -->
-  <div class="bg-cream">
+  <div id="angebote-list" class="bg-cream">
     {grouped.map((group) => (
       <section
         data-category={group.tag}
@@ -131,5 +131,20 @@ const page = pageData;
         }
       });
     });
+
+    // Pre-apply a category filter from the URL (e.g. /angebote?category=...)
+    const initial = new URLSearchParams(window.location.search).get('category');
+    if (initial) {
+      let matched = false;
+      bar.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((b) => {
+        if (b.dataset.filter === initial) {
+          b.click();
+          matched = true;
+        }
+      });
+      if (matched) {
+        document.getElementById('angebote-list')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
 </script>
