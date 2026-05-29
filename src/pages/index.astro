@@ -162,11 +162,11 @@ const voucher = hp.voucher_strip;
       </div>
 
       <!-- Category cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
         {categoryCards.map((cat) => (
-          <article class="group card-hover">
-            <a href={`/angebote?category=${encodeURIComponent(cat.name)}`} class="block h-full">
-              <div class="aspect-[4/3] overflow-hidden">
+          <article class="group card-hover h-full">
+            <a href={`/angebote?category=${encodeURIComponent(cat.name)}`} class="flex flex-col h-full">
+              <div class="aspect-[4/3] overflow-hidden shrink-0">
                 <img
                   src={cat.image}
                   alt={cat.name}
@@ -174,12 +174,12 @@ const voucher = hp.voucher_strip;
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div class="bg-white px-6 pt-6 pb-7 border border-stone-light border-t-0 group-hover:border-gold/30 transition-colors duration-300">
+              <div class="bg-white px-6 pt-6 pb-7 border border-stone-light border-t-0 group-hover:border-gold/30 transition-colors duration-300 flex flex-col flex-1">
                 {cat.count > 0 && (
                   <p class="caption-label text-gold mb-2">{cat.count} Angebote</p>
                 )}
                 <h3 class="font-display font-light text-[1.4rem] text-ink-dark leading-tight">{cat.name}</h3>
-                <p class="text-xs text-ink-muted mt-2 leading-relaxed">{cat.desc}</p>
+                <p class="text-xs text-ink-muted mt-2 leading-relaxed flex-1">{cat.desc}</p>
                 <span class="mt-5 inline-flex items-center gap-2 text-xs tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all duration-200">
                   Entdecken
                   <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" aria-hidden="true">
