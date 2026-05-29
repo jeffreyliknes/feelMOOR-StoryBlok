@@ -8,16 +8,16 @@ highlight: false
 sort_order: 3
 seo_title: Suiten, Zimmer & Suiten, feelMOOR
 seo_description: Suiten Comfort und Superior im feelMOOR Gesundresort Bad Wurzach. Ab 48 m², separater Wohnbereich, Therme-Zugang inklusive. Jetzt buchen.
-hero_image: /images/zimmer/Superior-Suite/90-a-0091-IRZ_9892-ingorack.com.jpg
-preview_image: /images/zimmer/Superior-Suite/86-a-0087-IRZ_9888-ingorack.com.jpg
+hero_image: /images/zimmer/Superior-Suite/90-a-0091-IRZ_9892-ingorack.com.webp
+preview_image: /images/zimmer/Superior-Suite/86-a-0087-IRZ_9888-ingorack.com.webp
 gallery:
-  - image: /images/zimmer/Superior-Suite/87-a-0088-IRZ_9889-ingorack.com.jpg
+  - image: /images/zimmer/Superior-Suite/87-a-0088-IRZ_9889-ingorack.com.webp
     caption: Suite Wohnbereich
-  - image: /images/zimmer/Superior-Suite/88-a-0089-IRZ_9890-ingorack.com.jpg
+  - image: /images/zimmer/Superior-Suite/88-a-0089-IRZ_9890-ingorack.com.webp
     caption: Schlafbereich
-  - image: /images/zimmer/Superior-Suite/92-a-0093-IRZ_9894-ingorack.com.jpg
+  - image: /images/zimmer/Superior-Suite/92-a-0093-IRZ_9894-ingorack.com.webp
     caption: Badezimmer
-  - image: /images/zimmer/Superior-Suite/94-a-0095-IRZ_9896-ingorack.com.jpg
+  - image: /images/zimmer/Superior-Suite/94-a-0095-IRZ_9896-ingorack.com.webp
     caption: Ausblick
 intro_heading: Die Suite
 intro_subheading: "Raum für Zweisamkeit, auf höchstem Niveau"

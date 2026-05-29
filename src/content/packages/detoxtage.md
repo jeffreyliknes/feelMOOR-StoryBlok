@@ -2,7 +2,7 @@
 title: "feelMOOr Detoxtage"
 subtitle: "Mit allen Sinnen zu mehr Wohlbefinden"
 tag: "Entschlackung & Entgiftung"
-image: "/images/wellness/flower-3086596_1920-2880w.jpg"
+image: "/images/wellness/flower-3086596_1920-2880w.webp"
 image_alt: "Detox und Reinigung im feelMOOR"
 nights: "7 Tage"
 teaser: "Wir unterstützen Sie gezielt bei der Regeneration und Reinigung Ihres Körpers mit der besonders entschlackenden Wirkung unseres NATURMOORES, des Trinkmoors sowie weiteren detoxunterstützenden Anwendungen."

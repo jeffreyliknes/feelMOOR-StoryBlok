@@ -8,16 +8,16 @@ highlight: true
 sort_order: 2
 seo_title: Doppelzimmer, Zimmer & Suiten, feelMOOR
 seo_description: Doppelzimmer Comfort, Superior und Classic im feelMOOR Gesundresort Bad Wurzach. Ab 28 m², Therme-Zugang inbegriffen. Jetzt buchen.
-hero_image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer1.jpg
-preview_image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer2.jpg
+hero_image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer1.webp
+preview_image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer2.webp
 gallery:
-  - image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer3.jpg
+  - image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer3.webp
     caption: Wohnbereich
-  - image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer4.jpg
+  - image: /images/zimmer/comfort-DZ/ComfortDoppelzimmer4.webp
     caption: Schlafbereich
-  - image: /images/zimmer/comfort-DZ/110-a-0111-IRZ_9920-ingorack.com.jpg
+  - image: /images/zimmer/comfort-DZ/110-a-0111-IRZ_9920-ingorack.com.webp
     caption: Zimmeransicht
-  - image: /images/zimmer/comfort-DZ/112-a-0113-IRZ_9922-ingorack.com.jpg
+  - image: /images/zimmer/comfort-DZ/112-a-0113-IRZ_9922-ingorack.com.webp
     caption: Badezimmer
 intro_heading: Das Zimmer
 intro_subheading: "Gemeinsam erholen, Komfort für zwei"

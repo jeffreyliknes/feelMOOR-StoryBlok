@@ -2,7 +2,7 @@
 title: "Achtsamkeit & Regeneration"
 subtitle: "Restart für Körper, Geist und Seele"
 tag: "Heilung & Regeneration"
-image: "/images/allgaeu/Achtsamkeit6-HGDEeATDvwN2dUzrmKq4TA.png"
+image: "/images/allgaeu/Achtsamkeit6-HGDEeATDvwN2dUzrmKq4TA.webp"
 image_alt: "Achtsamkeit und Regeneration in der Natur"
 nights: "7 bis 14 Nächte"
 teaser: "Sie sind ständig müde und erschöpft? Der (berufliche) Alltag lässt sich nur noch schwerlich meistern?"

@@ -6,11 +6,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "optimize-images": "node scripts/optimize-images.mjs --replace",
+    "update-image-references": "node scripts/update-image-references.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.3",
     "astro": "^5.7.2",
     "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }

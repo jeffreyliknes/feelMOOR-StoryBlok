@@ -2,7 +2,7 @@
 title: "Yoga Retreat Week"
 subtitle: "Yoga im Urlaub, Harmonie und Entspannung am Rande des Allgäus"
 tag: "Entschleunigung & Wellness"
-image: "/images/allgaeu/IMG_0270Mittel.jpg"
+image: "/images/allgaeu/IMG_0270Mittel.webp"
 image_alt: "Natur rund um Bad Wurzach"
 nights: "4 Tage"
 teaser: "Yoga hilft Ihnen Stress abzubauen sowie die Muskulatur und das Immunsystem zu stärken. Darüber hinaus bieten wir viele weitere Urlaubsaktivitäten in unserem feelMOOR Resort und der Umgebung (SPA, MOORbäder, Riedwanderung, Radtouren) für die genügend Zeit bleibt, da die Yoga-Einheiten morgens und abends stattfinden - eine perfekte Kombination für einen erfüllten Urlaub."

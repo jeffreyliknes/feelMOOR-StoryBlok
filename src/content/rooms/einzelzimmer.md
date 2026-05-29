@@ -8,16 +8,16 @@ highlight: false
 sort_order: 1
 seo_title: Einzelzimmer, Zimmer & Suiten, feelMOOR
 seo_description: Einzelzimmer Comfort und Classic im feelMOOR Gesundresort Bad Wurzach. Ab 22 m², Therme-Zugang inbegriffen. Jetzt buchen.
-hero_image: /images/zimmer/comfort-EZ/101-a-0102-IRZ_9905-ingorack.com.jpg
-preview_image: /images/zimmer/comfort-EZ/99-a-0100-IRZ_9902-ingorack.com.jpg
+hero_image: /images/zimmer/comfort-EZ/101-a-0102-IRZ_9905-ingorack.com.webp
+preview_image: /images/zimmer/comfort-EZ/99-a-0100-IRZ_9902-ingorack.com.webp
 gallery:
-  - image: /images/zimmer/comfort-EZ/100-a-0101-IRZ_9903-ingorack.com.jpg
+  - image: /images/zimmer/comfort-EZ/100-a-0101-IRZ_9903-ingorack.com.webp
     caption: Zimmeransicht
-  - image: /images/zimmer/comfort-EZ/102-a-0103-IRZ_9906-ingorack.com.jpg
+  - image: /images/zimmer/comfort-EZ/102-a-0103-IRZ_9906-ingorack.com.webp
     caption: Schlafbereich
-  - image: /images/zimmer/comfort-EZ/103-a-0104-IRZ_9907-ingorack.com.jpg
+  - image: /images/zimmer/comfort-EZ/103-a-0104-IRZ_9907-ingorack.com.webp
     caption: Wohnbereich
-  - image: /images/zimmer/comfort-EZ/104-a-0105-IRZ_9908-ingorack.com.jpg
+  - image: /images/zimmer/comfort-EZ/104-a-0105-IRZ_9908-ingorack.com.webp
     caption: Badezimmer
 intro_heading: Das Zimmer
 intro_subheading: "Ankommen, abschalten, ganz für sich"

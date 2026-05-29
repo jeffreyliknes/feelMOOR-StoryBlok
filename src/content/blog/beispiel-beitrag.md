@@ -5,7 +5,7 @@ seo_description: "Übungsbeitrag zum Testen von Pages CMS: Headline, SEO-Titel, 
 date: "2026-05-20"
 author: "feelMOOR Redaktion"
 teaser: "Dieser Beitrag ist nur ein Platzhalter, damit Sie in Pages CMS einen neuen Blog-Artikel anlegen und testen können."
-image: "/images/hotel/20-a-0020-IRZ_9795-ingorack.com.jpg"
+image: "/images/hotel/20-a-0020-IRZ_9795-ingorack.com.webp"
 image_alt: "feelMOOR Gesundresort Bad Wurzach, Außenansicht"
 category: "Übung"
 ---

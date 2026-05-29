@@ -2,7 +2,7 @@
 title: "Die Offene/Ambulante Badekur"
 subtitle: "Eine ambulante Vorsorgeleistung nach §23 Abs. 2 SGB V"
 tag: "Heilung & Regeneration"
-image: "/images/wellness/physiotherapy-2133286_1920.jpg"
+image: "/images/wellness/physiotherapy-2133286_1920.webp"
 image_alt: "Therapie und Anwendung im feelMOOR"
 nights: "21 Nächte"
 teaser: "Die ideale Kombination aus Gesundheit, Kur und Urlaub! Stärken Sie Ihre Gesundheit und beugen Sie mit einer ambulanten Badekur im feelMOOR Gesundresort Bad Wurzach vor. Genießen Sie die Kräfte aus der Natur - Moor & Thermalwasser - und das alles unter einem Dach."

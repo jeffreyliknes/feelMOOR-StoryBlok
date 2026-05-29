@@ -66,5 +66,13 @@
     { "source": "/zimmer/comfort-dz", "destination": "/zimmer/doppelzimmer", "permanent": true },
     { "source": "/zimmer/superior-dz", "destination": "/zimmer/doppelzimmer", "permanent": true },
     { "source": "/zimmer/superior-suite", "destination": "/zimmer/suiten", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
   ]
 }

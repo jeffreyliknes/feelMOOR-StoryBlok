@@ -2,7 +2,7 @@
 title: "feeLmoor basenfasten"
 subtitle: "in unserem Gesundresort am Rande des Allgäus"
 tag: "Entschlackung & Entgiftung"
-image: "/images/wellness/spa-3184610_1920.jpg"
+image: "/images/wellness/spa-3184610_1920.webp"
 image_alt: "Entspannung und Wohlbefinden im feelMOOR"
 nights: "7 Tage"
 teaser: "Das feelMOOR Basenfasten ist eine Variante des Fastens, die besonders mild und trotzdem sehr effektiv ist. Basenfasten setzt im Unterschied zum klassischen Fasten den Fokus auf eine pflanzliche, kalorienreduzierte Kost, was den Körper wunderbar entsäuert und den Säure-Basen-Haushalt reguliert."

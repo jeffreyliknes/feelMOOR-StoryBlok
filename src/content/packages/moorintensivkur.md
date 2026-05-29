@@ -4,7 +4,7 @@ subtitle: "Moor und mehr, im Fokus steht die Behandlung von orthopädischen Besc
 tag: Heilung & Regeneration
 nights: 10 bis 21 Nächte
 teaser: Die klassische Moorheilkur, medizinisch begleitet, mit täglichen Moorbädern und individuell abgestimmten Anwendungen für nachhaltige Gesundheit.
-image: /images/allgaeu/Heilkraft-des-moores.jpg
+image: /images/allgaeu/Heilkraft-des-moores.webp
 image_alt: Moorlandschaft Torflehrpfad Bad Wurzach
 booking_options:
   - label: "10 Übernachtungen"

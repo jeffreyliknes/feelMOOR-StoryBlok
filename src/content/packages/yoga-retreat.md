@@ -4,7 +4,7 @@ subtitle: "Yoga im Urlaub, Harmonie und Entspannung am Rande des Allgäus"
 tag: Entschleunigung & Wellness
 nights: 5 bis 7 Nächte
 teaser: Körper, Geist und Seele in Einklang bringen. Tägliche Yoga-Praxis, Meditation in der Moorlandschaft und regenerative Spa-Behandlungen.
-image: /images/allgaeu/Achtsamkeit5-qregBYAvwytR5Yy04E_KuQ.png
+image: /images/allgaeu/Achtsamkeit5-qregBYAvwytR5Yy04E_KuQ.webp
 image_alt: Yoga und Achtsamkeit im feelMOOR
 booking_options:
   - label: "Yoga Retreat"

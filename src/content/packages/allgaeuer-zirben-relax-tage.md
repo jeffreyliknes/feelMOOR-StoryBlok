@@ -2,7 +2,7 @@
 title: "Algäuer Zirben-Relax-Tage"
 subtitle: "Zeit für das Besondere"
 tag: "Entschleunigung & Wellness"
-image: "/images/wellness/Massage.jpg"
+image: "/images/wellness/Massage.webp"
 image_alt: "Wohltuende Massage im feelMOOR"
 nights: "5 bis 7 Nächte"
 teaser: "Lassen Sie die \"Königin der Alpen\" auf sich wirken und schöpfen neue Kraft und Energie. Der Zirbe mit ihrem hart-würzigen Duft werden entspannende und schlaf-fördernde Wirkungen zugeschrieben. Sie wirkt zudem beruhigend und senkt den Herzschlag. Drumherum genießen Sie einige Vorzüge unseres Gesundresorts und können einfach mal wieder die Seele baumeln lassen."

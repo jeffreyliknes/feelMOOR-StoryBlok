@@ -2,7 +2,7 @@
 title: "Achtsamkeit & Moor"
 subtitle: "Restart für Körper, Geist und Seele"
 tag: "Heilung & Regeneration"
-image: "/images/allgaeu/Achtsamkeit5-qregBYAvwytR5Yy04E_KuQ.png"
+image: "/images/allgaeu/Achtsamkeit5-qregBYAvwytR5Yy04E_KuQ.webp"
 image_alt: "Achtsamkeit im Wurzacher Ried"
 nights: "7 bis 21 Nächte"
 teaser: "EFFEKTIV REGENERIEN - Schöpfen Sie neue Kraft für den (beruflichen) Alltag und atmen Sie tief durch."

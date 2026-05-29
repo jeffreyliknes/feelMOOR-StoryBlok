@@ -2,7 +2,7 @@
 title: "Wellness à la carte"
 subtitle: "Das Baukastensystem für individuelle Wellness-Wünsche"
 tag: "Entschleunigung & Wellness"
-image: "/images/wellness/candles-2000135_1920.jpg"
+image: "/images/wellness/candles-2000135_1920.webp"
 image_alt: "Wellness-Atmosphäre mit Kerzen"
 nights: "5 bis 10 Nächte"
 teaser: "VERWÖHNEN - ENTSPANNEN - TRÄUMEN. Entfliehen Sie dem Stress, reduzieren Sie das Tempo und lassen Sie einfach mal wieder Ihre Seele baumeln. Genießen Sie wohlig warmes Thermalwasser und Wellness-Anwendungen vom Feinsten."

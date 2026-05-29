@@ -2,7 +2,7 @@
 title: "Angebot 4=3 WanderTage im feelmoor"
 subtitle: "Natur genießen & Entspannen im feelMOOR"
 tag: "Saisonal & Specials"
-image: "/images/allgaeu/Wandern1.png"
+image: "/images/allgaeu/Wandern1.webp"
 image_alt: "Wandern im Allgäu rund um Bad Wurzach"
 nights: "4 Tage"
 teaser: "Bad Wurzach ist idealer Ausgangspunkt für einen Wanderurlaub im Allgäu. Hier starten spannende Touren, von einfach bis anspruchsvoll, durch die hügelige Voralpenandschaft. Danach lässt es sich herrlich in unserer Thermen- und Saunalandschaft entspannen oder einen erlebnisreichen Tag mit kulinarischen Gaumenfreuden in unserem Restaurant Culinarium sowie anschließendem Absacker in der Kaminlounge genüsslich beenden. Freuen Sie sich auf eine unvergessliche Zeit am Rande des Allgäus!"

@@ -2,7 +2,7 @@
 title: "auszeit zu Ostern"
 subtitle: "Erholsame Feiertage im feelMOOR"
 tag: "Saisonal & Specials"
-image: "/images/kulinarik/Osterbrunch.png"
+image: "/images/kulinarik/Osterbrunch.webp"
 image_alt: "Osterbrunch im feelMOOR"
 nights: "4 Nächte"
 teaser: "Entspannen Sie in unserer Thermen- und Saunalandschaft, lassen Sie sich im Restaurant Culinarium mit österlichen Gaumenfreuden verwöhnen, erleben Sie die erwachende Natur im Wurzacher Ried und genießen Sie eine unvergessliche Zeit am Rande des Allgäus!"

@@ -2,7 +2,7 @@
 title: "VARIO.Kur"
 subtitle: "Das Baukastensystem für individuelle Wünsche"
 tag: "Heilung & Regeneration"
-image: "/images/allgaeu/moor-2.jpg"
+image: "/images/allgaeu/moor-2.webp"
 image_alt: "Heilmoor aus Bad Wurzach"
 nights: "7 bis 21 Nächte"
 teaser: "Unsere erfahrenen Ärzte stellen gemeinsam mit Ihnen Ihr persönliches Gesundheitsprogramm aus unserem breitgefächerten Leistungskatalog zusammen, das gezielt an Ihre persönlichen Bedürfnisse angepasst wird."

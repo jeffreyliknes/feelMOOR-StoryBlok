@@ -4,7 +4,7 @@ subtitle: "Ruhe und Entspannung am Rande des Allgäus"
 tag: Entschleunigung & Wellness
 nights: 2 bis 4 Nächte
 teaser: Abschalten, loslassen, ankommen. Verwöhnprogramm mit Therme, Sauna und ausgewählten Wellnessanwendungen, für die Seele und den Körper.
-image: /images/therme/wellness-1.jpg
+image: /images/therme/wellness-1.webp
 image_alt: Paar entspannt auf Sprudelliege in der Therme
 booking_options:
   - label: "4 Nächte"

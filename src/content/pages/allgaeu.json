@@ -6,30 +6,30 @@
   "hero_intro": "Wandern, Radfahren, Faszination Wurzacher Ried und vieles mehr.",
   "intro_heading": "Für jeden das richtige Erlebnis",
   "intro_body": "Egal ob erholungssuchender Wochenreisender, Sport- und Outdoorbegeisterter, Durchreisender, Kur-, Gesundheits- oder Wellnessgast, hier im Allgäu findet sich für jeden die richtige Freizeitbeschäftigung in und um Bad Wurzach.",
-  "hero_image": "/images/allgaeu/IMG_0270.jpg",
+  "hero_image": "/images/allgaeu/IMG_0270.webp",
   "hero_image_alt": "Allgäuer Landschaft",
-  "intro_image": "/images/allgaeu/Fahrradfahren1.png",
+  "intro_image": "/images/allgaeu/Fahrradfahren1.webp",
   "activities": [
     {
       "title": "Aktiv sein",
-      "image": "/images/allgaeu/Wandern3.png",
+      "image": "/images/allgaeu/Wandern3.webp",
       "body": "Wandern, Radfahren und Fahrradvergnügen pur, zahlreiche Wege führen durch Moorlandschaften und sanfte Allgäuer Hügel in und um Bad Wurzach."
     },
     {
       "title": "Ausflugsziele & Sehenswürdigkeiten",
-      "image": "/images/allgaeu/Landschaft3.png",
+      "image": "/images/allgaeu/Landschaft3.webp",
       "body": "Aufatmen und genießen: die schönsten Ziele, Sehenswürdigkeiten und Aussichten der Region rund um Bad Wurzach entdecken."
     },
     {
       "title": "Action & Adrenalin",
-      "image": "/images/allgaeu/E-Bike_Allgaeu.png",
+      "image": "/images/allgaeu/E-Bike_Allgaeu.webp",
       "body": "Adrenalinkick garantiert, für alle, die ihren Aktivurlaub mit einer Extraportion Nervenkitzel erleben möchten."
     }
   ],
   "features": [
     {
       "heading": "Wurzacher Ried, ein außergewöhnliches Naturerlebnis",
-      "image": "/images/allgaeu/IRX_2310_MorgenstimmungamRiedsee.jpg",
+      "image": "/images/allgaeu/IRX_2310_MorgenstimmungamRiedsee.webp",
       "image_alt": "Wurzacher Ried Morgenstimmung",
       "paragraphs": [
         "Die Entstehungsgeschichte des Wurzacher Riedes reicht bis ins Eiszeitalter zurück. Der risseiszeitliche Rhein-Gletscher formte vor 200.000 Jahren das Wurzacher Becken. Der würmeiszeitliche Gletscher riegelte vor rund 20.000 Jahren mit seiner Endmoräne das Zungenbecken ab, sodass die einfließenden Schmelzwässer nicht abfließen konnten und sich zu einem flachen See stauten. Dieser See verlandete über Jahrtausende immer mehr zu einem Moorgebiet, dem Wurzacher Ried.",
@@ -43,7 +43,7 @@
     },
     {
       "heading": "Podkäschtle Oberschwaben-Allgäu",
-      "image": "/images/allgaeu/IRX_2282.jpg",
+      "image": "/images/allgaeu/IRX_2282.webp",
       "image_alt": "Landschaft in Oberschwaben-Allgäu",
       "paragraphs": [
         "Im offiziellen Reisepodcast Podkäschtle, Oberschwaben-Allgäu entdecken, stellen Einheimische ihre Heimat vor. Sie bringen dem Zuhörer die besondere Wärme, den Humor und die bodenständige Gemütlichkeit von Oberschwaben-Allgäu nahe und füllen die schönen Aussichten auf Berge und Seen mit noch schöneren Geschichten.",
