@@ -1,0 +1,317 @@
+{
+  "source_url": "https://www.feelmoor.de/aktiv-sein",
+  "scraped_at": "2026-05-29T17:31:11Z",
+  "page_title": "Aktiv sein - feelMOOR Gesundheitsresort & Hotel Bad Wurzach",
+  "meta_description": "feelMOOR - Das Gesundresort und Hotel in Bad Wurzach. Entdecken Sie eine der schönsten Naturlandschaften Deutschlands.",
+  "navigation_context": {
+    "parent_section": "ALLGÄU ERLEBEN",
+    "parent_path": "/allgaeu-erleben",
+    "current_path": "/aktiv-sein"
+  },
+  "hero": {
+    "heading": "Aktiv sein - Wandern und radfahren",
+    "subheading": "Ein wahrer Naturgenuss - Erholung und Entschleunigung pur!",
+    "intro": "Oberschwaben & das Allgäu haben so einiges zu bieten... Entdecken Sie eine der schönsten Naturlandschaften & Erholungsgebiete Deutschlands. Ob Sie entspannt wandern, sportlich aktiv sind oder kulturelle Kleinode finden möchten - die Erholungs- und Ferienregion Oberschwaben/Allgäu bietet Ihnen zu allen Jahreszeiten einzigartige Möglichkeiten.",
+    "topic_teasers": [
+      {
+        "title": "Wandern",
+        "teaser": "in und um Bad Wurzach",
+        "link": "#!next"
+      },
+      {
+        "title": "Radfahren",
+        "teaser": "Fahrradvergnügen pur",
+        "link": "#!next"
+      },
+      {
+        "title": "wurzacher Ried",
+        "teaser": "ein außergewöhnliches Naturerlebnis",
+        "link": "#!next"
+      },
+      {
+        "title": "Sehenswürdigkeiten",
+        "teaser": "aufatmen und genießen",
+        "link": "#!next"
+      },
+      {
+        "title": "Action",
+        "teaser": "Adrenalinkick garantiert",
+        "link": "#!next"
+      }
+    ]
+  },
+  "sections": {
+    "wandern": {
+      "heading": "Wandern in und um Bad Wurzach",
+      "intro_paragraphs": [
+        "Über 180 km gepflegte und perfekt beschilderte Wanderwege sind das Eldorado für Wanderer und Spaziergänger. 18 Wandertouren von einfach bis anspruchsvoll führen durch das malerische Umland von Bad Wurzach und rund um das europadiplomierte Wurzacher Ried. Auch die Wandertrilogie Allgäu, das neue Fernwanderwegekonzept im Allgäu, verläuft durch den Portalort Bad Wurzach.",
+        "Wer mag, erkundet Wege und Landschaften nach eigenem Gusto. Zusätzlich gibt es geführte Wanderungen, botanische Exkursionen oder Bergtouren in die nahen Alpen."
+      ],
+      "wandertrilogie_allgaeu": {
+        "title": "Wandertriologie allgäu",
+        "paragraphs": [
+          "Wandern und Allgäu gehören einfach zusammen. Die \"Wandertrilogie Allgäu - Im Dreiklang mit der Natur\" ist mit 876 Streckenkilometer ein einzigartiges Weitwanderwegenetz auf 3 Routen durch das Allgäu.",
+          "Die Wandertrilogie zeigt die charakteristische Vielfalt der Region von der sanften Hügellandschaft für Genusswanderer bis hinauf zu den alpinen Gipfeln des Hochgebirges. Die drei prägenden Landschaftsbilder mit ihren Höhenlagen werden erlebbar und erwanderbar. Die Wandertrilogie lädt aber nicht nur zum Wandern ein, sondern sie erzählt die Geschichten der Region und lässt sie an einer Vielzahl von Symbolen und Plätzen lebendig werden, Ort für Ort, Themenraum für Themenraum.",
+          "Bad Wurzach bildet als Portalort einen Eckpfeiler dieser Wandertrilogie. Als nordwestliches Tor zum Allgäu erzählt Bad Wurzach die Geschichte der Naturschutzkammern. Hier verbirgt sich der Energiespeicher, den die eiszeitlichen Gletscher hinterließen: das Moor. Die Naturschutzkammern sind ein Reich der Extreme, dem eine wunderbare, barock geprägte Kulturlandschaft mit imposanten Kirchen und Klöstern gegenübersteht."
+        ],
+        "links": [
+          {
+            "label": "mehr erfahren",
+            "url": "https://www.allgaeu.de/draussen/wandern"
+          }
+        ]
+      },
+      "hiking_routes": [
+        {
+          "title": "Ried bei bad wurzach",
+          "detail_text": null,
+          "outdooractive_embed_url": "https://www.outdooractive.com/de/embed/13484507/js?mw=false",
+          "outdooractive_tour_id": "13484507",
+          "image_url": "https://cdn3.site-media.eu/images/1920/4826684/IRX_0444_Aussicht-am-Torflehrpfad.jpg",
+          "notes": "Route details loaded via Outdooractive embed widget; no static description text in page HTML."
+        },
+        {
+          "title": "vom aussichtspunkt wachbühl zum schloss zeil",
+          "detail_text": null,
+          "outdooractive_embed_url": "https://www.outdooractive.com/de/embed/1397143/js?mw=false",
+          "outdooractive_tour_id": "1397143",
+          "image_url": "https://cdn3.site-media.eu/images/1920/4826684/IRX_0444_Aussicht-am-Torflehrpfad.jpg",
+          "notes": "Route details loaded via Outdooractive embed widget; no static description text in page HTML."
+        },
+        {
+          "title": "Nach Gospoldshofen und zum Herrgottsried",
+          "detail_text": null,
+          "outdooractive_embed_url": "https://www.outdooractive.com/de/embed/1372877/js?mw=false",
+          "outdooractive_tour_id": "1372877",
+          "image_url": "https://cdn3.site-media.eu/images/1920/4826684/IRX_0444_Aussicht-am-Torflehrpfad.jpg",
+          "notes": "Route details loaded via Outdooractive embed widget; no static description text in page HTML."
+        },
+        {
+          "title": "Rund ums Dietmannser Ried mit aussichtsweg",
+          "detail_text": null,
+          "outdooractive_embed_url": "https://www.outdooractive.com/de/embed/1386304/js?mw=false",
+          "outdooractive_tour_id": "1386304",
+          "image_url": null,
+          "notes": "Route details loaded via Outdooractive embed widget; no static description text in page HTML."
+        },
+        {
+          "title": "ins wurzacher ried",
+          "detail_text": null,
+          "outdooractive_embed_url": "https://www.outdooractive.com/de/embed/1374642/js?mw=false",
+          "outdooractive_tour_id": "1374642",
+          "image_url": null,
+          "notes": "Route details loaded via Outdooractive embed widget; no static description text in page HTML."
+        },
+        {
+          "title": "Zum schloss Zeil",
+          "detail_text": null,
+          "outdooractive_embed_url": "https://www.outdooractive.com/de/embed/1398837/js?mw=false",
+          "outdooractive_tour_id": "1398837",
+          "image_url": null,
+          "notes": "Route details loaded via Outdooractive embed widget; no static description text in page HTML."
+        }
+      ]
+    },
+    "radfahren": {
+      "heading": "Radfahren in und um Bad Wurzach",
+      "intro_paragraphs": [
+        "Radler kommen in Bad Wurzach voll auf ihre Kosten, egal ob bei eigenen Entdeckungsfahrten oder bei einer geführten Radtour. Fünf ausgeschilderte lokale Radtouren führen durch die einmalig schöne Landschaft rund um Bad Wurzach. Zudem bildet Bad Wurzach einen Knotenpunkt von zwei überregional bekannten Radfernwegen."
+      ],
+      "radrunde_allgaeu": {
+        "title": "Radrunde Allgäu",
+        "paragraphs": [
+          "Ein besonderes Raderlebnis ist die \"Radrunde Allgäu - die Runde in die schönsten Ecken\". Sie wurde bereits kurz nach Eröffnung vom ADFC mit 4 Sternen ausgezeichnet und führt durch sechs Landkreise in Bayern, Baden-Württemberg und Tirol. Dabei verbindet die Runde nicht nur Ort für Ort sondern taucht ein in die Geschichten des Allgäus."
+        ],
+        "links": [
+          {
+            "label": "mehr erfahren",
+            "url": "https://www.allgaeu.de/draussen/rad/radrunde"
+          }
+        ]
+      },
+      "oberschwaben_allgaeu_radweg": {
+        "title": "Oberschwaben-Allgäu Radweg",
+        "paragraphs": [
+          "Auf diesem 365 km langen Rundweg, ausgezeichnet vom ADFC, können Sie per Rad alles erleben, wofür Oberschwaben und das Württembergische Allgäu bekannt sind. Der Weg führt auf 8 Etappen vorbei an Burgen und Schlössern, zahlreichen historischen Bauwerken entlang der Oberschwäbischen Barockstraße und Museen."
+        ],
+        "links": [
+          {
+            "label": "mehr erfahren",
+            "url": "https://www.oberschwaben-tourismus.de/themenwelten/radfahren/oberschwaben-allgaeu-radweg"
+          }
+        ]
+      },
+      "hotel_benefits_for_cyclists": [
+        "abschließbare Fahrradgarage",
+        "Lunchpakete zum Mitnehmen",
+        "wir sind \"Bett & Bike\"-zertifiziert",
+        "Lademöglichkeiten für E-Bikes",
+        "Werkzeug für kleinere Reparaturen (auf Anfrage an der Rezeption)"
+      ],
+      "hotel_benefits_image_url": "https://cdn3.site-media.eu/images/1920/4868814/06Juni.jpg",
+      "e_bike_rental": {
+        "heading": "E-Bike-Verleih im feelmoor Gesundresort",
+        "details": [
+          "Wir halten 5 E-Bikes für ausgedehnte Touren (Reichweite zwischen 80-180 km) bereit | von April bis Oktober",
+          "Tarif: ab 33,- € (1 - 2 - 4 - 7 Tage)",
+          "Abendtarif ab 16 Uhr: ab 15,- €",
+          "Nimm 2 und spare 15% auf den Mietpreis",
+          "Anfrage & Reservierung über die Rezeption möglich"
+        ],
+        "image_url": "https://cdn3.site-media.eu/images/1200/5931403/E-Bike_Allgaeu.png",
+        "pricing_lines": [
+          "Wir halten 5 E-Bikes für ausgedehnte Touren (Reichweite zwischen 80-180 km) bereit | von April bis Oktober",
+          "Tarif: ab 33,- € (1 - 2 - 4 - 7 Tage)",
+          "Abendtarif ab 16 Uhr: ab 15,- €",
+          "Nimm 2 und spare 15% auf den Mietpreis",
+          "Anfrage & Reservierung über die Rezeption möglich"
+        ]
+      }
+    },
+    "allgaeu_erleben_teasers": {
+      "heading": "feelMOOR – Allgäu erleben",
+      "links": [
+        {
+          "title": "Ausflugsziele & Sehenswürdigkeiten",
+          "url": "/ausflugsziele",
+          "cta": "mehr erfahren"
+        },
+        {
+          "title": "Action & Adrenalin",
+          "url": "/action-adrenalin",
+          "cta": "mehr erfahren"
+        },
+        {
+          "title": "Allgäu erleben (Übersicht)",
+          "url": "/allgaeu-erleben",
+          "source": "site navigation"
+        }
+      ]
+    }
+  },
+  "external_links": [
+    {
+      "url": "https://maps.app.goo.gl/2xVMSHPTzu7t5QGDA",
+      "label": null
+    },
+    {
+      "url": "https://www.allgaeu.de/draussen/wandern",
+      "label": "mehr erfahren"
+    },
+    {
+      "url": "https://www.allgaeu.de/draussen/rad/radrunde",
+      "label": "mehr erfahren"
+    },
+    {
+      "url": "https://www.oberschwaben-tourismus.de/themenwelten/radfahren/oberschwaben-allgaeu-radweg",
+      "label": "mehr erfahren"
+    },
+    {
+      "url": "https://www.facebook.com/feelmoorbadwurzach/",
+      "label": null
+    },
+    {
+      "url": "https://www.instagram.com/feelmoorbadwurzach/?hl=de",
+      "label": null
+    },
+    {
+      "url": "https://my.sitejet.io/images/document/21809767/251216_FM_Pauschalenkatalog_2026_260x210mm_LOW_DS-ZgZ19whZnLQhnQkqz2tzvQ.pdf",
+      "label": "GESUNDHEITS- & WELLNESSMAGAZIN"
+    },
+    {
+      "url": "https://my.sitejet.io/images/document/20021372/AGBHotelaufnahmevertrag-J6DOiy4EZbJfi0X7NAmYCg.pdf",
+      "label": "AGB"
+    },
+    {
+      "url": "https://my.sitejet.io/images/document/21859699/AGBThermeStand01.02.26-Q3C_VusUSeTmNkhyR0UtyA.pdf",
+      "label": "AGB THERME"
+    },
+    {
+      "url": "https://my.sitejet.io/images/document/20021369/AGBNutzungsvertraegefeelMOORThermeundFitness-MMUrzZly0DgkuVfjp6o7tw.pdf",
+      "label": "AGB THERME (2025)"
+    }
+  ],
+  "cross_links": [
+    {
+      "title": "Ausflugsziele & Sehenswürdigkeiten",
+      "url": "/ausflugsziele",
+      "cta": "mehr erfahren"
+    },
+    {
+      "title": "Action & Adrenalin",
+      "url": "/action-adrenalin",
+      "cta": "mehr erfahren"
+    },
+    {
+      "title": "Allgäu erleben (Übersicht)",
+      "url": "/allgaeu-erleben",
+      "source": "site navigation"
+    }
+  ],
+  "raw_image_urls": [
+    "https://cdn3.site-media.eu/images/0/18157959/montserrat-v30-latin-600-IR0_lvTRyAbwINIK1GQBWA.woff2",
+    "https://cdn3.site-media.eu/images/0/18157962/montserrat-v30-latin-700-TEna3UxZTjW3R_gj_Bk27Q.woff2",
+    "https://cdn3.site-media.eu/images/0/18157965/montserrat-v30-latin-500-G2vMqdWfgOoB0cFfHnOnzw.woff2",
+    "https://cdn3.site-media.eu/images/0/18157968/montserrat-v30-latin-regular-LGV86gZapQz0HvV_fcQLHg.woff2",
+    "https://cdn3.site-media.eu/images/0/22150505/dinpro_medium-174w4VuMjWIT5xNDQHkxvw.otf",
+    "https://cdn3.site-media.eu/images/0/22150508/dinpro_mediumitalic-rC4AKevUeFa6w60R7NHkjg.otf",
+    "https://cdn3.site-media.eu/images/0/22150511/dinpro_condensedblack-TQHLgzGLOyQ3csrj97QBqQ.otf",
+    "https://cdn3.site-media.eu/images/0/22150514/dinpro_condensedmedium-zm8yVxD0mYquDHO4mObCag.otf",
+    "https://cdn3.site-media.eu/images/0/22150517/dinpro_black-5F2YaUQrxwR-WXw-7hIqMQ.otf",
+    "https://cdn3.site-media.eu/images/0/22150520/dinpro_condenseditalic-xtXy6R5fSaatNv8xqCKhcg.otf",
+    "https://cdn3.site-media.eu/images/0/22150523/dinpro_bold-6Tgkx84ijd69-53KqfaVTw.otf",
+    "https://cdn3.site-media.eu/images/0/22150526/dinpro_condensedmediumitalic--VVy9IqVjv6k_jdUhEaj1A.otf",
+    "https://cdn3.site-media.eu/images/0/22150529/dinpro_light-7MbeX2etFtv8LGobE6MIjA.otf",
+    "https://cdn3.site-media.eu/images/0/22150532/dinpro_bolditalic-qXSqPIZQhzIx4B7W6D0DjQ.otf",
+    "https://cdn3.site-media.eu/images/0/22150535/dinpro_condensedlightitalic-ahH9gkn0rcePvT67SpaQoQ.otf",
+    "https://cdn3.site-media.eu/images/0/22150538/dinpro_condensedlight-YnRLlBIjZ7N1oHiWY5Lc7A.otf",
+    "https://cdn3.site-media.eu/images/0/22150541/dinpro-iQN34fAIayJrMEGl3mNgkQ.otf",
+    "https://cdn3.site-media.eu/images/0/22150544/dinpro_italic-WvmnIU11ORmxCFr_joGXbQ.otf",
+    "https://cdn3.site-media.eu/images/0/22150547/dinpro_condensedblackitalic-EIutFsYvBmUNo8Qz2JYRoA.otf",
+    "https://cdn3.site-media.eu/images/0/22150550/dinpro_condensedregular-RyDSF-G_mFiiXuzh9hSrBQ.otf",
+    "https://cdn3.site-media.eu/images/0/22150553/dinpro_blackitalic-qB7y5YI5DhfAN3eVO1lCpA.otf",
+    "https://cdn3.site-media.eu/images/0/22150556/dinpro_lightitalic--Lle-SOOyn1VdZt9Cm5MiQ.ttf",
+    "https://cdn3.site-media.eu/images/0/22150559/dinpro_condensedbolditalic-I4kSNVwTBe2wxWa2HL7VOg.otf",
+    "https://cdn3.site-media.eu/images/0/22150562/dinpro_condensedbold-dYRr7iySDKgv6iC9q1srag.otf",
+    "https://cdn3.site-media.eu/images/0/4803632/LogoISO9001weiss.jpg",
+    "https://cdn3.site-media.eu/images/0/4819716/BettBike_Logo_farbig_4c_negativ.jpg",
+    "https://cdn3.site-media.eu/images/0/6076513/widget-bg-2.png",
+    "https://cdn3.site-media.eu/images/0/6903407/WStars_Lizenzlogo_feelMoor_quer.jpg",
+    "https://cdn3.site-media.eu/images/1200/5931403/E-Bike_Allgaeu.png",
+    "https://cdn3.site-media.eu/images/1200x630/4794380/5-a-0005-IRZ_9777-ingorack.com.jpg",
+    "https://cdn3.site-media.eu/images/152x152/4795169/Bildmarke-feelmoor.png",
+    "https://cdn3.site-media.eu/images/154%2C704x671%2B215%2B118/5310839/quer_Logo_FEELMOOR_Therme_HEXAB49D4E1.png",
+    "https://cdn3.site-media.eu/images/16x16/4795169/Bildmarke-feelmoor.png",
+    "https://cdn3.site-media.eu/images/1920/4753505/180727_Hoehenlinien_alm_NEU-gold.png",
+    "https://cdn3.site-media.eu/images/1920/4826684/IRX_0444_Aussicht-am-Torflehrpfad.jpg",
+    "https://cdn3.site-media.eu/images/1920/4826693/karting-1666758_640.jpg",
+    "https://cdn3.site-media.eu/images/1920/4826834/IRX_2364_Radler-Eintuernenberg.jpg",
+    "https://cdn3.site-media.eu/images/1920/4830203/IRX_0411-Paar-auf-Steg.jpg",
+    "https://cdn3.site-media.eu/images/1920/4868814/06Juni.jpg",
+    "https://cdn3.site-media.eu/images/1920/4868829/SBS-BadWurzach-Ried-03_JH.jpg",
+    "https://cdn3.site-media.eu/images/32x32/4795169/Bildmarke-feelmoor.png",
+    "https://cdn3.site-media.eu/images/576/4753505/180727_Hoehenlinien_alm_NEU-gold.png",
+    "https://cdn3.site-media.eu/images/576/4826684/IRX_0444_Aussicht-am-Torflehrpfad.jpg",
+    "https://cdn3.site-media.eu/images/576/4826693/karting-1666758_640.jpg",
+    "https://cdn3.site-media.eu/images/576/4826834/IRX_2364_Radler-Eintuernenberg.jpg",
+    "https://cdn3.site-media.eu/images/576/4830203/IRX_0411-Paar-auf-Steg.jpg",
+    "https://cdn3.site-media.eu/images/576/4868814/06Juni.jpg",
+    "https://cdn3.site-media.eu/images/576/4868829/SBS-BadWurzach-Ried-03_JH.jpg",
+    "https://cdn3.site-media.eu/images/576/5931403/E-Bike_Allgaeu.png",
+    "https://cdn3.site-media.eu/images/77%2C704x671%2B215%2B118/5310839/quer_Logo_FEELMOOR_Therme_HEXAB49D4E1.png",
+    "https://cdn3.site-media.eu/images/96x96/4795169/Bildmarke-feelmoor.png",
+    "https://cdn3.site-media.eu/images/976/4826684/IRX_0444_Aussicht-am-Torflehrpfad.jpg",
+    "https://cdn3.site-media.eu/images/976/4826834/IRX_2364_Radler-Eintuernenberg.jpg",
+    "https://cdn3.site-media.eu/images/976/4830203/IRX_0411-Paar-auf-Steg.jpg",
+    "https://cdn3.site-media.eu/images/976/4868814/06Juni.jpg",
+    "https://cdn3.site-media.eu/images/976/4868829/SBS-BadWurzach-Ried-03_JH.jpg",
+    "https://cdn3.site-media.eu/images/976/5931403/E-Bike_Allgaeu.png"
+  ],
+  "notes": [
+    "Hiking route accordion panels contain Outdooractive JavaScript embeds only; descriptive copy for individual routes is not present as static HTML.",
+    "Page typo preserved from source: accordion title 'Wandertriologie allgäu' (likely Wandertrilogie).",
+    "Sixth hiking route title on page: 'Rund ums Dietmannser Ried mit aussichtsweg' (user list omitted 'mit aussichtsweg').",
+    "Hero topic cards use in-page accordion triggers (#!next), not separate URLs.",
+    "Meta description appears to be site-wide default, not page-specific."
+  ]
+}

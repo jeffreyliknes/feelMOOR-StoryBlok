@@ -1,0 +1,537 @@
+{
+  "source_url": "https://www.feelmoor.de/ausflugsziele",
+  "scraped_at": "2026-05-29T17:30:54.698586+00:00",
+  "page_title": "Ausflugsziele - feelMOOR Gesundheitsresort & Hotel Bad Wurzach",
+  "meta_description": "feelMOOR  - Das Gesundresort und Hotel in Bad Wurzach. Entdecken Sie unsere Ausflugsziele und Sehenswürdigkeiten im Allgäu.",
+  "hero": {
+    "heading": "Ausflugsziele & Sehenswürdigkeiten",
+    "subheading": "Finden Sie Ihren Lieblingsplatz",
+    "intro": "Inmitten der malerischen voralpinen Allgäuer Hügellandschaft, fernab vom hektischen Alltag der Großstädte findet in Bad Wurzach jeder sein Lieblingsplätzchen zum aufatmen und genießen."
+  },
+  "navigation_context": {
+    "parent_section": "ALLGÄU ERLEBEN",
+    "breadcrumb_or_nav_labels": [
+      "Allgäu erleben",
+      "Ausflugsziele"
+    ]
+  },
+  "sections": [
+    {
+      "id": "feelmoor-ausflugsziele",
+      "slug": "feelmoor-ausflugsziele",
+      "heading": "feelMOOR Ausflugsziele",
+      "group_type": "excursions",
+      "items": [
+        {
+          "title": "Oberschwäbisches Torfbähnle",
+          "slug": "oberschwaebisches-torfbaehnle",
+          "category": "Besichtigung / Führung",
+          "date_schedule": "von April bis Oktober - jeden 2. Sonntag und jeden vierten Samstag im Monat",
+          "duration": "ca. 1 Stunde",
+          "location_meeting_point": "Oberschw. Torfmuseum, Oberried",
+          "highlights": [
+            "Führung durch das Torfmuseum",
+            "Einrichtung und Arbeitsweise des früheren Torfabbaus",
+            "Fahrt mit der Torfbahn"
+          ],
+          "description": null,
+          "external_links": [
+            {
+              "label": "Mehr Erfahren",
+              "url": "https://torfbahn.de/"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0/4871298/Torfwerkshockete.jpg",
+            "https://cdn3.site-media.eu/images/0/4871301/IMG_0425.JPG",
+            "https://cdn3.site-media.eu/images/0/4871304/IMG_0388.JPG"
+          ],
+          "raw_fields": {
+            "kategorie": "Besichtigung / Führung",
+            "datum": "von April bis Oktober - jeden 2. Sonntag und jeden vierten Samstag im Monat",
+            "beginn": "13:30 Uhr, 14:30 Uhr & 15:30 Uhr",
+            "dauer": "ca. 1 Stunde",
+            "treff": "Oberschw. Torfmuseum, Oberried"
+          },
+          "id": "oberschwaebisches-torfbaehnle"
+        },
+        {
+          "title": "Ausflugszug Moorbahn",
+          "slug": "ausflugszug-moorbahn",
+          "category": "Ausflug",
+          "date_schedule": "von 30. April bis 15. Oktober 2023 - jeden Sonn- & Feiertag",
+          "duration": null,
+          "location_meeting_point": "Bahnhofstraße (neben Aldi)",
+          "highlights": [
+            "Fahrt von Bad Wurzach nach Aulendorf",
+            "kostenlos mit der Kur- und Gästekarte",
+            "Region aus einer besonderer Perspektive entdecken"
+          ],
+          "description": null,
+          "external_links": [
+            {
+              "label": "Mehr erfahren",
+              "url": "https://www.moorbahn.eu/"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0/4878480/GaesteundFreizeit-ab1.Mai-Moorbahn.JPG",
+            "https://cdn3.site-media.eu/images/0/4878483/aktuellesausBadWurzachMoorbahn.jpg",
+            "https://cdn3.site-media.eu/images/0/4878477/AkutellesausBadWurzach-Moorbahn-NeueHaltestelleBadWurzachgeplant003.jpg",
+            "https://cdn3.site-media.eu/images/0/4878486/1.AlternativesTitelbildMoorbahn-752_rossberg2_c-hasenfratz.JPG"
+          ],
+          "raw_fields": {
+            "kategorie": "Ausflug",
+            "datum": "von 30. April bis 15. Oktober 2023 - jeden Sonn- & Feiertag",
+            "abfahrt": "am Bahnhof Bad Wurzach",
+            "treff": "Bahnhofstraße (neben Aldi)"
+          },
+          "id": "ausflugszug-moorbahn"
+        },
+        {
+          "title": "Oberschwäbisches Torfmuseum",
+          "slug": "oberschwaebisches-torfmuseum",
+          "category": "Sehenswürdigkeit / Führungen",
+          "date_schedule": "von April bis Oktober - jeden zweiten Sonntag und jeden vierten Samstag im Monat",
+          "duration": null,
+          "location_meeting_point": "Dr.-Harry-Wiegand-Str. 4/1",
+          "highlights": [
+            "Erste Arbeit im Ried",
+            "Geschichte der Torfstecherei",
+            "Sagen und Märchen rund ums Wurzacher Ried"
+          ],
+          "description": "88410 Bad Wurzach",
+          "external_links": [
+            {
+              "label": "Mehr Erfahren",
+              "url": "https://torfbahn.de/torfmuseum/"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0/4871289/IMG_0300_P1.JPG",
+            "https://cdn3.site-media.eu/images/0/4871283/IMG_6118_A.JPG",
+            "https://cdn3.site-media.eu/images/0/4871286/IMG_6109_A.JPG"
+          ],
+          "raw_fields": {
+            "kategorie": "Sehenswürdigkeit / Führungen",
+            "datum": "von April bis Oktober - jeden zweiten Sonntag und jeden vierten Samstag im Monat",
+            "öffnungszeiten": "13:00 - 17:00 Uhr",
+            "treff": "Dr.-Harry-Wiegand-Str. 4/1"
+          },
+          "id": "oberschwaebisches-torfmuseum"
+        },
+        {
+          "title": "Torflehrpfad",
+          "slug": "torflehrpfad",
+          "category": "Wandern / Entdecken",
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": "Oberschw. Torfmuseum",
+          "highlights": [
+            "führt auf die Spuren der Torfstecher",
+            "Torfwerke und Gräben zu sehen",
+            "1,5 km langer Pfad",
+            "12 Informationstafeln",
+            "historische Gerätschaften"
+          ],
+          "description": "Dr.-Harry-Wiegand-Str. 4/1\n\n88410 Bad Wurzach",
+          "external_links": [],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0/4868841/IRX_2282_Torflehrpfad-Morgenstimmung.jpg",
+            "https://cdn3.site-media.eu/images/0/4868829/SBS-BadWurzach-Ried-03_JH.jpg",
+            "https://cdn3.site-media.eu/images/0/4826747/IRX_0362_PaarimRied_3.jpg"
+          ],
+          "raw_fields": {
+            "kategorie": "Wandern / Entdecken",
+            "start": "Oberschw. Torfmuseum"
+          },
+          "id": "torflehrpfad"
+        },
+        {
+          "title": "Alpaka Leben",
+          "slug": "alpaka-leben",
+          "category": "Ausflug / Wandern",
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": "Alpakaleben",
+          "highlights": [
+            "Alpaka-Wanderungen",
+            "Tierische Achtsamkeit & Yoga",
+            "Feste, Geburtstage, Betriebsausflüge mit Alpakas",
+            "Seminare und Teambuilding auf tierische Art"
+          ],
+          "description": "Pfänders 3\n\n88319 Aitrach",
+          "external_links": [
+            {
+              "label": "mehr erfahren",
+              "url": "https://www.alpakaleben.de/alpaka-leben.html"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0/6607384/AlapakaLeben2.jpg",
+            "https://cdn3.site-media.eu/images/0/6607388/AlapakaLeben4.jpg",
+            "https://cdn3.site-media.eu/images/0/6607387/AlapakaLeben3.jpg"
+          ],
+          "raw_fields": {
+            "kategorie": "Ausflug / Wandern",
+            "start": "Alpakaleben"
+          },
+          "id": "alpaka-leben"
+        }
+      ]
+    },
+    {
+      "id": "feelmoor-sehenswuerdigkeiten",
+      "slug": "feelmoor-sehenswuerdigkeiten",
+      "heading": "feelMOOR Sehenswürdigkeiten",
+      "group_type": "sights",
+      "items": [
+        {
+          "title": "Barocktreppenhaus im Bad Wurzacher Schloss",
+          "slug": "barocktreppenhaus-im-bad-wurzacher-schloss",
+          "category": null,
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": null,
+          "highlights": [],
+          "description": "Weit über die Grenzen hinaus bekannt ist das Barocktreppenhaus im Schloss von Bad Wurzach. Als Besucher dieses repräsentativen Aufgangs erleben Sie hautnah ein Meisterstück barocker Baukunst. Die elegant geschwungene Treppe und das schöne Deckenfresko gelten als eines der Juwele der Oberschwäbischen Barockstraße.",
+          "external_links": [
+            {
+              "label": " Bad Wurzacher Schloss von Außen",
+              "url": "https://cdn3.site-media.eu/images/1200/4848774/barocktreppenhaus2.JPG"
+            },
+            {
+              "label": "Fresken in Bad Wurzacher Schloss",
+              "url": "https://cdn3.site-media.eu/images/1200/4848783/Barocktreppenhaus-Deckengemaelde_IMG_3458_P.JPG"
+            },
+            {
+              "label": "Barocktreppenhaus",
+              "url": "https://cdn3.site-media.eu/images/1200/4848777/Barocktreppenhaus_1_WurzacherSchloss.JPG"
+            },
+            {
+              "label": "Barocktreppenhaus",
+              "url": "https://cdn3.site-media.eu/images/1200/4848780/Barocktreppenhaus_11.jpg"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0%2C2736x2736%2B456%2B0/4848774/barocktreppenhaus2.JPG",
+            "https://cdn3.site-media.eu/images/0%2C2736x2736%2B456%2B0/4848783/Barocktreppenhaus-Deckengemaelde_IMG_3458_P.JPG",
+            "https://cdn3.site-media.eu/images/0%2C1536x1536%2B256%2B0/4848777/Barocktreppenhaus_1_WurzacherSchloss.JPG",
+            "https://cdn3.site-media.eu/images/0%2C1536x1536%2B256%2B0/4848780/Barocktreppenhaus_11.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B456%2B0/4848774/barocktreppenhaus2.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B456%2B0/4848783/Barocktreppenhaus-Deckengemaelde_IMG_3458_P.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C1536x1536%2B256%2B0/4848777/Barocktreppenhaus_1_WurzacherSchloss.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C1536x1536%2B256%2B0/4848780/Barocktreppenhaus_11.jpg"
+          ],
+          "raw_fields": {},
+          "id": "barocktreppenhaus-im-bad-wurzacher-schloss"
+        },
+        {
+          "title": "Rokokohauskapelle in Maria Rosengarten",
+          "slug": "rokokohauskapelle-in-maria-rosengarten",
+          "category": null,
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": null,
+          "highlights": [],
+          "description": "1711 ließen die Schwestern, die seit der Klostergründung das herrschaftliche Oratorium in der Pfarrkirche mitbenutzen durften, mit Erlaubnis des Bischofs von Konstanz eine eigene Hauskapelle einbauen, die 1717 zu Ehren der hl. Joseph, Elisabeth, Franziskus, Antonius von Padua und Klara konsekriert wurde (Patrozinium am 19. November 1717). 1763 wurde die Kapelle im Zuge umfassender baulicher Erneuerungen im gesamten Gebäude im Rokoko-Stil neu ausgeschmückt (Plastiken der vier Franziskanerheiligen Elisabeth, Franziskus, Klara und Antonius von Padua, Johann Jakob Willibald Ruez zugeschrieben). Die Hauskapelle ist während der normalen Öffnungszeiten des Hauses zugänglich und kann für kleinere Andachten u.ä. genutzt werden. Öffnungszeiten täglich von 10 - 16 Uhr.",
+          "external_links": [
+            {
+              "label": "Rokokohauskapelle Interieur",
+              "url": "https://cdn3.site-media.eu/images/1200/4848813/HauskapelleRosengarten.jpg"
+            },
+            {
+              "label": "Altar in Rokokohauskapelle ",
+              "url": "https://cdn3.site-media.eu/images/1200/4848795/HauskapelleRosengarten3.jpg"
+            },
+            {
+              "label": "Muster in in Rokokohauskapelle ",
+              "url": "https://cdn3.site-media.eu/images/1200/4848807/HauskapelleRosengarten5.jpg"
+            },
+            {
+              "label": "Engel ",
+              "url": "https://cdn3.site-media.eu/images/1200/4848810/hauskapelleRosengarten6.jpg"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0%2C5504x5504%2B1376%2B0/4848813/HauskapelleRosengarten.jpg",
+            "https://cdn3.site-media.eu/images/0%2C5112x5112%2B1278%2B0/4848795/HauskapelleRosengarten3.jpg",
+            "https://cdn3.site-media.eu/images/0%2C5504x5504%2B1376%2B0/4848807/HauskapelleRosengarten5.jpg",
+            "https://cdn3.site-media.eu/images/0%2C5504x5504%2B1376%2B0/4848810/hauskapelleRosengarten6.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C5504x5504%2B1376%2B0/4848813/HauskapelleRosengarten.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C5112x5112%2B1278%2B0/4848795/HauskapelleRosengarten3.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C5504x5504%2B1376%2B0/4848807/HauskapelleRosengarten5.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C5504x5504%2B1376%2B0/4848810/hauskapelleRosengarten6.jpg"
+          ],
+          "raw_fields": {},
+          "id": "rokokohauskapelle-in-maria-rosengarten"
+        },
+        {
+          "title": "Stadtkirche St. Verena",
+          "slug": "stadtkirche-st-verena",
+          "category": null,
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": null,
+          "highlights": [],
+          "description": "Die Bad Wurzacher Pfarrkirche liegt außerhalb der einstigen Wurzacher Stadtmauer auf einem felsigen Untergrund. Der frühklassizistische Bau wurde 1775/77 errichtet. Das bedeutende Deckenfresko im Langhaus ist ein Werk des Langenargener Malers Andreas Brugger.",
+          "external_links": [
+            {
+              "label": "Stadtkirche St. Verena  von Außen",
+              "url": "https://cdn3.site-media.eu/images/1200/4848816/KlosterplatzundStadtpfarrkircheSt.VerenaBadWurzach.jpg"
+            },
+            {
+              "label": "Altar von Stadtkirche St. Verena  ",
+              "url": "https://cdn3.site-media.eu/images/1200/4848819/StVerenaAltar_IMG_2904_P.jpg"
+            },
+            {
+              "label": "Altar von Stadtkirche St. Verena  ",
+              "url": "https://cdn3.site-media.eu/images/900/4848822/StVerenaHochalter_IMG_2908_P.jpg"
+            },
+            {
+              "label": "Stadtkirche St. Verena  von Außen",
+              "url": "https://cdn3.site-media.eu/images/900/4848828/StVerena_IMG_2923_P.jpg"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0%2C4755x4755%2B1189%2B0/4848816/KlosterplatzundStadtpfarrkircheSt.VerenaBadWurzach.jpg",
+            "https://cdn3.site-media.eu/images/0%2C2736x2736%2B456%2B0/4848819/StVerenaAltar_IMG_2904_P.jpg",
+            "https://cdn3.site-media.eu/images/0%2C2736x2736%2B0%2B456/4848822/StVerenaHochalter_IMG_2908_P.jpg",
+            "https://cdn3.site-media.eu/images/0%2C2736x2736%2B0%2B456/4848828/StVerena_IMG_2923_P.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C4755x4755%2B1189%2B0/4848816/KlosterplatzundStadtpfarrkircheSt.VerenaBadWurzach.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B456%2B0/4848819/StVerenaAltar_IMG_2904_P.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B0%2B456/4848822/StVerenaHochalter_IMG_2908_P.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B0%2B456/4848828/StVerena_IMG_2923_P.jpg"
+          ],
+          "raw_fields": {},
+          "id": "stadtkirche-st-verena"
+        },
+        {
+          "title": "Wallfahrtskirche auf dem Gottesberg",
+          "slug": "wallfahrtskirche-auf-dem-gottesberg",
+          "category": null,
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": null,
+          "highlights": [],
+          "description": "Der Bad Wurzacher Gottesberg, von dem aus an klaren Tagen das Alpenpanorama bewundert werden kann, ist in mehrfacher Hinsicht bedeutungsvoll. Die Barockkirche zum Heiligen Kreuz entstand 1709 (Erweiterung 1712/13) und stellt eine kunsthistorische Sehenswürdigkeit dar. Die Heilig-Blut-Reliquie, die im 18. Jh. auf den Gottesberg kam, befindet sich in einer Seitenkapelle. Sie spielt beim jährlich am zweiten Freitag im Juli stattfindenden Heilig-Blut-Fest eine zentrale Rolle. Rund 1500 Reiter und 5000 Wallfahrer machen dieses Hochfest zur zweitgrößten Reiterprozession Mitteleuropas.",
+          "external_links": [
+            {
+              "label": "Wallfahrtskirche  Interieur",
+              "url": "https://cdn3.site-media.eu/images/1200/4848843/InnenraumGottesberg.jpg"
+            },
+            {
+              "label": "Wallfahrtskirche  Ausensicht",
+              "url": "https://cdn3.site-media.eu/images/766/4848834/Gottesberg.jpg"
+            },
+            {
+              "label": "Wallfahrtskirche  ",
+              "url": "https://cdn3.site-media.eu/images/1200/4848840/Gottesbergimm002_34_P.jpg"
+            },
+            {
+              "label": "Wallfahrtskirche  Ausensicht",
+              "url": "https://cdn3.site-media.eu/images/1200/4848837/Gottesberg_BadWurzachInfo.jpg"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0%2C1509x1509%2B252%2B0/4848843/InnenraumGottesberg.jpg",
+            "https://cdn3.site-media.eu/images/0%2C519x519%2B123%2B0/4848834/Gottesberg.jpg",
+            "https://cdn3.site-media.eu/images/0%2C1024x1024%2B256%2B0/4848840/Gottesbergimm002_34_P.jpg",
+            "https://cdn3.site-media.eu/images/0%2C1512x1512%2B252%2B0/4848837/Gottesberg_BadWurzachInfo.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C1509x1509%2B252%2B0/4848843/InnenraumGottesberg.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C519x519%2B123%2B0/4848834/Gottesberg.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C1024x1024%2B256%2B0/4848840/Gottesbergimm002_34_P.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C1512x1512%2B252%2B0/4848837/Gottesberg_BadWurzachInfo.jpg"
+          ],
+          "raw_fields": {},
+          "id": "wallfahrtskirche-auf-dem-gottesberg"
+        },
+        {
+          "title": "Leprosenhaus",
+          "slug": "leprosenhaus",
+          "category": null,
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": null,
+          "highlights": [],
+          "description": "Das Leprosenhaus, ehemaliges Siechenhaus, diente im 13. Jahrhundert als Isolierstation für Aussatzkranke. Als das älteste Gebäude Bad Wurzachs ist das Leprosenhaus in seiner Art einmalig im süddeutschen Raum. Im Gebäude befinden sich ein Museum zur Geschichte des Hauses sowie das Sepp-Mahler-Museum.",
+          "external_links": [
+            {
+              "label": "Leprosenhaus Interieur",
+              "url": "https://cdn3.site-media.eu/images/1200/4848846/LeprosenhausSiechenzimmer2.jpg"
+            },
+            {
+              "label": "Leprosenhaus Interieur",
+              "url": "https://cdn3.site-media.eu/images/1200/4848849/LeprosenhausWohnraum.JPG"
+            },
+            {
+              "label": "Leprosenhaus Ausensicht",
+              "url": "https://cdn3.site-media.eu/images/900/4848855/Leprosenhaus2.JPG"
+            },
+            {
+              "label": "Leprosenhaus Ausensicht",
+              "url": "https://cdn3.site-media.eu/images/900/4848852/Leprosenhaus.JPG"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0%2C960x960%2B160%2B0/4848846/LeprosenhausSiechenzimmer2.jpg",
+            "https://cdn3.site-media.eu/images/0%2C960x960%2B160%2B0/4848849/LeprosenhausWohnraum.JPG",
+            "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848855/Leprosenhaus2.JPG",
+            "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848852/Leprosenhaus.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C960x960%2B160%2B0/4848846/LeprosenhausSiechenzimmer2.jpg",
+            "https://cdn3.site-media.eu/images/480x480%2C960x960%2B160%2B0/4848849/LeprosenhausWohnraum.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848855/Leprosenhaus2.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848852/Leprosenhaus.JPG"
+          ],
+          "raw_fields": {},
+          "id": "leprosenhaus"
+        },
+        {
+          "title": "Kulturdenkmal Sepp-Mahler-Haus",
+          "slug": "kulturdenkmal-sepp-mahler-haus",
+          "category": null,
+          "date_schedule": null,
+          "duration": null,
+          "location_meeting_point": null,
+          "highlights": [],
+          "description": "Das anschaulich erhaltene Wohnhaus des oberschwäbischen Malers der Moderne wurde vom Torfmeister Josef Mahler 1903 erbaut. Das Bürgerhaus mit großem Naturgarten beinhaltet einen malerischen, literarischen und sozialgeschichtlichen Nachlass des Wurzacher Künstlers Sepp Mahler (1901-1975). Erhalten sind Original-Mobiliar, Bibliothek und Dokumente zur Geschichte der Torfarbeit.",
+          "external_links": [
+            {
+              "label": "Interieur von Sepp-Mahler-Haus",
+              "url": "https://cdn3.site-media.eu/images/900/4848870/sepp-Mahler5.JPG"
+            },
+            {
+              "label": "Interieur von Sepp-Mahler-Haus",
+              "url": "https://cdn3.site-media.eu/images/900/4848867/sepp-mahler4.JPG"
+            },
+            {
+              "label": "Treppe in Sepp-Mahler-Haus",
+              "url": "https://cdn3.site-media.eu/images/900/4848864/Sepp-Mahler3.JPG"
+            },
+            {
+              "label": "Interieur von Sepp-Mahler-Haus",
+              "url": "https://cdn3.site-media.eu/images/900/4848861/Sepp-Mahler2.JPG"
+            }
+          ],
+          "image_urls": [
+            "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848870/sepp-Mahler5.JPG",
+            "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848867/sepp-mahler4.JPG",
+            "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848864/Sepp-Mahler3.JPG",
+            "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848861/Sepp-Mahler2.JPG",
+            "data:image/svg+xml,%3Csvg%20width='480'%20viewBox='0%200%20480%20480'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='480'%20height='480'%20style='fill:%20%23F7F7F7'%20/%3E%3C/svg%3E",
+            "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848870/sepp-Mahler5.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848867/sepp-mahler4.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848864/Sepp-Mahler3.JPG",
+            "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848861/Sepp-Mahler2.JPG"
+          ],
+          "raw_fields": {},
+          "id": "kulturdenkmal-sepp-mahler-haus"
+        }
+      ]
+    }
+  ],
+  "cross_links": [
+    {
+      "path": "/allgaeu-erleben",
+      "url": "https://www.feelmoor.de/allgaeu-erleben",
+      "label": "Allgäu erleben"
+    },
+    {
+      "path": "/action-adrenalin",
+      "url": "https://www.feelmoor.de/action-adrenalin",
+      "label": "Action & Adrenalin"
+    },
+    {
+      "path": "/aktiv-sein",
+      "url": "https://www.feelmoor.de/aktiv-sein",
+      "label": "Aktiv sein"
+    }
+  ],
+  "raw_image_urls": [
+    "%3Csvg%20width='480'%20viewBox='0%200%20480%20480'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='480'%20height='480'%20style='fill:%20%23F7F7F7'%20/%3E%3C/svg%3E",
+    "data:image/svg+xml",
+    "data:image/svg+xml,%3Csvg%20width='480'%20viewBox='0%200%20480%20480'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='480'%20height='480'%20style='fill:%20%23F7F7F7'%20/%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg%20width='800'%20viewBox='0%200%20800%20248.1012658227848'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='800'%20height='248.1012658227848'%20style='fill:%20%23F7F7F7'%20/%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg%20width='800'%20viewBox='0%200%20800%20302'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='800'%20height='302'%20style='fill:%20%23F7F7F7'%20/%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg%20width='800'%20viewBox='0%200%20800%20338.3914034516444'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='800'%20height='338.3914034516444'%20style='fill:%20%23F7F7F7'%20/%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg%20width='800'%20viewBox='0%200%20800%20780.9847198641766'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='800'%20height='780.9847198641766'%20style='fill:%20%23F7F7F7'%20/%3E%3C/svg%3E",
+    "https://cdn3.site-media.eu/images/0%2C1024x1024%2B256%2B0/4848840/Gottesbergimm002_34_P.jpg",
+    "https://cdn3.site-media.eu/images/0%2C1509x1509%2B252%2B0/4848843/InnenraumGottesberg.jpg",
+    "https://cdn3.site-media.eu/images/0%2C1512x1512%2B252%2B0/4848837/Gottesberg_BadWurzachInfo.jpg",
+    "https://cdn3.site-media.eu/images/0%2C1536x1536%2B256%2B0/4848777/Barocktreppenhaus_1_WurzacherSchloss.JPG",
+    "https://cdn3.site-media.eu/images/0%2C1536x1536%2B256%2B0/4848780/Barocktreppenhaus_11.jpg",
+    "https://cdn3.site-media.eu/images/0%2C2736x2736%2B0%2B456/4848822/StVerenaHochalter_IMG_2908_P.jpg",
+    "https://cdn3.site-media.eu/images/0%2C2736x2736%2B0%2B456/4848828/StVerena_IMG_2923_P.jpg",
+    "https://cdn3.site-media.eu/images/0%2C2736x2736%2B456%2B0/4848774/barocktreppenhaus2.JPG",
+    "https://cdn3.site-media.eu/images/0%2C2736x2736%2B456%2B0/4848783/Barocktreppenhaus-Deckengemaelde_IMG_3458_P.JPG",
+    "https://cdn3.site-media.eu/images/0%2C2736x2736%2B456%2B0/4848819/StVerenaAltar_IMG_2904_P.jpg",
+    "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848852/Leprosenhaus.JPG",
+    "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848855/Leprosenhaus2.JPG",
+    "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848861/Sepp-Mahler2.JPG",
+    "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848864/Sepp-Mahler3.JPG",
+    "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848867/sepp-mahler4.JPG",
+    "https://cdn3.site-media.eu/images/0%2C3024x3024%2B0%2B504/4848870/sepp-Mahler5.JPG",
+    "https://cdn3.site-media.eu/images/0%2C4755x4755%2B1189%2B0/4848816/KlosterplatzundStadtpfarrkircheSt.VerenaBadWurzach.jpg",
+    "https://cdn3.site-media.eu/images/0%2C5112x5112%2B1278%2B0/4848795/HauskapelleRosengarten3.jpg",
+    "https://cdn3.site-media.eu/images/0%2C519x519%2B123%2B0/4848834/Gottesberg.jpg",
+    "https://cdn3.site-media.eu/images/0%2C5504x5504%2B1376%2B0/4848807/HauskapelleRosengarten5.jpg",
+    "https://cdn3.site-media.eu/images/0%2C5504x5504%2B1376%2B0/4848810/hauskapelleRosengarten6.jpg",
+    "https://cdn3.site-media.eu/images/0%2C5504x5504%2B1376%2B0/4848813/HauskapelleRosengarten.jpg",
+    "https://cdn3.site-media.eu/images/0%2C960x960%2B160%2B0/4848846/LeprosenhausSiechenzimmer2.jpg",
+    "https://cdn3.site-media.eu/images/0%2C960x960%2B160%2B0/4848849/LeprosenhausWohnraum.JPG",
+    "https://cdn3.site-media.eu/images/0/4803632/LogoISO9001weiss.jpg",
+    "https://cdn3.site-media.eu/images/0/4819716/BettBike_Logo_farbig_4c_negativ.jpg",
+    "https://cdn3.site-media.eu/images/0/4826747/IRX_0362_PaarimRied_3.jpg",
+    "https://cdn3.site-media.eu/images/0/4868829/SBS-BadWurzach-Ried-03_JH.jpg",
+    "https://cdn3.site-media.eu/images/0/4868841/IRX_2282_Torflehrpfad-Morgenstimmung.jpg",
+    "https://cdn3.site-media.eu/images/0/4871283/IMG_6118_A.JPG",
+    "https://cdn3.site-media.eu/images/0/4871286/IMG_6109_A.JPG",
+    "https://cdn3.site-media.eu/images/0/4871289/IMG_0300_P1.JPG",
+    "https://cdn3.site-media.eu/images/0/4871298/Torfwerkshockete.jpg",
+    "https://cdn3.site-media.eu/images/0/4871301/IMG_0425.JPG",
+    "https://cdn3.site-media.eu/images/0/4871304/IMG_0388.JPG",
+    "https://cdn3.site-media.eu/images/0/4878477/AkutellesausBadWurzach-Moorbahn-NeueHaltestelleBadWurzachgeplant003.jpg",
+    "https://cdn3.site-media.eu/images/0/4878480/GaesteundFreizeit-ab1.Mai-Moorbahn.JPG",
+    "https://cdn3.site-media.eu/images/0/4878483/aktuellesausBadWurzachMoorbahn.jpg",
+    "https://cdn3.site-media.eu/images/0/4878486/1.AlternativesTitelbildMoorbahn-752_rossberg2_c-hasenfratz.JPG",
+    "https://cdn3.site-media.eu/images/0/6076513/widget-bg-2.png",
+    "https://cdn3.site-media.eu/images/0/6607384/AlapakaLeben2.jpg",
+    "https://cdn3.site-media.eu/images/0/6607387/AlapakaLeben3.jpg",
+    "https://cdn3.site-media.eu/images/0/6607388/AlapakaLeben4.jpg",
+    "https://cdn3.site-media.eu/images/0/6903407/WStars_Lizenzlogo_feelMoor_quer.jpg",
+    "https://cdn3.site-media.eu/images/154%2C704x671%2B215%2B118/5310839/quer_Logo_FEELMOOR_Therme_HEXAB49D4E1.png",
+    "https://cdn3.site-media.eu/images/480x480%2C1024x1024%2B256%2B0/4848840/Gottesbergimm002_34_P.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C1509x1509%2B252%2B0/4848843/InnenraumGottesberg.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C1512x1512%2B252%2B0/4848837/Gottesberg_BadWurzachInfo.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C1536x1536%2B256%2B0/4848777/Barocktreppenhaus_1_WurzacherSchloss.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C1536x1536%2B256%2B0/4848780/Barocktreppenhaus_11.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B0%2B456/4848822/StVerenaHochalter_IMG_2908_P.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B0%2B456/4848828/StVerena_IMG_2923_P.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B456%2B0/4848774/barocktreppenhaus2.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B456%2B0/4848783/Barocktreppenhaus-Deckengemaelde_IMG_3458_P.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C2736x2736%2B456%2B0/4848819/StVerenaAltar_IMG_2904_P.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848852/Leprosenhaus.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848855/Leprosenhaus2.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848861/Sepp-Mahler2.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848864/Sepp-Mahler3.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848867/sepp-mahler4.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C3024x3024%2B0%2B504/4848870/sepp-Mahler5.JPG",
+    "https://cdn3.site-media.eu/images/480x480%2C4755x4755%2B1189%2B0/4848816/KlosterplatzundStadtpfarrkircheSt.VerenaBadWurzach.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C5112x5112%2B1278%2B0/4848795/HauskapelleRosengarten3.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C519x519%2B123%2B0/4848834/Gottesberg.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C5504x5504%2B1376%2B0/4848807/HauskapelleRosengarten5.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C5504x5504%2B1376%2B0/4848810/hauskapelleRosengarten6.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C5504x5504%2B1376%2B0/4848813/HauskapelleRosengarten.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C960x960%2B160%2B0/4848846/LeprosenhausSiechenzimmer2.jpg",
+    "https://cdn3.site-media.eu/images/480x480%2C960x960%2B160%2B0/4848849/LeprosenhausWohnraum.JPG",
+    "https://cdn3.site-media.eu/images/77%2C704x671%2B215%2B118/5310839/quer_Logo_FEELMOOR_Therme_HEXAB49D4E1.png"
+  ],
+  "notes": [
+    "No free-form description paragraph for 'Oberschwäbisches Torfbähnle' (metadata + highlights only).",
+    "Schedule for 'Ausflugszug Moorbahn' references 2023; may be outdated on live site.",
+    "No free-form description paragraph for 'Ausflugszug Moorbahn' (metadata + highlights only).",
+    "Page uses 'feelMOOR' branding in section headings (no feelMOUR typo in HTML).",
+    "Duplicate h2 section headings appear to be responsive layout copies; items parsed from block with accordion triggers.",
+    "Hero intro extracted from div text block following subheading (not a standalone p tag)."
+  ]
+}
