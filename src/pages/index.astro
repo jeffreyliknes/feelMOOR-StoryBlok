@@ -164,31 +164,31 @@ const voucher = hp.voucher_strip;
       <!-- Category cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {categoryCards.map((cat) => (
-          <a
-            href={`/angebote?category=${encodeURIComponent(cat.name)}`}
-            class="group relative block overflow-hidden aspect-[3/4] card-hover"
-          >
-            <img
-              src={cat.image}
-              alt={cat.name}
-              loading="lazy"
-              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/35 to-transparent"></div>
-            <div class="absolute inset-0 p-6 flex flex-col justify-end">
-              {cat.count > 0 && (
-                <p class="caption-label text-gold mb-2">{cat.count} Angebote</p>
-              )}
-              <h3 class="font-display font-light text-cream leading-tight" style="font-size:1.4rem;">{cat.name}</h3>
-              <p class="text-xs text-cream/70 mt-2 leading-relaxed">{cat.desc}</p>
-              <span class="mt-4 inline-flex items-center gap-2 text-xs tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all">
-                Entdecken
-                <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
-                  <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </div>
-          </a>
+          <article class="group card-hover">
+            <a href={`/angebote?category=${encodeURIComponent(cat.name)}`} class="block h-full">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  loading="lazy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div class="bg-white px-6 pt-6 pb-7 border border-stone-light border-t-0 group-hover:border-gold/30 transition-colors duration-300">
+                {cat.count > 0 && (
+                  <p class="caption-label text-gold mb-2">{cat.count} Angebote</p>
+                )}
+                <h3 class="font-display font-light text-[1.4rem] text-ink-dark leading-tight">{cat.name}</h3>
+                <p class="text-xs text-ink-muted mt-2 leading-relaxed">{cat.desc}</p>
+                <span class="mt-5 inline-flex items-center gap-2 text-xs tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all duration-200">
+                  Entdecken
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
         ))}
       </div>
     </div>
