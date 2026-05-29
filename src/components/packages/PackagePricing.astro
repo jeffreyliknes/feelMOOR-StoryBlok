@@ -1,0 +1,47 @@
+---
+interface Tier {
+  duration: string;
+  price_from?: number;
+  price_note?: string;
+  href?: string;
+}
+
+interface Props {
+  tiers: Tier[];
+  heading?: string;
+}
+
+const { tiers, heading = 'Preise & Verfügbarkeit' } = Astro.props;
+---
+
+{tiers && tiers.length > 0 && (
+  <section class="py-12 lg:py-16 bg-white border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="font-display font-light text-ink-dark text-2xl lg:text-3xl mb-8">{heading}</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {tiers.map((tier) => (
+          <div class="rounded-xl border border-stone-light bg-cream p-7 flex flex-col">
+            <p class="caption-label text-gold mb-3">{tier.duration}</p>
+            {tier.price_from && (
+              <p class="font-display font-light text-ink-dark text-3xl">ab {tier.price_from} €</p>
+            )}
+            {tier.price_note && (
+              <p class="text-xs text-ink-muted mt-2 leading-relaxed">{tier.price_note}</p>
+            )}
+            <a
+              href={tier.href ?? '#booking'}
+              target={tier.href ? '_blank' : undefined}
+              rel={tier.href ? 'noopener' : undefined}
+              class="btn-gold w-full justify-center mt-6"
+            >
+              Verfügbarkeit prüfen
+              <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

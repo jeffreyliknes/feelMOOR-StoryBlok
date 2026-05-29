@@ -1,6 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
+import PackageInclusions from '@/components/packages/PackageInclusions.astro';
+import PackageBookingCard from '@/components/packages/PackageBookingCard.astro';
+import PackagePricing from '@/components/packages/PackagePricing.astro';
+import PackageHighlights from '@/components/packages/PackageHighlights.astro';
+import PackageProgram from '@/components/packages/PackageProgram.astro';
 
 export async function getStaticPaths() {
   const packages = await getCollection('packages');
@@ -16,6 +21,11 @@ const pkg = entry.data;
 
 const seoTitle = `${pkg.title}, feelMOOR Bad Wurzach`;
 const seoDescription = pkg.teaser ?? `${pkg.title} im feelMOOR Gesundresort Bad Wurzach.`;
+
+const closingParagraphs = (pkg.closing_body ?? '')
+  .split(/\n\s*\n/)
+  .map((p) => p.trim())
+  .filter(Boolean);
 ---
 
 <PageLayout title={seoTitle} description={seoDescription}>
@@ -46,13 +56,16 @@ const seoDescription = pkg.teaser ?? `${pkg.title} im feelMOOR Gesundresort Bad 
   <section class="bg-cream pt-8 pb-6 lg:pt-10 lg:pb-8">
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-        <div>
+        <div class="max-w-3xl">
           {pkg.tag && (
             <p class="caption-label mb-2">{pkg.tag}</p>
           )}
           <h1 class="font-display font-light text-ink-dark tracking-tight text-[clamp(1.85rem,4vw,3rem)] leading-[1.08]">
             {pkg.title}
           </h1>
+          {pkg.subtitle && (
+            <p class="mt-3 font-display font-light text-ink-muted text-lg lg:text-xl leading-snug">{pkg.subtitle}</p>
+          )}
           <p class="mt-3 text-xs text-ink-muted flex flex-wrap items-center gap-x-2 gap-y-1">
             {pkg.nights && (
               <>
@@ -113,80 +126,90 @@ const seoDescription = pkg.teaser ?? `${pkg.title} im feelMOOR Gesundresort Bad 
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid lg:grid-cols-[1fr_350px] gap-8 lg:gap-12">
 
-        <!-- Left column: article body + includes list -->
-        <div class="space-y-8">
+        <!-- Left column: article body + inclusions + recommendations -->
+        <div class="space-y-10">
           <article class="article-prose max-w-none">
             <Content />
           </article>
 
-          {pkg.includes && pkg.includes.length > 0 && (
-            <div>
-              <h2 class="font-display font-light text-ink-dark text-2xl mb-5">Leistungen im Überblick</h2>
-              <ul class="space-y-3 grid sm:grid-cols-2 gap-4">
-                {pkg.includes.map((item) => (
-                  <li class="flex items-start gap-3 text-xs text-ink-muted">
-                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0"></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <PackageInclusions items={pkg.includes} note={pkg.inclusion_note} />
+
+          <PackageInclusions items={pkg.recommendations} heading="Unsere Empfehlung" />
+
+          {pkg.availability && (
+            <div class="rounded-xl border border-stone-light bg-white p-6">
+              <p class="caption-label text-gold mb-2">Termine</p>
+              <p class="text-xs text-ink-muted leading-relaxed">{pkg.availability}</p>
+              {pkg.availability_note && (
+                <p class="text-xs text-ink-muted/80 leading-relaxed mt-2">{pkg.availability_note}</p>
+              )}
             </div>
           )}
         </div>
 
         <!-- Right column: sticky booking card -->
         <div class="lg:col-start-2">
-          <div class="rounded-xl bg-white border border-stone-light shadow-md p-7 lg:sticky lg:top-[calc(var(--header-h)+2rem)]">
-            <p class="caption-label mb-3">Ihr Angebot</p>
-
-            {pkg.price_from && (
-              <div class="mb-5">
-                <p class="font-display font-light text-ink-dark text-3xl">ab {pkg.price_from} €</p>
-                {pkg.price_label && (
-                  <p class="text-xs text-ink-muted mt-1">{pkg.price_label}</p>
-                )}
-              </div>
-            )}
-
-            {pkg.nights && (
-              <p class="text-xs text-ink-muted mb-5 border-b border-stone-light pb-4">{pkg.nights}</p>
-            )}
-
-            {pkg.includes && pkg.includes.length > 0 && (
-              <div class="mb-6">
-                <p class="text-xs tracking-caption uppercase text-gold font-medium mb-3">Leistungen</p>
-                <ul class="space-y-2">
-                  {pkg.includes.slice(0, 5).map((item) => (
-                    <li class="flex items-start gap-2 text-xs text-ink-muted">
-                      <span class="w-1 h-1 rounded-full bg-gold mt-2 flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div class="space-y-3 pt-4 border-t border-stone-light">
-              {pkg.booking_options && pkg.booking_options.length > 0 ? (
-                pkg.booking_options.map((opt) => (
-                  <a href={opt.href} target="_blank" rel="noopener" class="btn-gold w-full justify-between">
-                    <span class="font-sans text-[0.7rem] uppercase tracking-wider opacity-75">{opt.label}</span>
-                    <span class="text-xs">Verfügbarkeit prüfen</span>
-                  </a>
-                ))
-              ) : pkg.booking_link ? (
-                <a href={pkg.booking_link} class="btn-gold w-full justify-center">Jetzt buchen</a>
-              ) : (
-                <a href="#booking" class="btn-gold w-full justify-center">Verfügbarkeit prüfen</a>
-              )}
-              <a href="/service-kontakt" class="btn-outline-gold w-full justify-center">Persönliche Anfrage</a>
-            </div>
-          </div>
+          <PackageBookingCard
+            nights={pkg.nights}
+            priceFrom={pkg.price_from}
+            priceLabel={pkg.price_label}
+            includes={pkg.includes}
+            bookingOptions={pkg.booking_options}
+            bookingLink={pkg.booking_link}
+          />
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- ── Pricing tiers ── -->
+  <PackagePricing tiers={pkg.pricing_tiers} />
+
+  <!-- ── Feature highlights ── -->
+  <PackageHighlights highlights={pkg.highlights} />
+
+  <!-- ── Program / Punktekatalog ── -->
+  <PackageProgram
+    intro={pkg.program_intro}
+    pointsCatalog={pkg.points_catalog}
+    columns={pkg.program_columns}
+    rows={pkg.program_rows}
+  />
+
+  <!-- ── Gallery ── -->
+  {pkg.gallery && pkg.gallery.length > 0 && (
+    <section class="py-12 lg:py-16 bg-white border-t border-stone-light">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {pkg.gallery.map((img) => (
+            <img
+              src={img.image}
+              alt={img.alt || pkg.title}
+              class="w-full aspect-[4/3] object-cover rounded-xl"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ── Closing philosophy ── -->
+  {(pkg.closing_heading || closingParagraphs.length > 0) && (
+    <section class="py-16 lg:py-20 bg-cream border-t border-stone-light">
+      <div class="max-w-3xl mx-auto px-6">
+        {pkg.closing_heading && (
+          <h2 class="font-display font-light text-ink-dark text-2xl lg:text-3xl mb-6">{pkg.closing_heading}</h2>
+        )}
+        <div class="space-y-4">
+          {closingParagraphs.map((para) => (
+            <p class="text-xs text-ink-muted leading-relaxed">{para}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- ── Bottom CTA ── -->
   <section class="py-16 bg-white border-t border-stone-light">

@@ -54,6 +54,50 @@ const packages = defineCollection({
       href: z.string(),
     })).optional().default([]),
     includes: z.array(z.string()).optional().default([]),
+    /** Short tagline shown under the title (e.g. "Das Baukastensystem für individuelle Wünsche") */
+    subtitle: z.string().optional(),
+    /** Note shown beneath the inclusions list (conditions, asterisk explanations) */
+    inclusion_note: z.string().optional(),
+    /** "Unsere Empfehlung" bullet list */
+    recommendations: z.array(z.string()).optional().default([]),
+    /** "Termine" availability text, e.g. "ganzjährig buchbar" */
+    availability: z.string().optional(),
+    availability_note: z.string().optional(),
+    /** Pricing rows by duration: "ab X € im Classic Doppelzimmer" + booking link */
+    pricing_tiers: z.array(z.object({
+      duration: z.string(),
+      price_from: z.number().optional(),
+      price_note: z.string().optional(),
+      href: z.string().optional(),
+    })).optional().default([]),
+    /** Feature cards (Health Balance & Spa, Moorbad, Therme, Natur …) */
+    highlights: z.array(z.object({
+      title: z.string(),
+      text: z.string().optional(),
+    })).optional().default([]),
+    /** Intro paragraph above the program / Punktekatalog block */
+    program_intro: z.string().optional(),
+    /** Punktekatalog rows: { points: "11 Punkte", items: "A | B | C" } */
+    points_catalog: z.array(z.object({
+      points: z.string(),
+      items: z.string(),
+    })).optional().default([]),
+    /** Column headers for the per-duration treatment table, e.g. ["10 Nächte","14 Nächte","21 Nächte"] */
+    program_columns: z.array(z.string()).optional().default([]),
+    /** Treatment table rows; values align to program_columns */
+    program_rows: z.array(z.object({
+      treatment: z.string(),
+      effect: z.string().optional(),
+      values: z.array(z.string()).optional().default([]),
+    })).optional().default([]),
+    /** Extra image gallery */
+    gallery: z.array(z.object({
+      image: z.string(),
+      alt: z.string().optional().default(''),
+    })).optional().default([]),
+    /** Closing philosophy section heading + prose (e.g. "Warum ins Moor?") */
+    closing_heading: z.string().optional(),
+    closing_body: z.string().optional(),
     /** Lower sorts first in mega menu within each column */
     nav_order: z.number().optional(),
     /** Set false to hide this package from Angebote mega menu */

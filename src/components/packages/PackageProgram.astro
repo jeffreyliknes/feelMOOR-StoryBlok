@@ -1,0 +1,81 @@
+---
+interface PointRow {
+  points: string;
+  items: string;
+}
+
+interface ProgramRow {
+  treatment: string;
+  effect?: string;
+  values?: string[];
+}
+
+interface Props {
+  intro?: string;
+  pointsCatalog?: PointRow[];
+  columns?: string[];
+  rows?: ProgramRow[];
+  heading?: string;
+}
+
+const {
+  intro,
+  pointsCatalog = [],
+  columns = [],
+  rows = [],
+  heading = 'Das Programm',
+} = Astro.props;
+
+const hasPoints = pointsCatalog.length > 0;
+const hasTable = columns.length > 0 && rows.length > 0;
+---
+
+{(hasPoints || hasTable || intro) && (
+  <section class="py-12 lg:py-16 bg-cream border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="font-display font-light text-ink-dark text-2xl lg:text-3xl mb-6">{heading}</h2>
+
+      {intro && (
+        <p class="text-xs text-ink-muted leading-relaxed max-w-3xl mb-10 whitespace-pre-line">{intro}</p>
+      )}
+
+      {hasPoints && (
+        <div class="space-y-3 max-w-4xl">
+          {pointsCatalog.map((row) => (
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-5 border-b border-stone-light/60 pb-3">
+              <p class="caption-label text-gold sm:w-28 flex-shrink-0">{row.points}</p>
+              <p class="text-xs text-ink-muted leading-relaxed">{row.items}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {hasTable && (
+        <div class="overflow-x-auto mt-10 rounded-xl border border-stone-light">
+          <table class="w-full text-xs text-left border-collapse min-w-[640px]">
+            <thead>
+              <tr class="bg-white border-b border-stone-light">
+                <th class="p-4 font-medium text-ink-dark">Leistung</th>
+                <th class="p-4 font-medium text-ink-dark">Wirkungsweise</th>
+                {columns.map((col) => (
+                  <th class="p-4 font-medium text-gold text-center whitespace-nowrap">{col}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row) => (
+                <tr class="border-b border-stone-light/60 last:border-0 bg-cream/40">
+                  <td class="p-4 font-medium text-ink-dark align-top">{row.treatment}</td>
+                  <td class="p-4 text-ink-muted align-top leading-relaxed">{row.effect}</td>
+                  {columns.map((_, i) => (
+                    <td class="p-4 text-ink-dark text-center align-top">{row.values?.[i] ?? ''}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  </section>
+)}

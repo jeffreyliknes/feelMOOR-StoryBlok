@@ -362,6 +362,92 @@ content:
       - name: includes
         label: "What's Included"
         type: list
+      - name: subtitle
+        label: "Subtitle / Tagline (shown under the title)"
+        type: string
+      - name: inclusion_note
+        label: "Note below the inclusions list (conditions, asterisks)"
+        type: text
+      - name: recommendations
+        label: "Our Recommendation (Unsere Empfehlung, bullet list)"
+        type: list
+      - name: availability
+        label: "Dates / Availability (Termine)"
+        type: text
+      - name: availability_note
+        label: "Availability note"
+        type: text
+      - name: pricing_tiers
+        label: "Pricing Tiers (one row per duration)"
+        type: list
+        fields:
+          - name: duration
+            label: "Duration (e.g. 10 Übernachtungen)"
+            type: string
+          - name: price_from
+            label: "From price in EUR (number only)"
+            type: number
+          - name: price_note
+            label: "Price note (e.g. im Classic Doppelzimmer)"
+            type: string
+          - name: href
+            label: "Booking URL"
+            type: string
+      - name: highlights
+        label: "Feature Highlights (cards)"
+        type: list
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+          - name: text
+            label: "Text"
+            type: text
+      - name: program_intro
+        label: "Program Intro (above the Punktekatalog / table)"
+        type: text
+      - name: points_catalog
+        label: "Points Catalog (Punktekatalog)"
+        type: list
+        fields:
+          - name: points
+            label: "Points label (e.g. 11 Punkte)"
+            type: string
+          - name: items
+            label: "Treatments (separate with |)"
+            type: text
+      - name: program_columns
+        label: "Program Table Columns (e.g. 10 Nächte)"
+        type: list
+      - name: program_rows
+        label: "Program Table Rows"
+        type: list
+        fields:
+          - name: treatment
+            label: "Treatment (Leistung)"
+            type: string
+          - name: effect
+            label: "Effect (Wirkungsweise)"
+            type: text
+          - name: values
+            label: "Values per column (in column order)"
+            type: list
+      - name: gallery
+        label: "Image Gallery"
+        type: list
+        fields:
+          - name: image
+            label: "Photo"
+            type: image
+          - name: alt
+            label: "Alt text"
+            type: string
+      - name: closing_heading
+        label: "Closing Section Heading (e.g. Warum ins Moor?)"
+        type: string
+      - name: closing_body
+        label: "Closing Section Text"
+        type: text
 
   # ── HOTEL PAGE ───────────────────────────────────────────────────────────────
   - name: hotel_page
