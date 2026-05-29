@@ -1,3 +1,18 @@
+/* ── Footer clearance for fixed widget ── */
+:root {
+  --booking-widget-clearance: 5.5rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --booking-widget-clearance: 6.5rem;
+  }
+}
+
+body:has(#booking-widget-container) footer {
+  padding-bottom: var(--booking-widget-clearance);
+}
+
 /* ── Fixed container ── */
 #booking-widget-container {
   position: fixed;
