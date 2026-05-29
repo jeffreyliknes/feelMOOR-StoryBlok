@@ -1,12 +1,54 @@
 {
-  "seo_title": "Kulinarik, feelMOOR Restaurant Bad Wurzach",
-  "seo_description": "Das Restaurant im feelMOOR Gesundresort: regionale Küche, gesunde Vitalküche und saisonale Menüs, mit Blick auf die Allgäuer Landschaft.",
+  "seo_title": "Kulinarik, Restaurant Culinarium, FEELbar & PanoramaCafé Bad Wurzach",
+  "seo_description": "Restaurant Culinarium, FEELbar und PanoramaCafé im feelMOOR Gesundresort Bad Wurzach: leicht mediterrane Vitalküche, regionale Köstlichkeiten, Drinks und Aussicht.",
   "hero_caption": "Kulinarik",
   "hero_heading": "Genuss & Vitalküche",
-  "hero_intro": "Gesund essen mit Genuss, regionale Zutaten, saisonale Menüs und vitale Küche.",
+  "hero_intro": "Restaurant Culinarium, FEELbar und PanoramaCafé, drei Orte für Genuss mit Blick auf die Allgäuer Landschaft.",
   "intro_heading": "Essen als Teil der Gesundheit",
-  "intro_body": "In unserem Restaurant verbinden wir Genuss mit Gesundheit. Regionale Zutaten aus dem Allgäu, saisonale Menüs und eine umfangreiche Vitalküche, jedes Gericht ist mit Blick auf Ihre Gesundheit und Ihren Gaumen kreiert. Das Frühstücksbuffet ist für alle Hotelgäste inklusive.",
+  "intro_body": "In unserem Restaurant verbinden wir Genuss mit Gesundheit. Regionale Zutaten aus dem Allgäu, saisonale Menüs und eine leicht mediterrane Vitalküche, jedes Gericht ist mit Blick auf Ihre Gesundheit und Ihren Gaumen kreiert. Das Frühstücksbuffet ist für alle Hotelgäste inklusive.",
   "hero_image": "/images/kulinarik/121-a-0123-IRZ_9935-ingorack.com.jpg",
   "hero_image_alt": "Restaurant und Vitalküche feelMOOR",
-  "intro_image": "/images/kulinarik/127-a-0129-IRZ_9965-ingorack.com.jpg"
+  "intro_image": "/images/kulinarik/127-a-0129-IRZ_9965-ingorack.com.jpg",
+  "venues": [
+    {
+      "name": "Restaurant Culinarium",
+      "tagline": "Kulinarisch Energie tanken",
+      "body": "Das offen gehaltene Restaurant Culinarium mit seinen ca. 220 Sitzplätzen und zwei zusätzlichen Séparées für bis zu 10 Personen überzeugt nicht nur durch seine leicht mediterrane Vitalküche, sondern vor allem durch sein abgestimmtes Interieur, den gezielten Einsatz von Farben, Formen und Materialien. Genießen Sie ganzjährig die kulinarische Vielfalt unseres Restaurants und lassen Sie sich von saisonalen und regionalen Köstlichkeiten aus dem Allgäu überraschen.",
+      "hours": [
+        "Frühstück: 07:00 bis 10:00 Uhr",
+        "Mittagsjause: 12:00 bis 13:00 Uhr",
+        "Abendessen: 18:00 bis 21:00 Uhr"
+      ]
+    },
+    {
+      "name": "FEELbar",
+      "tagline": "Atemberaubende Atmosphäre",
+      "body": "Die perfekte Location für alle, die nach einem langen Tag bei leckeren Drinks und Snacks die Abendstunden in guter Gesellschaft genießen wollen. Jeder ist herzlich eingeladen, entspannte Stunden in unserer Hotelbar bei atemberaubender Atmosphäre zu verbringen. Die dazugehörige Kaminlounge ist der perfekte Ort für einen vitalisierenden Drink zum Sonnenuntergang. Neben internationalen Blends und einer wohl überlegten Weinauswahl gibt es kleine Gerichte aus der FEELbar Küche bis 23:00 Uhr.",
+      "highlight": "Ladies Night: Aperitif zum halben Preis, jeden Dienstag",
+      "hours": [
+        "täglich 07:00 bis 23:00 Uhr"
+      ]
+    },
+    {
+      "name": "PanoramaCafé",
+      "tagline": "Beste Aussicht inklusive",
+      "body": "Den Nachmittagskaffee fernab von Trubel und Hektik über den Dächern der Stadt einnehmen, das wirkt belebend auf Körper und Geist. Zu einem wahren Erlebnis wird das in unserem PanoramaCafé in der 6. Etage. Das um 270° verglaste Café lässt alle Sehenswürdigkeiten Bad Wurzachs zum Greifen nah erscheinen, ob Mitteleuropas größtes intaktes Hochmoor, den Torflehrpfad, das Wurzacher Schloss oder den Gottesberg. Bei günstigen Bedingungen reicht der Blick bis in die rund 50 km entfernten Alpen. Im Sommer auch mit großzügiger Außenterrasse.",
+      "note": "Momentan geschlossen",
+      "hours": [
+        "Fr bis So: 14:00 bis 17:00 Uhr"
+      ]
+    }
+  ],
+  "buffet_heading": "Buffetvarianten im Culinarium",
+  "buffet_items": [
+    { "label": "Frühstücksbuffet", "price": "22,00 €" },
+    { "label": "Lunchbuffet (nur komplett möglich)", "price": "20,00 €" },
+    { "label": "Dinnerbuffet", "price": "39,00 €" },
+    { "label": "alternativ nur Salatbuffet", "price": "7,50 €" },
+    { "label": "oder nur Suppe vom Buffet", "price": "7,50 €" },
+    { "label": "oder nur Vorspeisenbuffet", "price": "15,50 €" },
+    { "label": "oder nur Hauptgang vom Buffet", "price": "22,00 €" },
+    { "label": "oder nur Dessert vom Buffet", "price": "6,00 €" }
+  ],
+  "buffet_note": "Ermäßigt: 0 bis 3 Jahre kostenfrei, 4 bis 7 Jahre zum 1/4 Preis, 8 bis 13 Jahre zum 1/2 Preis."
 }

@@ -37,67 +37,62 @@ const page = pageData;
     </div>
   </section>
 
-  <!-- ── Highlights Grid (3 columns) ── -->
+  <!-- ── Venues ── -->
   <section class="py-16 lg:py-24 bg-stone-light/30">
     <div class="max-w-screen-xl mx-auto px-6">
-      <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
-        {/* Vitalküche */}
-        <div class="bg-white border border-stone-light p-8 lg:p-10">
-          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Vitalküche</h3>
-          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Nährstoffreich und leicht verdaulich, unsere Vitalküche unterstützt Ihren Körper bei der Regeneration.</p>
-          <div class="mt-6 pt-6 border-t border-stone-light/50">
-            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
-              Mehr erfahren
-              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
+      <div class="space-y-8">
+        {page.venues?.map((venue) => (
+          <div class="bg-white border border-stone-light p-8 lg:p-10">
+            <div class="grid lg:grid-cols-[1fr_280px] gap-8 lg:gap-12">
+              <div>
+                <p class="caption-label text-gold mb-2">{venue.tagline}</p>
+                <h3 class="font-display font-light text-ink-dark mb-4" style="font-size:clamp(1.4rem,2.8vw,2rem);">
+                  {venue.name}
+                </h3>
+                {venue.note && (
+                  <p class="inline-block text-xs font-medium text-gold bg-gold/10 px-3 py-1 rounded-full mb-4">{venue.note}</p>
+                )}
+                <p class="text-xs text-ink-muted leading-relaxed">{venue.body}</p>
+                {venue.highlight && (
+                  <p class="text-xs text-ink-dark font-medium mt-4">{venue.highlight}</p>
+                )}
+              </div>
+              {venue.hours && venue.hours.length > 0 && (
+                <div class="lg:border-l lg:border-stone-light lg:pl-8">
+                  <p class="caption-label text-gold mb-3">Öffnungszeiten</p>
+                  <ul class="space-y-1.5">
+                    {venue.hours.map((h) => (
+                      <li class="text-xs text-ink-muted">{h}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-
-        {/* Regionale Zutaten */}
-        <div class="bg-white border border-stone-light p-8 lg:p-10">
-          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Regionale Zutaten</h3>
-          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Direkt von Allgäuer Bauern und lokalen Partnern, Frische und Qualität garantiert.</p>
-          <div class="mt-6 pt-6 border-t border-stone-light/50">
-            <a href="/nachhaltigkeit" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
-              Unsere Partner
-              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        {/* Saisonale Menüs */}
-        <div class="bg-white border border-stone-light p-8 lg:p-10">
-          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Saisonale Menüs</h3>
-          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Das Beste aus jeder Jahreszeit, von Frühling bis Winter wechseln wir kreativ die Menüs.</p>
-          <div class="mt-6 pt-6 border-t border-stone-light/50">
-            <a href="/service-kontakt" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
-              Reservieren
-              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ── Opening Hours Note ── -->
-  <section class="py-12 bg-cream border-t border-stone-light">
-    <div class="max-w-screen-xl mx-auto px-6 text-center">
-      <p class="text-xs text-ink-muted mb-4">Informationen zu unseren Öffnungszeiten erhalten Sie hier:</p>
-      <a href="/oeffnungszeiten" class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
-        Zu den Öffnungszeiten
-        <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none">
-          <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-  </section>
+  <!-- ── Buffet pricing ── -->
+  {page.buffet_items && page.buffet_items.length > 0 && (
+    <section class="py-16 lg:py-20 bg-cream border-t border-stone-light">
+      <div class="max-w-2xl mx-auto px-6">
+        <h2 class="font-display font-light text-ink-dark text-center mb-8" style="font-size:clamp(1.5rem,3vw,2.25rem);">{page.buffet_heading}</h2>
+        <ul class="divide-y divide-stone-light/60 border-y border-stone-light/60">
+          {page.buffet_items.map((item) => (
+            <li class="flex items-baseline justify-between gap-4 py-3">
+              <span class="text-xs text-ink-dark">{item.label}</span>
+              <span class="text-xs text-gold font-medium whitespace-nowrap">{item.price}</span>
+            </li>
+          ))}
+        </ul>
+        {page.buffet_note && (
+          <p class="text-xs text-ink-muted/80 leading-relaxed mt-5">{page.buffet_note}</p>
+        )}
+      </div>
+    </section>
+  )}
 
   <!-- ── Bottom CTA ── -->
   <section class="py-16 bg-white border-t border-stone-light">

@@ -1,13 +1,30 @@
 {
   "seo_title": "Gutscheine, feelMOOR Gesundresort Bad Wurzach",
-  "seo_description": "Gutscheine für das feelMOOR Gesundresort: Thermeneintritte, Wellness-Pakete, Übernachtungen und individuelle Wunschbeträge. Das ideale Geschenk.",
+  "seo_description": "feelMOMENTS Geschenkgutscheine für das feelMOOR Gesundresort: Übernachtung, Kulinarik, Wellness & Spa, Gesundheit, Moor und Fitness. Online auswählen und verschenken.",
   "hero_caption": "Geschenke",
   "hero_heading": "Gutscheine",
-  "hero_intro": "Das perfekte Geschenk für alle, die das Besondere lieben, ein feelMOOR Erlebnis.",
-  "intro_heading": "Schenken Sie Wohlbefinden",
-  "intro_body": "Mit einem feelMOOR Gutschein schenken Sie mehr als ein Produkt, Sie schenken ein Erlebnis. Ob Thermeneintritt, Wellness-Behandlung oder ein komplettes Aufenthaltspakt, unsere Gutscheine sind das ideale Geschenk für Geburtstag, Weihnachten oder einfach so.",
-  "cta_buy_label": "Gutschein anfragen",
-  "cta_buy_href": "/service-kontakt",
+  "hero_intro": "Schenken Sie Ihren Liebsten eine kleine Auszeit zwischen Himmel und Erde.",
+  "intro_heading": "Urlaub verschenken",
+  "intro_body": "Geburtstag, Weihnachten, Hochzeitstag und vieles mehr, egal ob für besondere Menschen und Anlässe, als Wertschätzung für herausragende Leistungen oder zum Jubiläum. Mit den feelMOMENTS Geschenkgutscheinen sind Sie immer auf der richtigen Seite. Ganz gleich ob für entspannte Übernachtungen in einem unserer neu gestalteten Wohlfühlzimmer, für einen kulinarischen Besuch in unserem Restaurant Culinarium mit seiner FEELbar oder für erholsame Stunden in unserer feelMOOR Therme mit mehr als 20 Wellnessanwendungen.",
   "hero_image": "/images/hotel/14-a-0014-IRZ_9787-ingorack.com.jpg",
-  "hero_image_alt": "Gutscheine feelMOOR"
+  "hero_image_alt": "Gutscheine feelMOOR",
+  "intro_quote": "Das Beste aus der Natur verschenken, für besondere Menschen zu besonderen Anlässen.",
+  "steps_heading": "So einfach gehts",
+  "steps": [
+    "Wunschgutschein auswählen und individuelles Design aus mehreren Vorlagen wählen.",
+    "Persönliche Grußformel oder Widmung hinzufügen.",
+    "Ganz einfach online per PayPal oder Kreditkarte zahlen.",
+    "Gutschein innerhalb von 2 Minuten per Mail erhalten und direkt ausdrucken. Alternativ schicken wir ihn Ihnen per Post zu."
+  ],
+  "categories_heading": "Wertgutscheine",
+  "categories_intro": "Ob ein gemütliches Dinner, vitales Frühstück, eine exklusive Wellnessanwendung oder ein revitalisierender Aufenthalt, mit unseren Gutscheinen landen Sie garantiert einen Volltreffer.",
+  "categories": [
+    "Übernachtung & Kulinarik",
+    "Wellness & Spa Anwendungen",
+    "Gesundheit, Moor & Fitness"
+  ],
+  "partner_heading": "Gemeinsam mit starken Partnern in Richtung Gesundheit",
+  "partner_body": "Sie sind bereits Fan unseres Trinkmoors und wollen auch Ihre Mitmenschen davon begeistern? Oder warum nicht mal das Beste aus der Natur verschenken? Das Trinkmoor sowie eine Vielzahl weiterer Produkte unseres langjährigen Partners SonnenMoor finden Sie direkt im Onlineshop des Familienunternehmens. Schauen Sie einfach mal rein.",
+  "cta_buy_label": "Gutschein anfragen",
+  "cta_buy_href": "/service-kontakt"
 }

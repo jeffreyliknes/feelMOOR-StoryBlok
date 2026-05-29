@@ -1,11 +1,46 @@
 {
-  "seo_title": "Nachhaltigkeit, feelMOOR Gesundresort",
-  "seo_description": "Nachhaltigkeit im feelMOOR: Umweltschutz, regionale Partnerschaften, Moorschutz und verantwortungsvoller Tourismus im Allgäu.",
+  "seo_title": "Nachhaltigkeit, feelMOOR goes green, Bad Wurzach",
+  "seo_description": "feelMOOR goes green: regionale Beschaffung, Ressourcenmanagement, soziales Engagement, Aufforstung, Insektenresort und Artenschutz im Wurzacher Ried.",
   "hero_caption": "Verantwortung",
-  "hero_heading": "Nachhaltigkeit",
+  "hero_heading": "feelMOOR goes green",
   "hero_intro": "Das Moor schützen, von dem wir leben, Nachhaltigkeit ist Teil unserer DNA.",
-  "intro_heading": "Unser Engagement",
-  "intro_body": "Als Gesundresort, das von der einzigartigen Natur des Wurzacher Rieds lebt, tragen wir besondere Verantwortung. Wir setzen auf regionale Partnerschaften, energie- und ressourcensparendes Wirtschaften und aktiven Moorschutz, weil wir verstehen, dass gesunde Natur die Grundlage für gesunde Menschen ist.",
+  "intro_heading": "Unsere Nachhaltigkeitsinitiative",
+  "intro_body": "Nachhaltigkeit wird bei uns im feelMOOR Gesundresort großgeschrieben. Mit Begeisterung entwickeln wir ständig neue Projekte, um die Energieeffizienz in unserem Resort zu optimieren und unsere ökologische sowie soziale Verantwortung im Zeichen des Klimaschutzes zu leben. Aus diesem Grund haben wir uns bewusst für eine Unternehmensführung mit den Säulen Umwelt, Soziales und Wirtschaft entschieden. Im Zuge dessen haben wir die Nachhaltigkeitsinitiative feelMOOR goes green gegründet, mit der wir konkrete Umwelt- und Naturschutzprojekte umsetzen.",
   "hero_image": "/images/allgaeu/IRX_2310_MorgenstimmungamRiedsee.jpg",
-  "hero_image_alt": "Natur und Nachhaltigkeit im Allgäu"
+  "hero_image_alt": "Natur und Nachhaltigkeit im Allgäu",
+  "intro_quote": "Wir sind Gastgeber aus Leidenschaft, was die Fürsorge für unseren Planeten und dessen begrenzte Ressourcen nicht ausschließen darf.",
+  "initiatives": [
+    {
+      "title": "Regionalität",
+      "body": "Eine Vielzahl unserer kulinarischen Köstlichkeiten stammt direkt aus der Region. Unseren Käse beziehen wir teils aus der Käserei im benachbarten Gospoldshofen, die Eier kommen vom örtlichen Bio-Bauern und unsere Kräuter bauen wir über den Dächern der Stadt an. Ob Fleisch, Gemüse, Getränke oder Backwaren am Morgen, die meisten Produkte werden von lokalen Produzenten und Händlern geliefert. Das spart lange Transportwege und CO2 und stärkt die regionale Wirtschaft."
+    },
+    {
+      "title": "Ressourcenmanagement",
+      "body": "In den meisten öffentlichen Bereichen sowie allen Hotelzimmern wird LED-Beleuchtung eingesetzt und so Strom gespart. Der Wasserverbrauch wird mithilfe von Strahlreglern an den Wasserhähnen reduziert. Der Umwelt zuliebe werden die Hotelzimmer nur alle drei Tage gereinigt. Unsere Hotelwäsche durchläuft einen ökologisch zertifizierten Waschprozess. Außerdem finden Sie auf unseren Zimmern Pflegeprodukte in zu 100% recycelter Verpackung sowie 100% recyceltes Toilettenpapier."
+    },
+    {
+      "title": "Soziales Engagement",
+      "body": "Über das Jahr verteilt sammeln wir mit verschiedenen Aktionen Spendengelder für soziale Projekte, etwa mit unserer Wunschbaumaktion zu Weihnachten oder unserer Mitarbeitertombola beim Sommerfest. Wir möchten damit Menschen und Einrichtungen unterstützen, die auf Hilfe angewiesen sind, zum Beispiel den Tafelladen Bad Wurzach oder das Kinderhospiz in Bad Grönenbach."
+    },
+    {
+      "title": "Spende Ukraine",
+      "body": "Die Hilfsorganisation H.O.P.E. unterstützt Eltern von schwerst- und todkranken Kindern in der Ukraine mit medizinischer Ausrüstung und Unterweisungen in der Krankenpflege. Um aktiv zu helfen, haben wir eine Spendenrate eingerichtet: Wurde unsere Superior Suite in Kombination mit dieser Rate gebucht, haben wir 50% des Übernachtungspreises gespendet. Insgesamt konnten wir rund 460 Euro sammeln und spenden."
+    },
+    {
+      "title": "Wald Action",
+      "body": "Unser erstes aktives Projekt im Rahmen der Nachhaltigkeitsinitiative war eine Aufforstungsaktion in einem Waldstück in Bad Wurzach, Hünlishofen. Der zuständige Förster pflanzte 2000 Bäume vor. Unsere tatkräftigen Mitarbeiter halfen, die frisch gepflanzten Bäume durch Zäune und Drähte vor Wildzugriff zu schützen, damit die jungen Bäume nicht absterben."
+    },
+    {
+      "title": "Insektenresort",
+      "body": "In den vergangenen 15 Jahren ist die Anzahl heimischer Insekten um rund 80% zurückgegangen. Da Insekten als Nahrung für Tiere und Bestäuber für Pflanzen dienen, tragen sie zum ökologischen Gleichgewicht bei. Deshalb haben wir das feelMOOR Insektenresort eröffnet. Aus Holzrahmen und Materialien wie Stroh, Ästen, Tannenzapfen und Backsteinen entstand ein Unterschlupf, den Sie nun vor dem Hoteleingang bestaunen können."
+    },
+    {
+      "title": "Grüne Nachtwächter",
+      "body": "Wir sammeln Spenden für den Erhalt der Artenvielfalt im Wurzacher Ried. Mit einem Umweltbeitrag von drei Euro unterstützen Sie die notwendigen Pflegemaßnahmen und können einen unserer grünen Nachtwächter mit auf Ihr Zimmer nehmen. Die Pflanzen sorgen für frische Luft, sind gute Zuhörer und natürlich schön anzuschauen."
+    },
+    {
+      "title": "Das Wilde Leben",
+      "body": "Mit unserer neu angelegten Wildblumenwiese im Außengelände leisten wir einen weiteren Beitrag zum Artenschutz. Hier sollen sich Bienen, Käfer, Schmetterlinge und Co. zwischen einer bunten Blütenvielfalt niederlassen. Außerdem finden Sie auf der Wiese einen Bienenstock mit zwei Carnica-Bienenvölkern mit jeweils 30.000 Bienen, einer der friedlichsten Bienenrassen."
+    }
+  ]
 }

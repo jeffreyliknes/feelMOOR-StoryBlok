@@ -27,59 +27,29 @@ const page = pageData;
           <p class="text-xs text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
         </div>
         <div class="bg-forest-700 p-8 lg:p-12 text-cream rounded-sm flex flex-col justify-center min-h-[300px] lg:min-h-[400px]">
-          <div class="space-y-8">
-            <div>
-              <p class="text-xs leading-relaxed text-cream/80">Wir verstehen Nachhaltigkeit nicht als Trend, sondern als Verantwortung gegenüber den kommenden Generationen.</p>
-            </div>
-            <div class="border-t border-cream/20 pt-8">
-              <p class="text-xs tracking-widest uppercase text-gold mb-3">Ganzheitlicher Ansatz</p>
-              <p class="text-xs text-cream/70">Von der Beschaffung bis zur Abfallvermeidung, Nachhaltigkeit ist in jeder Entscheidung unseres Hauses verankert.</p>
-            </div>
+          <p class="font-display font-light text-cream text-xl lg:text-2xl leading-snug">{page.intro_quote}</p>
+          <div class="border-t border-cream/20 pt-6 mt-8">
+            <p class="text-xs tracking-widest uppercase text-gold">feelMOOR goes green</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── 4-Column Initiatives Grid ── -->
+  <!-- ── Initiatives Grid ── -->
   <section class="py-16 lg:py-24 bg-stone-light/30">
     <div class="max-w-screen-xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Moorschutz */}
-        <div class="bg-white border border-stone-light p-8 lg:p-10">
-          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Moorschutz</h3>
-          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Aktive Zusammenarbeit mit Naturschutzorganisationen zum Erhalt des Wurzacher Rieds.</p>
-        </div>
-
-        {/* Regionale Partner */}
-        <div class="bg-white border border-stone-light p-8 lg:p-10">
-          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Regionale Partner</h3>
-          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Bevorzugung lokaler Lieferanten zur Unterstützung der Allgäuer Wirtschaft.</p>
-        </div>
-
-        {/* Energieeffizienz */}
-        <div class="bg-white border border-stone-light p-8 lg:p-10">
-          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Energieeffizienz</h3>
-          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Moderne Technologien und intelligente Systeme zur Reduktion unseres CO₂-Fußabdrucks.</p>
-        </div>
-
-        {/* Abfallreduzierung */}
-        <div class="bg-white border border-stone-light p-8 lg:p-10">
-          <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">Abfallreduzierung</h3>
-          <p class="text-xs text-ink-muted mt-4 leading-relaxed">Konsequente Mülltrennung und Recycling in allen Bereichen des Resorts.</p>
-        </div>
+      <div class="text-center mb-12">
+        <p class="caption-label text-gold mb-2">Unsere Projekte</p>
+        <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Konkrete Umwelt- und Naturschutzprojekte</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ── Certifications/Memberships Strip ── -->
-  <section class="py-12 bg-cream border-t border-stone-light">
-    <div class="max-w-screen-xl mx-auto px-6 text-center">
-      <p class="text-xs text-ink-muted mb-6">Unsere Nachhaltigkeitsstandards werden durch international anerkannte Zertifizierungen bestätigt.</p>
-      <div class="flex flex-wrap gap-6 justify-center items-center">
-        <span class="text-xs font-medium text-ink-dark px-4 py-2 bg-white border border-stone-light rounded-sm">Moorheilbad Bad Wurzach</span>
-        <span class="text-xs font-medium text-ink-dark px-4 py-2 bg-white border border-stone-light rounded-sm">Wellness-Zertifikat</span>
-        <span class="text-xs font-medium text-ink-dark px-4 py-2 bg-white border border-stone-light rounded-sm">Nachhaltigkeitssiegel</span>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {page.initiatives?.map((item) => (
+          <div class="bg-white border border-stone-light p-8 lg:p-10">
+            <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.6rem);">{item.title}</h3>
+            <p class="text-xs text-ink-muted mt-4 leading-relaxed">{item.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

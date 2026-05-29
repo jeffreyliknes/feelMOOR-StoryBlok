@@ -1,12 +1,52 @@
 {
-  "seo_title": "Allgäu erleben, Ausflüge & Freizeitaktivitäten Bad Wurzach",
-  "seo_description": "Die schönsten Ausflugsziele und Aktivitäten rund um Bad Wurzach und im Allgäu, Wandern, Radfahren, Sehenswürdigkeiten und Natur.",
+  "seo_title": "Allgäu erleben, Ausflüge & Wurzacher Ried, Bad Wurzach",
+  "seo_description": "Wandern, Radfahren und Ausflugsziele rund um Bad Wurzach, das Wurzacher Ried als außergewöhnliches Naturerlebnis und der Reisepodcast Podkäschtle Oberschwaben-Allgäu.",
   "hero_caption": "Allgäuer Natur",
   "hero_heading": "Allgäu erleben",
-  "hero_intro": "Wandern, Radfahren, Kultur und Natur, das Allgäu hat für jeden etwas zu bieten.",
-  "intro_heading": "Ihre Region entdecken",
-  "intro_body": "Bad Wurzach und das Allgäu bieten eine beeindruckende Vielfalt an Erlebnissen. Ob Sie die einzigartigen Moorlandschaften des Wurzacher Rieds erkunden, Allgäuer Berge besteigen oder kulturelle Sehenswürdigkeiten besuchen möchten, unsere Umgebung ist Abenteuer und Entspannung zugleich.",
+  "hero_intro": "Wandern, Radfahren, Faszination Wurzacher Ried und vieles mehr.",
+  "intro_heading": "Für jeden das richtige Erlebnis",
+  "intro_body": "Egal ob erholungssuchender Wochenreisender, Sport- und Outdoorbegeisterter, Durchreisender, Kur-, Gesundheits- oder Wellnessgast, hier im Allgäu findet sich für jeden die richtige Freizeitbeschäftigung in und um Bad Wurzach.",
   "hero_image": "/images/allgaeu/IMG_0270.jpg",
   "hero_image_alt": "Allgäuer Landschaft",
-  "intro_image": "/images/allgaeu/Fahrradfahren1.png"
+  "intro_image": "/images/allgaeu/Fahrradfahren1.png",
+  "activities": [
+    {
+      "title": "Aktiv sein",
+      "body": "Wandern, Radfahren und Fahrradvergnügen pur, zahlreiche Wege führen durch Moorlandschaften und sanfte Allgäuer Hügel in und um Bad Wurzach."
+    },
+    {
+      "title": "Ausflugsziele & Sehenswürdigkeiten",
+      "body": "Aufatmen und genießen: die schönsten Ziele, Sehenswürdigkeiten und Aussichten der Region rund um Bad Wurzach entdecken."
+    },
+    {
+      "title": "Action & Adrenalin",
+      "body": "Adrenalinkick garantiert, für alle, die ihren Aktivurlaub mit einer Extraportion Nervenkitzel erleben möchten."
+    }
+  ],
+  "features": [
+    {
+      "heading": "Wurzacher Ried, ein außergewöhnliches Naturerlebnis",
+      "image": "/images/allgaeu/IRX_2310_MorgenstimmungamRiedsee.jpg",
+      "image_alt": "Wurzacher Ried Morgenstimmung",
+      "paragraphs": [
+        "Die Entstehungsgeschichte des Wurzacher Riedes reicht bis ins Eiszeitalter zurück. Der risseiszeitliche Rhein-Gletscher formte vor 200.000 Jahren das Wurzacher Becken. Der würmeiszeitliche Gletscher riegelte vor rund 20.000 Jahren mit seiner Endmoräne das Zungenbecken ab, sodass die einfließenden Schmelzwässer nicht abfließen konnten und sich zu einem flachen See stauten. Dieser See verlandete über Jahrtausende immer mehr zu einem Moorgebiet, dem Wurzacher Ried.",
+        "Heute präsentiert sich das Wurzacher Ried als einzigartiges Mosaik aus Hoch- und Niedermoor, aus Streuwiesen und Moorwäldern. Es ist ein Reservat für viele vom Aussterben bedrohte Tier- und Pflanzenarten und ein Paradies für Naturliebhaber. Über 2.500 Pflanzen, Tiere und Pilze sind bis heute nachgewiesen. Das Gebiet wurde mit dem Europa-Diplom ausgezeichnet, der höchsten Auszeichnung für herausragende Naturschutzgebiete von internationaler Bedeutung. Erkunden Sie es auf zahlreichen Wander- und Radwegen, bei einem Spaziergang auf dem Torflehrpfad oder einer Fahrt mit dem historischen Torfbähnle.",
+        "In der Erlebnisausstellung MOOR EXTREM entdecken Sie interaktiv biologische und naturwissenschaftliche Phänomene an neun Themenbereichen und erleben die Welt der Moore mit allen Sinnen. Hören, sehen, anfassen, ausprobieren, spielen, alle Sinne werden angesprochen."
+      ],
+      "links": [
+        { "label": "moorextrem.de", "href": "https://www.moorextrem.de" },
+        { "label": "wurzacher-ried.de", "href": "https://www.wurzacher-ried.de" }
+      ]
+    },
+    {
+      "heading": "Podkäschtle Oberschwaben-Allgäu",
+      "paragraphs": [
+        "Im offiziellen Reisepodcast Podkäschtle, Oberschwaben-Allgäu entdecken, stellen Einheimische ihre Heimat vor. Sie bringen dem Zuhörer die besondere Wärme, den Humor und die bodenständige Gemütlichkeit von Oberschwaben-Allgäu nahe und füllen die schönen Aussichten auf Berge und Seen mit noch schöneren Geschichten.",
+        "Gäste wie auch Einheimische finden in jeder Episode neue Ideen, inspirierende Perspektiven und sympathische Charaktere. Hören Sie jetzt rein und machen Sie Urlaub im Kopf."
+      ],
+      "links": [
+        { "label": "Podkäschtle bei Oberschwaben Tourismus", "href": "https://www.oberschwaben-tourismus.de/stadt-land-leute/podcast" }
+      ]
+    }
+  ]
 }
