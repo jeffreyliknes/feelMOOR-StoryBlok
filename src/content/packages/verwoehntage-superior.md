@@ -2,6 +2,8 @@
 title: "Verwöhntage Superior"
 subtitle: "Ruhe und Entspannung am Rande des Allgäus"
 tag: "Entschleunigung & Wellness"
+image: "/images/wellness/a-0333-IR8_1899__IngoRack1.jpg"
+image_alt: "Wellness und Verwöhnung im feelMOOR"
 nights: "3 bis 4 Nächte"
 teaser: "Raus aus dem Hamsterrad, mit den Bad Wurzacher Verwöhntagen wieder fit für den Alltag werden."
 booking_options:

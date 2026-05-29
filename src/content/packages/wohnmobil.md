@@ -2,6 +2,8 @@
 title: "Wohnmobil-Special"
 subtitle: "Ihr Wohnmobil-Stellplatz am feelMOOR Gesundresort"
 tag: "Saisonal & Specials"
+image: "/images/allgaeu/Landschaft.jpg"
+image_alt: "Allgäuer Landschaft rund um Bad Wurzach"
 nights: "14 Tage"
 teaser: "Ab dem 19.06.2023 (11 Uhr) ist der Stellplatz kostenpflichtig und kann nur mit einer Stellplatzkarte (erhältlich am Kassenautomaten) befahren und verlassen werden. Die Kosten können Sie der unten aufgeführten Preisliste entnehmen."
 includes:

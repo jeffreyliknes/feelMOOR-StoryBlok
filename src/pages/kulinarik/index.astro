@@ -42,8 +42,13 @@ const page = pageData;
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="space-y-8">
         {page.venues?.map((venue) => (
-          <div class="bg-white border border-stone-light p-8 lg:p-10">
-            <div class="grid lg:grid-cols-[1fr_280px] gap-8 lg:gap-12">
+          <div class="bg-white border border-stone-light overflow-hidden">
+            {venue.image && (
+              <div class="aspect-[21/9] overflow-hidden">
+                <img src={venue.image} alt={venue.name} loading="lazy" class="w-full h-full object-cover" />
+              </div>
+            )}
+            <div class="grid lg:grid-cols-[1fr_280px] gap-8 lg:gap-12 p-8 lg:p-10">
               <div>
                 <p class="caption-label text-gold mb-2">{venue.tagline}</p>
                 <h3 class="font-display font-light text-ink-dark mb-4" style="font-size:clamp(1.4rem,2.8vw,2rem);">

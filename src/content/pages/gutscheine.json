@@ -19,9 +19,9 @@
   "categories_heading": "Wertgutscheine",
   "categories_intro": "Ob ein gemütliches Dinner, vitales Frühstück, eine exklusive Wellnessanwendung oder ein revitalisierender Aufenthalt, mit unseren Gutscheinen landen Sie garantiert einen Volltreffer.",
   "categories": [
-    "Übernachtung & Kulinarik",
-    "Wellness & Spa Anwendungen",
-    "Gesundheit, Moor & Fitness"
+    { "name": "Übernachtung & Kulinarik", "image": "/images/zimmer/ComfortDZ7.jpg" },
+    { "name": "Wellness & Spa Anwendungen", "image": "/images/therme/wellness-1.jpg" },
+    { "name": "Gesundheit, Moor & Fitness", "image": "/images/allgaeu/Heilkraft-des-moores.jpg" }
   ],
   "partner_heading": "Gemeinsam mit starken Partnern in Richtung Gesundheit",
   "partner_body": "Sie sind bereits Fan unseres Trinkmoors und wollen auch Ihre Mitmenschen davon begeistern? Oder warum nicht mal das Beste aus der Natur verschenken? Das Trinkmoor sowie eine Vielzahl weiterer Produkte unseres langjährigen Partners SonnenMoor finden Sie direkt im Onlineshop des Familienunternehmens. Schauen Sie einfach mal rein.",

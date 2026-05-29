@@ -1,6 +1,8 @@
 ---
 title: "Moor-Schnuppertage"
 tag: "Heilung & Regeneration"
+image: "/images/allgaeu/moor-1.jpg"
+image_alt: "Naturmoor aus dem Wurzacher Ried"
 nights: "2 Nächte"
 teaser: "Lernen Sie bei Ihrem Kurzaufenthalt die Kräfte und Schätze aus unserer Natur kennen: Regionales, frisch gestochenes Moor und Thermalwasser aus eigener Quelle. Erleben Sie das „Schwarze Gold“ in Deutschlands modernster Moorbadeabteilung und genießen Sie die Vorzüge unseres feelMOOR Gesundresorts - alles unter einem Dach."
 booking_options:

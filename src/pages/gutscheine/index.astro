@@ -45,8 +45,14 @@ const page = pageData;
       </div>
       <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
         {page.categories?.map((cat) => (
-          <div class="bg-white border border-stone-light p-8 lg:p-10 flex flex-col">
-            <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.6rem);">{cat}</h3>
+          <div class="bg-white border border-stone-light flex flex-col overflow-hidden">
+            {cat.image && (
+              <div class="aspect-[4/3] overflow-hidden">
+                <img src={cat.image} alt={cat.name} loading="lazy" class="w-full h-full object-cover" />
+              </div>
+            )}
+            <div class="p-8 lg:p-10 flex flex-col flex-1">
+            <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.6rem);">{cat.name}</h3>
             <div class="mt-auto pt-6 border-t border-stone-light/50">
               <a href={page.cta_buy_href} class="inline-flex items-center gap-2 text-xs text-gold font-medium hover:gap-3 transition-all">
                 {page.cta_buy_label}
@@ -54,6 +60,7 @@ const page = pageData;
                   <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
+            </div>
             </div>
           </div>
         ))}

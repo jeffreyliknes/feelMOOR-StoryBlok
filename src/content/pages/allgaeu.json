@@ -12,14 +12,17 @@
   "activities": [
     {
       "title": "Aktiv sein",
+      "image": "/images/allgaeu/Wandern3.png",
       "body": "Wandern, Radfahren und Fahrradvergnügen pur, zahlreiche Wege führen durch Moorlandschaften und sanfte Allgäuer Hügel in und um Bad Wurzach."
     },
     {
       "title": "Ausflugsziele & Sehenswürdigkeiten",
+      "image": "/images/allgaeu/Landschaft3.png",
       "body": "Aufatmen und genießen: die schönsten Ziele, Sehenswürdigkeiten und Aussichten der Region rund um Bad Wurzach entdecken."
     },
     {
       "title": "Action & Adrenalin",
+      "image": "/images/allgaeu/E-Bike_Allgaeu.png",
       "body": "Adrenalinkick garantiert, für alle, die ihren Aktivurlaub mit einer Extraportion Nervenkitzel erleben möchten."
     }
   ],
@@ -40,6 +43,8 @@
     },
     {
       "heading": "Podkäschtle Oberschwaben-Allgäu",
+      "image": "/images/allgaeu/IRX_2282.jpg",
+      "image_alt": "Landschaft in Oberschwaben-Allgäu",
       "paragraphs": [
         "Im offiziellen Reisepodcast Podkäschtle, Oberschwaben-Allgäu entdecken, stellen Einheimische ihre Heimat vor. Sie bringen dem Zuhörer die besondere Wärme, den Humor und die bodenständige Gemütlichkeit von Oberschwaben-Allgäu nahe und füllen die schönen Aussichten auf Berge und Seen mit noch schöneren Geschichten.",
         "Gäste wie auch Einheimische finden in jeder Episode neue Ideen, inspirierende Perspektiven und sympathische Charaktere. Hören Sie jetzt rein und machen Sie Urlaub im Kopf."

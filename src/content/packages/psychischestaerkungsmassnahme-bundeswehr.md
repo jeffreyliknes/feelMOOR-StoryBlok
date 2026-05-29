@@ -2,6 +2,8 @@
 title: "Psychische stärkungsmaßnahme der bundeswehr"
 subtitle: "für Soldat*innen nach einem Auslandseinsatz zur Regeneration am Rande des Allgäu"
 tag: "Heilung & Regeneration"
+image: "/images/allgaeu/IRX_0444_Aussicht-am-Torflehrpfad.jpg"
+image_alt: "Aussicht am Torflehrpfad im Wurzacher Ried"
 nights: "21 Tage"
 teaser: "Im Rahmen des 3-wöchigen Präventivaufenthalts bieten wir ein umfangreiches Trainings- und Regenerationsprogramm innerhalb einer festen Gruppe, kombiniert mit verschiedenen Einzelanwendungen."
 includes:

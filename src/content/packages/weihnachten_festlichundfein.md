@@ -2,6 +2,8 @@
 title: "Weihnachten festlich & fein"
 subtitle: "Entspannte Feiertage am Rande des Allgäus"
 tag: "Saisonal & Specials"
+image: "/images/wellness/WellnessWeihnachten2.png"
+image_alt: "Weihnachtszeit im feelMOOR"
 nights: "6 Nächte"
 teaser: "Entfliehen Sie dem Stress und der Hektik der Weihnachtsfeiertage und gönnen Sie sich Ihre Auszeit im feelMOOR Gesundresort."
 includes:

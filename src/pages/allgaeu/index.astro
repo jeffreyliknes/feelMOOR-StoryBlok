@@ -42,9 +42,16 @@ const page = pageData;
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-8">
         {page.activities?.map((act) => (
-          <div class="bg-white border border-stone-light p-8 lg:p-10">
-            <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">{act.title}</h3>
-            <p class="text-xs text-ink-muted mt-4 leading-relaxed">{act.body}</p>
+          <div class="bg-white border border-stone-light overflow-hidden flex flex-col">
+            {act.image && (
+              <div class="aspect-[4/3] overflow-hidden">
+                <img src={act.image} alt={act.title} loading="lazy" class="w-full h-full object-cover" />
+              </div>
+            )}
+            <div class="p-8 lg:p-10">
+              <h3 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">{act.title}</h3>
+              <p class="text-xs text-ink-muted mt-4 leading-relaxed">{act.body}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -2,6 +2,8 @@
 title: "weihnachten kurz & fein"
 subtitle: "Entspannte Feiertage am Rande des Allgäus"
 tag: "Saisonal & Specials"
+image: "/images/kulinarik/espresso-1209522_1920-2880w.jpg"
+image_alt: "Gemütliche Auszeit im feelMOOR"
 nights: "4 Nächte"
 teaser: "Entfliehen Sie dem Stress und der Hektik der Weihnachtsfeiertage und gönnen Sie sich Ihre Auszeit im feelMOOR Gesundresort."
 includes:

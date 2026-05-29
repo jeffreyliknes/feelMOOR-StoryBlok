@@ -2,6 +2,8 @@
 title: "feelmoor auszeit - der minirefresher"
 subtitle: "Wo die Seele auf Reisen geht"
 tag: "Entschleunigung & Wellness"
+image: "/images/wellness/head-massage-3530560_1920.jpg"
+image_alt: "Kopfmassage zur Entspannung"
 nights: "2 bis 3 Nächte"
 teaser: "Abschalten, Durchatmen und einfach mal rauskommen. Genießen Sie bei uns eine kleine Erholungspause und tanken neue Kraft für den Alltag. Darüber hinaus bieten wir viele weitere Urlaubsaktivitäten in unserem feelMOOR Resort und der Umgebung (SPA, MOORbäder, Riedwanderung, Radtouren) für die genügend Zeit bleibt."
 booking_options:

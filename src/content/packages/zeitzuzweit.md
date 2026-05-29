@@ -2,6 +2,8 @@
 title: "auszeit zu zweit"
 subtitle: "Erholsame Tage im feelMOOR"
 tag: "Saisonal & Specials"
+image: "/images/wellness/a-0305-IR8_1855__IngoRack1.jpg"
+image_alt: "Romantische Auszeit zu zweit"
 nights: "3 bis 4 Nächte"
 teaser: "Entspannen Sie in unserer Thermen- und Saunalandschaft, lassen Sie sich im Restaurant Culinarium beim romantischen Dinner verwöhnen und erleben Sie eine unvergessliche Zeit zu zweit!"
 includes:
