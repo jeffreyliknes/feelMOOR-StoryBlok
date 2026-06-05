@@ -1,17 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
-import site from '@/content/settings/site.json';
+import { fetchPackages, fetchRooms, fetchSiteSettings } from '@/lib/storyblok';
 import {
   buildSiteNavigation,
   type HeaderNavExtra,
 } from '@/lib/header-nav';
 
-const packages = await getCollection('packages');
-const rooms = await getCollection('rooms');
+const packages = await fetchPackages();
+const rooms = await fetchRooms();
+const site = await fetchSiteSettings();
 
-const navExtras =
-  (site as typeof site & { header_nav_links?: HeaderNavExtra[] })
-    .header_nav_links ?? [];
+const navExtras = (site?.header_nav_links ?? []) as HeaderNavExtra[];
 
 const nav = buildSiteNavigation(packages, rooms, navExtras);
 

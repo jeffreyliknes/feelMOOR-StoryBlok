@@ -1,14 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import roomsOverview from '@/content/pages/rooms-overview.json';
+import { fetchRooms, fetchPage } from '@/lib/storyblok';
+import roomsOverviewFallback from '@/content/pages/rooms-overview.json';
 
-const roomTypes = (await getCollection('rooms')).sort(
-  (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
+const roomTypes = (await fetchRooms()).sort(
+  (a: any, b: any) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
 );
 
-const page = roomsOverview;
+const page = (await fetchPage('zimmer')) ?? roomsOverviewFallback;
 const amenitiesList: { label: string }[] = Array.isArray(page.amenities) ? page.amenities : [];
 ---
 

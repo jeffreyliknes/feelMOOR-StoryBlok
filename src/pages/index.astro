@@ -1,14 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
-import homepage from '@/content/pages/homepage.json';
+import { fetchHomepage, fetchPackages, fetchRooms } from '@/lib/storyblok';
+import homepageFallback from '@/content/pages/homepage.json';
 
-const packages = await getCollection('packages');
-const rooms = (await getCollection('rooms')).sort(
-  (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
+const hpData = await fetchHomepage();
+const hp = hpData ?? homepageFallback;
+
+const packages = await fetchPackages();
+const rooms = (await fetchRooms()).sort(
+  (a: any, b: any) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
 );
-
-const hp = homepage;
 
 const CATEGORY_CARDS = [
   {

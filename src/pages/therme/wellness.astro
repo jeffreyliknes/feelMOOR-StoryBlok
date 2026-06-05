@@ -1,9 +1,10 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import wellnessData from '@/content/pages/therme-wellness.json';
+import { fetchPage } from '@/lib/storyblok';
+import wellnessFallback from '@/content/pages/therme-wellness.json';
 
-const page = wellnessData;
+const page = (await fetchPage('therme-wellness')) ?? wellnessFallback;
 
 const categories = [
   {

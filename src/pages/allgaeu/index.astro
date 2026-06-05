@@ -2,9 +2,10 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import ContentImage from '@/components/common/ContentImage.astro';
-import pageData from '@/content/pages/allgaeu.json';
+import { fetchPage } from '@/lib/storyblok';
+import allgaeuFallback from '@/content/pages/allgaeu.json';
 
-const page = pageData;
+const page = (await fetchPage('allgaeu')) ?? allgaeuFallback;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

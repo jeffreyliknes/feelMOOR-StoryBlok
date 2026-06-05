@@ -1,11 +1,12 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/service-kontakt.json';
-import siteSettings from '@/content/settings/site.json';
+import { fetchPage, fetchSiteSettings } from '@/lib/storyblok';
+import kontaktFallback from '@/content/pages/service-kontakt.json';
+import siteSettingsFallback from '@/content/settings/site.json';
 
-const page = pageData;
-const site = siteSettings;
+const page = (await fetchPage('service-kontakt')) ?? kontaktFallback;
+const site = (await fetchSiteSettings()) ?? siteSettingsFallback;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

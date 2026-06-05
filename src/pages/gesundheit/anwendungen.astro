@@ -1,9 +1,10 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/gesundheit-anwendungen.json';
+import { fetchPage } from '@/lib/storyblok';
+import anwendungenFallback from '@/content/pages/gesundheit-anwendungen.json';
 
-const page = pageData;
+const page = (await fetchPage('gesundheit-anwendungen')) ?? anwendungenFallback;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

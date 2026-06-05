@@ -1,14 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
-import homepageEn from '@/content/pages/homepage-en.json';
+import { fetchPackages, fetchRooms } from '@/lib/storyblok';
+import homepageEnFallback from '@/content/pages/homepage-en.json';
 
-const packages = await getCollection('packages');
-const rooms = (await getCollection('rooms')).sort(
-  (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
+const packages = await fetchPackages();
+const rooms = (await fetchRooms()).sort(
+  (a: any, b: any) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
 );
 
-const hp = homepageEn;
+// TODO: fetch English homepage from Storyblok when EN locale is set up
+const hp = homepageEnFallback;
 const pillarOrder = ['moorheilbad', 'therme', 'nature'] as const;
 const hero = hp.hero;
 const therme = hp.therme_cta;

@@ -1,17 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
+import { fetchBlogPosts } from '@/lib/storyblok';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((entry) => ({
+  const posts = await fetchBlogPosts();
+  return posts.map((entry: any) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
 const post = entry.data;
 
 const seoTitle = post.seo_title ?? `${post.title}, feelMOOR Blog`;
@@ -69,8 +68,7 @@ const seoDescription = post.seo_description ?? post.teaser ?? post.title;
 
   <!-- Article body -->
   <section class="py-10 lg:py-14 bg-cream">
-    <div class="article-prose max-w-2xl mx-auto px-6">
-      <Content />
+    <div class="article-prose max-w-2xl mx-auto px-6" set:html={post.body_html}>
     </div>
   </section>
 

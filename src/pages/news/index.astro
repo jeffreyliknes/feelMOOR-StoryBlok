@@ -1,19 +1,19 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/news.json';
+import { fetchBlogPosts, fetchPage } from '@/lib/storyblok';
+import pageDataFallback from '@/content/pages/news.json';
 
 let posts: any[] = [];
 try {
-  posts = (await getCollection('blog')).sort(
+  posts = (await fetchBlogPosts()).sort(
     (a: any, b: any) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
 } catch {
   // blog collection not yet populated
 }
 
-const page = pageData;
+const page = (await fetchPage('news')) ?? pageDataFallback;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
