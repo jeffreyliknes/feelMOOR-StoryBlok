@@ -12,3 +12,6 @@ dist/
 
 # TinaCMS
 tina/__generated__
+public/admin
+
+.vercel
