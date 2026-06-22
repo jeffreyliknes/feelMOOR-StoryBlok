@@ -1,10 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import { fetchPage } from '@/lib/storyblok';
-import preiseFallback from '@/content/pages/therme-preise.json';
+import priceData from '@/content/pages/therme-preise.json';
 
-const page = (await fetchPage('therme-preise')) ?? preiseFallback;
+const page = priceData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

@@ -2,10 +2,9 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import ContentImage from '@/components/common/ContentImage.astro';
-import { fetchPage } from '@/lib/storyblok';
-import kulinarikFallback from '@/content/pages/kulinarik.json';
+import pageData from '@/content/pages/kulinarik.json';
 
-const page = (await fetchPage('kulinarik')) ?? kulinarikFallback;
+const page = pageData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

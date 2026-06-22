@@ -1,21 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PackageInclusions from '@/components/packages/PackageInclusions.astro';
 import PackageBookingCard from '@/components/packages/PackageBookingCard.astro';
 import PackagePricing from '@/components/packages/PackagePricing.astro';
 import PackageHighlights from '@/components/packages/PackageHighlights.astro';
 import PackageProgram from '@/components/packages/PackageProgram.astro';
-import { fetchPackages } from '@/lib/storyblok';
 
 export async function getStaticPaths() {
-  const packages = await fetchPackages();
-  return packages.map((entry: any) => ({
+  const packages = await getCollection('packages');
+  return packages.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 const pkg = entry.data;
 
 const seoTitle = `${pkg.title}, feelMOOR Bad Wurzach`;
@@ -23,7 +24,7 @@ const seoDescription = pkg.teaser ?? `${pkg.title} im feelMOOR Gesundresort Bad 
 
 const closingParagraphs = (pkg.closing_body ?? '')
   .split(/\n\s*\n/)
-  .map((p: string) => p.trim())
+  .map((p) => p.trim())
   .filter(Boolean);
 ---
 
@@ -127,7 +128,8 @@ const closingParagraphs = (pkg.closing_body ?? '')
 
         <!-- Left column: article body + inclusions + recommendations -->
         <div class="space-y-10">
-          <article class="article-prose max-w-none" set:html={pkg.body_html}>
+          <article class="article-prose max-w-none">
+            <Content />
           </article>
 
           <PackageInclusions items={pkg.includes} note={pkg.inclusion_note} />

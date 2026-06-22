@@ -2,10 +2,9 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import ContentImage from '@/components/common/ContentImage.astro';
-import { fetchPage } from '@/lib/storyblok';
-import hotelFallback from '@/content/pages/hotel.json';
+import hotelData from '@/content/pages/hotel.json';
 
-const page = (await fetchPage('hotel')) ?? hotelFallback;
+const page = hotelData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

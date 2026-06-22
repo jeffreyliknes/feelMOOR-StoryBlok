@@ -309,13 +309,6 @@ content:
     type: collection
     format: yaml-frontmatter
     extension: md
-    view:
-      fields: [title, tag, nights, teaser, image, price_from, availability]
-      primary: title
-      sort: [title, tag, nav_order]
-      default:
-        sort: title
-        order: asc
     fields:
       - name: title
         label: "Package Name"
@@ -352,11 +345,7 @@ content:
         type: string
       - name: booking_options
         label: "Booking Options (multiple durations)"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
+        type: list
         fields:
           - name: label
             label: "Duration Label (e.g. 7 Übernachtungen)"
@@ -372,8 +361,7 @@ content:
         type: boolean
       - name: includes
         label: "What's Included"
-        type: string
-        list: true
+        type: list
       - name: subtitle
         label: "Subtitle / Tagline (shown under the title)"
         type: string
@@ -382,8 +370,7 @@ content:
         type: text
       - name: recommendations
         label: "Our Recommendation (Unsere Empfehlung, bullet list)"
-        type: string
-        list: true
+        type: list
       - name: availability
         label: "Dates / Availability (Termine)"
         type: text
@@ -392,11 +379,7 @@ content:
         type: text
       - name: pricing_tiers
         label: "Pricing Tiers (one row per duration)"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{duration}"
+        type: list
         fields:
           - name: duration
             label: "Duration (e.g. 10 Übernachtungen)"
@@ -412,11 +395,7 @@ content:
             type: string
       - name: highlights
         label: "Feature Highlights (cards)"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
+        type: list
         fields:
           - name: title
             label: "Title"
@@ -429,11 +408,7 @@ content:
         type: text
       - name: points_catalog
         label: "Points Catalog (Punktekatalog)"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{points}"
+        type: list
         fields:
           - name: points
             label: "Points label (e.g. 11 Punkte)"
@@ -443,15 +418,10 @@ content:
             type: text
       - name: program_columns
         label: "Program Table Columns (e.g. 10 Nächte)"
-        type: string
-        list: true
+        type: list
       - name: program_rows
         label: "Program Table Rows"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{treatment}"
+        type: list
         fields:
           - name: treatment
             label: "Treatment (Leistung)"
@@ -461,15 +431,10 @@ content:
             type: text
           - name: values
             label: "Values per column (in column order)"
-            type: string
-            list: true
+            type: list
       - name: gallery
         label: "Image Gallery"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{alt}"
+        type: list
         fields:
           - name: image
             label: "Photo"
@@ -881,11 +846,7 @@ content:
         type: string
       - name: header_nav_links
         label: "Header mega menu — extra links (optional; for pages not in collections)"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
+        type: list
         fields:
           - name: mega_menu_id
             label: "Section — hotel | therme | gesundheit | angebote | allgaeu"
@@ -904,22 +865,14 @@ content:
             type: number
       - name: footer_columns
         label: "Footer Navigation (4 columns)"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{heading}"
+        type: list
         fields:
           - name: heading
             label: "Column Heading"
             type: string
           - name: links
             label: "Links"
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{label}"
+            type: list
             fields:
               - name: label
                 label: "Link Text"

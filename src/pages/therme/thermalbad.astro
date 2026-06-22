@@ -1,10 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import { fetchPage } from '@/lib/storyblok';
-import thermalbadFallback from '@/content/pages/therme-thermalbad.json';
+import thermalBadData from '@/content/pages/therme-thermalbad.json';
 
-const page = (await fetchPage('therme-thermalbad')) ?? thermalbadFallback;
+const page = thermalBadData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

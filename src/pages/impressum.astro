@@ -1,9 +1,8 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
-import { fetchPage } from '@/lib/storyblok';
-import impressumFallback from '@/content/pages/impressum.json';
+import pageData from '@/content/pages/impressum.json';
 
-const page = (await fetchPage('impressum')) ?? impressumFallback;
+const page = pageData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description} noindex={true}>

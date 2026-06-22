@@ -1,9 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import PackageCard from '@/components/packages/PackageCard.astro';
-import { fetchPackages, fetchPage } from '@/lib/storyblok';
-import pageDataFallback from '@/content/pages/angebote.json';
+import pageData from '@/content/pages/angebote.json';
 
 const CATEGORY_ORDER = [
   'Heilung & Regeneration',
@@ -12,10 +12,8 @@ const CATEGORY_ORDER = [
   'Saisonal & Specials',
 ];
 
-const page = (await fetchPage('angebote')) ?? pageDataFallback;
-
-const allPackages = (await fetchPackages()).sort(
-  (a: any, b: any) => (a.data.nav_order ?? 99) - (b.data.nav_order ?? 99)
+const allPackages = (await getCollection('packages')).sort(
+  (a, b) => (a.data.nav_order ?? 99) - (b.data.nav_order ?? 99)
 );
 
 // Group by category in defined order; uncategorised packages go last
@@ -30,6 +28,7 @@ const grouped = [
   },
 ].filter((g) => g.packages.length > 0);
 
+const page = pageData;
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

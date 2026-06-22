@@ -1,5 +1,5 @@
 ---
-import { fetchSiteSettings } from '@/lib/storyblok';
+import site from '@/content/settings/site.json';
 
 interface Props {
   locale?: 'de' | 'en';
@@ -9,25 +9,6 @@ const { locale = 'de' } = Astro.props;
 const homeHref = locale === 'en' ? '/en' : '/';
 const isEn = locale === 'en';
 
-const siteData = await fetchSiteSettings();
-// Fall back to inline defaults so the footer always renders
-const site = siteData ?? {
-  hotel_name: 'feelMOOR',
-  tagline: '',
-  address_street: 'Moorbadstraße 1',
-  address_zip_city: '88410 Bad Wurzach',
-  address_region: 'Bayern',
-  address_country: 'Deutschland',
-  phone_display: '+49 7564 30-1000',
-  phone_link: '+497564301000',
-  email: 'info@feelmoor.de',
-  social_instagram: '#',
-  social_facebook: '#',
-  default_og_image: '/images/og-default.webp',
-  copyright_name: 'feelMOOR GmbH · Das Gesundresort Bad Wurzach',
-  header_nav_links: [],
-  footer_columns: [],
-};
 const year = new Date().getFullYear();
 const cols = site.footer_columns;
 ---
