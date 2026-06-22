@@ -28,6 +28,16 @@ Content lives in two forms:
 
 The CMS is **Pages CMS** — its field definitions live in **`.pages.yml`** (the file the CMS reads). `pages.config.yml` is a duplicate reference copy; keep both in sync when adding collections. Editors manage content through the Pages CMS UI which writes directly to these files.
 
+### CMS
+
+The CMS is **TinaCMS**, configured in `tina/config.ts`. Editors log in at `/admin` and edit the existing `src/content/**` files through a form UI — there is no separate database; the files in `src/content/` remain the source of truth and Tina writes directly back to them.
+
+To add a new page to the CMS: create the JSON/Markdown file in `src/content/pages/` (or the relevant collection folder), add the Astro route in `src/pages/`, then add a matching collection entry in `tina/config.ts`.
+
+Images uploaded through the Tina media manager are stored in `public/images/`, matching the existing convention.
+
+`.pages.yml` / `pages.config.yml` (Pages CMS) are no longer the active CMS config — superseded by `tina/config.ts`. Left in place for now; safe to remove in a follow-up once Tina is confirmed working in production.
+
 ### Routing
 
 File-based Astro routing under `src/pages/`:
