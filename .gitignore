@@ -9,3 +9,6 @@ dist/
 # macOS
 .DS_Store
 **/.DS_Store
+
+# TinaCMS
+tina/__generated__
