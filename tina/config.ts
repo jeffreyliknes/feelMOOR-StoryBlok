@@ -22,7 +22,7 @@ export default defineConfig({
         label: 'Homepage',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'homepage' },
+        match: { include: 'homepage*' },
         ui: {
           allowedActions: { create: false, delete: false },
         },
