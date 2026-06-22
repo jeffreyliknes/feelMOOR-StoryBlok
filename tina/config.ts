@@ -25,7 +25,6 @@ export default defineConfig({
         match: { include: 'homepage' },
         ui: {
           allowedActions: { create: false, delete: false },
-          router: () => '/',
         },
         fields: [
           { type: 'string', name: 'seo_title', label: 'Page Title (Browser Tab)' },
@@ -143,7 +142,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'hotel' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/hotel' },
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -169,7 +168,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'therme' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/therme' },
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -195,7 +194,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'gesundheit' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/gesundheit' },
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -215,7 +214,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'kulinarik' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/kulinarik' },
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -262,7 +261,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'allgaeu' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/allgaeu' },
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -315,7 +314,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'gutscheine' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/gutscheine' },
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -353,9 +352,6 @@ export default defineConfig({
         label: 'Rooms & Suites',
         path: 'src/content/rooms',
         format: 'md',
-        ui: {
-          router: ({ document }) => `/zimmer/${document._sys.filename}`,
-        },
         fields: [
           { type: 'string', name: 'name', label: 'Room Name', isTitle: true, required: true },
           { type: 'string', name: 'variants', label: 'Room Categories (e.g. "Comfort · Classic")' },
@@ -408,9 +404,6 @@ export default defineConfig({
         label: 'Packages & Offers',
         path: 'src/content/packages',
         format: 'md',
-        ui: {
-          router: ({ document }) => `/angebote/${document._sys.filename}`,
-        },
         fields: [
           { type: 'string', name: 'title', label: 'Package Name', isTitle: true, required: true },
           {
@@ -526,9 +519,6 @@ export default defineConfig({
           { type: 'string', name: 'image_alt', label: 'Featured Image Alt Text' },
           { type: 'rich-text', name: 'body', label: 'Article Content', isBody: true },
         ],
-        ui: {
-          router: ({ document }) => `/blog/${document._sys.filename}`,
-        },
       },
       {
         name: 'settings',
