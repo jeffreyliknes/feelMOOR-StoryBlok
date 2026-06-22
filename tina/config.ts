@@ -24,6 +24,7 @@ export default defineConfig({
         format: 'json',
         match: { include: 'homepage' },
         ui: {
+          global: true,
           allowedActions: { create: false, delete: false },
           router: () => '/',
         },
@@ -143,7 +144,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'hotel' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/hotel' },
+        ui: { global: true, allowedActions: { create: false, delete: false }, router: () => '/hotel' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -169,7 +170,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'therme' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/therme' },
+        ui: { global: true, allowedActions: { create: false, delete: false }, router: () => '/therme' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -195,7 +196,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'gesundheit' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/gesundheit' },
+        ui: { global: true, allowedActions: { create: false, delete: false }, router: () => '/gesundheit' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -215,7 +216,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'kulinarik' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/kulinarik' },
+        ui: { global: true, allowedActions: { create: false, delete: false }, router: () => '/kulinarik' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -262,7 +263,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'allgaeu' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/allgaeu' },
+        ui: { global: true, allowedActions: { create: false, delete: false }, router: () => '/allgaeu' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -315,7 +316,7 @@ export default defineConfig({
         path: 'src/content/pages',
         format: 'json',
         match: { include: 'gutscheine' },
-        ui: { allowedActions: { create: false, delete: false }, router: () => '/gutscheine' },
+        ui: { global: true, allowedActions: { create: false, delete: false }, router: () => '/gutscheine' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
           { type: 'string', name: 'seo_description', label: 'SEO Description (Google)', ui: { component: 'textarea' } },
@@ -536,7 +537,7 @@ export default defineConfig({
         path: 'src/content/settings',
         format: 'json',
         match: { include: 'site' },
-        ui: { allowedActions: { create: false, delete: false } },
+        ui: { global: true, allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'hotel_name', label: 'Hotel Name' },
           { type: 'string', name: 'tagline', label: 'Hotel Tagline' },
