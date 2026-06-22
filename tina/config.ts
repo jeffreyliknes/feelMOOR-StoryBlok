@@ -22,7 +22,7 @@ export default defineConfig({
         label: 'Homepage',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'homepage.json' },
+        match: { include: 'homepage' },
         ui: {
           allowedActions: { create: false, delete: false },
           router: () => '/',
@@ -142,7 +142,7 @@ export default defineConfig({
         label: 'Hotel & Resort Page',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'hotel.json' },
+        match: { include: 'hotel' },
         ui: { allowedActions: { create: false, delete: false }, router: () => '/hotel' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
@@ -168,7 +168,7 @@ export default defineConfig({
         label: 'Therme Page',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'therme.json' },
+        match: { include: 'therme' },
         ui: { allowedActions: { create: false, delete: false }, router: () => '/therme' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
@@ -194,7 +194,7 @@ export default defineConfig({
         label: 'Gesundheit Page',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'gesundheit.json' },
+        match: { include: 'gesundheit' },
         ui: { allowedActions: { create: false, delete: false }, router: () => '/gesundheit' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
@@ -214,7 +214,7 @@ export default defineConfig({
         label: 'Kulinarik Page',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'kulinarik.json' },
+        match: { include: 'kulinarik' },
         ui: { allowedActions: { create: false, delete: false }, router: () => '/kulinarik' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
@@ -261,7 +261,7 @@ export default defineConfig({
         label: 'Allgäu erleben Page',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'allgaeu.json' },
+        match: { include: 'allgaeu' },
         ui: { allowedActions: { create: false, delete: false }, router: () => '/allgaeu' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
@@ -314,7 +314,7 @@ export default defineConfig({
         label: 'Gutscheine Page',
         path: 'src/content/pages',
         format: 'json',
-        match: { include: 'gutscheine.json' },
+        match: { include: 'gutscheine' },
         ui: { allowedActions: { create: false, delete: false }, router: () => '/gutscheine' },
         fields: [
           { type: 'string', name: 'seo_title', label: 'SEO Title (Browser Tab)' },
@@ -535,7 +535,7 @@ export default defineConfig({
         label: 'Global Settings',
         path: 'src/content/settings',
         format: 'json',
-        match: { include: 'site.json' },
+        match: { include: 'site' },
         ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'hotel_name', label: 'Hotel Name' },
