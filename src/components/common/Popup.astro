@@ -1,0 +1,73 @@
+---
+// Homepage welcome pop-up. Built from a Change Request (Tina → src/content/requests).
+// ponytail: native <dialog> gives backdrop + ESC-close + focus trap for free.
+interface Props {
+  heading: string;
+  body: string;
+  image?: string;
+  imageAlt?: string;
+  closeLabel?: string;
+  /** sessionStorage key so it shows once per session, not every navigation */
+  id?: string;
+}
+const {
+  heading,
+  body,
+  image,
+  imageAlt = '',
+  closeLabel = 'Schließen',
+  id = 'welcome-popup',
+} = Astro.props;
+---
+
+<dialog
+  id={id}
+  data-popup-id={id}
+  class="popup w-[min(92vw,460px)] bg-cream text-ink-dark p-0 border border-gold/30 shadow-2xl backdrop:bg-forest-950/60"
+>
+  <button
+    type="button"
+    data-popup-close
+    aria-label={closeLabel}
+    class="absolute top-3 right-3 z-10 grid place-items-center w-9 h-9 text-ink-dark/70 hover:text-ink-dark hover:bg-stone-light/60 transition-colors"
+  >
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  {image && (
+    <img src={image} alt={imageAlt} class="w-full aspect-[3/2] object-cover" loading="eager" />
+  )}
+
+  <div class="px-8 py-8 text-center">
+    <h2 class="font-display font-light text-[1.75rem] leading-tight text-ink-dark">{heading}</h2>
+    <span class="block w-10 h-px bg-gold/50 mx-auto my-4"></span>
+    <p class="text-sm text-ink-muted leading-relaxed">{body}</p>
+  </div>
+</dialog>
+
+<style>
+  .popup[open] {
+    animation: popup-in 0.3s ease forwards;
+  }
+  @keyframes popup-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLDialogElement>('dialog.popup').forEach((dialog) => {
+    const key = `popup-seen:${dialog.dataset.popupId}`;
+    if (!sessionStorage.getItem(key)) {
+      dialog.showModal();
+      sessionStorage.setItem(key, '1');
+    }
+    // close button + click outside (on the backdrop) both dismiss
+    dialog.querySelector('[data-popup-close]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
+</script>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
+import Popup from '@/components/common/Popup.astro';
 import homepageEn from '@/content/pages/homepage-en.json';
 
 const packages = await getCollection('packages');
@@ -317,5 +318,15 @@ const voucher = hp.voucher_strip;
       </div>
     </div>
   </section>
+
+  {hp.popup?.enabled && (
+    <Popup
+      heading={hp.popup.heading}
+      body={hp.popup.body}
+      image={hp.popup.image}
+      imageAlt={hp.popup.image_alt}
+      closeLabel="Close"
+    />
+  )}
 
 </PageLayout>

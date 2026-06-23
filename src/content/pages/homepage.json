@@ -60,5 +60,12 @@
     "caption": "Verschenken Sie Erholung",
     "heading": "feelMOOR Gutscheine",
     "subheading": "das perfekte Geschenk"
+  },
+  "popup": {
+    "enabled": false,
+    "heading": "",
+    "body": "",
+    "image": "",
+    "image_alt": ""
   }
 }

@@ -134,6 +134,18 @@ export default defineConfig({
               { type: 'string', name: 'subheading', label: 'Second Line (italic)' },
             ],
           },
+          {
+            type: 'object',
+            name: 'popup',
+            label: 'Welcome Pop-up',
+            fields: [
+              { type: 'boolean', name: 'enabled', label: 'Show the pop-up?' },
+              { type: 'string', name: 'heading', label: 'Heading' },
+              { type: 'string', name: 'body', label: 'Text', ui: { component: 'textarea' } },
+              { type: 'image', name: 'image', label: 'Image (optional)' },
+              { type: 'string', name: 'image_alt', label: 'Image Alt Text' },
+            ],
+          },
         ],
       },
       {
@@ -518,6 +530,27 @@ export default defineConfig({
           { type: 'image', name: 'image', label: 'Featured Image' },
           { type: 'string', name: 'image_alt', label: 'Featured Image Alt Text' },
           { type: 'rich-text', name: 'body', label: 'Article Content', isBody: true },
+        ],
+      },
+      {
+        name: 'requests',
+        label: 'Change Requests',
+        path: 'src/content/requests',
+        format: 'md',
+        ui: {
+          // sensible defaults for a newly created request
+          defaultItem: () => ({ status: 'New' }),
+        },
+        fields: [
+          { type: 'string', name: 'title', label: 'Short summary of the request', isTitle: true, required: true },
+          {
+            type: 'string', name: 'status', label: 'Status',
+            options: ['New', 'In progress', 'Done'],
+          },
+          { type: 'string', name: 'page', label: 'Which page or section? (paste the URL if you can)' },
+          { type: 'string', name: 'submitted_by', label: 'Your name' },
+          { type: 'image', name: 'images', label: 'Reference images / assets to use', list: true },
+          { type: 'rich-text', name: 'body', label: 'Describe the change you want', isBody: true },
         ],
       },
       {

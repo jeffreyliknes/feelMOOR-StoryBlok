@@ -124,4 +124,7 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { rooms, packages, pages, settings, blog };
+// Internal change-request tickets, managed in Tina but never rendered as pages.
+const requests = defineCollection({ type: 'content', schema: z.any() });
+
+export const collections = { rooms, packages, pages, settings, blog, requests };

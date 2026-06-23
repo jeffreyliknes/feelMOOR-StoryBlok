@@ -1,0 +1,93 @@
+name: Change Request
+
+# Fires when a manager files a Change Request through Tina (which commits a
+# Markdown file under src/content/requests/ to main). Claude reads the request,
+# implements it, and opens a PR. Vercel auto-builds a preview for the PR branch.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/requests/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  implement-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Which request file(s) landed in this push? Pass them to Claude so it
+      # only implements what actually changed, not every request ever filed.
+      - name: Find changed request files
+        id: changed
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            RANGE="HEAD~1 HEAD"
+          else
+            RANGE="$BEFORE ${{ github.sha }}"
+          fi
+          FILES=$(git diff --name-only $RANGE -- 'src/content/requests/*.md' | tr '\n' ' ')
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+          echo "Changed request files: ${FILES:-(none)}"
+
+      - name: Implement the request with Claude
+        if: steps.changed.outputs.files != ''
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: |
+            --max-turns 30
+            --model claude-sonnet-4-6
+            --allowedTools Edit,Read,Write,Bash,Glob,Grep
+          prompt: |
+            A content editor filed a change request through the CMS. The request
+            file(s) added in this push:
+
+              ${{ steps.changed.outputs.files }}
+
+            Each is Markdown with YAML frontmatter:
+              - title: short summary of the request
+              - page: which page or URL it applies to
+              - submitted_by: who asked
+              - images: image paths already uploaded under public/ (use as-is)
+              - the Markdown body: the detailed description
+
+            Your task:
+            1. Read the changed request file(s) listed above.
+            2. Implement the requested change in this Astro 5 + TinaCMS codebase,
+               following CLAUDE.md (no em/en dashes in copy, use the brand tokens,
+               match surrounding code style).
+            3. Prefer making new content editable in TinaCMS (add fields in
+               tina/config.ts and wire the JSON/markdown it maps to) rather than
+               hardcoding, when an editor would plausibly tweak it later.
+            4. Do NOT modify anything under src/content/requests/. Do NOT touch
+               vercel.json redirects, the global header/footer, or site-wide
+               styles UNLESS the request explicitly and unambiguously asks for it,
+               and even then keep the change minimal.
+            5. If the request is ambiguous, contradictory, or larger than a single
+               self-contained change, implement only the safe, clearly-specified
+               part and leave the rest. State your assumptions and any open
+               questions clearly in your final message.
+
+      - name: Open pull request
+        if: steps.changed.outputs.files != ''
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: change-request/run-${{ github.run_id }}
+          delete-branch: true
+          commit-message: "Change request: implement editor request"
+          title: "Change request from Tina (review needed)"
+          body: |
+            Automated implementation of a change request filed through Tina.
+
+            Request file(s): `${{ steps.changed.outputs.files }}`
+
+            Review the diff and the Vercel preview below, then approve or close.
+            See the Claude step in this run's Actions log for its reasoning,
+            assumptions, and any open questions.
