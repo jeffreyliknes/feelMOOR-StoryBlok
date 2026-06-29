@@ -11,6 +11,8 @@
     {
       "title": "Oberschwäbisches Torfbähnle",
       "category": "Besichtigung und Führung",
+      "image": "/images/allgaeu/ausflugsziele/Torfwerkshockete.webp",
+      "image_alt": "Oberschwäbisches Torfbähnle",
       "schedule": "von April bis Oktober, jeden 2. Sonntag und jeden 4. Samstag im Monat",
       "duration": "ca. 1 Stunde",
       "meeting_point": "Oberschwäbisches Torfmuseum, Oberried",
@@ -25,11 +27,14 @@
     {
       "title": "Ausflugszug Moorbahn",
       "category": "Ausflug",
+      "image": "/images/allgaeu/ausflugsziele/moorbahn.webp",
+      "image_alt": "Ausflugszug Moorbahn Bad Wurzach",
       "schedule": "Saisonbetrieb, Termine auf Anfrage",
-      "meeting_point": "Bad Wurzach",
+      "meeting_point": "Bahnhof Bad Wurzach",
       "highlights": [
         "Historische Moorbahnfahrt durch das Wurzacher Ried",
-        "Einblick in die Moorgeschichte der Region"
+        "Kostenlos mit der Kur- und Gästekarte",
+        "Region aus einer besonderen Perspektive entdecken"
       ],
       "link_label": null,
       "link_href": null
@@ -37,6 +42,8 @@
     {
       "title": "Oberschwäbisches Torfmuseum",
       "category": "Sehenswürdigkeit und Führungen",
+      "image": "/images/allgaeu/ausflugsziele/torfmuseum.webp",
+      "image_alt": "Oberschwäbisches Torfmuseum",
       "meeting_point": "88410 Bad Wurzach",
       "highlights": [
         "Geschichte des Torfabbaus in Oberschwaben",
@@ -48,6 +55,8 @@
     {
       "title": "Torflehrpfad",
       "category": "Wandern und Entdecken",
+      "image": "/images/allgaeu/ausflugsziele/IRX_2282_Torflehrpfad-Morgenstimmung.webp",
+      "image_alt": "Torflehrpfad Morgenstimmung Bad Wurzach",
       "meeting_point": "Dr.-Harry-Wiegand-Str. 4/1, 88410 Bad Wurzach",
       "highlights": [
         "Geführter Naturpfad durch das Moorgebiet",
@@ -59,6 +68,8 @@
     {
       "title": "Alpaka Leben",
       "category": "Ausflug und Wandern",
+      "image": "/images/allgaeu/ausflugsziele/AlapakaLeben2.webp",
+      "image_alt": "Alpaka Leben Aitrach",
       "meeting_point": "Pfänders 3, 88319 Aitrach",
       "highlights": [
         "Alpakas hautnah erleben",

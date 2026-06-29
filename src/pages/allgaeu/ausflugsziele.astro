@@ -32,46 +32,55 @@ const page = pageData;
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="space-y-8">
         {page.excursions.map((exc) => (
-          <div class="border border-stone-light bg-cream/30 p-8 lg:p-10">
-            <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
-              <div>
-                <p class="caption-label text-gold mb-2">{exc.category}</p>
-                <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">{exc.title}</h2>
+          <div class="border border-stone-light bg-cream/30 overflow-hidden">
+            <div class="grid lg:grid-cols-2">
+              {exc.image && (
+                <div class="aspect-[4/3] lg:aspect-auto overflow-hidden">
+                  <img src={exc.image} alt={exc.image_alt} class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              )}
+              <div class={`p-8 lg:p-10 flex flex-col justify-center ${!exc.image ? 'lg:col-span-2' : ''}`}>
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                  <div>
+                    <p class="caption-label text-gold mb-2">{exc.category}</p>
+                    <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.25rem,2.5vw,1.75rem);">{exc.title}</h2>
+                  </div>
+                  {exc.link_href && (
+                    <a href={exc.link_href} target="_blank" rel="noopener" class="btn-outline-gold shrink-0">{exc.link_label}</a>
+                  )}
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                  {exc.meeting_point && (
+                    <div>
+                      <p class="text-xs font-semibold text-ink-dark uppercase tracking-wide mb-1">Treffpunkt</p>
+                      <p class="text-xs text-ink-muted">{exc.meeting_point}</p>
+                    </div>
+                  )}
+                  {exc.schedule && (
+                    <div>
+                      <p class="text-xs font-semibold text-ink-dark uppercase tracking-wide mb-1">Termine</p>
+                      <p class="text-xs text-ink-muted">{exc.schedule}</p>
+                    </div>
+                  )}
+                  {exc.duration && (
+                    <div>
+                      <p class="text-xs font-semibold text-ink-dark uppercase tracking-wide mb-1">Dauer</p>
+                      <p class="text-xs text-ink-muted">{exc.duration}</p>
+                    </div>
+                  )}
+                </div>
+                {exc.highlights && exc.highlights.length > 0 && (
+                  <ul class="space-y-2">
+                    {exc.highlights.map((h) => (
+                      <li class="flex items-start gap-3 text-xs text-ink-muted">
+                        <span class="text-gold mt-0.5 shrink-0">✓</span>
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-              {exc.link_href && (
-                <a href={exc.link_href} target="_blank" rel="noopener" class="btn-outline-gold shrink-0">{exc.link_label}</a>
-              )}
             </div>
-            <div class="grid md:grid-cols-2 gap-6">
-              {exc.meeting_point && (
-                <div>
-                  <p class="text-xs font-semibold text-ink-dark uppercase tracking-wide mb-1">Treffpunkt</p>
-                  <p class="text-xs text-ink-muted">{exc.meeting_point}</p>
-                </div>
-              )}
-              {exc.schedule && (
-                <div>
-                  <p class="text-xs font-semibold text-ink-dark uppercase tracking-wide mb-1">Termine</p>
-                  <p class="text-xs text-ink-muted">{exc.schedule}</p>
-                </div>
-              )}
-              {exc.duration && (
-                <div>
-                  <p class="text-xs font-semibold text-ink-dark uppercase tracking-wide mb-1">Dauer</p>
-                  <p class="text-xs text-ink-muted">{exc.duration}</p>
-                </div>
-              )}
-            </div>
-            {exc.highlights && exc.highlights.length > 0 && (
-              <ul class="mt-6 space-y-2">
-                {exc.highlights.map((h) => (
-                  <li class="flex items-start gap-3 text-xs text-ink-muted">
-                    <span class="text-gold mt-0.5 shrink-0">✓</span>
-                    {h}
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         ))}
       </div>
