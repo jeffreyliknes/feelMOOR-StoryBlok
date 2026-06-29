@@ -1,0 +1,75 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import PageHero from '@/components/common/PageHero.astro';
+import pageData from '@/content/pages/hotel-resort-uebersicht.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+  <PageHero
+    image={page.hero_image}
+    imageAlt={page.hero_image_alt}
+    caption={page.hero_caption}
+    heading={page.hero_heading}
+    intro={page.hero_intro}
+    breadcrumb={[{ label: 'Start', href: '/' }, { label: 'Hotel', href: '/hotel' }, { label: 'Resort Übersicht' }]}
+  />
+
+  <section class="py-6 bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <a href="/hotel" class="text-gold text-xs font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Hotel & Resort</a>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="font-display font-light text-ink-dark mb-6" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+          <p class="text-xs text-ink-muted leading-relaxed">{page.intro_body}</p>
+        </div>
+        <img src={page.intro_image} alt={page.intro_image_alt} class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        {page.facility_sections.map((section) => (
+          <div class="bg-cream/40 border border-stone-light p-8">
+            <h3 class="font-display font-light text-ink-dark text-2xl mb-6">{section.heading}</h3>
+            <ul class="space-y-3">
+              {section.items.map((item) => (
+                <li class="flex items-start gap-3 text-xs text-ink-muted leading-relaxed">
+                  <span class="text-gold mt-0.5 shrink-0">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <img src={page.location_image} alt={page.location_image_alt} class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy" />
+        <div>
+          <h2 class="font-display font-light text-ink-dark mb-6" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.location_heading}</h2>
+          <p class="text-xs text-ink-muted leading-relaxed">{page.location_body}</p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="#booking" class="btn-gold">Jetzt buchen</a>
+            <a href="/service-kontakt" class="btn-outline-gold">Kontakt & Anfahrt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

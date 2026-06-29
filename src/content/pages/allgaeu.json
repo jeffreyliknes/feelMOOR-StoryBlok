@@ -12,16 +12,19 @@
   "activities": [
     {
       "title": "Aktiv sein",
+      "href": "/allgaeu/aktiv-sein",
       "image": "/images/allgaeu/Wandern3.webp",
       "body": "Wandern, Radfahren und Fahrradvergnügen pur, zahlreiche Wege führen durch Moorlandschaften und sanfte Allgäuer Hügel in und um Bad Wurzach."
     },
     {
       "title": "Ausflugsziele & Sehenswürdigkeiten",
+      "href": "/allgaeu/ausflugsziele",
       "image": "/images/allgaeu/Landschaft3.webp",
       "body": "Aufatmen und genießen: die schönsten Ziele, Sehenswürdigkeiten und Aussichten der Region rund um Bad Wurzach entdecken."
     },
     {
       "title": "Action & Adrenalin",
+      "href": "/allgaeu/action-adrenalin",
       "image": "/images/allgaeu/E-Bike_Allgaeu.webp",
       "body": "Adrenalinkick garantiert, für alle, die ihren Aktivurlaub mit einer Extraportion Nervenkitzel erleben möchten."
     }

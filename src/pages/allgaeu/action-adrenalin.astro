@@ -1,0 +1,61 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import PageHero from '@/components/common/PageHero.astro';
+import pageData from '@/content/pages/allgaeu-action-adrenalin.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+  <PageHero
+    image={page.hero_image}
+    imageAlt={page.hero_image_alt}
+    caption={page.hero_caption}
+    heading={page.hero_heading}
+    intro={page.hero_intro}
+    breadcrumb={[{ label: 'Start', href: '/' }, { label: 'Allgäu erleben', href: '/allgaeu' }, { label: 'Action & Adrenalin' }]}
+  />
+
+  <section class="py-6 bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <a href="/allgaeu" class="text-gold text-xs font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Allgäu erleben</a>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        {page.activities.map((act) => (
+          <div class="border border-stone-light bg-cream/20 p-8 flex flex-col">
+            <div class="flex-1">
+              <h2 class="font-display font-light text-ink-dark mb-3" style="font-size:clamp(1.25rem,2.5vw,1.5rem);">{act.title}</h2>
+              <p class="text-xs text-ink-muted leading-relaxed">{act.description}</p>
+            </div>
+            <div class="mt-6 pt-6 border-t border-stone-light flex items-center justify-between flex-wrap gap-3">
+              <div class="space-y-1">
+                {act.location && <p class="text-xs text-ink-dark font-medium">{act.location}</p>}
+                {act.distance && <p class="text-xs text-ink-muted">{act.distance}</p>}
+              </div>
+              {act.link_href && (
+                <a href={act.link_href} target="_blank" rel="noopener" class="text-xs text-gold font-medium hover:underline">
+                  Mehr erfahren →
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-cream border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">Bereit für Ihren Aktivurlaub?</h2>
+      <p class="text-xs text-ink-muted mt-3 mb-8">Buchen Sie Ihren Aufenthalt und starten Sie von Bad Wurzach aus Ihr Abenteuer.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#booking" class="btn-gold">Jetzt buchen</a>
+        <a href="/allgaeu" class="btn-outline-gold">Alle Allgäu-Tipps</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

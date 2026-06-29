@@ -1,0 +1,70 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import PageHero from '@/components/common/PageHero.astro';
+import pageData from '@/content/pages/kulinarik-vitalkueche.json';
+
+const page = pageData;
+---
+
+<PageLayout title={page.seo_title} description={page.seo_description}>
+  <PageHero
+    image={page.hero_image}
+    imageAlt={page.hero_image_alt}
+    caption={page.hero_caption}
+    heading={page.hero_heading}
+    intro={page.hero_intro}
+    breadcrumb={[{ label: 'Start', href: '/' }, { label: 'Kulinarik', href: '/kulinarik' }, { label: 'Vitalküche' }]}
+  />
+
+  <section class="py-6 bg-white border-b border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <a href="/kulinarik" class="text-gold text-xs font-semibold uppercase tracking-wide hover:text-gold/80 transition-colors">← Kulinarik</a>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 lg:py-24 bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="font-display font-light text-ink-dark mb-6" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
+          <p class="text-xs text-ink-muted leading-relaxed">{page.intro_body}</p>
+        </div>
+        <img src={page.intro_image} alt={page.intro_image_alt} class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="font-display font-light text-ink-dark mb-6" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.concept_heading}</h2>
+        <p class="text-xs text-ink-muted leading-relaxed">{page.concept_body}</p>
+      </div>
+
+      <div>
+        <p class="caption-label text-gold text-center mb-8">{page.food_groups_heading}</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {page.food_groups.map((group) => (
+            <div class="bg-cream border border-stone-light p-6 text-center">
+              <p class="font-display font-light text-ink-dark text-lg">{group}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-cream border-t border-stone-light">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.5rem,3vw,2.5rem);">{page.cta_heading}</h2>
+      <p class="text-xs text-ink-muted mt-3 mb-8">{page.cta_body}</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href={page.cta_link_href} class="btn-gold">{page.cta_link_label}</a>
+        <a href="#booking" class="btn-outline-gold">Zimmer buchen</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

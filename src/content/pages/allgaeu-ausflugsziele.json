@@ -1,0 +1,71 @@
+{
+  "seo_title": "Ausflugsziele & Sehenswürdigkeiten rund um Bad Wurzach",
+  "seo_description": "Die schönsten Ausflugsziele und Sehenswürdigkeiten rund um Bad Wurzach: Torfbähnle, Moorbahn, Torfmuseum und mehr im Allgäu.",
+  "hero_caption": "Allgäu erleben",
+  "hero_heading": "Ausflugsziele & Sehenswürdigkeiten",
+  "hero_intro": "Inmitten der malerischen voralpinen Allgäuer Hügellandschaft, fernab vom hektischen Alltag, findet in Bad Wurzach jeder sein Lieblingsplätzchen zum Aufatmen und Genießen.",
+  "hero_image": "/images/allgaeu/IMG_1085.webp",
+  "hero_image_alt": "Allgäuer Landschaft",
+  "intro": "Aufatmen und genießen: die schönsten Ziele, Sehenswürdigkeiten und Aussichten der Region rund um Bad Wurzach entdecken.",
+  "excursions": [
+    {
+      "title": "Oberschwäbisches Torfbähnle",
+      "category": "Besichtigung und Führung",
+      "schedule": "von April bis Oktober, jeden 2. Sonntag und jeden 4. Samstag im Monat",
+      "duration": "ca. 1 Stunde",
+      "meeting_point": "Oberschwäbisches Torfmuseum, Oberried",
+      "highlights": [
+        "Führung durch das Torfmuseum",
+        "Einrichtung und Arbeitsweise des früheren Torfabbaus",
+        "Fahrt mit der historischen Torfbahn"
+      ],
+      "link_label": "Mehr erfahren",
+      "link_href": "https://torfbahn.de/"
+    },
+    {
+      "title": "Ausflugszug Moorbahn",
+      "category": "Ausflug",
+      "schedule": "Saisonbetrieb, Termine auf Anfrage",
+      "meeting_point": "Bad Wurzach",
+      "highlights": [
+        "Historische Moorbahnfahrt durch das Wurzacher Ried",
+        "Einblick in die Moorgeschichte der Region"
+      ],
+      "link_label": null,
+      "link_href": null
+    },
+    {
+      "title": "Oberschwäbisches Torfmuseum",
+      "category": "Sehenswürdigkeit und Führungen",
+      "meeting_point": "88410 Bad Wurzach",
+      "highlights": [
+        "Geschichte des Torfabbaus in Oberschwaben",
+        "Interaktive Ausstellung zur Moorlandschaft"
+      ],
+      "link_label": null,
+      "link_href": null
+    },
+    {
+      "title": "Torflehrpfad",
+      "category": "Wandern und Entdecken",
+      "meeting_point": "Dr.-Harry-Wiegand-Str. 4/1, 88410 Bad Wurzach",
+      "highlights": [
+        "Geführter Naturpfad durch das Moorgebiet",
+        "Infotafeln zur Flora und Fauna des Wurzacher Rieds"
+      ],
+      "link_label": null,
+      "link_href": null
+    },
+    {
+      "title": "Alpaka Leben",
+      "category": "Ausflug und Wandern",
+      "meeting_point": "Pfänders 3, 88319 Aitrach",
+      "highlights": [
+        "Alpakas hautnah erleben",
+        "Geführte Wanderungen mit den Tieren"
+      ],
+      "link_label": null,
+      "link_href": null
+    }
+  ]
+}
