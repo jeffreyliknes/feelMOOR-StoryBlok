@@ -9,6 +9,38 @@ const rooms = (await getCollection('rooms')).sort(
   (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
 );
 
+// ponytail: `tag` stays German to match package data + /angebote filter; name/desc are the English display copy
+const CATEGORY_CARDS = [
+  {
+    name: 'Healing & Regeneration',
+    tag: 'Heilung & Regeneration',
+    desc: 'Moor baths, spa cures and medical care.',
+    image: '/images/allgaeu/Heilkraft-des-moores.webp',
+  },
+  {
+    name: 'Detox & Cleansing',
+    tag: 'Entschlackung & Entgiftung',
+    desc: 'Base fasting, detox and a fresh start.',
+    image: '/images/wellness/flower-3086596_1920-2880w.webp',
+  },
+  {
+    name: 'Slow Down & Wellness',
+    tag: 'Entschleunigung & Wellness',
+    desc: 'Massages, spa and yoga retreats.',
+    image: '/images/therme/wellness-2.webp',
+  },
+  {
+    name: 'Seasonal & Specials',
+    tag: 'Saisonal & Specials',
+    desc: 'Festivals, hiking and getaways for two.',
+    image: '/images/allgaeu/WinterlandschaftWurzacherRied.webp',
+  },
+];
+const categoryCards = CATEGORY_CARDS.map((c) => ({
+  ...c,
+  count: packages.filter((p) => p.data.tag === c.tag).length,
+}));
+
 const hp = homepageEn;
 const pillarOrder = ['moorheilbad', 'therme', 'nature'] as const;
 const hero = hp.hero;
@@ -124,43 +156,27 @@ const voucher = hp.voucher_strip;
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        {packages.map((pkg) => (
-          <article class="group card-hover">
-            <a href={pkg.data.booking_link ?? `/angebote/${pkg.slug}`} class="block">
-
-              <div class="relative aspect-[4/3] overflow-hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+        {categoryCards.map((cat) => (
+          <article class="group card-hover h-full">
+            <a href={`/angebote?category=${encodeURIComponent(cat.tag)}`} class="flex flex-col h-full">
+              <div class="aspect-[4/3] overflow-hidden shrink-0">
                 <img
-                  src={pkg.data.image ?? '/images/hotel/15-a-0015-IRZ_9788-ingorack.com.webp'}
-                  alt={pkg.data.image_alt ?? pkg.data.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  src={cat.image}
+                  alt={cat.name}
                   loading="lazy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div class="absolute inset-0 bg-ink-dark/30"></div>
-                {pkg.data.tag && (
-                  <div class="absolute top-4 left-4 z-20">
-                    <span class="caption-label bg-cream/90 px-2.5 py-1">{pkg.data.tag}</span>
-                  </div>
-                )}
               </div>
-
-              <div class="bg-white px-6 pt-6 pb-7 border border-stone-light border-t-0 group-hover:border-gold/30 transition-colors duration-300">
-                <div class="flex items-start justify-between gap-3 mb-3">
-                  <h3 class="font-display font-light text-[1.4rem] text-ink-dark leading-tight">
-                    {pkg.data.title}
-                  </h3>
-                  {pkg.data.nights && (
-                    <span class="text-xs text-ink-muted bg-stone-light/60 px-2.5 py-1 flex-shrink-0 mt-1">
-                      {pkg.data.nights}
-                    </span>
-                  )}
-                </div>
-                {pkg.data.teaser && (
-                  <p class="text-xs text-ink-muted leading-relaxed mb-5">{pkg.data.teaser}</p>
+              <div class="bg-white px-6 pt-6 pb-7 border border-stone-light border-t-0 group-hover:border-gold/30 transition-colors duration-300 flex flex-col flex-1">
+                {cat.count > 0 && (
+                  <p class="caption-label text-gold mb-2">{cat.count} packages</p>
                 )}
-                <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all duration-200">
-                  Learn more
-                  <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                <h3 class="font-display font-light text-[1.4rem] text-ink-dark leading-tight">{cat.name}</h3>
+                <p class="text-xs text-ink-muted mt-2 leading-relaxed flex-1">{cat.desc}</p>
+                <span class="mt-5 inline-flex items-center gap-2 text-xs tracking-wider uppercase text-gold font-medium group-hover:gap-3 transition-all duration-200">
+                  Discover
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </span>
