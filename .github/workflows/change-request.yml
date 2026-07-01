@@ -21,8 +21,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Which request file(s) landed in this push? Pass them to Claude so it
-      # only implements what actually changed, not every request ever filed.
+      # Which request file(s) landed in this push?
       - name: Find changed request files
         id: changed
         run: |
@@ -36,44 +35,41 @@ jobs:
           echo "files=$FILES" >> "$GITHUB_OUTPUT"
           echo "Changed request files: ${FILES:-(none)}"
 
+      - name: Setup Node.js
+        if: steps.changed.outputs.files != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code
+        if: steps.changed.outputs.files != ''
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Implement the request with Claude
         if: steps.changed.outputs.files != ''
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          claude_args: |
-            --max-turns 30
-            --model claude-sonnet-4-6
-            --allowedTools Edit,Read,Write,Bash,Glob,Grep
-          prompt: |
-            A content editor filed a change request through the CMS. The request
-            file(s) added in this push:
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          claude --print \
+            --allowedTools "Edit,Read,Write,Bash,Glob,Grep" \
+            --max-turns 30 \
+            --model claude-sonnet-4-6 \
+            "A content editor filed a change request through the CMS. The request file(s) added in this push: ${CHANGED_FILES}
 
-              ${{ steps.changed.outputs.files }}
+          Each is Markdown with YAML frontmatter:
+            - title: short summary of the request
+            - page: which page or URL it applies to
+            - submitted_by: who asked
+            - images: image paths already uploaded under public/ (use as-is)
+            - the Markdown body: the detailed description
 
-            Each is Markdown with YAML frontmatter:
-              - title: short summary of the request
-              - page: which page or URL it applies to
-              - submitted_by: who asked
-              - images: image paths already uploaded under public/ (use as-is)
-              - the Markdown body: the detailed description
-
-            Your task:
-            1. Read the changed request file(s) listed above.
-            2. Implement the requested change in this Astro 5 + TinaCMS codebase,
-               following CLAUDE.md (no em/en dashes in copy, use the brand tokens,
-               match surrounding code style).
-            3. Prefer making new content editable in TinaCMS (add fields in
-               tina/config.ts and wire the JSON/markdown it maps to) rather than
-               hardcoding, when an editor would plausibly tweak it later.
-            4. Do NOT modify anything under src/content/requests/. Do NOT touch
-               vercel.json redirects, the global header/footer, or site-wide
-               styles UNLESS the request explicitly and unambiguously asks for it,
-               and even then keep the change minimal.
-            5. If the request is ambiguous, contradictory, or larger than a single
-               self-contained change, implement only the safe, clearly-specified
-               part and leave the rest. State your assumptions and any open
-               questions clearly in your final message.
+          Your task:
+          1. Read the changed request file(s) listed above.
+          2. Implement the requested change in this Astro 5 + TinaCMS codebase, following CLAUDE.md (no em/en dashes in copy, use the brand tokens, match surrounding code style).
+          3. Prefer making new content editable in TinaCMS (add fields in tina/config.ts and wire the JSON/markdown it maps to) rather than hardcoding, when an editor would plausibly tweak it later.
+          4. Do NOT modify anything under src/content/requests/. Do NOT touch vercel.json redirects, the global header/footer, or site-wide styles UNLESS the request explicitly and unambiguously asks for it, and even then keep the change minimal.
+          5. If the request is ambiguous, contradictory, or larger than a single self-contained change, implement only the safe, clearly-specified part and leave the rest. State your assumptions and any open questions clearly in your final message."
 
       - name: Open pull request
         if: steps.changed.outputs.files != ''
