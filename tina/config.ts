@@ -538,8 +538,8 @@ export default defineConfig({
         path: 'src/content/requests',
         format: 'md',
         ui: {
-          // sensible defaults for a newly created request
           defaultItem: () => ({ status: 'New' }),
+          allowedActions: { create: true, delete: false },
         },
         fields: [
           { type: 'string', name: 'title', label: 'Short summary of the request', isTitle: true, required: true },
