@@ -54,7 +54,7 @@ jobs:
           claude --print \
             --allowedTools "Edit,Read,Write,Bash,Glob,Grep" \
             --max-turns 30 \
-            --model claude-sonnet-4-6 \
+            --model claude-sonnet-5 \
             "A content editor filed a change request through the CMS. The request file(s) added in this push: ${CHANGED_FILES}
 
           Each is Markdown with YAML frontmatter:
@@ -67,9 +67,17 @@ jobs:
           Your task:
           1. Read the changed request file(s) listed above.
           2. Implement the requested change in this Astro 5 + TinaCMS codebase, following CLAUDE.md (no em/en dashes in copy, use the brand tokens, match surrounding code style).
-          3. Prefer making new content editable in TinaCMS (add fields in tina/config.ts and wire the JSON/markdown it maps to) rather than hardcoding, when an editor would plausibly tweak it later.
+          3. All content must be editable in TinaCMS. If you create a new page, you MUST also register it in tina/config.ts in the same change (extend the shared subpages collection's match list for simple hero/intro pages, or add a dedicated collection for unique structures). For existing pages, prefer adding Tina fields over hardcoding when an editor would plausibly tweak the content later. Tina field schemas must exactly mirror the JSON keys.
           4. Do NOT modify anything under src/content/requests/. Do NOT touch vercel.json redirects, the global header/footer, or site-wide styles UNLESS the request explicitly and unambiguously asks for it, and even then keep the change minimal.
           5. If the request is ambiguous, contradictory, or larger than a single self-contained change, implement only the safe, clearly-specified part and leave the rest. State your assumptions and any open questions clearly in your final message."
+
+      # Flip the request's status inside the PR, so merging the PR marks it Done.
+      - name: Mark request as Done
+        if: steps.changed.outputs.files != ''
+        run: |
+          for f in ${{ steps.changed.outputs.files }}; do
+            [ -f "$f" ] && sed -i "s/^status: .*/status: Done/" "$f"
+          done
 
       - name: Open pull request
         if: steps.changed.outputs.files != ''

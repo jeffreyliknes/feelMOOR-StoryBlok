@@ -9,10 +9,12 @@ feelMOOR is a luxury health resort website (https://www.feelmoor.de) for a therm
 ## Commands
 
 ```bash
-npm run dev       # Start dev server (Astro)
-npm run build     # Build static site to dist/
+npm run dev       # Start dev server (TinaCMS + Astro; admin UI at /admin)
+npm run build     # tinacms build + astro build to dist/
 npm run preview   # Preview production build locally
 ```
+
+`npm run dev` and `npm run build` need `TINA_CLIENT_ID` and `TINA_TOKEN` in `.env` (pull with `npx vercel env pull`).
 
 No lint or test scripts are configured.
 
@@ -26,17 +28,15 @@ Content lives in two forms:
 - **Markdown collections** (`src/content/rooms/`, `src/content/packages/`, `src/content/blog/`) — individual entries with YAML frontmatter. Schemas defined in `src/content/config.ts` via Zod.
 - **JSON page data** (`src/content/pages/`) — structured data for static pages (homepage, therme, gesundheit, etc.) and global settings (`src/content/settings/site.json`).
 
-The CMS is **Pages CMS** — its field definitions live in **`.pages.yml`** (the file the CMS reads). `pages.config.yml` is a duplicate reference copy; keep both in sync when adding collections. Editors manage content through the Pages CMS UI which writes directly to these files.
-
 ### CMS
 
 The CMS is **TinaCMS**, configured in `tina/config.ts`. Editors log in at `/admin` and edit the existing `src/content/**` files through a form UI — there is no separate database; the files in `src/content/` remain the source of truth and Tina writes directly back to them.
 
-To add a new page to the CMS: create the JSON/Markdown file in `src/content/pages/` (or the relevant collection folder), add the Astro route in `src/pages/`, then add a matching collection entry in `tina/config.ts`.
+**Every content file must be editable in Tina.** When you create a new page: create the JSON/Markdown file in `src/content/pages/` (or the relevant collection folder), add the Astro route in `src/pages/`, and add a matching collection entry (or extend an existing collection's `match`) in `tina/config.ts` in the same change. A page without a Tina collection entry is considered incomplete. Simple hero/intro pages belong in the shared `subpages` collection; pages with unique structures get their own collection.
+
+A Tina collection's fields must exactly mirror the keys in the JSON file it edits — Tina drops unknown keys on save.
 
 Images uploaded through the Tina media manager are stored in `public/images/`, matching the existing convention.
-
-`.pages.yml` / `pages.config.yml` (Pages CMS) are no longer the active CMS config — superseded by `tina/config.ts`. Left in place for now; safe to remove in a follow-up once Tina is confirmed working in production.
 
 ### Routing
 
@@ -65,7 +65,6 @@ An external MWS booking widget is loaded from a DigitalOcean CDN. It is embedded
 ### Copy Guidelines
 
 - Never use em dashes (—) or en dashes (–) in site copy, SEO titles, or CMS content. Use commas, colons, rephrasing, or "bis" for ranges (times, nights, temperatures).
-- Documented for editors at the top of `pages.config.yml`.
 
 ### Images
 
