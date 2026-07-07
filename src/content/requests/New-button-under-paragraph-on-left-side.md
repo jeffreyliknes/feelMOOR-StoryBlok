@@ -1,6 +1,6 @@
 ---
 title: New button under paragraph on left side
-status: New
+status: Done
 page: 'https://feelmoor-tinacms.vercel.app/gutscheine '
 submitted_by: Jeff
 images:
