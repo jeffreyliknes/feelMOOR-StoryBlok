@@ -25,6 +25,9 @@ const page = pageData;
           <p class="caption-label mb-4 text-gold">Geschenke</p>
           <h2 class="font-display font-light text-ink-dark" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.intro_heading}</h2>
           <p class="text-xs text-ink-muted mt-6 leading-relaxed">{page.intro_body}</p>
+          {page.intro_cta_href && (
+            <a href={page.intro_cta_href} target="_blank" rel="noopener" class="btn-gold inline-block mt-8">{page.intro_cta_label}</a>
+          )}
         </div>
         <div class="bg-forest-700 p-8 lg:p-12 text-cream rounded-sm flex flex-col justify-center min-h-[300px] lg:min-h-[400px]">
           <p class="font-display font-light text-cream text-xl lg:text-2xl leading-snug">{page.intro_quote}</p>

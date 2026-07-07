@@ -337,6 +337,8 @@ export default defineConfig({
           { type: 'string', name: 'hero_image_alt', label: 'Hero Image Alt Text' },
           { type: 'string', name: 'intro_heading', label: 'Intro Heading' },
           { type: 'string', name: 'intro_body', label: 'Intro Body', ui: { component: 'textarea' } },
+          { type: 'string', name: 'intro_cta_label', label: 'Intro Button Text' },
+          { type: 'string', name: 'intro_cta_href', label: 'Intro Button Link' },
           { type: 'image', name: 'intro_image', label: 'Intro Image' },
           { type: 'string', name: 'intro_quote', label: 'Intro Quote' },
           { type: 'string', name: 'steps_heading', label: '"How It Works" Heading' },
