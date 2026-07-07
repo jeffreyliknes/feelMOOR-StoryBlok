@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
-    "build": "if [ \"$VERCEL_ENV\" = \"preview\" ]; then tinacms build --skip-cloud-checks; else tinacms build; fi && astro build",
+    "build": "if [ \"$VERCEL_ENV\" = \"preview\" ]; then tinacms build --skip-cloud-checks; else tinacms build || { sleep 30; tinacms build; } || { sleep 60; tinacms build; }; fi && astro build",
     "preview": "astro preview",
     "optimize-images": "node scripts/optimize-images.mjs --replace",
     "update-image-references": "node scripts/update-image-references.mjs"
