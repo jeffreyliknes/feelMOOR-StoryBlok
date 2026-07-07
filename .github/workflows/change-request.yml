@@ -71,6 +71,16 @@ jobs:
           4. Do NOT modify anything under src/content/requests/. Do NOT touch vercel.json redirects, the global header/footer, or site-wide styles UNLESS the request explicitly and unambiguously asks for it, and even then keep the change minimal.
           5. If the request is ambiguous, contradictory, or larger than a single self-contained change, implement only the safe, clearly-specified part and leave the rest. State your assumptions and any open questions clearly in your final message."
 
+      # Tina Cloud indexes the schema from tina-lock.json, so a schema edit
+      # without a lock regen fails every build's cloud check until fixed.
+      - name: Regenerate Tina lock if schema changed
+        if: steps.changed.outputs.files != ''
+        run: |
+          if ! git diff --quiet -- tina/config.ts; then
+            npm ci
+            npx tinacms dev -c "node -e 'process.exit(0)'"
+          fi
+
       # Flip the request's status inside the PR, so merging the PR marks it Done.
       - name: Mark request as Done
         if: steps.changed.outputs.files != ''
