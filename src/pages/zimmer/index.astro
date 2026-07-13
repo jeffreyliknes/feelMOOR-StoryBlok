@@ -1,15 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import roomsOverview from '@/content/pages/rooms-overview.json';
+import { getStory, getStories, lines } from '@/lib/storyblok';
 
-const roomTypes = (await getCollection('rooms')).sort(
+const roomTypes = (await getStories('rooms/', Astro)).sort(
   (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
 );
 
-const page = roomsOverview;
-const amenitiesList: { label: string }[] = Array.isArray(page.amenities) ? page.amenities : [];
+const page = await getStory('pages/rooms-overview', Astro);
+const amenitiesList = lines(page.amenities);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -64,9 +63,9 @@ const amenitiesList: { label: string }[] = Array.isArray(page.amenities) ? page.
                 <span class="text-xs text-ink-muted border border-stone px-2.5 py-1">{room.data.capacity}</span>
               )}
             </div>
-            {room.data.feature_groups[0] && (
+            {room.data.feature_groups?.[0] && (
               <ul class="grid grid-cols-2 gap-x-4 gap-y-2 mb-8">
-                {room.data.feature_groups[0].items.map((f) => (
+                {lines(room.data.feature_groups[0].items).map((f) => (
                   <li class="flex items-center gap-2 text-xs text-ink-muted">
                     <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
                     {f}
@@ -107,7 +106,7 @@ const amenitiesList: { label: string }[] = Array.isArray(page.amenities) ? page.
             <div class="w-10 h-10 border border-gold/40 flex items-center justify-center mx-auto mb-3 group-hover:bg-gold/10 transition-colors">
               <span class="text-gold text-lg leading-none">✦</span>
             </div>
-            <p class="text-xs text-cream/70 leading-snug">{a.label}</p>
+            <p class="text-xs text-cream/70 leading-snug">{a}</p>
           </div>
         ))}
       </div>

@@ -1,11 +1,10 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/service-kontakt.json';
-import siteSettings from '@/content/settings/site.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = pageData;
-const site = siteSettings;
+const page = await getStory('pages/service-kontakt', Astro);
+const site = await getStory('site-settings', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

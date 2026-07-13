@@ -109,17 +109,17 @@ async function tx(obj, component) {
   const blokMap = BLOK_OF[component] || {};
   const out = {};
   for (const [key, value] of Object.entries(obj)) {
-    if (value === null || value === undefined) continue;
+    if (value === null || value === undefined || value === '') continue;
     if (key === 'body' && component !== 'homepage' && typeof value === 'string' && ['room', 'package', 'article'].includes(component)) {
       out[key] = markdownToRichtext(value);
     } else if (typeof value === 'string') {
       out[key] = value.startsWith('/images/') ? asset(await assetUrl(value)) : value;
     } else if (Array.isArray(value)) {
-      if (value.every((v) => typeof v === 'string')) {
-        out[key] = value.join('\n');
-      } else if (blokMap[key]) {
+      if (blokMap[key]) {
         out[key] = [];
         for (const item of value) out[key].push({ component: blokMap[key], ...(await tx(item, blokMap[key])) });
+      } else if (value.every((v) => typeof v === 'string')) {
+        out[key] = value.join('\n');
       } else if (value.every((v) => v && typeof v === 'object' && Object.keys(v).join() === 'label')) {
         out[key] = value.map((v) => v.label).join('\n'); // rooms-overview amenities
       } else {
@@ -134,8 +134,10 @@ async function tx(obj, component) {
       } else {
         throw new Error(`unmapped object "${key}" in ${component}`);
       }
+    } else if (typeof value === 'number') {
+      out[key] = String(value); // Storyblok number fields store strings
     } else {
-      out[key] = value; // number / boolean
+      out[key] = value; // boolean
     }
   }
   return out;

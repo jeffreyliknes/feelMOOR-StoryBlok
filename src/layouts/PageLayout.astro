@@ -7,6 +7,8 @@ import Favicons from '@/components/common/Favicons.astro';
 import '@/styles/global.css';
 import '@/styles/booking-widget.css';
 
+const inEditor = Astro.url.searchParams.has('_storyblok');
+
 interface Props {
   title: string;
   description: string;
@@ -51,5 +53,21 @@ const {
 
     <Footer locale={locale} />
     <BookingWidget />
+
+    {inEditor && (
+      <script src="https://app.storyblok.com/f/storyblok-v2-latest.js" is:inline></script>
+    )}
+    {inEditor && (
+      <script is:inline>
+        // Storyblok visual editor bridge: reload the iframe when content changes.
+        window.addEventListener('load', function () {
+          var bridge = new window.StoryblokBridge();
+          bridge.on(['input', 'published', 'change'], function (event) {
+            if (event.action === 'input') return; // reload on save/publish only
+            window.location.reload();
+          });
+        });
+      </script>
+    )}
   </body>
 </html>

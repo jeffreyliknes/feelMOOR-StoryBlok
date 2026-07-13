@@ -1,23 +1,23 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
+import { getStory, getStories, lines, renderRichText } from '@/lib/storyblok';
 
-export async function getStaticPaths() {
-  const rooms = await getCollection('rooms');
-  return rooms.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+const { slug } = Astro.params;
+let room: any;
+try {
+  room = await getStory(`rooms/${slug}`, Astro);
+} catch {
+  return new Response(null, { status: 404 });
 }
-
-const { entry } = Astro.props;
-const { Content } = await entry.render();
-const room = entry.data;
+room.gallery ??= [];
+room.specs ??= [];
+room.feature_groups ??= [];
+const bodyHtml = renderRichText(room.body);
 
 // Build list of other room types for the upsell section
-const allRooms = await getCollection('rooms');
+const allRooms = await getStories('rooms/', Astro);
 const otherRooms = allRooms
-  .filter((r) => r.slug !== entry.slug)
+  .filter((r) => r.slug !== slug)
   .sort((a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99));
 
 const seoTitle = room.seo_title ?? `${room.name}, Zimmer & Suiten, feelMOOR`;
@@ -224,9 +224,7 @@ const photoCount = allPhotos.length;
                 set:html={room.intro_subheading.replace(', ', ', <br /><em class="italic text-gold">') + '</em>'}>
             </h2>
           )}
-          <div class="space-y-4 text-xs text-ink-muted leading-relaxed prose-p:mb-0">
-            <Content />
-          </div>
+          <div class="space-y-4 text-xs text-ink-muted leading-relaxed prose-p:mb-0" set:html={bodyHtml}></div>
 
           <!-- Features grid -->
           {room.feature_groups.length > 0 && (
@@ -235,7 +233,7 @@ const photoCount = allPhotos.length;
                 <div>
                   <p class="text-xs tracking-caption uppercase text-gold font-medium mb-3">{group.heading}</p>
                   <ul class="space-y-2">
-                    {group.items.map((item) => (
+                    {lines(group.items).map((item) => (
                       <li class="flex items-start gap-2.5 text-xs text-ink-muted">
                         <span class="w-1 h-1 rounded-full bg-gold mt-2 flex-shrink-0"></span>
                         {item}

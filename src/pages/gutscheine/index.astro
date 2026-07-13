@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/gutscheine.json';
+import { getStory, lines } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/gutscheine', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -76,7 +76,7 @@ const page = pageData;
     <div class="max-w-2xl mx-auto px-6">
       <h3 class="font-display font-light text-ink-dark mb-8 text-center" style="font-size:1.75rem;">{page.steps_heading}</h3>
       <ol class="space-y-5">
-        {page.steps?.map((step, i) => (
+        {lines(page.steps).map((step, i) => (
           <li class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="flex items-center justify-center h-6 w-6 rounded-full bg-gold text-forest-700 text-xs font-bold">{i + 1}</div>

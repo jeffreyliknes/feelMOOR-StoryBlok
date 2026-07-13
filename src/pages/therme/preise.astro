@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import priceData from '@/content/pages/therme-preise.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = priceData;
+const page = await getStory('pages/therme-preise', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

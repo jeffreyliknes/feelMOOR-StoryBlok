@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/allgaeu-action-adrenalin.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/allgaeu-action-adrenalin', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -25,7 +25,7 @@ const page = pageData;
   <section class="py-16 lg:py-24 bg-white">
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-8">
-        {page.activities.map((act) => (
+        {(page.activities ?? []).map((act) => (
           <div class="border border-stone-light bg-cream/20 p-8 flex flex-col">
             <div class="flex-1">
               <h2 class="font-display font-light text-ink-dark mb-3" style="font-size:clamp(1.25rem,2.5vw,1.5rem);">{act.title}</h2>

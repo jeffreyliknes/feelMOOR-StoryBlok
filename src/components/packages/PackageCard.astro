@@ -1,8 +1,6 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-
 interface Props {
-  pkg: CollectionEntry<'packages'>;
+  pkg: { slug: string; data: Record<string, any> };
   /** "panel" = bordered card with button (Angebote index); "overlay" = image-overlay card (homepage) */
   variant?: 'panel' | 'overlay';
   /** Image to use when the package has none (overlay variant only) */

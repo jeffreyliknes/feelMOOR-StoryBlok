@@ -2,9 +2,9 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import ContentImage from '@/components/common/ContentImage.astro';
-import thermeData from '@/content/pages/therme.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = thermeData;
+const page = await getStory('pages/therme', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>

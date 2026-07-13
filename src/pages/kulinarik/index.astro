@@ -2,9 +2,9 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import ContentImage from '@/components/common/ContentImage.astro';
-import pageData from '@/content/pages/kulinarik.json';
+import { getStory, lines } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/kulinarik', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -62,11 +62,11 @@ const page = pageData;
                   <p class="text-xs text-ink-dark font-medium mt-4">{venue.highlight}</p>
                 )}
               </div>
-              {venue.hours && venue.hours.length > 0 && (
+              {lines(venue.hours).length > 0 && (
                 <div class="lg:border-l lg:border-stone-light lg:pl-8">
                   <p class="caption-label text-gold mb-3">Öffnungszeiten</p>
                   <ul class="space-y-1.5">
-                    {venue.hours.map((h) => (
+                    {lines(venue.hours).map((h) => (
                       <li class="text-xs text-ink-muted">{h}</li>
                     ))}
                   </ul>

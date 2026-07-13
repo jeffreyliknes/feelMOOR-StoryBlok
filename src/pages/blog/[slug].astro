@@ -1,18 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
+import { getStory, renderRichText } from '@/lib/storyblok';
 
-export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+const { slug } = Astro.params;
+let post: any;
+try {
+  post = await getStory(`blog/${slug}`, Astro);
+} catch {
+  return new Response(null, { status: 404 });
 }
-
-const { entry } = Astro.props;
-const { Content } = await entry.render();
-const post = entry.data;
+const bodyHtml = renderRichText(post.body);
 
 const seoTitle = post.seo_title ?? `${post.title}, feelMOOR Blog`;
 const seoDescription = post.seo_description ?? post.teaser ?? post.title;
@@ -69,9 +66,7 @@ const seoDescription = post.seo_description ?? post.teaser ?? post.title;
 
   <!-- Article body -->
   <section class="py-10 lg:py-14 bg-cream">
-    <div class="article-prose max-w-2xl mx-auto px-6">
-      <Content />
-    </div>
+    <div class="article-prose max-w-2xl mx-auto px-6" set:html={bodyHtml}></div>
   </section>
 
   <!-- Back to news CTA -->

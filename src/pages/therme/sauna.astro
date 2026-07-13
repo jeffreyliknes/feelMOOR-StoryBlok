@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import saunaData from '@/content/pages/therme-sauna.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = saunaData;
+const page = await getStory('pages/therme-sauna', Astro);
 
 const saunaTypes = [
   { name: 'Finnische Sauna', temp: '100 °C' },

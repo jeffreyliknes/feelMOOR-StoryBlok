@@ -1,15 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import Popup from '@/components/common/Popup.astro';
-import homepage from '@/content/pages/homepage.json';
+import { getStory, getStories, sbe } from '@/lib/storyblok';
 
-const packages = await getCollection('packages');
-const rooms = (await getCollection('rooms')).sort(
+const hp = await getStory('pages/home', Astro);
+const packages = await getStories('packages/', Astro);
+const rooms = (await getStories('rooms/', Astro)).sort(
   (a, b) => (a.data.sort_order ?? 99) - (b.data.sort_order ?? 99)
 );
-
-const hp = homepage;
 
 const CATEGORY_CARDS = [
   {
@@ -38,10 +36,14 @@ const categoryCards = CATEGORY_CARDS.map((c) => ({
   count: packages.filter((p) => p.data.tag === c.name).length,
 }));
 
-const pillarOrder = ['moorheilbad', 'therme', 'nature'] as const;
-const hero = hp.hero;
-const therme = hp.therme_cta;
-const voucher = hp.voucher_strip;
+// Section bloks arrive as single-item arrays from Storyblok
+const hero = hp.hero?.[0] ?? {};
+const pillars = hp.pillars ?? [];
+const packagesSection = hp.packages_section?.[0] ?? {};
+const roomsSection = hp.rooms_section?.[0] ?? {};
+const therme = hp.therme_cta?.[0] ?? {};
+const voucher = hp.voucher_strip?.[0] ?? {};
+const popup = hp.popup?.[0];
 ---
 
 <PageLayout
@@ -53,7 +55,7 @@ const voucher = hp.voucher_strip;
   <!-- ══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════ -->
-  <section class="relative h-screen min-h-[640px] flex items-center overflow-hidden bg-forest-700">
+  <section class="relative h-screen min-h-[640px] flex items-center overflow-hidden bg-forest-700" {...sbe(hero)}>
 
     <!-- Hero image ,  layer 1 (bottom) -->
     <div class="absolute inset-0 z-0">
@@ -123,10 +125,9 @@ const voucher = hp.voucher_strip;
   <section class="bg-white border-b border-stone-light">
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-stone-light">
-        {pillarOrder.map((key) => {
-          const pillar = hp.pillars[key];
+        {pillars.map((pillar) => {
           return (
-          <div class="px-8 py-10 group">
+          <div class="px-8 py-10 group" {...sbe(pillar)}>
             <span class="font-display italic text-gold/40 text-4xl font-light">{pillar.number}</span>
             <h3 class="font-display font-light text-[1.4rem] text-ink-dark mt-2 mb-3">{pillar.heading}</h3>
             <div class="w-8 h-px bg-gold/50 mb-4 group-hover:w-14 transition-all duration-500"></div>
@@ -146,16 +147,16 @@ const voucher = hp.voucher_strip;
     <div class="max-w-screen-xl mx-auto px-6">
 
       <!-- Section header -->
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14" {...sbe(packagesSection)}>
         <div>
-          <p class="caption-label">{hp.packages_section.caption}</p>
+          <p class="caption-label">{packagesSection.caption}</p>
           <h2 class="section-title mt-3"
-              set:html={hp.packages_section.heading.replace(' & ', ' &amp;<br /><em>') + '</em>'}>
+              set:html={packagesSection.heading.replace(' & ', ' &amp;<br /><em>') + '</em>'}>
           </h2>
           <span class="gold-rule"></span>
         </div>
         <a href="/angebote" class="btn-outline-gold self-start sm:self-auto flex-shrink-0">
-          {hp.packages_section.all_link_label}
+          {packagesSection.all_link_label}
           <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
             <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -202,18 +203,18 @@ const voucher = hp.voucher_strip;
   <section class="py-24 lg:py-32 bg-stone-light/30">
     <div class="max-w-screen-xl mx-auto px-6">
 
-      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16" {...sbe(roomsSection)}>
         <div>
-          <p class="caption-label">{hp.rooms_section.caption}</p>
+          <p class="caption-label">{roomsSection.caption}</p>
           <h2 class="section-title mt-3"
-              set:html={hp.rooms_section.heading.replace(' & ', ' &amp;<br /><em>') + '</em>'}>
+              set:html={roomsSection.heading.replace(' & ', ' &amp;<br /><em>') + '</em>'}>
           </h2>
           <span class="gold-rule"></span>
           <p class="text-xs text-ink-muted leading-relaxed mt-6 max-w-md">
-            {hp.rooms_section.body}
+            {roomsSection.body}
           </p>
           <a href="/zimmer" class="btn-forest mt-8 inline-flex">
-            {hp.rooms_section.all_link_label}
+            {roomsSection.all_link_label}
             <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none">
               <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -223,7 +224,7 @@ const voucher = hp.voucher_strip;
         <!-- Large featured room image -->
         <div class="aspect-[16/10] overflow-hidden">
           <img
-            src={hp.rooms_section.featured_image}
+            src={roomsSection.featured_image}
             alt="Doppelzimmer, feelMOOR Gesundresort"
             class="w-full h-full object-cover"
             loading="lazy"
@@ -270,7 +271,7 @@ const voucher = hp.voucher_strip;
   <!-- ══════════════════════════════════════════
        THERME CTA BANNER
   ══════════════════════════════════════════ -->
-  <section class="relative py-28 lg:py-36 overflow-hidden bg-forest-700">
+  <section class="relative py-28 lg:py-36 overflow-hidden bg-forest-700" {...sbe(therme)}>
 
     <!-- Background image -->
     <div class="absolute inset-0">
@@ -333,7 +334,7 @@ const voucher = hp.voucher_strip;
   <!-- ══════════════════════════════════════════
        GUTSCHEINE / CTA STRIP
   ══════════════════════════════════════════ -->
-  <section class="bg-white border-y border-stone-light py-16">
+  <section class="bg-white border-y border-stone-light py-16" {...sbe(voucher)}>
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div class="text-center lg:text-left">
@@ -356,12 +357,12 @@ const voucher = hp.voucher_strip;
     </div>
   </section>
 
-  {hp.popup?.enabled && (
+  {popup?.enabled && (
     <Popup
-      heading={hp.popup.heading}
-      body={hp.popup.body}
-      image={hp.popup.image}
-      imageAlt={hp.popup.image_alt}
+      heading={popup.heading}
+      body={popup.body}
+      image={popup.image}
+      imageAlt={popup.image_alt}
     />
   )}
 

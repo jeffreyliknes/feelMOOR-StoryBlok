@@ -13,3 +13,6 @@ dist/
 public/admin
 
 .vercel
+
+# Storyblok migration asset cache (local only)
+scripts/storyblok/.assets-map.json

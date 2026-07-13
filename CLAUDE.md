@@ -9,40 +9,46 @@ feelMOOR is a luxury health resort website (https://www.feelmoor.de) for a therm
 ## Commands
 
 ```bash
-npm run dev       # Start dev server (TinaCMS + Astro; admin UI at /admin)
-npm run build     # tinacms build + astro build to dist/
+npm run dev       # Start Astro dev server (fetches Storyblok DRAFT content)
+npm run build     # astro build (SSR, Vercel adapter)
 npm run preview   # Preview production build locally
 ```
 
-`npm run dev` and `npm run build` need `TINA_CLIENT_ID` and `TINA_TOKEN` in `.env` (pull with `npx vercel env pull`).
+`npm run dev` and `npm run build` need `STORYBLOK_PREVIEW_TOKEN` in `.env` (pull with `npx vercel env pull`). `STORYBLOK_PERSONAL_TOKEN` is only needed to re-run the migration scripts.
 
 No lint or test scripts are configured.
 
 ## Architecture
 
-**Stack:** Astro 5 (static site), Tailwind CSS 3, TypeScript. Deployed on Vercel as a static export.
+**Stack:** Astro 5 (SSR via `@astrojs/vercel`), Tailwind CSS 3, TypeScript. Deployed on Vercel as an on-demand server, so published Storyblok content goes live without a rebuild.
 
 ### Content Layer
 
-Content lives in two forms:
-- **Markdown collections** (`src/content/rooms/`, `src/content/packages/`, `src/content/blog/`) — individual entries with YAML frontmatter. Schemas defined in `src/content/config.ts` via Zod.
-- **JSON page data** (`src/content/pages/`) — structured data for static pages (homepage, therme, gesundheit, etc.) and global settings (`src/content/settings/site.json`).
+Content lives in a **Storyblok** space (cloud), not in git. Pages fetch it at request time through the Content Delivery API. Dev and the visual editor see `draft` content; production sees `published`.
+
+- **`src/lib/storyblok.ts`** is the whole content layer:
+  - `getStory(slug, Astro)` — one story, content flattened (asset fields → URL strings, nested blok lists → arrays).
+  - `getStories(startsWith, Astro)` — a folder of stories in `{ slug, data }` shape (the old `getCollection` shape).
+  - `renderRichText(doc)` — richtext document → HTML string (for room/package/blog bodies).
+  - `lines(text)` — splits a "one per line" textarea back into `string[]`.
+  - `sbe(blok)` — emits visual-editor click-to-edit attributes on a rendered blok.
+- Story slugs: pages live under `pages/` (e.g. `pages/therme-sauna`, homepage is `pages/home`, English homepage `pages/home-en`); collections under `rooms/`, `packages/`, `blog/`; global settings is the top-level `site-settings` story.
 
 ### CMS
 
-The CMS is **TinaCMS**, configured in `tina/config.ts`. Editors log in at `/admin` and edit the existing `src/content/**` files through a form UI — there is no separate database; the files in `src/content/` remain the source of truth and Tina writes directly back to them.
+The CMS is **Storyblok**. Components (bloks) are defined in the space and mirror the field structure the templates expect. Editors use the **Visual Editor**, which loads the live site in an iframe (preview URL in Space Settings → Visual Editor) and edits sections in place; **Publish** makes changes live on the next request.
 
-**Every content file must be editable in Tina.** When you create a new page: create the JSON/Markdown file in `src/content/pages/` (or the relevant collection folder), add the Astro route in `src/pages/`, and add a matching collection entry (or extend an existing collection's `match`) in `tina/config.ts` in the same change. A page without a Tina collection entry is considered incomplete. Simple hero/intro pages belong in the shared `subpages` collection; pages with unique structures get their own collection.
+**When you add a new page:** create the Astro route in `src/pages/`, define any new blok component(s) in the Storyblok space, and fetch the story with `getStory`. The blok's field names must match the keys the template reads. Nestable section bloks are what make a page click-to-editable — wrap each rendered section's root element with `{...sbe(blok)}`.
 
-A Tina collection's fields must exactly mirror the keys in the JSON file it edits — Tina drops unknown keys on save.
+Two migration scripts in `scripts/storyblok/` (`define-components.mjs`, `migrate-content.mjs`) built the space from the original Tina files. They are one-time tooling, not part of the build. Field-type mapping is documented in `define-components.mjs` (Tina `image` → Storyblok `asset`, string lists → newline `textarea`, object lists → nestable bloks, numbers → string fields).
 
-Images uploaded through the Tina media manager are stored in `public/images/`, matching the existing convention.
+Images are stored in the Storyblok asset library. Decorative/brand images not managed in the CMS (logos, a few hardcoded section images) still live in `public/images/`.
 
 ### Routing
 
 File-based Astro routing under `src/pages/`:
-- Static pages load their JSON content from `src/content/pages/`
-- Dynamic routes: `/zimmer/[slug].astro`, `/angebote/[slug].astro`, `/blog/[slug].astro` — pull from their respective Markdown collections
+- Static pages fetch their story via `getStory('pages/<slug>', Astro)`
+- Dynamic routes: `/zimmer/[slug].astro`, `/angebote/[slug].astro`, `/blog/[slug].astro` — fetch `getStory('<folder>/${slug}', Astro)` at request time and return a 404 Response when the story is missing
 - 60+ permanent redirects for legacy SEO URLs are in `vercel.json`
 
 ### Layouts & Components

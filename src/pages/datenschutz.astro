@@ -1,8 +1,8 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
-import pageData from '@/content/pages/datenschutz.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/datenschutz', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description} noindex={true}>

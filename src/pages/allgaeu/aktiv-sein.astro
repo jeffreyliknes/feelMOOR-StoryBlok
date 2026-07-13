@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/allgaeu-aktiv-sein.json';
+import { getStory, lines } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/allgaeu-aktiv-sein', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -22,14 +22,14 @@ const page = pageData;
     </div>
   </section>
 
-  {page.sections.map((section, i) => (
+  {(page.sections ?? []).map((section, i) => (
     <section class={`py-16 lg:py-24 ${i % 2 === 0 ? 'bg-cream' : 'bg-white'}`}>
       <div class="max-w-screen-xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div class={i % 2 !== 0 ? 'lg:order-2' : ''}>
             <h2 class="font-display font-light text-ink-dark mb-6" style="font-size:clamp(1.75rem,3.5vw,3rem);">{section.heading}</h2>
             <div class="space-y-4">
-              {section.paragraphs.map((p) => (
+              {lines(section.paragraphs).map((p) => (
                 <p class="text-xs text-ink-muted leading-relaxed">{p}</p>
               ))}
             </div>
@@ -49,7 +49,7 @@ const page = pageData;
               <div class="mt-8">
                 <p class="caption-label text-gold mb-4">Unser Service für Radfahrer</p>
                 <ul class="space-y-2">
-                  {section.hotel_benefits.map((b) => (
+                  {lines(section.hotel_benefits).map((b) => (
                     <li class="flex items-start gap-3 text-xs text-ink-muted">
                       <span class="text-gold mt-0.5 shrink-0">✓</span>
                       {b}
@@ -77,7 +77,7 @@ const page = pageData;
           <p class="caption-label text-gold mb-4">Direkt im Resort</p>
           <h2 class="font-display font-light" style="font-size:clamp(1.75rem,3.5vw,3rem);">{page.ebike_heading}</h2>
           <ul class="mt-8 space-y-3">
-            {page.ebike_details.map((d) => (
+            {lines(page.ebike_details).map((d) => (
               <li class="flex items-start gap-3 text-xs text-cream/80 leading-relaxed">
                 <span class="text-gold mt-0.5 shrink-0">—</span>
                 {d}

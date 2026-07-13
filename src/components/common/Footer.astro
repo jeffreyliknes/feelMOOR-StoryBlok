@@ -1,5 +1,7 @@
 ---
-import site from '@/content/settings/site.json';
+import { getStory } from '@/lib/storyblok';
+
+const site = await getStory('site-settings', Astro);
 
 interface Props {
   locale?: 'de' | 'en';

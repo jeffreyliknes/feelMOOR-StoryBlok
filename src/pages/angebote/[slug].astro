@@ -1,23 +1,29 @@
 ---
-import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PackageInclusions from '@/components/packages/PackageInclusions.astro';
 import PackageBookingCard from '@/components/packages/PackageBookingCard.astro';
 import PackagePricing from '@/components/packages/PackagePricing.astro';
 import PackageHighlights from '@/components/packages/PackageHighlights.astro';
 import PackageProgram from '@/components/packages/PackageProgram.astro';
+import { getStory, lines, renderRichText } from '@/lib/storyblok';
 
-export async function getStaticPaths() {
-  const packages = await getCollection('packages');
-  return packages.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+const { slug } = Astro.params;
+let pkg: any;
+try {
+  pkg = await getStory(`packages/${slug}`, Astro);
+} catch {
+  return new Response(null, { status: 404 });
 }
+const bodyHtml = renderRichText(pkg.body);
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
-const pkg = entry.data;
+// Newline-joined text fields back to arrays
+const includes = lines(pkg.includes);
+const recommendations = lines(pkg.recommendations);
+const programColumns = lines(pkg.program_columns);
+const programRows = (pkg.program_rows ?? []).map((row: any) => ({
+  ...row,
+  values: lines(row.values),
+}));
 
 const seoTitle = `${pkg.title}, feelMOOR Bad Wurzach`;
 const seoDescription = pkg.teaser ?? `${pkg.title} im feelMOOR Gesundresort Bad Wurzach.`;
@@ -128,13 +134,11 @@ const closingParagraphs = (pkg.closing_body ?? '')
 
         <!-- Left column: article body + inclusions + recommendations -->
         <div class="space-y-10">
-          <article class="article-prose max-w-none">
-            <Content />
-          </article>
+          <article class="article-prose max-w-none" set:html={bodyHtml}></article>
 
-          <PackageInclusions items={pkg.includes} note={pkg.inclusion_note} />
+          <PackageInclusions items={includes} note={pkg.inclusion_note} />
 
-          <PackageInclusions items={pkg.recommendations} heading="Unsere Empfehlung" />
+          <PackageInclusions items={recommendations} heading="Unsere Empfehlung" />
 
           {pkg.availability && (
             <div class="rounded-xl border border-stone-light bg-white p-6">
@@ -153,7 +157,7 @@ const closingParagraphs = (pkg.closing_body ?? '')
             nights={pkg.nights}
             priceFrom={pkg.price_from}
             priceLabel={pkg.price_label}
-            includes={pkg.includes}
+            includes={includes}
             bookingOptions={pkg.booking_options}
             bookingLink={pkg.booking_link}
           />
@@ -173,8 +177,8 @@ const closingParagraphs = (pkg.closing_body ?? '')
   <PackageProgram
     intro={pkg.program_intro}
     pointsCatalog={pkg.points_catalog}
-    columns={pkg.program_columns}
-    rows={pkg.program_rows}
+    columns={programColumns}
+    rows={programRows}
   />
 
   <!-- ── Gallery ── -->

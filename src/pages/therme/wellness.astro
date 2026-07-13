@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import wellnessData from '@/content/pages/therme-wellness.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = wellnessData;
+const page = await getStory('pages/therme-wellness', Astro);
 
 const categories = [
   {

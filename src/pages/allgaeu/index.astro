@@ -2,9 +2,9 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import ContentImage from '@/components/common/ContentImage.astro';
-import pageData from '@/content/pages/allgaeu.json';
+import { getStory, lines } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/allgaeu', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -75,7 +75,7 @@ const page = pageData;
           <div>
             <h2 class="font-display font-light text-ink-dark mb-6" style="font-size:clamp(1.5rem,3vw,2.25rem);">{feature.heading}</h2>
             <div class="space-y-4">
-              {feature.paragraphs?.map((p) => (
+              {lines(feature.paragraphs).map((p) => (
                 <p class="text-xs text-ink-muted leading-relaxed">{p}</p>
               ))}
             </div>

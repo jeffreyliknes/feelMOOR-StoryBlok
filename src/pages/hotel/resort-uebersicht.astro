@@ -1,9 +1,9 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
-import pageData from '@/content/pages/hotel-resort-uebersicht.json';
+import { getStory, lines } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/hotel-resort-uebersicht', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
@@ -39,11 +39,11 @@ const page = pageData;
   <section class="py-16 lg:py-24 bg-white">
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-8">
-        {page.facility_sections.map((section) => (
+        {(page.facility_sections ?? []).map((section) => (
           <div class="bg-cream/40 border border-stone-light p-8">
             <h3 class="font-display font-light text-ink-dark text-2xl mb-6">{section.heading}</h3>
             <ul class="space-y-3">
-              {section.items.map((item) => (
+              {lines(section.items).map((item) => (
                 <li class="flex items-start gap-3 text-xs text-ink-muted leading-relaxed">
                   <span class="text-gold mt-0.5 shrink-0">✓</span>
                   {item}

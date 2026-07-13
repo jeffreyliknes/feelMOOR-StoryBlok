@@ -2,9 +2,9 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHero from '@/components/common/PageHero.astro';
 import ContentImage from '@/components/common/ContentImage.astro';
-import pageData from '@/content/pages/gesundheit.json';
+import { getStory } from '@/lib/storyblok';
 
-const page = pageData;
+const page = await getStory('pages/gesundheit', Astro);
 ---
 
 <PageLayout title={page.seo_title} description={page.seo_description}>
