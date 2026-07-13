@@ -10,8 +10,6 @@ dist/
 .DS_Store
 **/.DS_Store
 
-# TinaCMS
-tina/__generated__
 public/admin
 
 .vercel
