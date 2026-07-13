@@ -1,6 +1,6 @@
-# feelMOOR
+# feelMOOR-StoryBlok
 
-Luxury health resort website for [feelmoor.de](https://www.feelmoor.de). Built with Astro 5, TinaCMS, and Tailwind CSS. Deployed on Vercel.
+Luxury health resort website for [feelmoor.de](https://www.feelmoor.de). Built with Astro 5, Storyblok (migration from TinaCMS in progress), and Tailwind CSS. Deployed on Vercel.
 
 ## Setup
 
