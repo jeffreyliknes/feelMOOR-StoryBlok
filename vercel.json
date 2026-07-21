@@ -36,6 +36,7 @@
     { "source": "/fit-aktiv/vitalium-fitness", "destination": "/fitness/studio", "permanent": true },
     { "source": "/gesundheitsvortrag", "destination": "/gesundheit", "permanent": true },
     { "source": "/newsblog-archiv", "destination": "/blog-archiv", "permanent": true },
+    { "source": "/blog", "destination": "/news", "permanent": true },
     { "source": "/BalanceundEnergie", "destination": "/angebote/balance-und-energie", "permanent": true },
     { "source": "/MindfulMoments-AchtsamkeitRetreat", "destination": "/angebote/achtsamkeit-retreat", "permanent": true },
     { "source": "/regenerations-und-vitalkur", "destination": "/angebote/regeneration-vitalkur", "permanent": true },
