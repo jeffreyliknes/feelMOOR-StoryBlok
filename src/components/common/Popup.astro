@@ -6,6 +6,8 @@ interface Props {
   body: string;
   image?: string;
   imageAlt?: string;
+  buttonLabel?: string;
+  buttonUrl?: string;
   closeLabel?: string;
   /** sessionStorage key so it shows once per session, not every navigation */
   id?: string;
@@ -15,6 +17,8 @@ const {
   body,
   image,
   imageAlt = '',
+  buttonLabel,
+  buttonUrl,
   closeLabel = 'Schließen',
   id = 'welcome-popup',
 } = Astro.props;
@@ -23,7 +27,7 @@ const {
 <dialog
   id={id}
   data-popup-id={id}
-  class="popup w-[min(92vw,460px)] bg-cream text-ink-dark p-0 border border-gold/30 shadow-2xl backdrop:bg-forest-950/60"
+  class="popup w-[min(94vw,720px)] bg-cream text-ink-dark p-0 border border-gold/30 shadow-2xl backdrop:bg-forest-950/60"
 >
   <button
     type="button"
@@ -36,14 +40,24 @@ const {
     </svg>
   </button>
 
-  {image && (
-    <img src={image} alt={imageAlt} class="w-full aspect-[3/2] object-cover" loading="eager" />
-  )}
+  <div class="grid md:grid-cols-2">
+    {image && (
+      <img src={image} alt={imageAlt} class="w-full h-56 md:h-full object-cover" loading="eager" />
+    )}
 
-  <div class="px-8 py-8 text-center">
-    <h2 class="font-display font-light text-[1.75rem] leading-tight text-ink-dark">{heading}</h2>
-    <span class="block w-10 h-px bg-gold/50 mx-auto my-4"></span>
-    <p class="text-sm text-ink-muted leading-relaxed">{body}</p>
+    <div class="px-8 py-8 text-center flex flex-col justify-center">
+      <h2 class="font-display font-light text-[1.75rem] leading-tight text-ink-dark">{heading}</h2>
+      <span class="block w-10 h-px bg-gold/50 mx-auto my-4"></span>
+      <p class="text-sm text-ink-muted leading-relaxed">{body}</p>
+      {buttonLabel && buttonUrl && (
+        <a
+          href={buttonUrl}
+          class="mt-6 inline-block self-center bg-gold text-cream text-sm tracking-wide px-6 py-3 hover:bg-gold/90 transition-colors"
+        >
+          {buttonLabel}
+        </a>
+      )}
+    </div>
   </div>
 </dialog>
 
